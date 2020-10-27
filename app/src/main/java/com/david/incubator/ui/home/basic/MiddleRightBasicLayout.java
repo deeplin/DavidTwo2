@@ -58,7 +58,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         });
 
         systemEnumObserver = systemEnum -> {
-            systemEnum = SystemEnum.Warmer;
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, true);
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, true);
@@ -76,9 +75,9 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
 //              setMat();
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
-//                binding.blueSensorView.setVisibility(View.GONE);
-//                binding.matSensorView.setVisibility(View.GONE);
-//                binding.angleSensorView.setVisibility(View.GONE);
+                binding.blueSensorView.setVisibility(View.GONE);
+                binding.matSensorView.setVisibility(View.GONE);
+                binding.angleSensorView.setVisibility(View.GONE);
             } else {
                 this.setVisibility(View.GONE);
             }
