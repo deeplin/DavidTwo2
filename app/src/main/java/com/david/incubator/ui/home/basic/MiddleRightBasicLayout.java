@@ -18,6 +18,7 @@ import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
+import com.david.core.util.LoggerUtil;
 import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBasicBinding;
 
@@ -76,7 +77,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
             }
-
             binding.humiditySensorView.setVisibility(View.GONE);
             binding.oxygenSensorView.setVisibility(View.GONE);
             if (binding.humiditySensorView.getVisibility() == View.GONE &&
@@ -123,6 +123,7 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.matSensorView.detach();
         binding.angleSensorView.detach();
     }
+
 
     private void setHum() {
 //        if (moduleHardware.hum.getValue()) {
