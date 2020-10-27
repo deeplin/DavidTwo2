@@ -112,7 +112,7 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
             binding.standardSpo2Layout.setVisibility(View.GONE);
         }
 
-        //        binding.middleRightSensorView.attach(lifeCycleOwner);
+        binding.middleRightSensorView.attach(lifeCycleOwner);
 
         incubatorModel.systemMode.observeForever(systemEnumObserver);
 
@@ -120,7 +120,7 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
         binding.skin1SensorView.setSensorDarkMode(darkMode);
         binding.airSensorView.setSensorDarkMode(darkMode);
         binding.timingLayout.setSensorDarkMode(darkMode);
-//        binding.middleRightSensorView.setDarkMode(darkMode);
+        binding.middleRightSensorView.setDarkMode(darkMode);
         binding.standardSpo2Layout.setSensorDarkMode(darkMode);
     }
 
@@ -130,8 +130,8 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
         incubatorModel.systemMode.removeObserver(systemEnumObserver);
 
         binding.standardSpo2Layout.detach();
-//        binding.middleRightSensorView.detach();
-//
+        binding.middleRightSensorView.detach();
+
         binding.angleSensorView.detach();
         binding.homeSetView.detach();
         binding.timingLayout.detach();

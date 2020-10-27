@@ -83,51 +83,11 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
         binding.prView.detach();
         binding.piView.detach();
         binding.siqView.detach();
-
-//        for (int index = 0; index < binding.spo2TopLayout.getChildCount(); index++) {
-//            View view = binding.spo2TopLayout.getChildAt(index);
-//            if (view instanceof ILifeCycleOwner) {
-//                ((ILifeCycleOwner) view).detach();
-//            }
-//        }
     }
 
-//    private void addViews(LinearLayout.LayoutParams layoutParams) {
-//        SiqView siqView = new SiqView(getContext(), null);
-//        siqView.set(bufferRepository.getSpo2Buffer());
-//        binding.spo2TopLayout.addView(siqView, layoutParams);
-//
-//        SensorRangeView spo2View = buildView(SensorModelEnum.Spo2);
-//        binding.spo2TopLayout.addView(spo2View, layoutParams);
-//
-//        SensorRangeView prView = buildView(SensorModelEnum.Pr);
-//        binding.spo2TopLayout.addView(prView, layoutParams);
-//
-//        SensorRangeView piView = buildView(SensorModelEnum.Pi);
-//        binding.spo2TopLayout.addView(piView, layoutParams);
-//    }
-
-//    protected SensorRangeView buildView(SensorModelEnum sensorModelEnum) {
-//
-//        SensorRangeView sensorRangeView = new SensorRangeView(getContext(), null);
-//        sensorRangeView.setIntegerTop(60);
-//        sensorRangeView.setTextSize(100, 70);
-//        sensorRangeView.set(sensorModel);
-//        sensorRangeView.setOnClickListener(view -> {
-//            if (systemModel.isFreeze()) {
-//                return;
-//            }
-//            systemModel.showSetupPage(SetupPageEnum.Spo2);
-//        });
-//        return sensorRangeView;
-//    }
-
     public void setDisable(boolean status) {
-//        for (int index = 0; index < binding.spo2TopLayout.getChildCount(); index++) {
-//            View view = binding.spo2TopLayout.getChildAt(index);
-//            if (view instanceof SensorRangeView) {
-//                ((SensorRangeView) view).setDisable(status);
-//            }
-//        }
+        binding.spo2View.setDisable(status);
+        binding.prView.setDisable(status);
+        binding.piView.setDisable(status);
     }
 }

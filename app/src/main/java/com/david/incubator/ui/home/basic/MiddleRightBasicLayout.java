@@ -72,7 +72,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
             } else {
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
-
             }
         };
     }
@@ -90,14 +89,13 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.humiditySensorView.attach(lifeCycleOwner);
         binding.oxygenSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Oxygen));
         binding.oxygenSensorView.attach(lifeCycleOwner);
-        binding.angleSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Angle));
-        binding.angleSensorView.attach(lifeCycleOwner);
 
-        //todo deeplin
         binding.matSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.MAT));
         binding.matSensorView.attach(lifeCycleOwner);
         binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
         binding.blueSensorView.attach(lifeCycleOwner);
+        binding.angleSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Angle));
+        binding.angleSensorView.attach(lifeCycleOwner);
 
         incubatorModel.systemMode.observeForever(systemEnumObserver);
     }
@@ -108,6 +106,10 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         incubatorModel.systemMode.removeObserver(systemEnumObserver);
         binding.oxygenSensorView.detach();
         binding.humiditySensorView.detach();
+
+        binding.blueSensorView.detach();
+        binding.matSensorView.detach();
+        binding.angleSensorView.detach();
     }
 
     private void setHum() {
