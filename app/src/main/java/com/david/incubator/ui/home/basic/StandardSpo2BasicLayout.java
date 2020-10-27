@@ -90,9 +90,21 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         if (getWidth() > 500) {
+            binding.spo2View.setFontSize(100, 70);
+            binding.prView.setFontSize(100, 70);
+            binding.piView.setFontSize(100, 70);
 
+            binding.spo2View.setIntegerTop(80);
+            binding.prView.setIntegerTop(80);
+            binding.piView.setIntegerTop(80);
         } else {
-            
+            binding.spo2View.setFontSize(80, 50);
+            binding.prView.setFontSize(80, 50);
+            binding.piView.setFontSize(80, 50);
+
+            binding.spo2View.setIntegerTop(110);
+            binding.prView.setIntegerTop(110);
+            binding.piView.setIntegerTop(110);
         }
     }
 

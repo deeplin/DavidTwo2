@@ -21,9 +21,6 @@
             android:id="@+id/spo2View"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:decimal_size="70"
-            app:integer_size="100"
-            app:integer_top="60"
             app:layout_constraintEnd_toStartOf="@id/prView"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -31,9 +28,6 @@
             android:id="@+id/prView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:decimal_size="70"
-            app:integer_size="100"
-            app:integer_top="60"
             app:layout_constraintEnd_toStartOf="@id/piView"
             app:layout_constraintStart_toEndOf="@id/spo2View" />
 
@@ -41,9 +35,6 @@
             android:id="@+id/piView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:decimal_size="70"
-            app:integer_size="100"
-            app:integer_top="60"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/prView" />
 

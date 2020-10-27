@@ -58,10 +58,16 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         });
 
         systemEnumObserver = systemEnum -> {
+            systemEnum = SystemEnum.Warmer;
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, true);
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, true);
-
+                if (binding.humiditySensorView.getVisibility() == View.GONE &&
+                        binding.oxygenSensorView.getVisibility() == View.GONE) {
+                    this.setVisibility(View.GONE);
+                } else {
+                    this.setVisibility(View.VISIBLE);
+                }
                 binding.blueSensorView.setVisibility(View.GONE);
                 binding.matSensorView.setVisibility(View.GONE);
                 binding.angleSensorView.setVisibility(View.GONE);
@@ -70,20 +76,11 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
 //              setMat();
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
-                binding.blueSensorView.setVisibility(View.GONE);
-                binding.matSensorView.setVisibility(View.GONE);
-                binding.angleSensorView.setVisibility(View.GONE);
+//                binding.blueSensorView.setVisibility(View.GONE);
+//                binding.matSensorView.setVisibility(View.GONE);
+//                binding.angleSensorView.setVisibility(View.GONE);
             } else {
-                binding.humiditySensorView.setVisibility(View.GONE);
-                binding.oxygenSensorView.setVisibility(View.GONE);
-            }
-            binding.humiditySensorView.setVisibility(View.GONE);
-            binding.oxygenSensorView.setVisibility(View.GONE);
-            if (binding.humiditySensorView.getVisibility() == View.GONE &&
-                    binding.oxygenSensorView.getVisibility() == View.GONE) {
                 this.setVisibility(View.GONE);
-            } else {
-                this.setVisibility(View.VISIBLE);
             }
         };
     }
@@ -122,23 +119,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.blueSensorView.detach();
         binding.matSensorView.detach();
         binding.angleSensorView.detach();
-    }
-
-
-    private void setHum() {
-//        if (moduleHardware.hum.getValue()) {
-//            binding.humiditySensorView.setVisibility(View.VISIBLE);
-//        } else {
-//            binding.humiditySensorView.setVisibility(View.GONE);
-//        }
-    }
-
-    private void setOxygen() {
-//        if (moduleHardware.oxygen.getValue()) {
-//            binding.oxygenSensorView.setVisibility(View.VISIBLE);
-//        } else {
-//            binding.oxygenSensorView.setVisibility(View.GONE);
-//        }
     }
 
     //todo su

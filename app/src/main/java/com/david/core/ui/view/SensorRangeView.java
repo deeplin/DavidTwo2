@@ -109,4 +109,13 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
         binding.integerPart.setTextSize(integerPartSize);
         binding.decimalPart.setTextSize(decimalPartSize);
     }
+
+    public void setIntegerTop(int integerTop) {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(binding.rootView);
+        if (integerTop >= 0) {
+            constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, integerTop);
+        }
+        constraintSet.applyTo(binding.rootView);
+    }
 }
