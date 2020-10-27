@@ -59,6 +59,18 @@
             app:layout_constraintStart_toEndOf="@id/integerPart" />
 
         <TextView
+            android:id="@+id/textString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/integerPart"
+            app:layout_constraintEnd_toEndOf="@id/decimalPart"
+            app:layout_constraintStart_toStartOf="@id/integerPart" />
+
+        <TextView
             android:id="@+id/unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -2,8 +2,8 @@ package com.david.core.ui.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.lifecycle.LifecycleOwner;
@@ -64,5 +64,10 @@ public class TitleValueView extends BindingBasicLayout<ViewTitleValueBinding> {
     @Override
     public void detach() {
         super.detach();
+    }
+
+    public void setText(String text) {
+        binding.textString.setText(text);
+        binding.integerPart.setVisibility(View.INVISIBLE);
     }
 }

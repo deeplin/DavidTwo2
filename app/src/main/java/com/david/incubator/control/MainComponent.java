@@ -3,7 +3,6 @@ package com.david.incubator.control;
 import com.david.core.control.CommonComponent;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
-import com.david.incubator.ui.home.basic.BlueView;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
 import com.david.incubator.ui.home.basic.StandardSpo2BasicLayout;
 import com.david.incubator.ui.home.common.Co2RrView;
@@ -54,8 +53,6 @@ public interface MainComponent extends CommonComponent {
     void inject(BasicLayout basicLayout);
 
     void inject(StandardSpo2BasicLayout standardSpo2BasicLayout);
-
-    void inject(BlueView blueView);
 
     void inject(MiddleRightBasicLayout middleRightBasicLayout);
 }

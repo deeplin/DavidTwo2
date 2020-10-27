@@ -112,6 +112,7 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.matSensorView.attach(lifeCycleOwner);
         binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
         binding.blueSensorView.attach(lifeCycleOwner);
+        binding.blueSensorView.setText("0");
 
         incubatorModel.systemMode.observeForever(systemEnumObserver);
     }
@@ -126,15 +127,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.blueSensorView.detach();
         binding.matSensorView.detach();
     }
-
-    //todo su
-    //  private void setBlue() {
-    //      binding.blueSensorView.setVisibility(View.VISIBLE);
-    //  }
-
-    //  private void setMat() {
-    //     binding.matSensorView.setVisibility(View.VISIBLE);
-    //  }
 
     public void setDarkMode(boolean darkMode) {
         binding.humiditySensorView.setSensorDarkMode(darkMode);

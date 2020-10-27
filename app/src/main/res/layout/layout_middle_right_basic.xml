@@ -33,7 +33,7 @@
             app:layout_constraintEnd_toStartOf="@id/blueSensorView"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <com.david.incubator.ui.home.basic.BlueView
+        <com.david.core.ui.view.TitleValueView
             android:id="@+id/blueSensorView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
