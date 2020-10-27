@@ -138,9 +138,9 @@ public class SystemModel {
         }
     }
 
-    public void setCo2Unit() {
+    public void setNibpUnit() {
         SensorModel nibpModel = sensorModelRepository.getSensorModel(SensorModelEnum.Nibp);
-        switch (configRepository.getConfig(ConfigEnum.Co2Unit).getValue()) {
+        switch (configRepository.getConfig(ConfigEnum.NibpUnit).getValue()) {
             case (0):
                 nibpUnitFunction = UnitUtil::intToString;
                 nibpModel.unit.set("mmHg");

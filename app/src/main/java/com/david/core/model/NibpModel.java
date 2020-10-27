@@ -69,7 +69,7 @@ public class NibpModel implements ILifeCycle {
 
     @Override
     public void attach() {
-        systemModel.setCo2Unit();
+        systemModel.setNibpUnit();
         error.observeForever(errorCallback);
 
         int stat = configRepository.getConfig(ConfigEnum.NibpStat).getValue();
