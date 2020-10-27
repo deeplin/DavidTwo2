@@ -71,7 +71,7 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
         };
 
         binding.co2View.setSmallLayout();
-        binding.rrView.setSmallLayout();
+        binding.rrView.setSpo2SmallLayout();
         binding.fiView.setSmallLayout();
         binding.fiView.displayEt(false);
     }

@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/spo2View"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="@id/spo2View"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.6" />
@@ -20,10 +20,10 @@
         <com.david.core.ui.view.SensorRangeView
             android:id="@+id/spo2View"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             app:decimal_size="70"
             app:integer_size="100"
             app:integer_top="60"
-            android:layout_height="match_parent"
             app:layout_constraintEnd_toStartOf="@id/prView"
             app:layout_constraintStart_toStartOf="parent" />
 

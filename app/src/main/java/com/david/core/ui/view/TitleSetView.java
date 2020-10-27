@@ -1,9 +1,12 @@
 package com.david.core.ui.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.david.R;
@@ -15,6 +18,19 @@ public class TitleSetView extends BindingBasicLayout<ViewTitleSetBinding> {
 
     public TitleSetView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleIconView);
+        int integerTop = typedArray.getInteger(R.styleable.TitleIconView_integer_top, -1);
+        int integerSize = typedArray.getInteger(R.styleable.TitleIconView_integer_size, -1);
+        typedArray.recycle();
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(binding.rootView);
+        if (integerTop >= 0) {
+            constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, integerTop);
+        }
+        constraintSet.applyTo(binding.rootView);
+        if (integerSize >= 0) {
+            binding.integerPart.setTextSize(integerSize);
+        }
     }
 
     @Override

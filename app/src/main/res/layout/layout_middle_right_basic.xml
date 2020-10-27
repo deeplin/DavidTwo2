@@ -11,6 +11,8 @@
             android:id="@+id/humiditySensorView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            app:integer_size="80"
+            app:integer_top="80"
             app:layout_constraintEnd_toStartOf="@id/oxygenSensorView"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -19,6 +21,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/f8"
+            app:integer_size="80"
+            app:integer_top="80"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/humiditySensorView" />
 

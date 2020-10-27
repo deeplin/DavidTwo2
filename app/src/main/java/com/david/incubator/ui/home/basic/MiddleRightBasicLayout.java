@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer;
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.control.SensorModelRepository;
+import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.SetupPageEnum;
 import com.david.core.enumeration.SystemEnum;
@@ -17,6 +18,7 @@ import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
+import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBasicBinding;
 
 import java.util.Objects;
@@ -56,8 +58,9 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
 
         systemEnumObserver = systemEnum -> {
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
-                setHum();
-                setOxygen();
+                ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, true);
+                ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, true);
+
                 binding.blueSensorView.setVisibility(View.GONE);
                 binding.matSensorView.setVisibility(View.GONE);
                 binding.angleSensorView.setVisibility(View.GONE);
@@ -72,6 +75,15 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
             } else {
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
+            }
+
+            binding.humiditySensorView.setVisibility(View.GONE);
+            binding.oxygenSensorView.setVisibility(View.GONE);
+            if (binding.humiditySensorView.getVisibility() == View.GONE &&
+                    binding.oxygenSensorView.getVisibility() == View.GONE) {
+                this.setVisibility(View.GONE);
+            } else {
+                this.setVisibility(View.VISIBLE);
             }
         };
     }

@@ -138,7 +138,7 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
         SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
         SensorRangeView sensorRangeView = new SensorRangeView(getContext(), null);
         sensorRangeView.set(sensorModel);
-        sensorRangeView.setSmallLayout();
+        sensorRangeView.setSpo2SmallLayout();
         sensorRangeView.setOnClickListener(view -> {
             if (systemModel.isFreeze()) {
                 return;
