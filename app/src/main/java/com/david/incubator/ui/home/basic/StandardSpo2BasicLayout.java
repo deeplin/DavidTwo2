@@ -14,7 +14,6 @@ import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.LoggerUtil;
 import com.david.databinding.LayoutStandardSpo2BasicBinding;
 
 import javax.inject.Inject;
@@ -98,9 +97,9 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
             binding.prView.setIntegerTop(80);
             binding.piView.setIntegerTop(80);
         } else {
-            binding.spo2View.setFontSize(80, 50);
-            binding.prView.setFontSize(80, 50);
-            binding.piView.setFontSize(80, 50);
+            binding.spo2View.setFontSize(70, 40);
+            binding.prView.setFontSize(70, 40);
+            binding.piView.setFontSize(70, 40);
 
             binding.spo2View.setIntegerTop(110);
             binding.prView.setIntegerTop(110);

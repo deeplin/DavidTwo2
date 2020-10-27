@@ -71,14 +71,22 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                 binding.matSensorView.setVisibility(View.GONE);
                 this.setVisibility(View.VISIBLE);
             } else if (Objects.equals(systemEnum, SystemEnum.Warmer)) {
-//              setBlue();
-//              setMat();
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
+
+                if (moduleHardware.isInstalled(ModuleEnum.Mat)) {
+                    binding.matSensorView.setVisibility(View.VISIBLE);
+                } else {
+                    binding.matSensorView.setVisibility(View.GONE);
+                }
+
+                if (binding.matSensorView.getVisibility() == View.GONE &&
+                        binding.blueSensorView.getVisibility() == View.GONE) {
+                    this.setVisibility(View.GONE);
+                } else {
+                    this.setVisibility(View.VISIBLE);
+                }
 //                binding.blueSensorView.setVisibility(View.GONE);
-//                binding.matSensorView.setVisibility(View.GONE);
-//                binding.angleSensorView.setVisibility(View.GONE);
-                this.setVisibility(View.VISIBLE);
             } else {
                 this.setVisibility(View.GONE);
             }
@@ -100,6 +108,7 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.oxygenSensorView.attach(lifeCycleOwner);
 
         binding.matSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.MAT));
+        sensorModelRepository.getSensorModel(SensorModelEnum.MAT).textNumber.set(100);
         binding.matSensorView.attach(lifeCycleOwner);
         binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
         binding.blueSensorView.attach(lifeCycleOwner);

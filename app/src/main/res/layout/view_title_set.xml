@@ -76,7 +76,6 @@
             android:text="@{viewModel.unit}"
             android:textColor="@color/text_blue"
             android:textSize="22dp"
-            android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@id/integerPart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/integerPart" />

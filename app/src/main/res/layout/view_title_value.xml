@@ -17,8 +17,9 @@
         <TextView
             android:id="@+id/title"
             android:layout_width="160dp"
-            android:layout_height="@dimen/f40"
+            android:layout_height="@dimen/f30"
             android:layout_marginTop="@dimen/f16"
+            android:background="@drawable/background_panel_pink"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@{sensorModel.title}"
@@ -28,29 +29,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/f30"
-            android:layout_marginBottom="16dp"
-            android:imageSrc="@{sensorModel.iconImage}"
-            app:layout_constraintHorizontal_bias="0.85"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
         <TextView
             android:id="@+id/integerPart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/f12"
+            android:layout_marginTop="110dp"
             android:includeFontPadding="false"
             android:text="@{sensorModel.textIntegerPart}"
-            android:textSize="130dp"
+            android:textColor="@color/text_blue"
+            android:textSize="80dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/icon"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toTopOf="@id/icon" />
+            app:layout_constraintEnd_toStartOf="@id/decimalPart"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/decimalPart"
@@ -58,9 +50,12 @@
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
             android:text="@{sensorModel.textDecimalPart}"
-            android:textSize="90dp"
+            android:textColor="@color/text_blue"
+            android:textSize="50dp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@id/integerPart"
+            app:layout_constraintEnd_toStartOf="@id/unit"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@id/integerPart" />
 
         <TextView
@@ -70,8 +65,11 @@
             android:layout_marginStart="@dimen/f16"
             android:includeFontPadding="false"
             android:text="@{sensorModel.unit}"
+            android:textColor="@color/text_blue"
             android:textSize="@dimen/f40"
             app:layout_constraintBaseline_toBaselineOf="@id/integerPart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@id/decimalPart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
