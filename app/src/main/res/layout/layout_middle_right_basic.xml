@@ -30,16 +30,16 @@
             android:id="@+id/angleSensorView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/f8"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/matSensorView"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.david.core.ui.view.TitleIconView
             android:id="@+id/matSensorView"
             android:layout_width="0dp"
+            android:layout_marginStart="@dimen/f8"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toStartOf="@id/blueSensorView"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/angleSensorView" />
 
         <com.david.incubator.ui.home.basic.BlueView
             android:id="@+id/blueSensorView"

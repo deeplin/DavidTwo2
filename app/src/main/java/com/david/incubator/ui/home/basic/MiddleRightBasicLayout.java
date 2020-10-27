@@ -18,7 +18,6 @@ import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.LoggerUtil;
 import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBasicBinding;
 
@@ -70,14 +69,16 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                 binding.blueSensorView.setVisibility(View.GONE);
                 binding.matSensorView.setVisibility(View.GONE);
                 binding.angleSensorView.setVisibility(View.GONE);
+                this.setVisibility(View.VISIBLE);
             } else if (Objects.equals(systemEnum, SystemEnum.Warmer)) {
 //              setBlue();
 //              setMat();
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
-                binding.blueSensorView.setVisibility(View.GONE);
-                binding.matSensorView.setVisibility(View.GONE);
-                binding.angleSensorView.setVisibility(View.GONE);
+//                binding.blueSensorView.setVisibility(View.GONE);
+//                binding.matSensorView.setVisibility(View.GONE);
+//                binding.angleSensorView.setVisibility(View.GONE);
+                this.setVisibility(View.VISIBLE);
             } else {
                 this.setVisibility(View.GONE);
             }
