@@ -57,6 +57,7 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         });
 
         systemEnumObserver = systemEnum -> {
+            systemEnum = SystemEnum.Warmer;
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, true);
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, true);
