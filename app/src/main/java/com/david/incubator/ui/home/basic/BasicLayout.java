@@ -83,6 +83,7 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
         binding.skin2SensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Skin2));
         binding.airSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Air));
         binding.angleSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Angle));
+        binding.angleSensorView.setAngleUnit();
     }
 
     @Override
