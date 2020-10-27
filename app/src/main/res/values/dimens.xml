@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <dimen name="f4">4dp</dimen>-->
+    <!--    <dimen name="f8">8dp</dimen>-->
+    <!--    <dimen name="f12">12dp</dimen>-->
+    <!--    <dimen name="f24">24dp</dimen>-->
+    <!--    <dimen name="f32">32dp</dimen>-->
+    <!--    <dimen name="f48">48dp</dimen>-->
+    <!--    <dimen name="f66">66dp</dimen>-->
+    <!--    <dimen name="f80">80dp</dimen>-->
+    <!--    <dimen name="f100">100dp</dimen>-->
+    <!--    <dimen name="f352">352dp</dimen>-->
+
+    <!--Font-->
+    <dimen name="f20">20dp</dimen>
+    <dimen name="f24">24dp</dimen>
+
+    <!--Corner-->
+    <dimen name="f4">4dp</dimen>
+    <dimen name="f8">8dp</dimen>
+    <dimen name="f16">16dp</dimen>
+
+    <!--Margin-->
+    <dimen name="f12">12dp</dimen>
+    <dimen name="f32">32dp</dimen>
+
+    <!--TextView-->
+    <dimen name="f18">18dp</dimen>
+    <dimen name="f40">40dp</dimen>
+    <dimen name="f50">50dp</dimen>
+    <dimen name="f60">60dp</dimen>
+    <dimen name="f80">80dp</dimen>
+
+    <!--Button-->
+    <dimen name="f30">30dp</dimen>
+
+</resources>

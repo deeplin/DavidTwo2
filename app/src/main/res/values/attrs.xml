@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleIconView">
+        <attr name="background_color" format="reference" />
+        <attr name="text_color" format="color" />
+        <attr name="title_height" format="integer" />
+        <attr name="icon_start" format="integer" />
+        <attr name="icon_bottom" format="integer" />
+        <attr name="integer_size" format="integer" />
+        <attr name="integer_start" format="integer" />
+        <attr name="decimal_size" format="integer" />
+        <attr name="unit_size" format="integer" />
+        <attr name="integer_top" format="integer" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.david.core.model.SensorModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/f16"
+            android:background="@drawable/background_panel_pink"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/set"
+            android:layout_width="@dimen/f40"
+            android:layout_height="@dimen/f30"
+            android:layout_marginTop="@dimen/f8"
+            android:gravity="center"
+            android:rotation="@{viewModel.textNumber/10}"
+            android:src="@mipmap/angle_icon"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/integerPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.textIntegerPart}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f60"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/title" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/f4"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.unit}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f60"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/integerPart"
+            app:layout_constraintTop_toTopOf="@id/integerPart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

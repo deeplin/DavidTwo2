@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/f80"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginEnd="36dp"
+            app:layout_constraintBottom_toBottomOf="@id/lockScreen"
+            app:layout_constraintEnd_toStartOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/leftWards"
+            android:layout_width="40dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="@dimen/f8"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/leftwards"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <TextView
+            android:id="@+id/menuText0"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/menuButton0"
+            app:layout_constraintStart_toStartOf="@id/menuButton0" />
+
+        <ImageButton
+            android:id="@+id/menuButton0"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/f32"
+            android:background="@drawable/bottom_icon_background"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintStart_toEndOf="@id/leftWards"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <TextView
+            android:id="@+id/menuText1"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/menuButton1"
+            app:layout_constraintStart_toStartOf="@id/menuButton1" />
+
+        <ImageButton
+            android:id="@+id/menuButton1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bottom_icon_background"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <TextView
+            android:id="@+id/menuText2"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/menuButton2"
+            app:layout_constraintStart_toStartOf="@id/menuButton2" />
+
+        <ImageButton
+            android:id="@+id/menuButton2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="@dimen/f32"
+            android:background="@drawable/bottom_icon_background"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintEnd_toStartOf="@id/rightwards"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <ImageButton
+            android:id="@+id/rightwards"
+            android:layout_width="40dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/rightwards"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <TextView
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/lock_screen"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="@id/lockScreen" />
+
+        <ImageButton
+            android:id="@+id/lockScreen"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f80"
+            android:layout_marginBottom="@dimen/f8"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/unlock_screen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/home"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="@id/home" />
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f80"
+            android:layout_marginStart="36dp"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/home"
+            app:layout_constraintBottom_toBottomOf="@id/lockScreen"
+            app:layout_constraintStart_toEndOf="@id/lockScreen" />
+
+        <TextView
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/menu"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="@id/setting" />
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f80"
+            android:layout_marginStart="36dp"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/setting"
+            app:layout_constraintBottom_toBottomOf="@id/lockScreen"
+            app:layout_constraintStart_toEndOf="@id/home" />
+
+        <TextView
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/mute_alarm"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="@id/muteAlarm" />
+
+        <ImageButton
+            android:id="@+id/muteAlarm"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f80"
+            android:layout_marginStart="36dp"
+            android:background="@drawable/bottom_button_background"
+            android:src="@mipmap/mute_alarm"
+            app:layout_constraintBottom_toBottomOf="@id/lockScreen"
+            app:layout_constraintStart_toEndOf="@id/setting" />
+
+        <TextView
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f24"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/alarm_reset"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/lockScreen"
+            app:layout_constraintStart_toStartOf="@id/clearAlarm" />
+
+        <ImageButton
+            android:id="@+id/clearAlarm"
+            android:layout_width="@dimen/f80"
+            android:layout_height="@dimen/f80"
+            android:layout_marginEnd="@dimen/f8"
+            android:background="@drawable/button_clear_alarm_background"
+            android:src="@mipmap/clear_alarm"
+            app:layout_constraintBottom_toBottomOf="@id/lockScreen"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

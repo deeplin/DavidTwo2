@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--500*568-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.core.ui.view.TitleIconView
+            android:id="@+id/skin2SensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/angleSensorView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:background_color="@drawable/background_panel_pink"
+            app:decimal_size="50"
+            app:integer_size="70"
+            app:icon_bottom="12"
+            app:text_color="@color/text_pink"
+            app:title_height="30"
+            app:unit_size="24" />
+
+        <com.david.incubator.ui.home.standard.middle.AngleView
+            android:id="@+id/angleSensorView"
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

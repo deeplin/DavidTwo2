@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">戴维医疗</string>
+
+    <!--Sensor-->
+    <string name="spo2_id" translatable="false">SpO₂</string>
+    <string name="pr" translatable="false">PR</string>
+    <string name="pi" translatable="false">PI</string>
+    <string name="sphb" translatable="false">SpHb</string>
+    <string name="spoc" translatable="false">SpOC</string>
+    <string name="spmet" translatable="false">SpMet</string>
+    <string name="spco" translatable="false">SpCO</string>
+    <string name="pvi" translatable="false">PVI</string>
+    <string name="apgar" translatable="false">APGAR</string>
+    <string name="cpr" translatable="false">CPR</string>
+    <string name="ecg_id" translatable="false">ECG</string>
+    <string name="hr" translatable="false">HR</string>
+    <string name="nibp" translatable="false">NIBP</string>
+    <string name="co2" translatable="false">CO₂</string>
+    <string name="resp" translatable="false">RESP</string>
+    <string name="awrr" translatable="false">AwRR</string>
+    <string name="Fi" translatable="false">Fi</string>
+    <string name="wake" translatable="false">Wake</string>
+
+    <!--com.david.core-->
+    <string name="off">关闭</string>
+    <string name="on">开启</string>
+    <string name="low">低</string>
+    <string name="high">高</string>
+    <string name="skin_mode">肤温模式</string>
+    <string name="air_mode">箱温模式</string>
+    <string name="overheat_mode">超温模式</string>
+    <string name="manual_mode">手控模式</string>
+    <string name="prewarm_mode">预热模式</string>
+
+    <!--com.david.core.enumeration.SensorModeEnum-->
+    <string name="skin">肤温</string>
+    <string name="skin2">肤温2</string>
+    <string name="air">箱温</string>
+    <string name="humidity">湿度</string>
+    <string name="oxygen">O₂</string>
+    <string name="weight">称重</string>
+    <string name="Ambient">环境温湿度</string>
+    <string name="angle">摇床角度</string>
+    <string name="heater">加热功率</string>
+    <string name="weight_unit">体重(g)</string>
+    <string name="blue">蓝光</string>
+    <string name="mat">床垫</string>
+
+    <!--com.david.incubator.ui.main-->
+    <string name="demo_setup">演示模式</string>
+
+    <!--com.david.incubator.ui.top-->
+    <string name="default_user">默认用户</string>
+    <string name="overheat_experiment">超温试验</string>
+
+    <!--com.david.incubator.ui.bottom-->
+    <string name="alarm_reset">报警复位</string>
+    <string name="mute_alarm">声音暂停</string>
+    <string name="menu">菜单</string>
+    <string name="home">主页</string>
+    <string name="lock_screen">锁键</string>
+    <string name="NIBP">血压测量</string>
+    <string name="camera">视频</string>
+    <string name="trend_chart">趋势图</string>
+    <string name="trend_table">趋势表</string>
+    <string name="freeze">波形冻结</string>
+    <string name="print_setup">打印设置</string>
+    <string name="screen_choice">界面选择</string>
+    <string name="alarm_setup">报警设置</string>
+
+    <!--com.david.incubator.ui.StandardLayout-->
+    <string name="start_clock">开始计时</string>
+
+    <!--com.david.incubator.ui.Nibp-->
+    <string name="auto">自动</string>
+    <string name="manual">手动</string>
+    <string name="error">失败</string>
+    <string name="calibrate_success">校准成功</string>
+    <string name="calibrate_failed">校准失败</string>
+    <string name="nibp_delay">NIBP等待</string>
+
+    <!--Alarm Setting-->
+    <string name="spo2_alarm_upper">SpO₂报警上限</string>
+    <string name="spo2_alarm_lower">SpO₂报警下限</string>
+    <string name="pr_alarm_upper">PR报警上限</string>
+    <string name="pr_alarm_lower">PR报警下限</string>
+    <string name="pi_alarm_upper">PI报警上限</string>
+    <string name="pi_alarm_lower">PI报警下限</string>
+    <string name="sphb_alarm_upper">SpHb报警上限</string>
+    <string name="sphb_alarm_lower">SpHb报警下限</string>
+    <string name="spoc_alarm_upper">SpOC报警上限</string>
+    <string name="spoc_alarm_lower">SpOC报警下限</string>
+    <string name="spmet_alarm_upper">SpMet报警上限</string>
+    <string name="spmet_alarm_lower">SpMet报警下限</string>
+    <string name="spco_alarm_upper">SpCO报警上限</string>
+    <string name="spco_alarm_lower">SpCO报警下限</string>
+    <string name="pvi_alarm_upper">PVI报警上限</string>
+    <string name="pvi_alarm_lower">PVI报警下限</string>
+
+    <string name="hr_alarm_upper">HR报警上限</string>
+    <string name="hr_alarm_lower">HR报警下限</string>
+
+    <string name="etco2_alarm_upper">EtCO₂报警上限</string>
+    <string name="etco2_alarm_lower">EtCO₂报警下限</string>
+    <string name="fico2_alarm_upper">FiCO₂报警上限</string>
+    <string name="fico2_alarm_lower">FiCO₂报警下限</string>
+    <string name="awrr_alarm_upper">AwRR报警上限</string>
+    <string name="awrr_alarm_lower">AwRR报警下限</string>
+
+    <string name="rr_alarm_upper">RR报警上限</string>
+    <string name="rr_alarm_lower">RR报警下限</string>
+
+    <string name="sys_alarm_upper">SYS报警上限</string>
+    <string name="sys_alarm_lower">SYS报警下限</string>
+    <string name="dia_alarm_upper">DIA报警上限</string>
+    <string name="dia_alarm_lower">DIA报警下限</string>
+    <string name="map_alarm_upper">MAP报警上限</string>
+    <string name="map_alarm_lower">MAP报警下限</string>
+
+    <!--Print-->
+    <string name="wave0">波形1</string>
+    <string name="wave1">波形2</string>
+    <string name="wave2">波形3</string>
+    <string name="print_time">打印时间</string>
+    <string name="continuous">连续</string>
+    <string name="print_speed">打印速度</string>
+    <string name="start_print">开始打印</string>
+    <string name="stop_print">结束打印</string>
+
+    <!--Alarm-->
+    <string name="SYS.CON">系统板与主板通讯故障</string>
+    <string name="SYS.BCON">控制仪与传感器盒通讯故障</string>
+    <string name="SYS.HA">主从机通讯故障</string>
+    <string name="SYS.HAC">从机间通讯故障</string>
+    <string name="SYS.CFG">备份配置数据异常</string>
+    <string name="SYS.HOOD">箱篷故障报警</string>
+    <string name="SYS.MOTOR">升降系统故障</string>
+    <string name="SYS.DOOR">辐射门故障报警</string>
+    <string name="SYS.WARM1">温度加热系统故障</string>
+    <string name="SYS.WARM2">辐射加热系统故障</string>
+    <string name="SYS.WARM3">床垫加热系统故障</string>
+    <string name="SYS.BOX">传感器盒放置错误报警</string>
+    <string name="SEN.A1">箱温传感器故障</string>
+    <string name="SEN.A2">独立温度传感器故障</string>
+    <string name="SEN.ADIF">箱温传感器差异</string>
+    <string name="SEN.F1">风道温度传感器故障报警</string>
+    <string name="SEN.M1">床温传感器故障报警</string>
+    <string name="SEN.M2">床温独立传感器故障报警</string>
+    <string name="SEN.MDIF">床温传感器差异故障报警</string>
+    <string name="SEN.S1A">肤温传感器1故障</string>
+    <string name="SEN.S1B">独立肤温传感器故障</string>
+    <string name="SEN.S2">肤温传感器2故障报警</string>
+    <string name="SEN.SDIF">肤温传感器差异故障报警</string>
+    <string name="SEN.SCALE">体重秤传感器故障报警</string>
+    <string name="AIR.OVH">箱温超温</string>
+    <string name="MAT.OVH">床温超温报警</string>
+    <string name="SKIN.OVH">肤温超温</string>
+    <string name="FLOW.OVH">风道超温报警</string>
+    <string name="CTRL.SEN">肤温传感器放置错误</string>
+    <string name="SYS.FAN">风机故障</string>
+    <string name="UNIT.FAN">控制仪内风扇故障报警</string>
+    <string name="SEN.O2_1">O₂传感器1故障</string>
+    <string name="SEN.O2_2">O₂传感器2故障</string>
+    <string name="SEN.O2DIF">O₂传感器差异</string>
+    <string name="SEN.RAIN">血氧模块通讯中断</string>
+    <string name="RAIN.ERR">血氧系统故障</string>
+    <string name="RAIN.DF">血氧诊断故障</string>
+    <string name="RAIN.E0">血氧导电线未连接</string>
+    <string name="RAIN.E1">血氧导电线过期</string>
+    <string name="RAIN.E2">血氧导电线不匹配</string>
+    <string name="RAIN.E3">血氧无法识别导电线</string>
+    <string name="RAIN.E4">血氧导电线故障</string>
+    <string name="RAIN.E7">血氧传感器连接错误</string>
+    <string name="RAIN.E8">血氧传感器过期</string>
+    <string name="RAIN.E11">血氧传感器故障</string>
+    <string name="RAIN.E10">血氧传感器无法识别</string>
+    <string name="RAIN.E12">检查血氧导电线或传感器</string>
+    <string name="RAIN.E15">未连接血氧粘黏探头</string>
+    <string name="RAIN.E16">血氧粘黏探头过期</string>
+    <string name="RAIN.E17">血氧粘黏探头不匹配</string>
+    <string name="RAIN.E18">无法识别血氧粘黏探头</string>
+    <string name="RAIN.E19">血氧粘黏探头故障</string>
+    <string name="RAIN.E21">血氧传感器脱落</string>
+    <string name="RAIN.E28">检查血氧传感器连接</string>
+
+    <string name="ECG.CON">ECG通信中断</string>
+    <string name="ECG.RESP">RESP通信中断</string>
+    <string name="NIBP.DIS">NIBP模块禁用</string>
+    <string name="NIBP.CON">NIBP通信中断</string>
+    <string name="NIBP.SEL">NIBP自检失败</string>
+
+    <string name="WAKE.CON">窒息唤醒模块通信中断</string>
+    <string name="WAKE.ERR">窒息唤醒器连接错误</string>
+    <string name="PRINT.ERR">打印机错误</string>
+
+    <string name="SYS.HUMC">湿度加热系统故障报警</string>
+    <string name="SEN.HUM">湿度传感器故障</string>
+    <string name="LOW.POWER">低压报警</string>
+    <string name="SYS.UPS">镍氢电池故障</string>
+    <string name="LIBAT1.LOW">锂电池1电压过低</string>
+    <string name="LIBAT2.LOW">锂电池2电压过低</string>
+    <string name="LIBAT1.HARD">锂电池1硬件故障</string>
+    <string name="LIBAT2.HARD">锂电池2硬件故障</string>
+    <string name="ECG.DROP">ECG导联脱落</string>
+    <string name="ECG.VDROP">ECG V 导联脱落</string>
+    <string name="ECG.OV">ECG过载</string>
+    <string name="NIBP.CUFF1">NIBP袖带错误</string>
+    <string name="NIBP.CUFF2">NIBP袖带微弱</string>
+    <string name="NIBP.OV1">NIBP测量超界</string>
+    <string name="NIBP.OV2">NIBP袖带过压</string>
+    <string name="NIBP.OV3">NIBP测量超时</string>
+    <string name="NIBP.SIG">NIBP信号饱和</string>
+    <string name="NIBP.ABO">NIBP测量中断</string>
+    <string name="NIBP.TYPE">NIBP袖带类型错误</string>
+    <string name="NIBP.LEAK">NIBP袖带漏气</string>
+    <string name="NIBP.PRE">NIBP压力错误</string>
+    <string name="NIBP.MOV">NIBP过分运动</string>
+    <string name="NIBP.HARD">NIBP硬件错误</string>
+    <string name="CO2.HARD">CO2硬件错误</string>
+    <string name="CO2.SOFT">CO2软件错误</string>
+    <string name="CO2.SPE">CO2电机转速超限</string>
+    <string name="CO2.NCAL">CO2出厂未校准</string>
+    <string name="CO2.CLOG">CO2采样管堵塞</string>
+    <string name="CO2.NCLOG">CO2没采样管</string>
+    <string name="CO2.OUTA">CO2超出精度范围</string>
+    <string name="CO2.OUTT">CO2温度超界</string>
+    <string name="CO2.OUTP">CO2大气压力超限</string>
+    <string name="CO2.ZR">CO2需要校零</string>
+    <string name="CO2.ZSD">CO2校零和校准错误</string>
+    <string name="CO2.ZIP">CO2正在校零</string>
+    <string name="CO2.SCF">CO2校准失败</string>
+    <string name="CO2.SCIP">CO2正在校准</string>
+    <string name="PRINT.PAPER">打印机缺纸</string>
+
+    <string name="SYS.TANK">水箱放置错误报警</string>
+    <string name="SYS.WATER">缺水报警</string>
+
+    <string name="SP.E0">血氧低信号质量</string>
+    <string name="SP.E2">无效的SpO2</string>
+    <string name="PR.E0">低可信度的PR</string>
+    <string name="PR.E2">无效的PR</string>
+    <string name="PI.E0">低可信度的PI</string>
+    <string name="PI.E1">无效的PI</string>
+    <string name="PI.E2">无效平滑的PI</string>
+    <string name="CO.E0">低可信度的SpCO</string>
+    <string name="CO.E1">低血流灌注SpCO</string>
+    <string name="CO.E2">无效的SpCO</string>
+    <string name="MET.E0">低可信度的SpMet</string>
+    <string name="MET.E1">低血流灌注SpMet</string>
+    <string name="MET.E2">无效的SpMet</string>
+    <string name="HB.E0">低可信度的SpHb</string>
+    <string name="HB.E1">低血流灌注SpHb</string>
+    <string name="HB.E2">无效的SpHb</string>
+    <string name="OC.E0">低可信度的SpOC</string>
+    <string name="OC.E1">低血流灌注SpOC</string>
+    <string name="OC.E2">无效的SpOC</string>
+    <string name="PVI.E0">低可信度的PVI</string>
+    <string name="PVI.E2">无效的PVI</string>
+    <string name="RAIN.E24">低血流灌注</string>
+    <string name="RAIN.E20">血氧传感器初始化</string>
+    <string name="RAIN.E22">搜寻脉搏</string>
+    <string name="RAIN.E23">血氧探测到干扰</string>
+    <string name="RAIN.E26">血氧粘黏探头将要过期</string>
+    <string name="RAIN.E29">仅限SpO₂模式</string>
+    <string name="RAIN.E5">血氧导电线将要过期</string>
+    <string name="RAIN.E9">血氧传感器不匹配</string>
+    <string name="RAIN.E14">血氧传感器将要过期</string>
+
+    <string name="DOOR.OPEN">前门打开</string>
+    <string name="TEMP.DEVH">温度上偏差</string>
+    <string name="TEMP.DEVL">温度下偏差</string>
+    <string name="CTRL.ERR1">设置报警A</string>
+    <string name="CTRL.ERR2">设置报警C</string>
+    <string name="CTRL.MAN1">请检查肤温</string>
+    <string name="CTRL.MAN">手控检查报警</string>
+    <string name="O2.DEVH">O₂上偏差</string>
+    <string name="O2.DEVL">O₂下偏差</string>
+    <string name="ECG.ASY">停搏</string>
+    <string name="ECG.VEN">室颤/室速</string>
+    <string name="ECG.APN">窒息</string>
+
+    <string name="SP.OVH">SpO₂高</string>
+    <string name="SP.OVL">SpO₂低</string>
+    <string name="PR.OVH">PR高</string>
+    <string name="PR.OVL">PR低</string>
+    <string name="HB.OVH">SpHb高</string>
+    <string name="HB.OVL">SpHb低</string>
+    <string name="OC.OVH">SpOC高</string>
+    <string name="OC.OVL">SpOC低</string>
+    <string name="MET.OVH">SpMet高</string>
+    <string name="MET.OVL">SpMet低</string>
+    <string name="CO.OVH">SpCO高</string>
+    <string name="CO.OVL">SpCO低</string>
+    <string name="PI.OVH">PI高</string>
+    <string name="PI.OVL">PI低</string>
+    <string name="PVI.OVH">PVI高</string>
+    <string name="PVI.OVL">PVI低</string>
+    <string name="ECG.HRH">心率高</string>
+    <string name="ECG.HRL">心率低</string>
+    <string name="ECG.RRH">呼吸率高</string>
+    <string name="ECG.RRL">呼吸率低</string>
+    <string name="NIBP.SH">NIBP收缩压高</string>
+    <string name="NIBP.SL">NIBP收缩压低</string>
+    <string name="NIBP.DH">NIBP舒张压高</string>
+    <string name="NIBP.DL">NIBP舒张压低</string>
+    <string name="NIBP.MH">NIBP平均压高</string>
+    <string name="NIBP.ML">NIBP平均压低</string>
+    <string name="CO2.ETH">EtCO₂高</string>
+    <string name="CO2.ETL">EtCO₂低</string>
+    <string name="CO2.FIH">FiCO₂高</string>
+    <string name="CO2.FIL">FiCO₂低</string>
+    <string name="CO2.BRH">BR高</string>
+    <string name="CO2.BRL">BR低</string>
+    <string name="HUM.DEVH">湿度上偏差</string>
+    <string name="HUM.DEVL">湿度下偏差</string>
+    <string name="SPO2.LOW">血氧饱和度低于85%</string>
+
+
+</resources>

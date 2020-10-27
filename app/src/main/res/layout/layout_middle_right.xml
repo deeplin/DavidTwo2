@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*568-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.incubator.ui.home.common.HrPrView
+            android:id="@+id/prHrView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/humiditySensorView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.david.core.ui.view.TitleSetView
+            android:id="@+id/humiditySensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintEnd_toStartOf="@id/oxygenSensorView"
+            app:layout_constraintStart_toEndOf="@id/prHrView" />
+
+        <com.david.core.ui.view.TitleSetView
+            android:id="@+id/oxygenSensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/humiditySensorView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

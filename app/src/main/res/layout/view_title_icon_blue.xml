@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.david.core.model.SensorModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/f40"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/set"
+            android:layout_width="@dimen/f40"
+            android:layout_height="@dimen/f30"
+            android:layout_marginTop="@dimen/f16"
+            android:background="@drawable/set_background"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="SET"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/objective"
+            android:layout_width="@dimen/f60"
+            android:layout_height="@dimen/f30"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.formatValue(viewModel.objective)}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f24"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@id/set"
+            app:layout_constraintTop_toTopOf="@id/set" />
+
+        <TextView
+            android:id="@+id/integerPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/f4"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.textIntegerPart}"
+            android:textColor="@color/text_blue"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/f8"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.unit}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/integerPart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/integerPart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

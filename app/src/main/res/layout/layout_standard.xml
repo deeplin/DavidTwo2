@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--第一行-->
+        <com.david.core.ui.view.TitleIconView
+            android:id="@+id/skin1SensorView"
+            android:layout_width="500dp"
+            android:layout_height="176dp"
+            android:layout_marginStart="@dimen/f8"
+            app:background_color="@drawable/background_panel_pink"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color="@color/text_pink" />
+
+        <ImageView
+            android:id="@+id/kang"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="92dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/kang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.view.TitleIconView
+            android:id="@+id/airSensorView"
+            android:layout_width="500dp"
+            android:layout_height="176dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:visibility="invisible"
+            app:icon_start="80"
+            app:background_color="@drawable/background_panel_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color="@color/text_blue" />
+
+        <com.david.incubator.ui.home.standard.top.TimingLayout
+            android:id="@+id/timingLayout"
+            android:layout_width="500dp"
+            android:layout_height="176dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.incubator.ui.home.standard.top.HomeSetView
+            android:id="@+id/homeSetView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="@id/skin1SensorView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/skin1SensorView" />
+
+        <!--第二行-->
+        <com.david.incubator.ui.home.standard.middle.MiddleLeftLayout
+            android:id="@+id/middleLeftSensorView"
+            android:layout_width="500dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginTop="@dimen/f8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skin1SensorView" />
+
+        <com.david.incubator.ui.home.standard.middle.MiddleRightLayout
+            android:id="@+id/middleRightSensorView"
+            android:layout_width="500dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginEnd="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skin1SensorView" />
+
+        <!--第三行-->
+        <com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout
+            android:id="@+id/standardSpo2Layout"
+            android:layout_width="500dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginTop="@dimen/f8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/middleLeftSensorView" />
+
+        <com.david.incubator.ui.home.standard.bottom.BottomRightLayout
+            android:id="@+id/bottomRightLayout"
+            android:layout_width="500dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginEnd="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/middleLeftSensorView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

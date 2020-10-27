@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.david.incubator.ui.top.TopViewModel" />
+
+        <variable
+            name="incubatorModel"
+            type="com.david.core.model.IncubatorModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/userIdView"
+            android:layout_width="140dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="@dimen/f16"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.userId}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userNameView"
+            android:layout_width="140dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="@dimen/f16"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.userName}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/wind"
+            android:visibility="@{incubatorModel.W1==1 ?View.VISIBLE : View.INVISIBLE }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/above37Icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/above37Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:src="@mipmap/above37"
+            android:visibility="@{incubatorModel.above37? View.VISIBLE: View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/batteryView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/batteryView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:imageSrc="@{viewModel.batteryImageId}"
+            android:visibility="@{incubatorModel.isTransit()? View.INVISIBLE: View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/physiologicalAlarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="@dimen/f60"
+            android:layout_marginStart="@dimen/f16"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.ambientString}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/f18"
+            app:layout_constraintEnd_toEndOf="@id/physiologicalAlarm"
+            app:layout_constraintStart_toStartOf="@id/physiologicalAlarm"
+            app:layout_constraintTop_toTopOf="@id/physiologicalAlarm" />
+
+        <TextView
+            android:id="@+id/physiologicalAlarm"
+            android:layout_width="280dp"
+            android:layout_height="@dimen/f60"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="@dimen/f8"
+            android:backgroundResource="@{viewModel.physiologicalAlarmTitleColor}"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.physiologicalAlarmString}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/f18"
+            app:layout_constraintEnd_toStartOf="@id/technicalAlarm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/technicalAlarm"
+            android:layout_width="280dp"
+            android:layout_height="@dimen/f60"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginEnd="232dp"
+            android:backgroundResource="@{viewModel.technicalAlarmTitleColor}"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.technicalAlarmString}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/f18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/physiologicalAlarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="560dp"
+            android:layout_height="@dimen/f60"
+            android:layout_marginTop="@dimen/f8"
+            android:background="@drawable/alarm_high_background"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.overheatString}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            android:visibility="@{viewModel.overheatString == null ? View.GONE: View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="560dp"
+            android:layout_height="@dimen/f60"
+            android:layout_marginTop="@dimen/f8"
+            android:background="@drawable/alarm_outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/alarmMuteIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f16"
+            android:src="@mipmap/alarm_muted"
+            android:visibility="@{viewModel.showSoundPause? View.VISIBLE: View.INVISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/alarmMuteTime"
+            app:layout_constraintStart_toEndOf="@id/technicalAlarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/alarmMuteTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.muteAlarmField}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            android:visibility="@{viewModel.showSoundPause? View.VISIBLE: View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/time"
+            app:layout_constraintEnd_toEndOf="@id/alarmMuteIcon"
+            app:layout_constraintStart_toStartOf="@id/alarmMuteIcon" />
+
+        <ImageView
+            android:id="@+id/tvFreeze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:src="@mipmap/freeze_icon"
+            android:visibility="@{viewModel.systemModel.freezeWave ? View.VISIBLE: View.INVISIBLE}"
+            app:layout_constraintStart_toEndOf="@id/alarmMuteTime"
+            app:layout_constraintTop_toTopOf="@id/date" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.date}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toTopOf="@id/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.time}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date" />
+
+        <SurfaceView
+            android:id="@+id/firstSurfaceView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

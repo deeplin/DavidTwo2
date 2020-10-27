@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/alarm_middle" />
+    <corners
+        android:bottomRightRadius="@dimen/f16"
+        android:topRightRadius="@dimen/f16" />
+</shape>

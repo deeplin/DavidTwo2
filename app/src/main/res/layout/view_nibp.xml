@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.david.core.model.SensorModel" />
+
+        <variable
+            name="nibpView"
+            type="com.david.core.model.NibpModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="@dimen/f60"
+            android:layout_height="@dimen/f30"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginTop="@dimen/f4"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.unit}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/integerPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{nibpView.fieldString}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f60"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upperLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.formatValue(viewModel.upperLimit)}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title" />
+
+        <TextView
+            android:id="@+id/lowerLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.formatValue(viewModel.lowerLimit)}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintEnd_toEndOf="@id/upperLimit"
+            app:layout_constraintTop_toBottomOf="@id/upperLimit" />
+
+        <TextView
+            android:id="@+id/functionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_marginBottom="36dp"
+            android:text="@{nibpView.functionTitle}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/functionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_marginBottom="@dimen/f12"
+            android:text="@{nibpView.functionValue}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/subFieldString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/f12"
+            android:text="@{nibpView.subFieldString}"
+            android:textColor="@color/text_pink"
+            android:textSize="@dimen/f50"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

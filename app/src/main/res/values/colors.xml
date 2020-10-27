@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark">#2F2F2F</color>
+
+    <!--Layout-->
+    <color name="background">#DCEFF3</color>
+    <color name="background_dark">#434343</color>
+    <color name="background_blue">#E4E6f4</color>
+    <color name="background_blue_dark">#73ACE6</color>
+    <color name="background_pink">#f8e9e4</color>
+    <color name="background_pink_dark">#EDC4C9</color>
+    <color name="button_clear_alarm">#F49A29</color>
+
+    <!--Alarm-->
+    <color name="alarm_high">#FF0000</color>
+    <color name="alarm_middle">#FFFF00</color>
+    <color name="alarm_low">#00FFFF</color>
+    <color name="alarm_info">#00FF00</color>
+
+    <color name="text_pink">#dc7785</color>
+    <color name="text_blue">#5757d9</color>
+
+    <!--Demo-->
+    <color name="demo_text">#edcd3d</color>
+
+    <!--Sensor Color-->
+    <color name="skin1_color">#26bfa6</color>
+    <color name="skin2_color">#42a66c</color>
+    <color name="air_color">#3687d9</color>
+    <color name="humidity_color">#36a3d9</color>
+    <color name="oxygen_color">#6a7cd9</color>
+    <color name="spo2_color">#1f8014</color>
+    <color name="pr_color">#619c5b</color>
+    <color name="pi_color">#7ea91f</color>
+    <color name="sphb_color">#c98502</color>
+    <color name="spoc_color">#d67900</color>
+    <color name="spmet_color">#ba536b</color>
+    <color name="spco_color">#ff7d9c</color>
+    <color name="pvi_color">#70814c</color>
+    <color name="ecg_color">#18aeac</color>
+    <color name="co2_color">#686d18</color>
+    <color name="nibp_color">#707070</color>
+
+</resources>

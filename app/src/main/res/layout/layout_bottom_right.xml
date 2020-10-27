@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--500*568-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.incubator.ui.home.common.Co2RrView
+            android:id="@+id/respSensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/nibpView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.david.incubator.ui.home.common.NibpView
+            android:id="@+id/nibpView"
+            android:layout_width="246dp"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
