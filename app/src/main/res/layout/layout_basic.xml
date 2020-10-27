@@ -99,8 +99,8 @@
             android:layout_marginStart="@dimen/f8"
             android:layout_marginTop="@dimen/f8"
             android:layout_marginEnd="@dimen/f8"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/middleRightSensorView"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/skin1SensorView" />
 
         <com.david.incubator.ui.home.basic.MiddleRightBasicLayout

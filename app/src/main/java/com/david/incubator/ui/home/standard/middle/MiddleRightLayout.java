@@ -18,6 +18,7 @@ import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
+import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBinding;
 
 import java.util.Objects;
@@ -57,8 +58,8 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
 
         systemEnumObserver = systemEnum -> {
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
-                setHum();
-                setOxygen();
+                ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, false);
+                ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, false);
             } else {
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
@@ -92,30 +93,6 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
         binding.prHrView.detach();
         binding.oxygenSensorView.detach();
         binding.humiditySensorView.detach();
-    }
-
-    private void setHum() {
-        if (moduleHardware.isActive(ModuleEnum.Hum)) {
-            binding.humiditySensorView.setDisable(false, R.drawable.background_panel_blue);
-            binding.humiditySensorView.setVisibility(View.VISIBLE);
-        } else if (moduleHardware.isInActive(ModuleEnum.Hum)) {
-            binding.humiditySensorView.setDisable(true, R.drawable.background_panel_blue);
-            binding.humiditySensorView.setVisibility(View.VISIBLE);
-        } else {
-            binding.humiditySensorView.setVisibility(View.GONE);
-        }
-    }
-
-    private void setOxygen() {
-        if (moduleHardware.isActive(ModuleEnum.Oxygen)) {
-            binding.oxygenSensorView.setDisable(false , R.drawable.background_panel_blue);
-            binding.oxygenSensorView.setVisibility(View.VISIBLE);
-        } else if (moduleHardware.isInActive(ModuleEnum.Oxygen)) {
-            binding.oxygenSensorView.setDisable(true, R.drawable.background_panel_blue);
-            binding.oxygenSensorView.setVisibility(View.VISIBLE);
-        } else {
-            binding.oxygenSensorView.setVisibility(View.GONE);
-        }
     }
 
     public void setDarkMode(boolean darkMode) {

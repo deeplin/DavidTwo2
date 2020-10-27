@@ -29,7 +29,7 @@ public class SystemModel {
     public final LazyLiveData<Boolean> darkMode = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> demo = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> lockScreen = new LazyLiveData<>(false);
-    public final LazyLiveData<LayoutPageEnum> layoutPage = new LazyLiveData<>(LayoutPageEnum.LAYOUT_BASIC);
+    public final LazyLiveData<LayoutPageEnum> layoutPage = new LazyLiveData<>(LayoutPageEnum.LAYOUT_STANDARD);
     public final LazyLiveData<Boolean> freezeWave = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> selectHr = new LazyLiveData<>();
     public final LazyLiveData<Boolean> selectCo2 = new LazyLiveData<>(true);
