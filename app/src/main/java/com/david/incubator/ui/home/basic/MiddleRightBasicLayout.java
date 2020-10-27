@@ -69,7 +69,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                 }
                 binding.blueSensorView.setVisibility(View.GONE);
                 binding.matSensorView.setVisibility(View.GONE);
-                binding.angleSensorView.setVisibility(View.GONE);
                 this.setVisibility(View.VISIBLE);
             } else if (Objects.equals(systemEnum, SystemEnum.Warmer)) {
 //              setBlue();
@@ -104,8 +103,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.matSensorView.attach(lifeCycleOwner);
         binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
         binding.blueSensorView.attach(lifeCycleOwner);
-        binding.angleSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Angle));
-        binding.angleSensorView.attach(lifeCycleOwner);
 
         incubatorModel.systemMode.observeForever(systemEnumObserver);
     }
@@ -119,7 +116,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
 
         binding.blueSensorView.detach();
         binding.matSensorView.detach();
-        binding.angleSensorView.detach();
     }
 
     //todo su
@@ -134,7 +130,6 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
     public void setDarkMode(boolean darkMode) {
         binding.humiditySensorView.setSensorDarkMode(darkMode);
         binding.oxygenSensorView.setSensorDarkMode(darkMode);
-        binding.angleSensorView.setSensorDarkMode(darkMode);
         binding.matSensorView.setSensorDarkMode(darkMode);
         binding.blueSensorView.setSensorDarkMode(darkMode);
     }

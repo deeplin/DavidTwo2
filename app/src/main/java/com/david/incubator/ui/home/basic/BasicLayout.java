@@ -99,8 +99,6 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
         binding.timingLayout.attach(lifeCycleOwner);
         binding.homeSetView.attach(lifeCycleOwner);
 
-        binding.angleSensorView.attach(lifeCycleOwner);
-
         if (moduleHardware.isActive(ModuleEnum.Spo2)) {
             binding.standardSpo2Layout.setVisibility(View.VISIBLE);
             binding.standardSpo2Layout.setDisable(false);
@@ -110,6 +108,13 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
             binding.standardSpo2Layout.setDisable(true);
         } else {
             binding.standardSpo2Layout.setVisibility(View.GONE);
+        }
+
+        if (moduleHardware.isInstalled(ModuleEnum.Angle)) {
+            binding.angleSensorView.setVisibility(View.VISIBLE);
+            binding.angleSensorView.attach(lifeCycleOwner);
+        } else {
+            binding.angleSensorView.setVisibility(View.GONE);
         }
 
         binding.middleRightSensorView.attach(lifeCycleOwner);
