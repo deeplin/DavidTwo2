@@ -49,10 +49,9 @@
             android:text="Et"
             android:textColor="@color/text_blue"
             android:textSize="@dimen/f16"
-            app:layout_constraintEnd_toStartOf="@id/integerPart"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/unit" />
+            app:layout_constraintEnd_toEndOf="@id/unit"
+            app:layout_constraintStart_toStartOf="@id/unit"
+            app:layout_constraintTop_toBottomOf="@id/unit" />
 
         <TextView
             android:id="@+id/integerPart"

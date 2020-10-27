@@ -103,7 +103,6 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
         int height = SPO2_HEIGHT / 2;
         if (moduleSum <= 4) {
             int width = SPO2_WIDTH / moduleSum;
-
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);
             addViews(layoutParams);
             if (moduleSum == 4) {
