@@ -16,6 +16,7 @@ import com.david.core.database.entity.IncubatorEntity;
 import com.david.core.enumeration.CtrlEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
+import com.david.core.enumeration.SystemEnum;
 import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
@@ -24,7 +25,6 @@ import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.FormatUtil;
 import com.david.core.util.IntervalUtil;
-import com.david.core.util.LoggerUtil;
 import com.david.core.util.TimeUtil;
 import com.david.core.util.rely.RangeUtil;
 import com.david.core.util.rely.ShapeUtil;
@@ -97,8 +97,8 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         binding.oxygenTextView.setOnClickListener(v -> selectOxygen());
 
         ctrlEnumObserver = ctrlEnum -> {
-            LoggerUtil.se(incubatorModel.systemMode.getValue() + " ctrl " + ctrlEnum + " " + (moduleHardware.isActive(ModuleEnum.Hum) + " "
-                    + (moduleHardware.isActive(ModuleEnum.Oxygen))));
+            //todo deeeplin
+            incubatorModel.systemMode.set(SystemEnum.Warmer);
             if (incubatorModel.isCabin()) {
                 binding.airIconView.setSelected(true);
                 binding.airIconView.setVisibility(View.VISIBLE);

@@ -14,6 +14,8 @@ import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
+import com.david.core.util.LazyLiveData;
+import com.david.core.util.LoggerUtil;
 import com.david.databinding.LayoutStandardSpo2BasicBinding;
 
 import javax.inject.Inject;
@@ -26,6 +28,8 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
     SensorModelRepository sensorModelRepository;
     @Inject
     BufferRepository bufferRepository;
+
+    private final LazyLiveData<Integer> width = new LazyLiveData<>();
 
     public StandardSpo2BasicLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -60,6 +64,26 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
         });
 
         binding.siqView.set(bufferRepository.getSpo2Buffer());
+
+        width.observeForever(integer -> {
+            if (getWidth() > 500) {
+                binding.spo2View.setFontSize(100, 70);
+                binding.prView.setFontSize(100, 70);
+                binding.piView.setFontSize(100, 70);
+
+                binding.spo2View.setIntegerTop(80);
+                binding.prView.setIntegerTop(80);
+                binding.piView.setIntegerTop(80);
+            } else {
+                binding.spo2View.setFontSize(70, 40);
+                binding.prView.setFontSize(70, 40);
+                binding.piView.setFontSize(70, 40);
+
+                binding.spo2View.setIntegerTop(110);
+                binding.prView.setIntegerTop(110);
+                binding.piView.setIntegerTop(110);
+            }
+        });
     }
 
     @Override
@@ -88,23 +112,8 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        if (getWidth() > 500) {
-            binding.spo2View.setFontSize(100, 70);
-            binding.prView.setFontSize(100, 70);
-            binding.piView.setFontSize(100, 70);
-
-            binding.spo2View.setIntegerTop(80);
-            binding.prView.setIntegerTop(80);
-            binding.piView.setIntegerTop(80);
-        } else {
-            binding.spo2View.setFontSize(70, 40);
-            binding.prView.setFontSize(70, 40);
-            binding.piView.setFontSize(70, 40);
-
-            binding.spo2View.setIntegerTop(110);
-            binding.prView.setIntegerTop(110);
-            binding.piView.setIntegerTop(110);
-        }
+        LoggerUtil.se("width " + getWidth());
+        width.post(getWidth());
     }
 
     public void setDisable(boolean status) {
