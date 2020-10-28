@@ -38,6 +38,7 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
     public void attach(LifecycleOwner lifecycleOwner) {
         super.attach(lifecycleOwner);
         binding.hrPrView.attach(lifecycleOwner);
+        binding.spo2View.attach(lifecycleOwner);
 //        binding.hrPrView.setUniqueColor();
 //        if (moduleSoftware.ecg.getValue() || moduleSoftware.co2.getValue()) {
 //            binding.hrPrView.attach(lifecycleOwner);
@@ -71,7 +72,7 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
 //
         boolean darkStatus = systemModel.darkMode.getValue();
         binding.hrPrView.setSensorDarkMode(darkStatus);
-//        binding.spo2View.setSensorDarkMode(darkStatus);
+        binding.spo2View.setSensorDarkMode(darkStatus);
 //        binding.co2View.setSensorDarkMode(darkStatus);
 //        binding.nibpView.setSensorDarkMode(darkStatus);
     }

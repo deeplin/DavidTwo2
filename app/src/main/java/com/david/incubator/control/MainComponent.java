@@ -10,6 +10,7 @@ import com.david.incubator.ui.home.common.HrPrView;
 import com.david.incubator.ui.home.common.IncubatorLayout;
 import com.david.incubator.ui.home.common.MonitorLayout;
 import com.david.incubator.ui.home.common.NibpView;
+import com.david.incubator.ui.home.common.Spo2ListView;
 import com.david.incubator.ui.home.common.TimingSmallLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout;
@@ -67,4 +68,6 @@ public interface MainComponent extends CommonComponent {
     void inject(TimingSmallLayout timingSmallLayout);
 
     void inject(MonitorLayout monitorLayout);
+
+    void inject(Spo2ListView spo2ListView);
 }

@@ -121,7 +121,7 @@ public class HrPrView extends BindingBasicLayout<ViewHrPrBinding> {
     }
 
     private void setDisable(boolean status) {
-        binding.hrPrView.setDisable(status);
+        binding.hrPrView.setDisable(status, R.drawable.background_panel_pink);
     }
 
     public void setTitleBackground(int backgroundResource) {

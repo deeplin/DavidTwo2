@@ -11,9 +11,10 @@ import androidx.lifecycle.LifecycleOwner;
 import com.david.R;
 import com.david.core.model.SensorModel;
 import com.david.core.ui.layout.BindingBasicLayout;
+import com.david.core.util.IDisableView;
 import com.david.databinding.ViewSensorRangeBinding;
 
-public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> {
+public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> implements IDisableView {
 
     private boolean uniqueColor;
 
@@ -67,7 +68,8 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
         super.detach();
     }
 
-    public void setDisable(boolean status) {
+    @Override
+    public void setDisable(boolean status, int backgroundColor) {
         if (status) {
             binding.title.setBackgroundResource(R.drawable.background_panel_dark);
             binding.unit.setVisibility(View.INVISIBLE);

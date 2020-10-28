@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/piView"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.david.incubator.ui.home.standard.bottom.SiqView
+            android:id="@+id/siqView"
+            android:layout_width="20dp"
+            android:layout_height="76dp"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/spo2View"
+            app:layout_constraintStart_toEndOf="@id/spo2View" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

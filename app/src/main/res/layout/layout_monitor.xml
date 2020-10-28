@@ -14,13 +14,13 @@
             app:layout_constraintBottom_toTopOf="@id/spo2View"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--        <com.david.incubator.ui.home.common.Spo2ListView-->
-        <!--            android:id="@+id/spo2View"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            android:layout_marginBottom="@dimen/f8"-->
-        <!--            app:layout_constraintBottom_toTopOf="@id/co2View"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/hrPrView" />-->
+        <com.david.incubator.ui.home.common.Spo2ListView
+            android:id="@+id/spo2View"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/co2View"
+            app:layout_constraintTop_toBottomOf="@id/hrPrView" />
 
         <!--        <com.david.incubator.ui.home.common.Co2RrTinyView-->
         <!--            android:id="@+id/co2View"-->
@@ -37,9 +37,9 @@
         <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
 
         <FrameLayout
-            android:id="@+id/spo2View"
+            android:id="@+id/co2View"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="200dp"
             android:background="#ff0000"
             app:layout_constraintBottom_toBottomOf="parent" />
 

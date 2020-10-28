@@ -115,8 +115,8 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
     }
 
     public void setDisable(boolean status) {
-        binding.spo2View.setDisable(status);
-        binding.prView.setDisable(status);
-        binding.piView.setDisable(status);
+        binding.spo2View.setDisable(status, R.drawable.background_panel_pink);
+        binding.prView.setDisable(status, R.drawable.background_panel_pink);
+        binding.piView.setDisable(status, R.drawable.background_panel_pink);
     }
 }

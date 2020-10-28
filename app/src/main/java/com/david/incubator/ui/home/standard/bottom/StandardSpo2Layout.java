@@ -163,14 +163,14 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
         for (int index = 0; index < binding.spo2TopLayout.getChildCount(); index++) {
             View view = binding.spo2TopLayout.getChildAt(index);
             if (view instanceof SensorRangeView) {
-                ((SensorRangeView) view).setDisable(status);
+                ((SensorRangeView) view).setDisable(status, R.drawable.background_panel_pink);
 
             }
         }
         for (int index = 0; index < binding.spo2BottomLayout.getChildCount(); index++) {
             View view = binding.spo2BottomLayout.getChildAt(index);
             if (view instanceof SensorRangeView) {
-                ((SensorRangeView) view).setDisable(status);
+                ((SensorRangeView) view).setDisable(status, R.drawable.background_panel_pink);
             }
         }
     }
