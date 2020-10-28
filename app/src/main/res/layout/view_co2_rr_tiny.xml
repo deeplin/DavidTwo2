@@ -20,7 +20,7 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/fiView"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1" />
@@ -31,7 +31,7 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toEndOf="@id/rrView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1" />

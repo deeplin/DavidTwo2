@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toTopOf="@id/co2View"
             app:layout_constraintTop_toBottomOf="@id/hrPrView" />
 
-        <com.david.incubator.ui.home.common.Co2RrView
+        <com.david.incubator.ui.home.common.Co2RrTinyView
             android:id="@+id/co2View"
             android:layout_width="match_parent"
             android:layout_height="0dp"
