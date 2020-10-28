@@ -13,9 +13,9 @@ import com.david.core.model.SensorModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.databinding.ViewTitleValueBinding;
 
-public class TitleValueView extends BindingBasicLayout<ViewTitleValueBinding> {
+public class TitleIntegerView extends BindingBasicLayout<ViewTitleValueBinding> {
 
-    public TitleValueView(Context context, AttributeSet attrs) {
+    public TitleIntegerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleIconView);
         int titleHeight = typedArray.getInteger(R.styleable.TitleIconView_title_height, -1);
@@ -49,7 +49,7 @@ public class TitleValueView extends BindingBasicLayout<ViewTitleValueBinding> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.view_title_value;
+        return R.layout.view_title_integer;
     }
 
     public void set(SensorModel sensorModel) {

@@ -82,8 +82,7 @@ public class TitleIconView extends BindingBasicLayout<ViewTitleIconBinding> {
     public void setAngleUnit() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
-        constraintSet.removeFromVerticalChain(binding.unit.getId());
-//        constraintSet.setMargin(binding.unit.getId(), ConstraintSet.BOTTOM, 100);
+        constraintSet.connect(binding.unit.getId(), ConstraintSet.TOP, binding.icon.getId(), ConstraintSet.TOP);
         constraintSet.applyTo(binding.rootView);
     }
 }
