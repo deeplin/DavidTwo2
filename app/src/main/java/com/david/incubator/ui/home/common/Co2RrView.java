@@ -103,12 +103,6 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
         binding.co2View.detach();
     }
 
-    public void setUniqueColor() {
-        binding.fiView.setUniqueColor();
-        binding.rrView.setUniqueColor();
-        binding.co2View.setUniqueColor();
-    }
-
     private void gotoObjective() {
         if (systemModel.isFreeze()) {
             return;
@@ -147,5 +141,15 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
             binding.fiView.setResp(null);
             binding.rootView.setVisibility(View.GONE);
         }
+    }
+
+    public void setTinyLayout() {
+        binding.co2View.setUniqueColor();
+        binding.fiView.setUniqueColor();
+        binding.rrView.setUniqueColor();
+
+        binding.co2View.setCo2TinyLayout();
+        binding.fiView.setFiTinyLayout();
+        binding.rrView.setSpo2SmallLayout();
     }
 }

@@ -26,7 +26,7 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
         ContextUtil.getComponent().inject(this);
         binding.hrPrView.setTitleBackground(R.drawable.background_panel_blue);
         binding.hrPrView.setSmallLayout();
-        //        binding.co2View.setSmallLayout();
+        binding.co2View.setTinyLayout();
     }
 
     @Override
