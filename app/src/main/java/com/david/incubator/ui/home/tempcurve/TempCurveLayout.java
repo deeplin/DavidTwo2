@@ -24,6 +24,7 @@ import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.FormatUtil;
 import com.david.core.util.IntervalUtil;
+import com.david.core.util.LoggerUtil;
 import com.david.core.util.TimeUtil;
 import com.david.core.util.rely.RangeUtil;
 import com.david.core.util.rely.ShapeUtil;
@@ -96,6 +97,8 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         binding.oxygenTextView.setOnClickListener(v -> selectOxygen());
 
         ctrlEnumObserver = ctrlEnum -> {
+            LoggerUtil.se(incubatorModel.systemMode.getValue() + " ctrl " + ctrlEnum + " " + (moduleHardware.isActive(ModuleEnum.Hum) + " "
+                    + (moduleHardware.isActive(ModuleEnum.Oxygen))));
             if (incubatorModel.isCabin()) {
                 binding.airIconView.setSelected(true);
                 binding.airIconView.setVisibility(View.VISIBLE);

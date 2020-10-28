@@ -194,8 +194,11 @@ public class AutomationControl implements ILifeCycle {
                 case (1):
                     ctrlGetCommand.initCallback();
                     incubatorCommandSender.getCtrlGet();
+                    LoggerUtil.se(" state1 " + integer);
                     break;
                 case (2):
+
+                    LoggerUtil.se(" state2 " + integer);
                     systemModel.systemInitState.removeObserver(startObserver);
                     initConfig();
                     synchronizeConfig();

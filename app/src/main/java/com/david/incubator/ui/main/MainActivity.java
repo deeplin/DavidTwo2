@@ -26,7 +26,6 @@ import com.david.core.util.ILifeCycleOwner;
 import com.david.core.util.IntervalUtil;
 import com.david.databinding.ActivityMainBinding;
 import com.david.incubator.control.MainApplication;
-import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
 
     private Observer<Boolean> darkObserver;
 
-    private final ILifeCycleOwner[] views = new ILifeCycleOwner[LayoutPageEnum.NONE.ordinal()];
+    private final ILifeCycleOwner[] views = new ILifeCycleOwner[LayoutPageEnum.LAYOUT_ALL.ordinal()];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
     private void buildViews() {
         Context applicationContext = ContextUtil.getApplicationContext();
         views[LayoutPageEnum.LAYOUT_STANDARD.ordinal()] = new StandardLayout(applicationContext);
-        views[LayoutPageEnum.LAYOUT_BASIC.ordinal()] = new BasicLayout(applicationContext);
+//        views[LayoutPageEnum.LAYOUT_BASIC.ordinal()] = new BasicLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_TEMP_CURVE.ordinal()] = new TempCurveLayout(applicationContext);
 
 //        views[LayoutPageEnum.LAYOUT_WEIGHT_CURVE.ordinal()] = new WeightCurveLayout(applicationContext);
