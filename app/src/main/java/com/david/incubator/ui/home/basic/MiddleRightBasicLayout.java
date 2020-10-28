@@ -21,6 +21,7 @@ import com.david.core.util.ContextUtil;
 import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBasicBinding;
 
+import java.util.Locale;
 import java.util.Objects;
 
 import javax.inject.Inject;
@@ -37,6 +38,7 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
     IncubatorModel incubatorModel;
 
     private final Observer<SystemEnum> systemEnumObserver;
+    private final Observer<Integer> cTimeObserver;
 
     public MiddleRightBasicLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -86,11 +88,16 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                 } else {
                     this.setVisibility(View.VISIBLE);
                 }
-//                binding.blueSensorView.setVisibility(View.GONE);
             } else {
                 this.setVisibility(View.GONE);
             }
         };
+
+        cTimeObserver = integer -> {
+            String heatString = String.format(Locale.US, "%02d:%02d", (integer / 60) % 60, integer % 60);
+            binding.blueSensorView.setText(heatString);
+        };
+        binding.blueSensorView.setUnit("h");
     }
 
     @Override
@@ -108,18 +115,18 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
         binding.oxygenSensorView.attach(lifeCycleOwner);
 
         binding.matSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.MAT));
-        sensorModelRepository.getSensorModel(SensorModelEnum.MAT).textNumber.set(100);
         binding.matSensorView.attach(lifeCycleOwner);
         binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
         binding.blueSensorView.attach(lifeCycleOwner);
-        binding.blueSensorView.setText("0");
 
         incubatorModel.systemMode.observeForever(systemEnumObserver);
+        incubatorModel.cTime.observeForever(cTimeObserver);
     }
 
     @Override
     public void detach() {
         super.detach();
+        incubatorModel.cTime.removeObserver(cTimeObserver);
         incubatorModel.systemMode.removeObserver(systemEnumObserver);
         binding.oxygenSensorView.detach();
         binding.humiditySensorView.detach();
