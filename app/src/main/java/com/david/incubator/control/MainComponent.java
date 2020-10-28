@@ -9,12 +9,13 @@ import com.david.incubator.ui.home.common.Co2RrView;
 import com.david.incubator.ui.home.common.HrPrView;
 import com.david.incubator.ui.home.common.IncubatorLayout;
 import com.david.incubator.ui.home.common.NibpView;
+import com.david.incubator.ui.home.common.TimingSmallLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout;
 import com.david.incubator.ui.home.standard.middle.MiddleLeftLayout;
 import com.david.incubator.ui.home.standard.middle.MiddleRightLayout;
 import com.david.incubator.ui.home.standard.top.HomeSetView;
-import com.david.incubator.ui.home.standard.top.TimingLayout;
+import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.top.TopLayout;
@@ -61,4 +62,6 @@ public interface MainComponent extends CommonComponent {
     void inject(TempCurveLayout tempCurveLayout);
 
     void inject(IncubatorLayout incubatorLayout);
+
+    void inject(TimingSmallLayout timingSmallLayout);
 }

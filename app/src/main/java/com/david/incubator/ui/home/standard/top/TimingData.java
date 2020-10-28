@@ -9,6 +9,7 @@ import com.david.core.util.ILifeCycle;
 import com.david.core.util.IntervalUtil;
 import com.david.core.util.LazyLiveData;
 import com.david.core.util.rely.SoundUtil;
+import com.david.incubator.ui.home.common.TimingLayout;
 
 import java.util.Locale;
 

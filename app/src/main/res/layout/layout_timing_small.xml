@@ -17,22 +17,21 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="160dp"
-            android:layout_height="@dimen/f40"
-            android:layout_marginTop="@dimen/f16"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/f8"
             android:background="@drawable/background_panel_blue"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@{viewModel.titleString}"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/f20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/f18"
+            app:layout_constraintStart_toStartOf="@id/startButton"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/f30"
+            android:layout_height="@dimen/f30"
             android:layout_marginStart="@dimen/f16"
             android:src="@mipmap/apgar"
             android:visibility="@{viewModel.showClock ? View.VISIBLE: View.INVISIBLE}"
@@ -40,50 +39,40 @@
             app:layout_constraintStart_toEndOf="@id/title"
             app:layout_constraintTop_toTopOf="@id/title" />
 
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginBottom="@dimen/f24"
-            android:src="@mipmap/clock"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
             android:id="@+id/timeString"
-            android:layout_width="224dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/f16"
             android:gravity="center_horizontal"
             android:includeFontPadding="false"
             android:text="@{viewModel.textString}"
             android:textColor="@color/text_blue"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toTopOf="@id/icon" />
+            app:layout_constraintBottom_toTopOf="@id/timingView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <com.david.incubator.ui.home.standard.top.TimingView
             android:id="@+id/timingView"
-            android:layout_width="224dp"
+            android:layout_width="136dp"
             android:layout_height="28dp"
-            android:layout_marginStart="@dimen/f16"
-            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/timeString" />
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="200dp"
-            android:layout_height="@dimen/f60"
-            android:layout_marginStart="@dimen/f24"
-            android:layout_marginBottom="@dimen/f32"
+            android:layout_width="120dp"
+            android:layout_height="@dimen/f40"
             android:background="@drawable/function_button_background"
-            android:gravity="center"
-            android:includeFontPadding="false"
             android:text="@string/start_clock"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/f30"
+            android:textSize="@dimen/f20"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/icon" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

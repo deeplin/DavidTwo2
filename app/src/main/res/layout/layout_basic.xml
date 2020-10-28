@@ -73,7 +73,7 @@
             app:text_color="@color/text_blue"
             app:title_height="30" />
 
-        <com.david.incubator.ui.home.standard.top.TimingLayout
+        <com.david.incubator.ui.home.common.TimingLayout
             android:id="@+id/timingLayout"
             android:layout_width="500dp"
             android:layout_height="200dp"

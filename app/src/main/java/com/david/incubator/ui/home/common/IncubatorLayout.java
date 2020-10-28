@@ -42,7 +42,7 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
     private final IncubatorListView airView;
     private final IncubatorListView humidityView;
     private final IncubatorListView oxygenView;
-//    private final TimingSmallLayout timingLayout;
+    private final TimingSmallLayout timingLayout;
 
     public IncubatorLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -53,8 +53,10 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
         homeSetView = new HomeSetView(getContext(), null);
         airView = new IncubatorListView(getContext(), null);
         humidityView = new IncubatorListView(getContext(), null);
+        humidityView.setSmallMode();
         oxygenView = new IncubatorListView(getContext(), null);
-//        timingLayout = new TimingSmallLayout(getContext(), null);
+        oxygenView.setSmallMode();
+        timingLayout = new TimingSmallLayout(getContext(), null);
 
         addInnerView(skin1View, SensorModelEnum.Skin1, true);
         addInnerView(skin2View, SensorModelEnum.Skin2, true);
@@ -63,6 +65,8 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
 
         addInnerView(humidityView, SensorModelEnum.Humidity, false);
         addInnerView(oxygenView, SensorModelEnum.Oxygen, false);
+
+        addView(timingLayout, new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
     }
 
     @Override
@@ -72,7 +76,7 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
         homeSetView.attach(lifecycleOwner);
 
         //todo deeplin
-        incubatorModel.systemMode.post(SystemEnum.Cabin);
+        incubatorModel.systemMode.post(SystemEnum.Warmer);
         if (incubatorModel.isCabin()) {
             airView.attach(lifecycleOwner);
             airView.setVisibility(View.VISIBLE);
@@ -83,8 +87,9 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
             airView.setVisibility(View.GONE);
             humidityView.setVisibility(View.GONE);
             oxygenView.setVisibility(View.GONE);
-//            addView(timingLayout, new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
-//            timingLayout.attach(lifecycleOwner);
+
+            timingLayout.attach(lifecycleOwner);
+            timingLayout.setVisibility(View.VISIBLE);
         }
 
         if (systemModel.darkMode.getValue()) {
@@ -92,16 +97,13 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
         } else {
             setBackgroundResource(R.drawable.background_panel);
         }
-
-        humidityView.setSmallMode();
-        oxygenView.setSmallMode();
     }
 
     @Override
     public void detach() {
-//        timingLayout.detach();
-//        oxygenView.detach();
-//        humidityView.detach();
+        timingLayout.detach();
+        oxygenView.detach();
+        humidityView.detach();
         airView.detach();
         homeSetView.detach();
         skin2View.detach();

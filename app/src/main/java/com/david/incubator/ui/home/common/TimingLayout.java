@@ -1,4 +1,4 @@
-package com.david.incubator.ui.home.standard.top;
+package com.david.incubator.ui.home.common;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -11,6 +11,7 @@ import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.IntervalUtil;
 import com.david.databinding.LayoutTimingBinding;
+import com.david.incubator.ui.home.standard.top.TimingData;
 
 import javax.inject.Inject;
 
