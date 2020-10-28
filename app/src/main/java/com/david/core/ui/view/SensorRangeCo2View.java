@@ -90,7 +90,7 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
         uniqueColor = true;
     }
 
-    public void setSmallLayout() {
+    public void setCo2SmallLayout() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 8);
@@ -100,8 +100,24 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
 
         binding.title.setTextSize(16);
         binding.unit.setTextSize(16);
-        binding.integerPart.setTextSize(46);
+        binding.integerPart.setTextSize(50);
         binding.decimalPart.setTextSize(34);
+        binding.upperLimit.setTextSize(16);
+        binding.lowerLimit.setTextSize(16);
+    }
+
+    public void setFiSmallLayout() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(binding.rootView);
+        constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 8);
+        constraintSet.setMargin(binding.title.getId(), ConstraintSet.START, 4);
+        constraintSet.setMargin(binding.upperLimit.getId(), ConstraintSet.END, 8);
+        constraintSet.applyTo(binding.rootView);
+
+        binding.title.setTextSize(16);
+        binding.unit.setTextSize(16);
+        binding.integerPart.setTextSize(40);
+        binding.decimalPart.setTextSize(30);
         binding.upperLimit.setTextSize(16);
         binding.lowerLimit.setTextSize(16);
     }
@@ -132,7 +148,7 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
 
         binding.title.setTextSize(16);
         binding.unit.setTextSize(16);
-        
+
         binding.integerPart.setTextSize(26);
         binding.decimalPart.setTextSize(20);
         binding.upperLimit.setTextSize(16);

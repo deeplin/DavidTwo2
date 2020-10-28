@@ -100,42 +100,46 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
                 activeModuleList.add(SensorModelEnum.values()[SensorModelEnum.Sphb.ordinal() + index]);
             }
         }
-        int height = SPO2_HEIGHT / 2;
+
         if (moduleSum <= 4) {
+            int height = SPO2_HEIGHT;
             int width = SPO2_WIDTH / moduleSum;
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);
-            addViews(layoutParams);
+            addViews(layoutParams, 156);
             if (moduleSum == 4) {
-                SensorRangeView sensorRangeView = buildView(activeModuleList.get(0));
+                SensorRangeView sensorRangeView = buildView(activeModuleList.get(0), 156);
                 binding.spo2TopLayout.addView(sensorRangeView, layoutParams);
             }
             binding.spo2BottomLayout.setVisibility(View.GONE);
         } else if (moduleSum <= 6) {
+            int height = SPO2_HEIGHT / 2;
             int width = SPO2_WIDTH / 3;
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);
-            addViews(layoutParams);
+            addViews(layoutParams, 50);
             binding.spo2BottomLayout.setVisibility(View.VISIBLE);
             for (int index = 0; index < activeModuleList.size(); index++) {
-                SensorRangeView otherView = buildView(activeModuleList.get(index));
+                SensorRangeView otherView = buildView(activeModuleList.get(index), 50);
                 binding.spo2BottomLayout.addView(otherView, layoutParams);
             }
         } else {
+            int height = SPO2_HEIGHT / 2;
             int width = SPO2_WIDTH / 4;
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);
-            addViews(layoutParams);
-            SensorRangeView sensorRangeView = buildView(activeModuleList.get(0));
+            addViews(layoutParams, 50);
+            SensorRangeView sensorRangeView = buildView(activeModuleList.get(0), 50);
             binding.spo2TopLayout.addView(sensorRangeView, layoutParams);
             binding.spo2BottomLayout.setVisibility(View.VISIBLE);
             for (int index = 1; index < activeModuleList.size(); index++) {
-                SensorRangeView otherView = buildView(activeModuleList.get(index));
+                SensorRangeView otherView = buildView(activeModuleList.get(index), 50);
                 binding.spo2BottomLayout.addView(otherView, layoutParams);
             }
         }
     }
 
-    protected SensorRangeView buildView(SensorModelEnum sensorModelEnum) {
+    protected SensorRangeView buildView(SensorModelEnum sensorModelEnum, int integerTop) {
         SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
         SensorRangeView sensorRangeView = new SensorRangeView(getContext(), null);
+        sensorRangeView.setIntegerTop(integerTop);
         sensorRangeView.set(sensorModel);
         sensorRangeView.setSpo2SmallLayout();
         sensorRangeView.setOnClickListener(view -> {
@@ -147,15 +151,15 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
         return sensorRangeView;
     }
 
-    private void addViews(LinearLayout.LayoutParams layoutParams) {
+    private void addViews(LinearLayout.LayoutParams layoutParams, int integerTop) {
         SiqView siqView = new SiqView(getContext(), null);
         siqView.set(bufferRepository.getSpo2Buffer());
         binding.spo2TopLayout.addView(siqView, layoutParams);
 
-        SensorRangeView spo2View = buildView(SensorModelEnum.Spo2);
+        SensorRangeView spo2View = buildView(SensorModelEnum.Spo2, integerTop);
         binding.spo2TopLayout.addView(spo2View, layoutParams);
 
-        SensorRangeView piView = buildView(SensorModelEnum.Pi);
+        SensorRangeView piView = buildView(SensorModelEnum.Pi, integerTop);
         binding.spo2TopLayout.addView(piView, layoutParams);
     }
 

@@ -70,9 +70,9 @@ public class Co2RrTinyView extends BindingBasicLayout<ViewCo2RrTinyBinding> {
             }
         };
 
-        binding.co2View.setSmallLayout();
-        binding.rrView.setSpo2SmallLayout();
-        binding.fiView.setSmallLayout();
+//        binding.co2View.setSmallLayout();
+//        binding.rrView.setSpo2SmallLayout();
+//        binding.fiView.setSmallLayout();
         binding.fiView.displayEt(false);
     }
 
@@ -150,6 +150,6 @@ public class Co2RrTinyView extends BindingBasicLayout<ViewCo2RrTinyBinding> {
 
         binding.co2View.setCo2TinyLayout();
         binding.fiView.setFiTinyLayout();
-        binding.rrView.setCo2SmallLayout();
+        binding.rrView.setCo2Layout();
     }
 }

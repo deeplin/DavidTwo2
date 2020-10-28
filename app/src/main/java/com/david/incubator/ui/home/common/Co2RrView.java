@@ -41,7 +41,7 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
         binding.fiView.setOnClickListener(v -> gotoObjective());
 
         selectCo2RrObserver = aBoolean -> {
-            aBoolean = false;
+            aBoolean = true;
             if (aBoolean == null) {
                 displayNoneSelection();
                 binding.rootView.setVisibility(View.GONE);
@@ -70,9 +70,9 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
             }
         };
 
-        binding.co2View.setSmallLayout();
+        binding.co2View.setCo2SmallLayout();
         binding.rrView.setSpo2SmallLayout();
-        binding.fiView.setSmallLayout();
+        binding.fiView.setFiSmallLayout();
         binding.fiView.displayEt(false);
     }
 
