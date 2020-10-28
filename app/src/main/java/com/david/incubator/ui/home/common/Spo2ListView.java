@@ -57,10 +57,12 @@ public class Spo2ListView extends BindingBasicLayout<ViewSpo2ListBinding> {
         SensorModel spo2Model = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
         binding.spo2View.set(spo2Model);
         binding.spo2View.setUniqueColor();
+        binding.spo2View.setSpo2SmallLayout();
 
         SensorModel piModel = sensorModelRepository.getSensorModel(SensorModelEnum.Pi);
         binding.piView.set(piModel);
         binding.piView.setUniqueColor();
+        binding.piView.setSpo2SmallLayout();
     }
 
     @Override

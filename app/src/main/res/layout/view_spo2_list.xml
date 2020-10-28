@@ -9,12 +9,14 @@
         <com.david.core.ui.view.SensorRangeView
             android:id="@+id/spo2View"
             android:layout_width="130dp"
+            app:integer_top="80"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.david.core.ui.view.SensorRangeView
             android:id="@+id/piView"
             android:layout_width="120dp"
+            app:integer_top="80"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

@@ -97,6 +97,7 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
         constraintSet.clone(binding.rootView);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 8);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.START, 4);
+        constraintSet.setMargin(binding.upperLimit.getId(), ConstraintSet.END, 8);
         constraintSet.applyTo(binding.rootView);
 
         binding.title.setTextSize(16);
