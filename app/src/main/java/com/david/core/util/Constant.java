@@ -89,7 +89,7 @@ public class Constant {
     public static final int SPO2_BAUDRATE = 115200;
 
     /*3. ECG*/
-    public static final String ECG_COM_ID = "/dev/ttyS4";
+    public static final String ECG_COM_ID = "/dev/ttyS0";
     public static final int ECG_BAUDRATE = 460800;
 
     /*4. CO2*/
@@ -97,7 +97,7 @@ public class Constant {
     public static final int CO2_BAUDRATE = 9600;
 
     /*5. 血压*/
-    public static final String NIBP_COM_ID = "/dev/ttyS0";
+    public static final String NIBP_COM_ID = "/dev/ttyS4";
     public static final int NIBP_BAUDRATE = 9600;
 
     /*6. 打印机*/

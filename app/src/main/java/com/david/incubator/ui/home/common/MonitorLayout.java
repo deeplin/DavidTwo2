@@ -24,9 +24,9 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
     public MonitorLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
-//        binding.co2View.setSmallLayout();
         binding.hrPrView.setTitleBackground(R.drawable.background_panel_blue);
         binding.hrPrView.setSmallLayout();
+        //        binding.co2View.setSmallLayout();
     }
 
     @Override
@@ -39,28 +39,7 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
         super.attach(lifecycleOwner);
         binding.hrPrView.attach(lifecycleOwner);
         binding.spo2View.attach(lifecycleOwner);
-//        binding.hrPrView.setUniqueColor();
-//        if (moduleSoftware.ecg.getValue() || moduleSoftware.co2.getValue()) {
-//            binding.hrPrView.attach(lifecycleOwner);
-//            binding.hrPrView.setUniqueColor();
-//        } else {
-//            binding.hrPrView.setVisibility(View.GONE);
-//        }
-//
-//        if (moduleSoftware.spo2.getValue()) {
-//            binding.spo2View.setVisibility(View.VISIBLE);
-//            binding.spo2View.attach(lifecycleOwner);
-//        } else {
-//            binding.spo2View.setVisibility(View.GONE);
-//        }
-//
-//        if (moduleSoftware.co2.getValue()) {
-//            binding.co2View.setVisibility(View.VISIBLE);
-//            binding.co2View.attach(lifecycleOwner);
-//            binding.co2View.setUniqueColor();
-//        } else {
-//            binding.co2View.setVisibility(View.GONE);
-//        }
+        binding.co2View.attach(lifecycleOwner);
 //
 //        if (moduleSoftware.nibp.getValue()) {
 //            binding.nibpView.setVisibility(View.VISIBLE);
@@ -73,7 +52,7 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
         boolean darkStatus = systemModel.darkMode.getValue();
         binding.hrPrView.setSensorDarkMode(darkStatus);
         binding.spo2View.setSensorDarkMode(darkStatus);
-//        binding.co2View.setSensorDarkMode(darkStatus);
+        binding.co2View.setSensorDarkMode(darkStatus);
 //        binding.nibpView.setSensorDarkMode(darkStatus);
     }
 
@@ -81,8 +60,8 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
     public void detach() {
         super.detach();
 //        binding.nibpView.detach();
-//        binding.co2View.detach();
-//        binding.spo2View.detach();
+        binding.co2View.detach();
+        binding.spo2View.detach();
         binding.hrPrView.detach();
     }
 }

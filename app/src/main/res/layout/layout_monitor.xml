@@ -22,13 +22,13 @@
             app:layout_constraintBottom_toTopOf="@id/co2View"
             app:layout_constraintTop_toBottomOf="@id/hrPrView" />
 
-        <!--        <com.david.incubator.ui.home.common.Co2RrTinyView-->
-        <!--            android:id="@+id/co2View"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            android:layout_marginBottom="@dimen/f8"-->
-        <!--            app:layout_constraintBottom_toTopOf="@id/nibpView"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/spo2View" />-->
+        <com.david.incubator.ui.home.common.Co2RrView
+            android:id="@+id/co2View"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/nibpView"
+            app:layout_constraintTop_toBottomOf="@id/spo2View" />
 
         <!--        <com.david.incubator.ui.home.common.NibpTinyView-->
         <!--            android:id="@+id/nibpView"-->
@@ -37,9 +37,9 @@
         <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
 
         <FrameLayout
-            android:id="@+id/co2View"
+            android:id="@+id/nibpView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="130dp"
             android:background="#ff0000"
             app:layout_constraintBottom_toBottomOf="parent" />
 

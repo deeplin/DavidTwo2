@@ -131,5 +131,6 @@ public class HrPrView extends BindingBasicLayout<ViewHrPrBinding> {
     public void setSmallLayout() {
         binding.hrPrView.setSpo2SmallLayout();
         binding.hrPrView.setUniqueColor();
+        binding.hrPrView.setIntegerTop(70);
     }
 }
