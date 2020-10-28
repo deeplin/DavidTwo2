@@ -1,11 +1,11 @@
 package com.david.core.util;
 
+import android.graphics.Paint;
 import android.view.View;
 
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
-import com.david.core.ui.view.TitleIconView;
 import com.david.core.ui.view.TitleSetView;
 
 public class ViewUtil {
@@ -28,21 +28,19 @@ public class ViewUtil {
         }
     }
 
-    public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, TitleIconView titleIconView, boolean isPink) {
-//        int backgroundColor;
-//        if (isPink) {
-//            backgroundColor = R.drawable.background_panel_pink;
-//        } else {
-//            backgroundColor = R.drawable.background_panel_blue;
-//        }
-//        if (moduleHardware.isActive(moduleEnum)) {
-//            titleIconView.setDisable(false, backgroundColor);
-//            titleIconView.setVisibility(View.VISIBLE);
-//        } else if (moduleHardware.isInActive(moduleEnum)) {
-//            titleIconView.setDisable(true, backgroundColor);
-//            titleIconView.setVisibility(View.VISIBLE);
-//        } else {
-//            titleIconView.setVisibility(View.GONE);
-//        }
+    public static Paint buildPaint(int strokeWidth) {
+        Paint paint = new Paint();
+        paint.setStrokeWidth(strokeWidth);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.SQUARE);
+        paint.setStrokeJoin(Paint.Join.BEVEL);
+        return paint;
     }
+
+    public static Paint buildPaint(int color, int strokeWidth) {
+        Paint paint = buildPaint(strokeWidth);
+        paint.setColor(color);
+        return paint;
+    }
+
 }

@@ -80,6 +80,9 @@
     <string name="calibrate_failed">校准失败</string>
     <string name="nibp_delay">NIBP等待</string>
 
+    <!--com.david.incubator.ui.TempCurveLayout-->
+    <string name="skin1">肤温1</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

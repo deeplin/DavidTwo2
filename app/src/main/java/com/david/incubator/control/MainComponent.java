@@ -14,6 +14,7 @@ import com.david.incubator.ui.home.standard.middle.MiddleLeftLayout;
 import com.david.incubator.ui.home.standard.middle.MiddleRightLayout;
 import com.david.incubator.ui.home.standard.top.HomeSetView;
 import com.david.incubator.ui.home.standard.top.TimingLayout;
+import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.top.TopLayout;
 
@@ -55,4 +56,6 @@ public interface MainComponent extends CommonComponent {
     void inject(StandardSpo2BasicLayout standardSpo2BasicLayout);
 
     void inject(MiddleRightBasicLayout middleRightBasicLayout);
+
+    void inject(TempCurveLayout tempCurveLayout);
 }

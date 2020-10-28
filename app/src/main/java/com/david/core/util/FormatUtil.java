@@ -62,6 +62,10 @@ public class FormatUtil {
         }
     }
 
+    public static String formatBasicValue(double value) {
+        return formatValue(value, 1, "0");
+    }
+
 
 //
 //    public static String formatHumidity(int value) {

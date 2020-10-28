@@ -26,6 +26,7 @@
 
     <!--TextView-->
     <dimen name="f18">18dp</dimen>
+    <dimen name="f22">22dp</dimen>
     <dimen name="f40">40dp</dimen>
     <dimen name="f50">50dp</dimen>
     <dimen name="f60">60dp</dimen>

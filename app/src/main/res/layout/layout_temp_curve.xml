@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/incubatorLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/tempChartView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/humidityChartView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/skin1IconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/tempChartView"
+            app:layout_constraintTop_toTopOf="@id/tempChartView" />
+
+        <TextView
+            android:id="@+id/skin1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:text="@string/skin1"
+            android:textColor="@color/skin1_color"
+            android:textSize="@dimen/f22"
+            app:layout_constraintBottom_toBottomOf="@id/skin1IconView"
+            app:layout_constraintStart_toEndOf="@id/skin1IconView"
+            app:layout_constraintTop_toTopOf="@id/skin1IconView" />
+
+        <ImageView
+            android:id="@+id/skin2IconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="120dp"
+            app:layout_constraintStart_toEndOf="@id/skin1IconView"
+            app:layout_constraintTop_toTopOf="@id/skin1IconView" />
+
+        <TextView
+            android:id="@+id/skin2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:text="@string/skin2"
+            android:textColor="@color/skin2_color"
+            android:textSize="@dimen/f22"
+            app:layout_constraintBottom_toBottomOf="@id/skin1IconView"
+            app:layout_constraintStart_toEndOf="@id/skin2IconView"
+            app:layout_constraintTop_toTopOf="@id/skin1IconView" />
+
+        <ImageView
+            android:id="@+id/airIconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="120dp"
+            app:layout_constraintStart_toEndOf="@id/skin2IconView"
+            app:layout_constraintTop_toTopOf="@id/skin1IconView" />
+
+        <TextView
+            android:id="@+id/airTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:text="@string/air"
+            android:textColor="@color/air_color"
+            android:textSize="@dimen/f22"
+            app:layout_constraintBottom_toBottomOf="@id/skin1IconView"
+            app:layout_constraintStart_toEndOf="@id/airIconView"
+            app:layout_constraintTop_toTopOf="@id/skin1IconView" />
+
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/humidityChartView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toBottomOf="@id/tempChartView" />
+
+        <ImageView
+            android:id="@+id/humidityIconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/humidityChartView"
+            app:layout_constraintTop_toTopOf="@id/humidityChartView" />
+
+        <TextView
+            android:id="@+id/humidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:text="@string/humidity"
+            android:textColor="@color/humidity_color"
+            android:textSize="@dimen/f22"
+            app:layout_constraintBottom_toBottomOf="@id/humidityIconView"
+            app:layout_constraintStart_toEndOf="@id/humidityIconView"
+            app:layout_constraintTop_toTopOf="@id/humidityIconView" />
+
+        <ImageView
+            android:id="@+id/oxygenIconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="120dp"
+            app:layout_constraintStart_toEndOf="@id/humidityIconView"
+            app:layout_constraintTop_toTopOf="@id/humidityIconView" />
+
+        <TextView
+            android:id="@+id/oxygenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f8"
+            android:text="@string/oxygen"
+            android:textColor="@color/oxygen_color"
+            android:textSize="@dimen/f22"
+            app:layout_constraintBottom_toBottomOf="@id/oxygenIconView"
+            app:layout_constraintStart_toEndOf="@id/oxygenIconView"
+            app:layout_constraintTop_toTopOf="@id/oxygenIconView" />
+
+        <!--        <com.david.incubator.ui.home.common.MonitorListView-->
+        <!--            android:id="@+id/monitorListView"-->
+        <!--            android:layout_width="250dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginEnd="@dimen/f8"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+        <!--        <com.david.incubator.ui.home.common.IncubatorLayout-->
+        <!--            android:id="@+id/incubatorLayout"-->
+        <!--            android:layout_width="750dp"-->
+        <!--            android:layout_height="130dp"-->
+        <!--            android:layout_marginStart="@dimen/f8"-->
+        <!--            android:background="@drawable/sensor_background"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+        <FrameLayout
+            android:id="@+id/incubatorLayout"
+            android:layout_width="750dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
