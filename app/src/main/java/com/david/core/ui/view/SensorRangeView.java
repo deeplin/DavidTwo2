@@ -52,6 +52,8 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
 
     public void set(SensorModel sensorModel) {
         binding.setViewModel(sensorModel);
+        //todo
+        sensorModel.textNumber.post(80);
         if (uniqueColor) {
             binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
             binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
@@ -129,9 +131,11 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
     public void setCo2Layout() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
+        constraintSet.constrainHeight(R.id.title, 20);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 4);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.START, 4);
         constraintSet.setMargin(binding.upperLimit.getId(), ConstraintSet.END, 4);
+        constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, 36);
         constraintSet.applyTo(binding.rootView);
 
         binding.title.setTextSize(16);

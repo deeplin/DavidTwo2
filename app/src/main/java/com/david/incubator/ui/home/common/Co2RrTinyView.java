@@ -70,9 +70,9 @@ public class Co2RrTinyView extends BindingBasicLayout<ViewCo2RrTinyBinding> {
             }
         };
 
-//        binding.co2View.setSmallLayout();
-//        binding.rrView.setSpo2SmallLayout();
-//        binding.fiView.setSmallLayout();
+        binding.co2View.setCo2TinyLayout();
+        binding.rrView.setCo2Layout();
+        binding.fiView.setFiTinyLayout();
         binding.fiView.displayEt(false);
     }
 
