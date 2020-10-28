@@ -116,8 +116,8 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
 
         binding.title.setTextSize(16);
         binding.unit.setTextSize(16);
-        binding.integerPart.setTextSize(40);
-        binding.decimalPart.setTextSize(30);
+        binding.integerPart.setTextSize(46);
+        binding.decimalPart.setTextSize(34);
         binding.upperLimit.setTextSize(16);
         binding.lowerLimit.setTextSize(16);
     }
