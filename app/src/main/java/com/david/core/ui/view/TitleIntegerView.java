@@ -11,9 +11,9 @@ import androidx.lifecycle.LifecycleOwner;
 import com.david.R;
 import com.david.core.model.SensorModel;
 import com.david.core.ui.layout.BindingBasicLayout;
-import com.david.databinding.ViewTitleValueBinding;
+import com.david.databinding.ViewTitleIntegerBinding;
 
-public class TitleIntegerView extends BindingBasicLayout<ViewTitleValueBinding> {
+public class TitleIntegerView extends BindingBasicLayout<ViewTitleIntegerBinding> {
 
     public TitleIntegerView(Context context, AttributeSet attrs) {
         super(context, attrs);
