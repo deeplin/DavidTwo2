@@ -15,6 +15,8 @@ import com.david.databinding.ViewSensorRangeBinding;
 
 public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> {
 
+    private boolean uniqueColor;
+
     public SensorRangeView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -49,6 +51,10 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
 
     public void set(SensorModel sensorModel) {
         binding.setViewModel(sensorModel);
+        if (uniqueColor) {
+            binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
+            binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
+        }
     }
 
     @Override
@@ -84,12 +90,6 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
         binding.title.setBackgroundResource(backgroundResource);
     }
 
-    public void setUniqueColor() {
-        SensorModel sensorModel = binding.getViewModel();
-        binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
-        binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
-    }
-
     public void setSpo2SmallLayout() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
@@ -117,5 +117,9 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
             constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, integerTop);
         }
         constraintSet.applyTo(binding.rootView);
+    }
+
+    public void setUniqueColor() {
+        uniqueColor = true;
     }
 }

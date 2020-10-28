@@ -158,7 +158,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
     @Override
     public void attach(LifecycleOwner lifeCycleOwner) {
         super.attach(lifeCycleOwner);
-//        binding.monitorListView.attach(lifeCycleOwner);
+        binding.monitorLayout.attach(lifeCycleOwner);
         binding.incubatorLayout.attach(lifeCycleOwner);
 
         binding.tempChartView.setXAxis(TimeUtil.getCurrentTimeInSecond(), INTERVAL);
@@ -195,7 +195,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         binding.humidityChartView.setReady(false);
 
         binding.incubatorLayout.detach();
-//        binding.monitorListView.detach();
+        binding.monitorLayout.detach();
     }
 
     private int count = 60;

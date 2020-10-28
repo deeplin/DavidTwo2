@@ -136,7 +136,7 @@
             app:layout_constraintTop_toTopOf="@id/oxygenIconView" />
 
         <com.david.incubator.ui.home.common.MonitorLayout
-            android:id="@+id/monitorListView"
+            android:id="@+id/monitorLayout"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/f8"

@@ -127,4 +127,9 @@ public class HrPrView extends BindingBasicLayout<ViewHrPrBinding> {
     public void setTitleBackground(int backgroundResource) {
         binding.hrPrView.setTitleBackground(backgroundResource);
     }
+
+    public void setSmallLayout() {
+        binding.hrPrView.setSpo2SmallLayout();
+        binding.hrPrView.setUniqueColor();
+    }
 }

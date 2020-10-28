@@ -2,7 +2,6 @@ package com.david.incubator.ui.home.common;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.lifecycle.LifecycleOwner;
 
@@ -26,6 +25,8 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
 //        binding.co2View.setSmallLayout();
+        binding.hrPrView.setTitleBackground(R.drawable.background_panel_blue);
+        binding.hrPrView.setSmallLayout();
     }
 
     @Override
@@ -36,7 +37,8 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
     @Override
     public void attach(LifecycleOwner lifecycleOwner) {
         super.attach(lifecycleOwner);
-
+        binding.hrPrView.attach(lifecycleOwner);
+//        binding.hrPrView.setUniqueColor();
 //        if (moduleSoftware.ecg.getValue() || moduleSoftware.co2.getValue()) {
 //            binding.hrPrView.attach(lifecycleOwner);
 //            binding.hrPrView.setUniqueColor();
@@ -67,8 +69,8 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
 //            binding.nibpView.setVisibility(View.GONE);
 //        }
 //
-//        boolean darkStatus = systemModel.darkMode.getValue();
-//        binding.hrPrView.setSensorDarkMode(darkStatus);
+        boolean darkStatus = systemModel.darkMode.getValue();
+        binding.hrPrView.setSensorDarkMode(darkStatus);
 //        binding.spo2View.setSensorDarkMode(darkStatus);
 //        binding.co2View.setSensorDarkMode(darkStatus);
 //        binding.nibpView.setSensorDarkMode(darkStatus);
@@ -80,6 +82,6 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
 //        binding.nibpView.detach();
 //        binding.co2View.detach();
 //        binding.spo2View.detach();
-//        binding.hrPrView.detach();
+        binding.hrPrView.detach();
     }
 }
