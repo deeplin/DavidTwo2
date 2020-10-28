@@ -34,8 +34,6 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
 
     public void setCo2(SensorModel sensorModel, SystemModel systemModel) {
         binding.setViewModel(sensorModel);
-        //todo
-        sensorModel.textNumber.post(100);
         if (sensorModel != null) {
             binding.upperLimit.setText(systemModel.respUnitFunction.apply(sensorModel.upperLimit.getValue()));
             binding.lowerLimit.setText(systemModel.respUnitFunction.apply(sensorModel.lowerLimit.getValue()));
@@ -141,7 +139,7 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
     public void setFiTinyLayout() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
-        constraintSet.constrainHeight(R.id.title, 20);
+        constraintSet.constrainHeight(R.id.title, 22);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 4);
         constraintSet.setMargin(binding.title.getId(), ConstraintSet.START, 4);
         constraintSet.setMargin(binding.upperLimit.getId(), ConstraintSet.END, 4);

@@ -40,26 +40,19 @@ public class MonitorLayout extends BindingBasicLayout<LayoutMonitorBinding> {
         binding.hrPrView.attach(lifecycleOwner);
         binding.spo2View.attach(lifecycleOwner);
         binding.co2View.attach(lifecycleOwner);
-//
-//        if (moduleSoftware.nibp.getValue()) {
-//            binding.nibpView.setVisibility(View.VISIBLE);
-//            binding.nibpView.attach(lifecycleOwner);
-//            binding.nibpView.setUniqueColor();
-//        } else {
-//            binding.nibpView.setVisibility(View.GONE);
-//        }
-//
+        binding.nibpView.attach(lifecycleOwner);
+
         boolean darkStatus = systemModel.darkMode.getValue();
         binding.hrPrView.setSensorDarkMode(darkStatus);
         binding.spo2View.setSensorDarkMode(darkStatus);
         binding.co2View.setSensorDarkMode(darkStatus);
-//        binding.nibpView.setSensorDarkMode(darkStatus);
+        binding.nibpView.setSensorDarkMode(darkStatus);
     }
 
     @Override
     public void detach() {
         super.detach();
-//        binding.nibpView.detach();
+        binding.nibpView.detach();
         binding.co2View.detach();
         binding.spo2View.detach();
         binding.hrPrView.detach();

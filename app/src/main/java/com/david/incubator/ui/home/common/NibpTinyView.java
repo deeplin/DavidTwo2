@@ -17,11 +17,11 @@ import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.databinding.ViewNibpBinding;
+import com.david.databinding.ViewNibpTinyBinding;
 
 import javax.inject.Inject;
 
-public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
+public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
 
     @Inject
     ModuleHardware moduleHardware;
@@ -32,7 +32,7 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
     @Inject
     SystemModel systemModel;
 
-    public NibpView(Context context, AttributeSet attrs) {
+    public NibpTinyView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
 
@@ -50,7 +50,7 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.view_nibp;
+        return R.layout.view_nibp_tiny;
     }
 
     public void set(SensorModel nibpSensorModel, NibpModel nibpModel) {
@@ -63,15 +63,13 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
         super.attach(lifecycleOwner);
         nibpModel.attach();
 
-        if (moduleHardware.isActive(ModuleEnum.Nibp)) {
-            this.setVisibility(View.VISIBLE);
-            setDisable(false);
-        } else if (moduleHardware.isInActive(ModuleEnum.Nibp)) {
-            this.setVisibility(View.VISIBLE);
-            setDisable(true);
-        } else {
-            this.setVisibility(View.GONE);
-        }
+//        if (moduleHardware.isActive(ModuleEnum.Nibp))
+//            if (moduleSoftware.nibp.getValue()) {
+//
+//            }
+//        } else {
+//            this.setVisibility(View.GONE);
+//        }
     }
 
     @Override
@@ -80,25 +78,10 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
         nibpModel.detach();
     }
 
-    public void setDisable(boolean status) {
-        if (status) {
-            binding.title.setBackgroundResource(R.drawable.background_panel_dark);
-            binding.unit.setVisibility(View.INVISIBLE);
-            binding.integerPart.setVisibility(View.INVISIBLE);
-            binding.upperLimit.setVisibility(View.INVISIBLE);
-            binding.lowerLimit.setVisibility(View.INVISIBLE);
-            binding.functionTitle.setVisibility(View.INVISIBLE);
-            binding.functionValue.setVisibility(View.INVISIBLE);
-            binding.subFieldString.setVisibility(View.INVISIBLE);
-        } else {
-            binding.title.setBackgroundResource(R.drawable.background_panel_pink);
-            binding.unit.setVisibility(View.VISIBLE);
-            binding.integerPart.setVisibility(View.VISIBLE);
-            binding.upperLimit.setVisibility(View.VISIBLE);
-            binding.lowerLimit.setVisibility(View.VISIBLE);
-            binding.functionTitle.setVisibility(View.VISIBLE);
-            binding.functionValue.setVisibility(View.VISIBLE);
-            binding.subFieldString.setVisibility(View.VISIBLE);
-        }
+    public void setUniqueColor() {
+        //todo deeplin
+//        SensorModel sensorModel = binding.getViewModel();
+//        binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
+//        binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
     }
 }

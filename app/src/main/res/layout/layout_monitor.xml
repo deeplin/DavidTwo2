@@ -30,17 +30,10 @@
             app:layout_constraintBottom_toTopOf="@id/nibpView"
             app:layout_constraintTop_toBottomOf="@id/spo2View" />
 
-        <!--        <com.david.incubator.ui.home.common.NibpTinyView-->
-        <!--            android:id="@+id/nibpView"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="130dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
-
-        <FrameLayout
+        <com.david.incubator.ui.home.common.NibpTinyView
             android:id="@+id/nibpView"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:background="#ff0000"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
