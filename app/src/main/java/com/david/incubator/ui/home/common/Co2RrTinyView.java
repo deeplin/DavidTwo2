@@ -17,11 +17,11 @@ import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.databinding.ViewCo2RrBinding;
+import com.david.databinding.ViewCo2RrTinyBinding;
 
 import javax.inject.Inject;
 
-public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
+public class Co2RrTinyView extends BindingBasicLayout<ViewCo2RrTinyBinding> {
 
     @Inject
     SystemModel systemModel;
@@ -32,7 +32,7 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
 
     private final Observer<Boolean> selectCo2RrObserver;
 
-    public Co2RrView(Context context, AttributeSet attrs) {
+    public Co2RrTinyView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
 
@@ -78,7 +78,7 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.view_co2_rr;
+        return R.layout.view_co2_rr_tiny;
     }
 
     @Override

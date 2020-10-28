@@ -125,4 +125,20 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
     public void setUniqueColor() {
         uniqueColor = true;
     }
+
+    public void setCo2SmallLayout() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(binding.rootView);
+        constraintSet.setMargin(binding.title.getId(), ConstraintSet.TOP, 4);
+        constraintSet.setMargin(binding.title.getId(), ConstraintSet.START, 4);
+        constraintSet.setMargin(binding.upperLimit.getId(), ConstraintSet.END, 4);
+        constraintSet.applyTo(binding.rootView);
+
+        binding.title.setTextSize(16);
+        binding.unit.setTextSize(16);
+        binding.integerPart.setTextSize(26);
+        binding.decimalPart.setTextSize(20);
+        binding.upperLimit.setTextSize(16);
+        binding.lowerLimit.setTextSize(16);
+    }
 }
