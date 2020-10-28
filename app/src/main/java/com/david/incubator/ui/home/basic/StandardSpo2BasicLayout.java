@@ -15,7 +15,6 @@ import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
-import com.david.core.util.LoggerUtil;
 import com.david.databinding.LayoutStandardSpo2BasicBinding;
 
 import javax.inject.Inject;
@@ -112,7 +111,6 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        LoggerUtil.se("width " + getWidth());
         width.post(getWidth());
     }
 

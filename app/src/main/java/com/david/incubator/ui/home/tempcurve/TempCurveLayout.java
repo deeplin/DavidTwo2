@@ -98,7 +98,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
 
         ctrlEnumObserver = ctrlEnum -> {
             //todo deeeplin
-            incubatorModel.systemMode.set(SystemEnum.Warmer);
+            incubatorModel.systemMode.set(SystemEnum.Cabin);
             if (incubatorModel.isCabin()) {
                 binding.airIconView.setSelected(true);
                 binding.airIconView.setVisibility(View.VISIBLE);
@@ -135,6 +135,16 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
                     binding.humidityChartView.setDataSet(1, null);
                 }
             } else {
+                binding.humidityIconView.setSelected(false);
+                binding.humidityIconView.setVisibility(View.INVISIBLE);
+                binding.humidityTextView.setVisibility(View.INVISIBLE);
+                binding.humidityChartView.setDataSet(0, null);
+
+                binding.oxygenIconView.setSelected(false);
+                binding.oxygenIconView.setVisibility(View.INVISIBLE);
+                binding.oxygenTextView.setVisibility(View.INVISIBLE);
+                binding.humidityChartView.setDataSet(1, null);
+
                 binding.humidityChartView.setVisibility(View.GONE);
             }
         };
@@ -149,7 +159,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
     public void attach(LifecycleOwner lifeCycleOwner) {
         super.attach(lifeCycleOwner);
 //        binding.monitorListView.attach(lifeCycleOwner);
-//        binding.incubatorLayout.attach(lifeCycleOwner);
+        binding.incubatorLayout.attach(lifeCycleOwner);
 
         binding.tempChartView.setXAxis(TimeUtil.getCurrentTimeInSecond(), INTERVAL);
         binding.tempChartView.setReady(true);
@@ -184,7 +194,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         binding.tempChartView.setReady(false);
         binding.humidityChartView.setReady(false);
 
-//        binding.incubatorLayout.detach();
+        binding.incubatorLayout.detach();
 //        binding.monitorListView.detach();
     }
 

@@ -6,11 +6,10 @@ import android.view.View;
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
-import com.david.core.ui.view.TitleSetView;
 
 public class ViewUtil {
 
-    public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, TitleSetView titleSetView, boolean isPink) {
+    public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, IDisableView titleSetView, boolean isPink) {
         int backgroundColor;
         if (isPink) {
             backgroundColor = R.drawable.background_panel_pink;
