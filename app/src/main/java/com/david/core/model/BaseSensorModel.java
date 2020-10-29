@@ -7,6 +7,7 @@ public class BaseSensorModel {
     private boolean alarmEnabled;
 
     public final LazyLiveData<Boolean> systemAlarmed = new LazyLiveData<>(false);
+    public final LazyLiveData<Boolean> connectionError = new LazyLiveData<>(false);
 
     public BaseSensorModel() {
     }

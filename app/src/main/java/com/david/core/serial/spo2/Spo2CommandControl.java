@@ -91,8 +91,7 @@ public class Spo2CommandControl extends BaseSerialControl {
 
     @Override
     protected void setConnectionError(boolean status) {
-//todo deeplin
-//        spo2Model.spo2ConnectionError.post(status);
+        spo2Model.connectionError.post(status);
         if (status) {
             errorOccur.notifyChange();
             if (!systemModel.demo.getValue()) {

@@ -5,8 +5,6 @@ import androidx.lifecycle.Observer;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.database.DaoControl;
 import com.david.core.database.entity.AlarmEntity;
-import com.david.core.enumeration.AlarmCategoryEnum;
-import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.model.SensorModel;
 import com.david.core.serial.BaseCommand;
 import com.david.core.serial.incubator.IncubatorCommandSender;
@@ -47,9 +45,6 @@ public class AlarmControl implements ILifeCycle {
 
     public final LazyLiveData<Boolean> technicalUpdate = new LazyLiveData<>();
     public final LazyLiveData<Boolean> physiologicalUpdate = new LazyLiveData<>();
-
-    public final List<LazyLiveData<Integer>> passThroughAlarms = new ArrayList<>();
-    public final List<LazyLiveData<Boolean>> sensorSystemAlarms = new ArrayList<>();
 
     private final List<AlarmModel> technicalAlarmList = new ArrayList<>();
     private final List<AlarmModel> physiologicalAlarmList = new ArrayList<>();
@@ -207,36 +202,36 @@ public class AlarmControl implements ILifeCycle {
         return technicalAlarmList.size() > 0 || physiologicalAlarmList.size() > 0;
     }
 
-    private void setPassThroughAlarm() {
-        //透传指令
-        for (int index = 0; index < AlarmGroupEnum.values().length; index++) {
-            sensorSystemAlarms.add(new LazyLiveData<>(false));
-        }
-
-        for (int index = 0; index < AlarmCategoryEnum.values().length; index++) {
-            final int currentIndex = index;
-            LazyLiveData<Integer> lazyLiveData = new LazyLiveData<>(0);
-            lazyLiveData.observeForever(integer -> {
-                AlarmCategoryEnum alarmCategoryEnum = AlarmCategoryEnum.values()[currentIndex];
-                AlarmGroupEnum alarmGroupEnum = alarmCategoryEnum.getAlarmGroupEnum();
-
-                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmCategoryEnum.getCategory(), integer);
-
-                boolean systemError = false;
-                for (int id = 0; id < AlarmCategoryEnum.values().length; id++) {
-                    AlarmCategoryEnum tempEnum = AlarmCategoryEnum.values()[id];
-                    if (Objects.equals(alarmGroupEnum, tempEnum.getAlarmGroupEnum())) {
-                        if (passThroughAlarms.get(tempEnum.ordinal()).getValue() > 0) {
-                            systemError = true;
-                            break;
-                        }
-                    }
-                }
-                sensorSystemAlarms.get(alarmGroupEnum.ordinal()).post(systemError);
-            });
-            passThroughAlarms.add(lazyLiveData);
-        }
-    }
+//    private void setPassThroughAlarm() {
+//        //透传指令
+//        for (int index = 0; index < AlarmGroupEnum.values().length; index++) {
+//            sensorSystemAlarms.add(new LazyLiveData<>(false));
+//        }
+//
+//        for (int index = 0; index < AlarmCategoryEnum.values().length; index++) {
+//            final int currentIndex = index;
+//            LazyLiveData<Integer> lazyLiveData = new LazyLiveData<>(0);
+//            lazyLiveData.observeForever(integer -> {
+//                AlarmCategoryEnum alarmCategoryEnum = AlarmCategoryEnum.values()[currentIndex];
+//                AlarmGroupEnum alarmGroupEnum = alarmCategoryEnum.getAlarmGroupEnum();
+//
+//                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmCategoryEnum.getCategory(), integer);
+//
+//                boolean systemError = false;
+//                for (int id = 0; id < AlarmCategoryEnum.values().length; id++) {
+//                    AlarmCategoryEnum tempEnum = AlarmCategoryEnum.values()[id];
+//                    if (Objects.equals(alarmGroupEnum, tempEnum.getAlarmGroupEnum())) {
+//                        if (passThroughAlarms.get(tempEnum.ordinal()).getValue() > 0) {
+//                            systemError = true;
+//                            break;
+//                        }
+//                    }
+//                }
+//                sensorSystemAlarms.get(alarmGroupEnum.ordinal()).post(systemError);
+//            });
+//            passThroughAlarms.add(lazyLiveData);
+//        }
+//    }
 
     private void setSpo2RangeAlarms() {
 
