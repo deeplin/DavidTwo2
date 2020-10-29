@@ -20,6 +20,7 @@ import com.david.core.util.IntervalUtil;
 import com.david.core.util.LazyLiveData;
 import com.david.core.util.TimeUtil;
 import com.david.core.util.ViewUtil;
+import com.david.core.util.rely.RangeUtil;
 import com.david.databinding.LayoutWeightCurveBinding;
 
 import java.util.Locale;
@@ -108,21 +109,21 @@ public class WeightCurveLayout extends BindingBasicLayout<LayoutWeightCurveBindi
         long lastTime = TimeUtil.getCurrentTimeInSecond();
         addDataSet(0, binding.weightChartView, SensorModelEnum.Weight, destArray, lastTime);
 
-        intervalUtil.addSecondConsumer(WeightCurveLayout.class.getSimpleName(), this::secondInterval);
+        intervalUtil.addSecondConsumer(WeightCurveLayout.class, this::secondInterval);
 
         status.set(0);
 
         if (systemModel.darkMode.getValue()) {
-            binding.weightChartView.setBackgroundResource(R.drawable.sensor_background_dark);
+            binding.weightChartView.setBackgroundResource(R.drawable.background_panel_dark);
         } else {
-            binding.weightChartView.setBackgroundResource(R.drawable.sensor_background);
+            binding.weightChartView.setBackgroundResource(R.drawable.background_panel);
         }
     }
 
     @Override
     public void detach() {
         super.detach();
-        intervalUtil.removeSecondConsumer(WeightCurveLayout.class.getSimpleName());
+        intervalUtil.removeSecondConsumer(WeightCurveLayout.class);
 
         binding.incubatorLayout.detach();
         binding.monitorListView.detach();

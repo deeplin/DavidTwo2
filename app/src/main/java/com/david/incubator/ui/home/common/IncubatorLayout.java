@@ -13,7 +13,6 @@ import com.david.core.control.ModuleHardware;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
-import com.david.core.enumeration.SystemEnum;
 import com.david.core.model.IncubatorModel;
 import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
@@ -75,8 +74,6 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
         skin2View.attach(lifecycleOwner);
         homeSetView.attach(lifecycleOwner);
 
-        //todo deeplin
-        incubatorModel.systemMode.post(SystemEnum.Warmer);
         if (incubatorModel.isCabin()) {
             airView.attach(lifecycleOwner);
             airView.setVisibility(View.VISIBLE);

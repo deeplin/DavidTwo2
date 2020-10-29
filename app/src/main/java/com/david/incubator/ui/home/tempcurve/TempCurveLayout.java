@@ -16,7 +16,6 @@ import com.david.core.database.entity.IncubatorEntity;
 import com.david.core.enumeration.CtrlEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
-import com.david.core.enumeration.SystemEnum;
 import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
@@ -97,8 +96,6 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         binding.oxygenTextView.setOnClickListener(v -> selectOxygen());
 
         ctrlEnumObserver = ctrlEnum -> {
-            //todo deeeplin
-            incubatorModel.systemMode.set(SystemEnum.Cabin);
             if (incubatorModel.isCabin()) {
                 binding.airIconView.setSelected(true);
                 binding.airIconView.setVisibility(View.VISIBLE);

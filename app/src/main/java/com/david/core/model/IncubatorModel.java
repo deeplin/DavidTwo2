@@ -14,7 +14,8 @@ import javax.inject.Singleton;
 public class IncubatorModel {
 
     /*status Command*/
-    public final LazyLiveData<SystemEnum> systemMode = new LazyLiveData<>();
+    //todo deeplin
+    public final LazyLiveData<SystemEnum> systemMode = new LazyLiveData<>(SystemEnum.Cabin);
     public final LazyLiveData<Boolean> humidityPower = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> oxygenPower = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> ohTest = new LazyLiveData<>(false);

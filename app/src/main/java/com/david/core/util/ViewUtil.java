@@ -1,11 +1,16 @@
 package com.david.core.util;
 
 import android.graphics.Paint;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
 
 public class ViewUtil {
 
@@ -42,4 +47,12 @@ public class ViewUtil {
         return paint;
     }
 
+    public static void showToast(String message) {
+        Observable.just(message).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(msg -> {
+                    Toast toast = Toast.makeText(ContextUtil.getApplicationContext(), msg, Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                });
+    }
 }
