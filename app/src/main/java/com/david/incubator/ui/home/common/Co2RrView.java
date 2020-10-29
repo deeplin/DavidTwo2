@@ -70,8 +70,11 @@ public class Co2RrView extends BindingBasicLayout<ViewCo2RrBinding> {
         };
 
         binding.co2View.setCo2SmallLayout();
+        binding.co2View.setTextColor(ContextUtil.getColor(R.color.text_pink));
         binding.rrView.setSpo2SmallLayout();
+        binding.rrView.setTextColor(ContextUtil.getColor(R.color.text_pink));
         binding.fiView.setFiSmallLayout();
+        binding.fiView.setTextColor(ContextUtil.getColor(R.color.text_pink));
         binding.fiView.displayEt(false);
     }
 

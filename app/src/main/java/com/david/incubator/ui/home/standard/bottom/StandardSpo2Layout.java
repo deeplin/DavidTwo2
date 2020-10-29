@@ -139,6 +139,7 @@ public class StandardSpo2Layout extends BindingBasicLayout<LayoutStandardSpo2Bin
     protected SensorRangeView buildView(SensorModelEnum sensorModelEnum, int integerTop) {
         SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
         SensorRangeView sensorRangeView = new SensorRangeView(getContext(), null);
+        sensorRangeView.setTextColor(ContextUtil.getColor(R.color.text_pink));
         sensorRangeView.setIntegerTop(integerTop);
         sensorRangeView.set(sensorModel);
         sensorRangeView.setSpo2SmallLayout();

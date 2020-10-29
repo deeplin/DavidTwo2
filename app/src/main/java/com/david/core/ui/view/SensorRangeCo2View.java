@@ -157,4 +157,9 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
     public void displayEt(boolean status) {
         binding.etPre.setVisibility(status ? View.VISIBLE : View.GONE);
     }
+
+    public void setTextColor(int color) {
+        binding.integerPart.setTextColor(color);
+        binding.decimalPart.setTextColor(color);
+    }
 }

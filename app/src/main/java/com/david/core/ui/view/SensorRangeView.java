@@ -143,4 +143,9 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
         binding.upperLimit.setTextSize(16);
         binding.lowerLimit.setTextSize(16);
     }
+
+    public void setTextColor(int color) {
+        binding.integerPart.setTextColor(color);
+        binding.decimalPart.setTextColor(color);
+    }
 }

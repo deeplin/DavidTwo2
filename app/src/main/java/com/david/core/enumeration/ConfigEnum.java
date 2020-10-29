@@ -10,7 +10,7 @@ public enum ConfigEnum {
 
     /*Hardware*/
     BlueTime(),
-    Spo2ModuleConfig(0x0),
+    Spo2ModuleConfig(0x1F),    //0x00-0x1F
 
     /*Software*/
     ScreenLuminance(5),
