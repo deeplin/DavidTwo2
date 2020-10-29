@@ -81,8 +81,8 @@ public class ParameterStrategy implements Consumer<byte[]> {
                 case (0x0C):
                     int data = NumberUtil.getLongHighFirst(buffer, 4);
 //                    spo2Model.spo2SysAlarm.post(data);
-                    if ((data & 1) == 0 && !spo2Model.enableSpo2Alarm.getValue()) {
-                        spo2Model.enableSpo2Alarm.post(true);
+                    if ((data & 1) == 0 && !spo2Model.isAlarmEnabled()) {
+                        spo2Model.setAlarmEnabled();
                         spo2TextNumber.notifyChange();
                         prTextNumber.notifyChange();
                         piTextNumber.notifyChange();

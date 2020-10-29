@@ -8,9 +8,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Singleton
-public class Spo2Model {
+public class Spo2Model extends BaseSensorModel {
 
-    public final LazyLiveData<Boolean> enableSpo2Alarm = new LazyLiveData<>(false);
     public final LazyLiveData<Boolean> spo2Beep = new LazyLiveData<>(false);
 
     /*Spo2 Get*/
