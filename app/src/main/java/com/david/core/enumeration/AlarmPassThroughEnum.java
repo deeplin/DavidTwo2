@@ -3,7 +3,7 @@ package com.david.core.enumeration;
 public enum AlarmPassThroughEnum {
     Spo2_Con(0, AlarmGroupEnum.S, "SEN"),
     Spo2_Sys(1, AlarmGroupEnum.S, "SYS"),
-    Spo2_Bf(2, AlarmGroupEnum.S, "BF"),
+    Spo2_Bf(2, AlarmGroupEnum.S, "BFC"),
     Spo2_Df(3, AlarmGroupEnum.S, "DF"),
 
     None;

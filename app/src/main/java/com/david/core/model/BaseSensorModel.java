@@ -4,6 +4,7 @@ import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmPassThroughEnum;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
+import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
 
 import javax.inject.Inject;
@@ -13,12 +14,13 @@ public class BaseSensorModel {
     @Inject
     IncubatorCommandSender incubatorCommandSender;
 
-    private boolean alarmEnabled;
+    private boolean alarmEnabled = true;
 
     private final LazyLiveData<Integer> systemAlarm = new LazyLiveData<>(0);
     private final LazyLiveData<Integer>[] passThroughAlarmArray;
 
     public BaseSensorModel(AlarmPassThroughEnum startAlarmPassThroughEnum, int passThroughAlarmNum) {
+        ContextUtil.getComponent().inject(this);
         passThroughAlarmArray = new LazyLiveData[passThroughAlarmNum];
         for (int index = 0; index < passThroughAlarmNum; index++) {
             final int currentIndex = startAlarmPassThroughEnum.ordinal() + index;
