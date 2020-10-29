@@ -95,7 +95,7 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
         if (systemModel.darkMode.getValue()) {
             setBackgroundResource(R.drawable.background_panel_dark);
         } else {
-            setBackgroundResource(R.drawable.background_panel);
+            setBackgroundResource(R.drawable.background_panel_white);
         }
     }
 

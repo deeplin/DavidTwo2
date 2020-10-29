@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.david.incubator.ui.home.weightcurve.WeightCurveLayout" />
+    </data>
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/weightChartView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginBottom="138dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/weightButton"
+            android:layout_width="100dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="@dimen/f16"
+            android:background="@drawable/button_background"
+            android:enabled="@{viewModel.status == 0}"
+            android:text="@string/weight"
+            android:textColor="@color/text_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/reWeightButton"
+            android:layout_width="100dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="80dp"
+            android:background="@drawable/button_background"
+            android:enabled="@{viewModel.status == 0}"
+            android:text="@string/re_weight"
+            android:textColor="@color/text_blue"
+            app:layout_constraintStart_toEndOf="@id/weightButton"
+            app:layout_constraintTop_toTopOf="@id/weightButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@{viewModel.lastWeight}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f24"
+            app:layout_constraintBottom_toBottomOf="@id/weightButton"
+            app:layout_constraintStart_toEndOf="@id/reWeightButton"
+            app:layout_constraintTop_toTopOf="@id/weightButton" />
+
+        <com.david.incubator.ui.home.common.MonitorLayout
+            android:id="@+id/monitorListView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.david.incubator.ui.home.common.IncubatorLayout
+            android:id="@+id/incubatorLayout"
+            android:layout_width="750dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginBottom="138dp"
+            android:background="@drawable/background_panel"
+            android:visibility="@{viewModel.status > 1 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/f12"
+            android:src="@mipmap/weight_up"
+            android:visibility="@{viewModel.status == 3 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/f12"
+            android:src="@mipmap/weight_down"
+            android:visibility="@{viewModel.status == 2 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintEnd_toEndOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="@id/backgroundView"
+            app:layout_constraintTop_toTopOf="@id/backgroundView" />
+
+        <TextView
+            android:id="@+id/tvScaleInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="160dp"
+            android:text="@{viewModel.scaleInfo}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f30"
+            android:visibility="@{viewModel.status > 1 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/weightChartView"
+            app:layout_constraintStart_toStartOf="@id/weightChartView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

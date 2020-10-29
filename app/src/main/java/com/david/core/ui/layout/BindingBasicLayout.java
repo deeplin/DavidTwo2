@@ -46,7 +46,7 @@ public abstract class BindingBasicLayout<U extends ViewDataBinding> extends Cons
         if (darkMode) {
             binding.getRoot().setBackgroundResource(R.drawable.background_panel_dark);
         } else {
-            binding.getRoot().setBackgroundResource(R.drawable.background_panel);
+            binding.getRoot().setBackgroundResource(R.drawable.background_panel_white);
         }
     }
 }

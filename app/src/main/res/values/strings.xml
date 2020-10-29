@@ -83,6 +83,13 @@
     <!--com.david.incubator.ui.TempCurveLayout-->
     <string name="skin1">肤温1</string>
 
+    <!--com.david.incubator.ui.WeightCurveLayout-->
+    <string name="re_weight">重新称重</string>
+    <string name="raise_baby">请抱起婴儿...</string>
+    <string name="put_down_baby">请放下婴儿...</string>
+    <string name="weight_failed">称重失败</string>
+    <string name="current_weight">重量</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

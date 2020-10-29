@@ -65,22 +65,4 @@ public class FormatUtil {
     public static String formatBasicValue(double value) {
         return formatValue(value, 1, "0");
     }
-
-
-//
-//    public static String formatHumidity(int value) {
-//        return formatValueUnit(SensorModelEnum.Humidity, value);
-//    }
-//
-//    public static String formatOxygen(int value) {
-//        return formatValueUnit(SensorModelEnum.Oxygen, value);
-//    }
-//
-//    public static String formatInc(int value) {
-//        return formatValueUnit(SensorModelEnum.Inc, value);
-//    }
-//
-//    public static String formatAngle(int value) {
-//        return formatValueUnit(SensorModelEnum.Angle, value);
-//    }
 }

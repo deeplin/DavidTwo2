@@ -21,6 +21,7 @@ import com.david.incubator.ui.home.standard.middle.MiddleRightLayout;
 import com.david.incubator.ui.home.standard.top.HomeSetView;
 import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
+import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.top.TopLayout;
 
@@ -76,4 +77,6 @@ public interface MainComponent extends CommonComponent {
     void inject(Co2RrTinyView co2RrTinyView);
 
     void inject(NibpTinyView nibpTinyView);
+
+    void inject(WeightCurveLayout weightCurveLayout);
 }

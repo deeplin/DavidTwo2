@@ -180,7 +180,7 @@ public class TempCurveLayout extends BindingBasicLayout<LayoutTempCurveBinding> 
         if (systemModel.darkMode.getValue()) {
             binding.backgroundView.setBackgroundResource(R.drawable.background_panel_dark);
         } else {
-            binding.backgroundView.setBackgroundResource(R.drawable.background_panel);
+            binding.backgroundView.setBackgroundResource(R.drawable.background_panel_white);
         }
     }
 

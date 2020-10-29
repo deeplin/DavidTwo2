@@ -11,6 +11,12 @@
     <color name="background_blue_dark">#73ACE6</color>
     <color name="background_pink">#f8e9e4</color>
     <color name="background_pink_dark">#EDC4C9</color>
+
+    <!--Button-->
+    <color name="button_background_disable">#939598</color>
+    <color name="button_stroke_standard">#FFFFFF</color>
+    <color name="button_stroke_pressed">#F49A29</color>
+    <color name="button_stroke_selected">#9ACADE</color>
     <color name="button_clear_alarm">#F49A29</color>
 
     <!--Alarm-->
