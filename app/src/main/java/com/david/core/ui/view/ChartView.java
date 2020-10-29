@@ -64,7 +64,7 @@ public class ChartView extends View {
         whitePath = new Path();
         axisPaint = ViewUtil.buildPaint(ContextUtil.getColor(R.color.text_blue), 2);
         axisPaint.setAntiAlias(true);
-        whitePaint = ViewUtil.buildPaint(ContextUtil.getColor(R.color.white), 2);
+        whitePaint = ViewUtil.buildPaint(ContextUtil.getColor(R.color.background), 2);
         textPaint = ViewUtil.buildPaint(ContextUtil.getColor(R.color.text_blue), 0);
         textPaint.setTextSize(16);
         textPaint.setAntiAlias(true);

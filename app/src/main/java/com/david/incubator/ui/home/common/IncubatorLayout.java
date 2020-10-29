@@ -80,6 +80,8 @@ public class IncubatorLayout extends LinearLayout implements ILifeCycleOwner {
 
             ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, humidityView, false);
             ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, oxygenView, false);
+
+            timingLayout.setVisibility(View.GONE);
         } else {
             airView.setVisibility(View.GONE);
             humidityView.setVisibility(View.GONE);

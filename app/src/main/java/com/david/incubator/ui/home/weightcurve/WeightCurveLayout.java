@@ -116,7 +116,7 @@ public class WeightCurveLayout extends BindingBasicLayout<LayoutWeightCurveBindi
         if (systemModel.darkMode.getValue()) {
             binding.weightChartView.setBackgroundResource(R.drawable.background_panel_dark);
         } else {
-            binding.weightChartView.setBackgroundResource(R.drawable.background_panel);
+            binding.weightChartView.setBackgroundResource(R.drawable.background_panel_white);
         }
     }
 
