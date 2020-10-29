@@ -33,8 +33,6 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
     @Inject
     SystemModel systemModel;
 
-    private final Observer<Integer> unitObserver;
-
     public NibpTinyView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
@@ -49,12 +47,6 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
             if (moduleHardware.isActive(ModuleEnum.Nibp))
                 systemModel.showSetupPage(SetupPageEnum.Nibp);
         });
-
-        unitObserver = integer -> {
-            SensorModel nibpModel = sensorModelRepository.getSensorModel(SensorModelEnum.Nibp);
-            binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.upperLimit.getValue()));
-            binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.lowerLimit.getValue()));
-        };
     }
 
     @Override
@@ -65,6 +57,9 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
     public void set(SensorModel sensorModel, NibpModel nibpModel) {
         binding.setViewModel(sensorModel);
         binding.setNibpView(nibpModel);
+
+        binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(sensorModel.upperLimit.getValue()));
+        binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(sensorModel.lowerLimit.getValue()));
 
         binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
         binding.subFieldString.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());

@@ -41,7 +41,6 @@ public class Co2RrTinyView extends BindingBasicLayout<ViewCo2RrTinyBinding> {
         binding.fiView.setOnClickListener(v -> gotoObjective());
 
         selectCo2RrObserver = aBoolean -> {
-            aBoolean = true;
             if (aBoolean == null) {
                 displayNoneSelection();
                 binding.rootView.setVisibility(View.GONE);

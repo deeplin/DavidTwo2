@@ -37,8 +37,6 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
     @Inject
     ConfigRepository configRepository;
 
-    private final Observer<Integer> unitObserver;
-
     public NibpView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
@@ -53,12 +51,6 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
             if (moduleHardware.isActive(ModuleEnum.Nibp))
                 systemModel.showSetupPage(SetupPageEnum.Nibp);
         });
-
-        unitObserver = integer -> {
-            SensorModel nibpModel = sensorModelRepository.getSensorModel(SensorModelEnum.Nibp);
-            binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.upperLimit.getValue()));
-            binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.lowerLimit.getValue()));
-        };
     }
 
     @Override
@@ -67,8 +59,11 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
     }
 
     public void set(SensorModel nibpSensorModel, NibpModel nibpModel) {
+        systemModel.setNibpUnit();
         binding.setViewModel(nibpSensorModel);
         binding.setNibpView(nibpModel);
+        binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(nibpSensorModel.upperLimit.getValue()));
+        binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(nibpSensorModel.lowerLimit.getValue()));
     }
 
     @Override
@@ -85,15 +80,11 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
         } else {
             this.setVisibility(View.GONE);
         }
-
-        configRepository.getConfig(ConfigEnum.NibpUnit).observeForever(unitObserver);
     }
 
     @Override
     public void detach() {
         super.detach();
-        configRepository.getConfig(ConfigEnum.NibpUnit).removeObserver(unitObserver);
-
         nibpModel.detach();
     }
 
