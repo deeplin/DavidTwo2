@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 
 import com.david.R;
 import com.david.core.control.ModuleHardware;
@@ -32,6 +33,8 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
     @Inject
     SystemModel systemModel;
 
+    private final Observer<Integer> unitObserver;
+
     public NibpTinyView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
@@ -46,6 +49,12 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
             if (moduleHardware.isActive(ModuleEnum.Nibp))
                 systemModel.showSetupPage(SetupPageEnum.Nibp);
         });
+
+        unitObserver = integer -> {
+            SensorModel nibpModel = sensorModelRepository.getSensorModel(SensorModelEnum.Nibp);
+            binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.upperLimit.getValue()));
+            binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.lowerLimit.getValue()));
+        };
     }
 
     @Override

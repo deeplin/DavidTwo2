@@ -5,10 +5,13 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 
 import com.david.R;
+import com.david.core.control.ConfigRepository;
 import com.david.core.control.ModuleHardware;
 import com.david.core.control.SensorModelRepository;
+import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.SetupPageEnum;
@@ -31,6 +34,10 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
     NibpModel nibpModel;
     @Inject
     SystemModel systemModel;
+    @Inject
+    ConfigRepository configRepository;
+
+    private final Observer<Integer> unitObserver;
 
     public NibpView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -46,6 +53,12 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
             if (moduleHardware.isActive(ModuleEnum.Nibp))
                 systemModel.showSetupPage(SetupPageEnum.Nibp);
         });
+
+        unitObserver = integer -> {
+            SensorModel nibpModel = sensorModelRepository.getSensorModel(SensorModelEnum.Nibp);
+            binding.upperLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.upperLimit.getValue()));
+            binding.lowerLimit.setText(systemModel.nibpUnitFunction.apply(nibpModel.lowerLimit.getValue()));
+        };
     }
 
     @Override
@@ -72,11 +85,15 @@ public class NibpView extends BindingBasicLayout<ViewNibpBinding> {
         } else {
             this.setVisibility(View.GONE);
         }
+
+        configRepository.getConfig(ConfigEnum.NibpUnit).observeForever(unitObserver);
     }
 
     @Override
     public void detach() {
         super.detach();
+        configRepository.getConfig(ConfigEnum.NibpUnit).removeObserver(unitObserver);
+
         nibpModel.detach();
     }
 
