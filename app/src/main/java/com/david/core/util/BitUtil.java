@@ -5,7 +5,11 @@ public class BitUtil {
         return ((data >> index) & 0x01) > 0;
     }
 
-    private int setBit(int data, int index) {
-        return data | (0x01 << index);
+    public static int setBit(int data, int index, boolean status) {
+        if (status) {
+            return data | (0x01 << index);
+        } else {
+            return data & ~(0x01 << index);
+        }
     }
 }

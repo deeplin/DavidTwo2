@@ -27,5 +27,6 @@ public class Spo2Model extends BaseSensorModel {
 
     @Inject
     public Spo2Model() {
+        super(4);
     }
 }

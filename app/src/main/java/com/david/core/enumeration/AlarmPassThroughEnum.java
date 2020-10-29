@@ -15,7 +15,7 @@ public enum AlarmPassThroughEnum {
     AlarmPassThroughEnum() {
         index = -2;
         alarmGroupEnum = null;
-        this.category = null;
+        category = null;
     }
 
     AlarmPassThroughEnum(int index, AlarmGroupEnum alarmGroupEnum, String category) {
@@ -24,15 +24,15 @@ public enum AlarmPassThroughEnum {
         this.category = category;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     public AlarmGroupEnum getAlarmGroupEnum() {
         return alarmGroupEnum;
     }
 
     public String getCategory() {
         return category;
-    }
-
-    public int getIndex() {
-        return index;
     }
 }
