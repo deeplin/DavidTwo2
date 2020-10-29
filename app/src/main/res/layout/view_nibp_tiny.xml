@@ -46,6 +46,7 @@
             app:layout_constraintTop_toBottomOf="@id/title" />
 
         <TextView
+            android:id="@+id/integerPart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
@@ -84,6 +85,7 @@
             app:layout_constraintTop_toBottomOf="@id/upperLimit" />
 
         <TextView
+            android:id="@+id/functionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/f16"
@@ -95,6 +97,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/functionValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/f16"
@@ -106,6 +109,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/subFieldString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{nibpView.subFieldString}"

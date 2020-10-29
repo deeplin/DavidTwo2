@@ -53,9 +53,12 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
         return R.layout.view_nibp_tiny;
     }
 
-    public void set(SensorModel nibpSensorModel, NibpModel nibpModel) {
-        binding.setViewModel(nibpSensorModel);
+    public void set(SensorModel sensorModel, NibpModel nibpModel) {
+        binding.setViewModel(sensorModel);
         binding.setNibpView(nibpModel);
+
+        binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
+        binding.subFieldString.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
     }
 
     @Override
@@ -63,13 +66,15 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
         super.attach(lifecycleOwner);
         nibpModel.attach();
 
-//        if (moduleHardware.isActive(ModuleEnum.Nibp))
-//            if (moduleSoftware.nibp.getValue()) {
-//
-//            }
-//        } else {
-//            this.setVisibility(View.GONE);
-//        }
+        if (moduleHardware.isActive(ModuleEnum.Nibp)) {
+            this.setVisibility(View.VISIBLE);
+            setDisable(false);
+        } else if (moduleHardware.isInActive(ModuleEnum.Nibp)) {
+            this.setVisibility(View.VISIBLE);
+            setDisable(true);
+        } else {
+            this.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -78,10 +83,25 @@ public class NibpTinyView extends BindingBasicLayout<ViewNibpTinyBinding> {
         nibpModel.detach();
     }
 
-    public void setUniqueColor() {
-        //todo deeplin
-//        SensorModel sensorModel = binding.getViewModel();
-//        binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
-//        binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
+    public void setDisable(boolean status) {
+        if (status) {
+            binding.title.setBackgroundResource(R.drawable.background_panel_dark);
+            binding.unit.setVisibility(View.INVISIBLE);
+            binding.integerPart.setVisibility(View.INVISIBLE);
+            binding.upperLimit.setVisibility(View.INVISIBLE);
+            binding.lowerLimit.setVisibility(View.INVISIBLE);
+            binding.functionTitle.setVisibility(View.INVISIBLE);
+            binding.functionValue.setVisibility(View.INVISIBLE);
+            binding.subFieldString.setVisibility(View.INVISIBLE);
+        } else {
+            binding.title.setBackgroundResource(R.drawable.background_panel_pink);
+            binding.unit.setVisibility(View.VISIBLE);
+            binding.integerPart.setVisibility(View.VISIBLE);
+            binding.upperLimit.setVisibility(View.VISIBLE);
+            binding.lowerLimit.setVisibility(View.VISIBLE);
+            binding.functionTitle.setVisibility(View.VISIBLE);
+            binding.functionValue.setVisibility(View.VISIBLE);
+            binding.subFieldString.setVisibility(View.VISIBLE);
+        }
     }
 }
