@@ -50,7 +50,7 @@ public class SensorRangeCo2View extends BindingBasicLayout<ViewSensorRangeCo2Bin
             binding.upperLimit.setText(sensorModel.formatValue(sensorModel.upperLimit.getValue()));
             binding.lowerLimit.setText(sensorModel.formatValue(sensorModel.lowerLimit.getValue()));
         }
-        if (uniqueColor) {
+        if (uniqueColor && sensorModel != null) {
             binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
             binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
         }

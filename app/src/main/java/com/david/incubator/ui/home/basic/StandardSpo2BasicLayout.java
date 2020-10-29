@@ -36,10 +36,13 @@ public class StandardSpo2BasicLayout extends BindingBasicLayout<LayoutStandardSp
 
         SensorModel spo2Model = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
         binding.spo2View.set(spo2Model);
+        binding.spo2View.setTextColor(ContextUtil.getColor(R.color.text_pink));
         SensorModel prModel = sensorModelRepository.getSensorModel(SensorModelEnum.Pr);
         binding.prView.set(prModel);
+        binding.prView.setTextColor(ContextUtil.getColor(R.color.text_pink));
         SensorModel piModel = sensorModelRepository.getSensorModel(SensorModelEnum.Pi);
         binding.piView.set(piModel);
+        binding.piView.setTextColor(ContextUtil.getColor(R.color.text_pink));
 
         binding.spo2View.setOnClickListener(v -> {
             if (systemModel.isFreeze()) {

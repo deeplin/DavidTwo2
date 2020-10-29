@@ -52,7 +52,7 @@ public class SensorRangeView extends BindingBasicLayout<ViewSensorRangeBinding> 
 
     public void set(SensorModel sensorModel) {
         binding.setViewModel(sensorModel);
-        if (uniqueColor) {
+        if (uniqueColor && sensorModel != null) {
             binding.integerPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
             binding.decimalPart.setTextColor(sensorModel.getSensorModelEnum().getUniqueColor());
         }
