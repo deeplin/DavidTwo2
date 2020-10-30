@@ -1,10 +1,14 @@
 package com.david.core.model;
 
+import androidx.lifecycle.Observer;
+
 import com.david.core.control.ModuleHardware;
+import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.AlarmCategoryEnum;
 import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.ModuleEnum;
+import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
@@ -20,18 +24,18 @@ public class BaseSensorModel {
     IncubatorCommandSender incubatorCommandSender;
     @Inject
     ModuleHardware moduleHardware;
+    @Inject
+    SensorModelRepository sensorModelRepository;
 
     private boolean alarmEnabled = false;
 
     private final ModuleEnum moduleEnum;
     private final LazyLiveData<Integer> systemAlarm = new LazyLiveData<>(0);
     private final LazyLiveData<Integer>[] passThroughAlarmArray;
-    private final AlarmCategoryEnum rangeCategoryEnum;
 
     public BaseSensorModel(ModuleEnum moduleEnum, AlarmCategoryEnum rangeCategoryEnum, int passThroughAlarmNum) {
         ContextUtil.getComponent().inject(this);
         this.moduleEnum = moduleEnum;
-        this.rangeCategoryEnum = rangeCategoryEnum;
         passThroughAlarmArray = new LazyLiveData[passThroughAlarmNum];
         for (int index = 0; index < passThroughAlarmNum; index++) {
             final int enumIndex = rangeCategoryEnum.ordinal() + index;
@@ -70,31 +74,30 @@ public class BaseSensorModel {
         }
     }
 
-    private void produceAlarm(SensorModel sensorModel, AlarmWordEnum upperAlarmEnum, AlarmWordEnum lowerAlarmEnum) {
-
-
-//        if (moduleHardware.isActive(moduleEnum)) {
-//            int data = sensorModel.textNumber.getValue();
-//            if (data > sensorModel.upperLimit.getValue()) {
-//
-//                upperAlarmEnum.toString()
-//
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//            } else if (data < sensorModel.lowerLimit.getValue()) {
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, true);
-//            } else {
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//            }
-//        } else {
-////            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-////            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//        }
+    public void loadRangeAlarm(SensorModelEnum sensorModelEnum, AlarmWordEnum upperAlarmEnum, AlarmWordEnum lowerAlarmEnum) {
+        SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
+        Observer<Integer> observer = integer -> testAlarm(sensorModel, upperAlarmEnum, lowerAlarmEnum);
+        sensorModel.textNumber.observeForever(observer);
+        sensorModel.upperLimit.observeForever(observer);
+        sensorModel.lowerLimit.observeForever(observer);
     }
 
-    private void setRangeAlarm() {
-
+    private void testAlarm(SensorModel sensorModel, AlarmWordEnum upperAlarmEnum, AlarmWordEnum lowerAlarmEnum) {
+        if (moduleHardware.isActive(moduleEnum)) {
+            int data = sensorModel.textNumber.getValue();
+            if (data > sensorModel.upperLimit.getValue()) {
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+            } else if (data < sensorModel.lowerLimit.getValue()) {
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, true);
+            } else {
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+            }
+        } else {
+//            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+//            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+        }
     }
 }

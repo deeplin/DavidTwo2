@@ -1,6 +1,7 @@
 package com.david.core.model;
 
 import com.david.core.enumeration.AlarmCategoryEnum;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.Spo2AverageTimeEnum;
@@ -30,10 +31,12 @@ public class Spo2Model extends BaseSensorModel {
 
     @Inject
     public Spo2Model() {
-        super(ModuleEnum.Spo2, AlarmCategoryEnum.Spo2_Con, 6);
-        SensorModelEnum[] sensorModelEnums = new SensorModelEnum[8];
+        super(ModuleEnum.Spo2, AlarmCategoryEnum.Spo2_Range, 6);
         for (int index = 0; index < 8; index++) {
-            sensorModelEnums[index] = SensorModelEnum.values()[SensorModelEnum.Spo2.ordinal() + index];
+            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Spo2.ordinal() + index];
+            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVH.ordinal() + 2 * index];
+            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVL.ordinal() + 2 * index];
+            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
     }
 }
