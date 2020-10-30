@@ -32,61 +32,64 @@ public class AlarmRepository {
     }
 
     //触发下位机报警
-    public synchronized void produceAlarmFromAndroid(AlarmWordEnum alarmWordEnum, boolean status) {
-
-//        AlarmModel alarmModel = alarmMap.get(alarmWordEnum.toString());
-//        if (alarmModel != null) {
-//            produceAlarmFromAndroid(alarmModel, status);
-//        } else {
-//            LoggerUtil.se("Unknown alarm word: " + alarmWordEnum.getAlarmWord() + " " + status);
-//        }
+    public void setActiveInAndroid(AlarmWordEnum alarmWordEnum, boolean status) {
+        AlarmModel alarmModel = alarmMap.get(alarmWordEnum.toString());
+        if (alarmModel != null) {
+            setActiveInAndroid(alarmModel, status);
+        } else {
+            LoggerUtil.se("Unknown alarm word: " + alarmWordEnum.toString() + " " + status);
+        }
     }
 
-    public synchronized void produceAlarmFromAndroid(AlarmModel alarmModel, boolean status) {
-//        alarmModel.setActiveInAndroid(status);
-//        switch (alarmModel.getAlarmGroupEnum()) {
-//            case S:
-//                AlarmWordEnum spo2AlarmWordEnum = alarmModel.getAlarmWordEnum();
-//                if (spo2AlarmWordEnum != null) {
-//                    if (status) {
-//                        spo2BitAlarm.post(spo2BitAlarm.getValue() | spo2AlarmWordEnum.getCommandBit());
-//                    } else {
-//                        spo2BitAlarm.post(spo2BitAlarm.getValue() & (~spo2AlarmWordEnum.getCommandBit()));
-//                    }
-//                }
-//                break;
-//            case P:
-//                AlarmWordEnum printPrintWordEnum = alarmModel.getAlarmWordEnum();
-//                if (printPrintWordEnum != null) {
-//                    if (status) {
-//                        printBitAlarm.post(printBitAlarm.getValue() | printPrintWordEnum.getCommandBit());
-//                    } else {
-//                        printBitAlarm.post(printBitAlarm.getValue() & (~printPrintWordEnum.getCommandBit()));
-//                    }
-//                }
-//                break;
-//            case W:
-//                AlarmWordEnum wakeAlarmWordEnum = alarmModel.getAlarmWordEnum();
-//                if (wakeAlarmWordEnum != null) {
-//                    if (status) {
-//                        wakeBitAlarm.post(wakeBitAlarm.getValue() | wakeAlarmWordEnum.getCommandBit());
-//                    } else {
-//                        wakeBitAlarm.post(wakeBitAlarm.getValue() & (~wakeAlarmWordEnum.getCommandBit()));
-//                    }
-//                }
-//                break;
-//            case E:
-//                AlarmWordEnum ecgAlarmWordEnum = alarmModel.getAlarmWordEnum();
-//                if (ecgAlarmWordEnum != null) {
-//                    if (status) {
-//                        ecgBitAlarm.post(ecgBitAlarm.getValue() | ecgAlarmWordEnum.getCommandBit());
-//                    } else {
-//                        ecgBitAlarm.post(ecgBitAlarm.getValue() & (~ecgAlarmWordEnum.getCommandBit()));
-//                    }
-//                }
-//                break;
-//        }
+    public void setActiveInAndroid(AlarmModel alarmModel, boolean status) {
+        alarmModel.setActiveInAndroid(status);
     }
+
+//    public synchronized void produceAlarmFromAndroid(AlarmModel alarmModel, boolean status) {
+////        alarmModel.setActiveInAndroid(status);
+////        switch (alarmModel.getAlarmGroupEnum()) {
+////            case S:
+////                AlarmWordEnum spo2AlarmWordEnum = alarmModel.getAlarmWordEnum();
+////                if (spo2AlarmWordEnum != null) {
+////                    if (status) {
+////                        spo2BitAlarm.post(spo2BitAlarm.getValue() | spo2AlarmWordEnum.getCommandBit());
+////                    } else {
+////                        spo2BitAlarm.post(spo2BitAlarm.getValue() & (~spo2AlarmWordEnum.getCommandBit()));
+////                    }
+////                }
+////                break;
+////            case P:
+////                AlarmWordEnum printPrintWordEnum = alarmModel.getAlarmWordEnum();
+////                if (printPrintWordEnum != null) {
+////                    if (status) {
+////                        printBitAlarm.post(printBitAlarm.getValue() | printPrintWordEnum.getCommandBit());
+////                    } else {
+////                        printBitAlarm.post(printBitAlarm.getValue() & (~printPrintWordEnum.getCommandBit()));
+////                    }
+////                }
+////                break;
+////            case W:
+////                AlarmWordEnum wakeAlarmWordEnum = alarmModel.getAlarmWordEnum();
+////                if (wakeAlarmWordEnum != null) {
+////                    if (status) {
+////                        wakeBitAlarm.post(wakeBitAlarm.getValue() | wakeAlarmWordEnum.getCommandBit());
+////                    } else {
+////                        wakeBitAlarm.post(wakeBitAlarm.getValue() & (~wakeAlarmWordEnum.getCommandBit()));
+////                    }
+////                }
+////                break;
+////            case E:
+////                AlarmWordEnum ecgAlarmWordEnum = alarmModel.getAlarmWordEnum();
+////                if (ecgAlarmWordEnum != null) {
+////                    if (status) {
+////                        ecgBitAlarm.post(ecgBitAlarm.getValue() | ecgAlarmWordEnum.getCommandBit());
+////                    } else {
+////                        ecgBitAlarm.post(ecgBitAlarm.getValue() & (~ecgAlarmWordEnum.getCommandBit()));
+////                    }
+////                }
+////                break;
+////        }
+//    }
 
     public Map<String, AlarmModel> getAlarmMap() {
         return alarmMap;

@@ -3,6 +3,8 @@ package com.david.core.alarm;
 import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmPriorityEnum;
 
+import java.util.Objects;
+
 public class AlarmModel implements Comparable<AlarmModel> {
 
     private int alarmId;
@@ -133,5 +135,9 @@ public class AlarmModel implements Comparable<AlarmModel> {
 
     public void setBitOffset(int bitOffset) {
         this.bitOffset = bitOffset;
+    }
+
+    public boolean isRangAlarm() {
+        return Objects.equals(category, "HL");
     }
 }

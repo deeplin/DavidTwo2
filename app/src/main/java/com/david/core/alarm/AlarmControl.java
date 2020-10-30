@@ -202,21 +202,6 @@ public class AlarmControl implements ILifeCycle {
         return technicalAlarmList.size() > 0 || physiologicalAlarmList.size() > 0;
     }
 
-    //触发下位机报警
-    public void setAlarm(AlarmWordEnum alarmWordEnum, boolean status) {
-        AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum.toString());
-        if (alarmModel != null) {
-            setAlarm(alarmModel, status);
-        } else {
-            LoggerUtil.se("Unknown alarm word: " + alarmWordEnum.toString() + " " + status);
-        }
-    }
-
-    public void setAlarm(AlarmModel alarmModel, boolean status) {
-        alarmModel.setActiveInAndroid(status);
-    }
-
-
 //    private void setPassThroughAlarm() {
 //        //透传指令
 //        for (int index = 0; index < AlarmGroupEnum.values().length; index++) {

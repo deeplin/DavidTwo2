@@ -1,15 +1,17 @@
 package com.david.core.model;
 
+import com.david.core.alarm.AlarmRepository;
 import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmPassThroughEnum;
-import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
-import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
 
 import javax.inject.Inject;
 
 public class BaseSensorModel {
+
+    @Inject
+    AlarmRepository alarmRepository;
 
     private boolean alarmEnabled = true;
 

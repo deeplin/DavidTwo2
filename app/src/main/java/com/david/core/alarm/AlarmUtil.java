@@ -34,10 +34,8 @@ public class AlarmUtil {
             case I:
             case P:
             case W:
-                return true;
             case S:
-                //todo deeplin
-                return alarmModel.getCategory() == null;
+                return true;
             default:
                 return false;
         }
