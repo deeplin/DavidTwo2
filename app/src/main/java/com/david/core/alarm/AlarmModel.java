@@ -87,11 +87,11 @@ public class AlarmModel implements Comparable<AlarmModel> {
         this.alarmPriorityEnum = alarmPriorityEnum;
     }
 
-    public boolean isActiveInAndroid() {
+    public synchronized boolean isActiveInAndroid() {
         return activeInAndroid;
     }
 
-    public void setActiveInAndroid(boolean activeInAndroid) {
+    public synchronized void setActiveInAndroid(boolean activeInAndroid) {
         this.activeInAndroid = activeInAndroid;
     }
 

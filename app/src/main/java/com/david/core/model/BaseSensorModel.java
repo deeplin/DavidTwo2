@@ -11,16 +11,12 @@ import javax.inject.Inject;
 
 public class BaseSensorModel {
 
-    @Inject
-    IncubatorCommandSender incubatorCommandSender;
-
     private boolean alarmEnabled = true;
 
     private final LazyLiveData<Integer> systemAlarm = new LazyLiveData<>(0);
     private final LazyLiveData<Integer>[] passThroughAlarmArray;
 
     public BaseSensorModel(AlarmPassThroughEnum startAlarmPassThroughEnum, int passThroughAlarmNum) {
-        ContextUtil.getComponent().inject(this);
         passThroughAlarmArray = new LazyLiveData[passThroughAlarmNum];
         for (int index = 0; index < passThroughAlarmNum; index++) {
             final int currentIndex = startAlarmPassThroughEnum.ordinal() + index;
@@ -28,7 +24,7 @@ public class BaseSensorModel {
             passThroughAlarmArray[index].observeForever(integer -> {
                 AlarmPassThroughEnum alarmPassThroughEnum = AlarmPassThroughEnum.values()[currentIndex];
                 AlarmGroupEnum alarmGroupEnum = alarmPassThroughEnum.getAlarmGroupEnum();
-                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmPassThroughEnum.getCategory(), integer);
+//                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmPassThroughEnum.getCategory(), integer);
             });
         }
     }

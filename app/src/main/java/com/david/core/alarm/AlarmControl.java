@@ -5,7 +5,9 @@ import androidx.lifecycle.Observer;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.database.DaoControl;
 import com.david.core.database.entity.AlarmEntity;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.model.SensorModel;
+import com.david.core.model.Spo2Model;
 import com.david.core.serial.BaseCommand;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.serial.incubator.command.repeated.AlarmListCommand;
@@ -18,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -42,6 +43,8 @@ public class AlarmControl implements ILifeCycle {
     IncubatorCommandSender incubatorCommandSender;
     @Inject
     SensorModelRepository sensorModelRepository;
+    @Inject
+    Spo2Model spo2Model;
 
     public final LazyLiveData<Boolean> technicalUpdate = new LazyLiveData<>();
     public final LazyLiveData<Boolean> physiologicalUpdate = new LazyLiveData<>();
@@ -57,9 +60,6 @@ public class AlarmControl implements ILifeCycle {
         technicalChanged = false;
         physiologicalChanged = false;
         currentVersion = 1;
-
-//        setPassThroughAlarm();
-//        setSpo2RangeAlarms();
     }
 
     @Override
@@ -201,6 +201,21 @@ public class AlarmControl implements ILifeCycle {
     public boolean isAlarm() {
         return technicalAlarmList.size() > 0 || physiologicalAlarmList.size() > 0;
     }
+
+    //触发下位机报警
+    public void setAlarm(AlarmWordEnum alarmWordEnum, boolean status) {
+        AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum.toString());
+        if (alarmModel != null) {
+            setAlarm(alarmModel, status);
+        } else {
+            LoggerUtil.se("Unknown alarm word: " + alarmWordEnum.toString() + " " + status);
+        }
+    }
+
+    public void setAlarm(AlarmModel alarmModel, boolean status) {
+        alarmModel.setActiveInAndroid(status);
+    }
+
 
 //    private void setPassThroughAlarm() {
 //        //透传指令

@@ -27,10 +27,9 @@ public class AlarmRepository {
         loadAsset();
     }
 
-//    public synchronized void setAlarm(String alarmWord, boolean status) {
-//        AlarmModel alarmModel = alarmMap.get(alarmWord);
-//        alarmModel.setActiveInAndroid(status);
-//    }
+    public AlarmModel getAlarmModel(String alarmWord) {
+        return alarmMap.get(alarmWord);
+    }
 
     //触发下位机报警
     public synchronized void produceAlarmFromAndroid(AlarmWordEnum alarmWordEnum, boolean status) {
