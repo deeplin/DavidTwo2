@@ -1,6 +1,8 @@
 package com.david.core.model;
 
 import com.david.core.enumeration.AlarmCategoryEnum;
+import com.david.core.enumeration.ModuleEnum;
+import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.Spo2AverageTimeEnum;
 import com.david.core.enumeration.Spo2SensEnum;
 import com.david.core.util.LazyLiveData;
@@ -28,11 +30,10 @@ public class Spo2Model extends BaseSensorModel {
 
     @Inject
     public Spo2Model() {
-        super(AlarmCategoryEnum.Spo2_Con, 6);
-    }
-
-    @Override
-    protected int getRangeEnumId() {
-        return AlarmCategoryEnum.Spo2_Range.getIndex();
+        super(ModuleEnum.Spo2, AlarmCategoryEnum.Spo2_Con, 6);
+        SensorModelEnum[] sensorModelEnums = new SensorModelEnum[8];
+        for (int index = 0; index < 8; index++) {
+            sensorModelEnums[index] = SensorModelEnum.values()[SensorModelEnum.Spo2.ordinal() + index];
+        }
     }
 }

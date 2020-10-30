@@ -1,7 +1,10 @@
 package com.david.core.model;
 
+import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.AlarmCategoryEnum;
 import com.david.core.enumeration.AlarmGroupEnum;
+import com.david.core.enumeration.AlarmWordEnum;
+import com.david.core.enumeration.ModuleEnum;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
@@ -11,19 +14,23 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 
-public abstract class BaseSensorModel {
+public class BaseSensorModel {
 
     @Inject
     IncubatorCommandSender incubatorCommandSender;
+    @Inject
+    ModuleHardware moduleHardware;
 
     private boolean alarmEnabled = false;
 
+    private final ModuleEnum moduleEnum;
     private final LazyLiveData<Integer> systemAlarm = new LazyLiveData<>(0);
     private final LazyLiveData<Integer>[] passThroughAlarmArray;
     private final AlarmCategoryEnum rangeCategoryEnum;
 
-    public BaseSensorModel(AlarmCategoryEnum rangeCategoryEnum, int passThroughAlarmNum) {
+    public BaseSensorModel(ModuleEnum moduleEnum, AlarmCategoryEnum rangeCategoryEnum, int passThroughAlarmNum) {
         ContextUtil.getComponent().inject(this);
+        this.moduleEnum = moduleEnum;
         this.rangeCategoryEnum = rangeCategoryEnum;
         passThroughAlarmArray = new LazyLiveData[passThroughAlarmNum];
         for (int index = 0; index < passThroughAlarmNum; index++) {
@@ -63,9 +70,31 @@ public abstract class BaseSensorModel {
         }
     }
 
+    private void produceAlarm(SensorModel sensorModel, AlarmWordEnum upperAlarmEnum, AlarmWordEnum lowerAlarmEnum) {
+
+
+//        if (moduleHardware.isActive(moduleEnum)) {
+//            int data = sensorModel.textNumber.getValue();
+//            if (data > sensorModel.upperLimit.getValue()) {
+//
+//                upperAlarmEnum.toString()
+//
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+//            } else if (data < sensorModel.lowerLimit.getValue()) {
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, true);
+//            } else {
+//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+//            }
+//        } else {
+////            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
+////            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+//        }
+    }
+
     private void setRangeAlarm() {
 
     }
-
-    protected abstract int getRangeEnumId();
 }
