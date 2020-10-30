@@ -19,4 +19,6 @@ public interface CommonComponent {
     void inject(ModuleHardwareCommand moduleHardwareCommand);
 
     void inject(ParameterStrategy parameterStrategy);
+
+    void inject(BaseSensorModel baseSensorModel);
 }

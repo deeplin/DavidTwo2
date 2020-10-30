@@ -36,7 +36,7 @@ public class BaseSensorModel {
     }
 
     public void setAlarmEnabled() {
-        this.alarmEnabled = true;
+        alarmEnabled = true;
     }
 
     public void setAlarm(AlarmPassThroughEnum alarmPassThroughEnum, int value) {
