@@ -2,6 +2,8 @@ package com.david.core.model;
 
 import androidx.lifecycle.Observer;
 
+import com.david.core.alarm.AlarmModel;
+import com.david.core.alarm.AlarmRepository;
 import com.david.core.control.ModuleHardware;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.AlarmCategoryEnum;
@@ -26,6 +28,8 @@ public class BaseSensorModel {
     ModuleHardware moduleHardware;
     @Inject
     SensorModelRepository sensorModelRepository;
+    @Inject
+    AlarmRepository alarmRepository;
 
     private boolean alarmEnabled = false;
 
@@ -86,6 +90,7 @@ public class BaseSensorModel {
         if (moduleHardware.isActive(moduleEnum)) {
             int data = sensorModel.textNumber.getValue();
             if (data > sensorModel.upperLimit.getValue()) {
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
 //                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
 //                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
             } else if (data < sensorModel.lowerLimit.getValue()) {
@@ -99,5 +104,11 @@ public class BaseSensorModel {
 //            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
 //            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
         }
+    }
+
+    private void setBit(AlarmWordEnum alarmWordEnum, boolean value) {
+        AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum.toString());
+        int bitOffset = alarmModel.getBitOffset();
+        systemAlarm.post(BitUtil.setBit(systemAlarm.getValue(), bitOffset, value));
     }
 }
