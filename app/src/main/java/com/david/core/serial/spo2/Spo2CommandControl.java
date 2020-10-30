@@ -4,7 +4,7 @@ import android.util.ArrayMap;
 
 import com.david.core.alarm.AlarmRepository;
 import com.david.core.control.SensorModelRepository;
-import com.david.core.enumeration.AlarmPassThroughEnum;
+import com.david.core.enumeration.AlarmCategoryEnum;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.model.SensorModel;
 import com.david.core.model.Spo2Model;
@@ -92,7 +92,7 @@ public class Spo2CommandControl extends BaseSerialControl {
 
     @Override
     protected void setConnectionError(boolean status) {
-        spo2Model.setAlarm(AlarmPassThroughEnum.Spo2_Con, status ? 1 : 0);
+        spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Con, status ? 1 : 0);
         if (status) {
             errorOccur.notifyChange();
             if (!systemModel.demo.getValue()) {

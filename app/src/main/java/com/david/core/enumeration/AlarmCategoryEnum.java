@@ -1,24 +1,18 @@
 package com.david.core.enumeration;
 
-public enum AlarmPassThroughEnum {
-    Spo2_Con(0, AlarmGroupEnum.S, "SEN"),
-    Spo2_Sys(1, AlarmGroupEnum.S, "SYS"),
-    Spo2_Bf(2, AlarmGroupEnum.S, "BFC"),
-    Spo2_Df(3, AlarmGroupEnum.S, "DF"),
-
-    None;
+public enum AlarmCategoryEnum {
+    Spo2_Range(0, AlarmGroupEnum.S, "HL"),
+    Spo2_Con(1, AlarmGroupEnum.S, "SEN"),
+    Spo2_Sys(2, AlarmGroupEnum.S, "SYS"),
+    Spo2_Bfc(3, AlarmGroupEnum.S, "BFC"),
+    Spo2_Df(4, AlarmGroupEnum.S, "DF"),
+    Spo2_Sp(5, AlarmGroupEnum.S, "SP");
 
     private final int index;
     private final AlarmGroupEnum alarmGroupEnum;
     private final String category;
 
-    AlarmPassThroughEnum() {
-        index = -2;
-        alarmGroupEnum = null;
-        category = null;
-    }
-
-    AlarmPassThroughEnum(int index, AlarmGroupEnum alarmGroupEnum, String category) {
+    AlarmCategoryEnum(int index, AlarmGroupEnum alarmGroupEnum, String category) {
         this.index = index;
         this.alarmGroupEnum = alarmGroupEnum;
         this.category = category;

@@ -186,41 +186,6 @@ public class AlarmControl implements ILifeCycle {
         return technicalAlarmList.size() > 0 || physiologicalAlarmList.size() > 0;
     }
 
-//    private void setPassThroughAlarm() {
-//        //透传指令
-//        for (int index = 0; index < AlarmGroupEnum.values().length; index++) {
-//            sensorSystemAlarms.add(new LazyLiveData<>(false));
-//        }
-//
-//        for (int index = 0; index < AlarmCategoryEnum.values().length; index++) {
-//            final int currentIndex = index;
-//            LazyLiveData<Integer> lazyLiveData = new LazyLiveData<>(0);
-//            lazyLiveData.observeForever(integer -> {
-//                AlarmCategoryEnum alarmCategoryEnum = AlarmCategoryEnum.values()[currentIndex];
-//                AlarmGroupEnum alarmGroupEnum = alarmCategoryEnum.getAlarmGroupEnum();
-//
-//                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmCategoryEnum.getCategory(), integer);
-//
-//                boolean systemError = false;
-//                for (int id = 0; id < AlarmCategoryEnum.values().length; id++) {
-//                    AlarmCategoryEnum tempEnum = AlarmCategoryEnum.values()[id];
-//                    if (Objects.equals(alarmGroupEnum, tempEnum.getAlarmGroupEnum())) {
-//                        if (passThroughAlarms.get(tempEnum.ordinal()).getValue() > 0) {
-//                            systemError = true;
-//                            break;
-//                        }
-//                    }
-//                }
-//                sensorSystemAlarms.get(alarmGroupEnum.ordinal()).post(systemError);
-//            });
-//            passThroughAlarms.add(lazyLiveData);
-//        }
-//    }
-
-    private void setSpo2RangeAlarms() {
-
-    }
-
     private void setRangeAlarms(int sensorId, final SensorModel sensorModel, LazyLiveData<Integer> enableModule, LazyLiveData<Boolean> enableSpo2) {
         Observer<Integer> observer = new Observer<Integer>() {
             @Override
