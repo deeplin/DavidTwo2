@@ -1,8 +1,8 @@
 package com.david.core.model;
 
-import com.david.core.alarm.AlarmRepository;
 import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmPassThroughEnum;
+import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.LazyLiveData;
 
@@ -11,7 +11,7 @@ import javax.inject.Inject;
 public class BaseSensorModel {
 
     @Inject
-    AlarmRepository alarmRepository;
+    IncubatorCommandSender incubatorCommandSender;
 
     private boolean alarmEnabled = true;
 
@@ -26,7 +26,7 @@ public class BaseSensorModel {
             passThroughAlarmArray[index].observeForever(integer -> {
                 AlarmPassThroughEnum alarmPassThroughEnum = AlarmPassThroughEnum.values()[currentIndex];
                 AlarmGroupEnum alarmGroupEnum = alarmPassThroughEnum.getAlarmGroupEnum();
-//                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmPassThroughEnum.getCategory(), integer);
+                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(), alarmPassThroughEnum.getCategory(), integer);
             });
         }
     }

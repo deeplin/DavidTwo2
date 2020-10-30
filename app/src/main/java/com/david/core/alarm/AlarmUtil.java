@@ -28,16 +28,4 @@ public class AlarmUtil {
             return 120;
         }
     }
-
-    public static boolean isFromCabin(AlarmGroupEnum alarmGroupEnum, AlarmModel alarmModel) {
-        switch (alarmGroupEnum) {
-            case I:
-            case P:
-            case W:
-            case S:
-                return true;
-            default:
-                return false;
-        }
-    }
 }

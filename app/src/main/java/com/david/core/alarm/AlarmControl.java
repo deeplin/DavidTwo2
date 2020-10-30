@@ -5,7 +5,6 @@ import androidx.lifecycle.Observer;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.database.DaoControl;
 import com.david.core.database.entity.AlarmEntity;
-import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.model.SensorModel;
 import com.david.core.model.Spo2Model;
 import com.david.core.serial.BaseCommand;
@@ -92,16 +91,7 @@ public class AlarmControl implements ILifeCycle {
                     LoggerUtil.se("Unsupported alarm: " + alarmWord);
                     continue;
                 }
-                if (alarmModel.isFromCabin()) {
-                    reportAlarm(alarmModel);
-                } else if (alarmModel.isActiveInAndroid()) {
-                    reportAlarm(alarmModel);
-                } else {
-                    //通知下位机 停止报警，ID为 alarmModel.alarmWord
-                    alarmModel.setActiveInAndroid(true);
-                    //todo deeplin
-//                    alarmRepository.produceAlarmFromAndroid(alarmModel, false);
-                }
+                reportAlarm(alarmModel);
             }
         }
         checkAlarmInMap();
@@ -140,12 +130,6 @@ public class AlarmControl implements ILifeCycle {
                 } else {
                     physiologicalChanged = true;
                 }
-            }
-
-            if ((!alarmModel.isFromCabin()) && alarmModel.isActiveInAndroid() && (alarmModel.getVersion() != currentVersion)) {
-                //通知下位机 新增加报警，ID为 alarmModel.alarmWord
-                //todo deeplin
-//                alarmRepository.produceAlarmFromAndroid(alarmModel, true);
             }
         }
     }

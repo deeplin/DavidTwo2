@@ -3,17 +3,13 @@ package com.david.core.alarm;
 import com.david.core.enumeration.AlarmGroupEnum;
 import com.david.core.enumeration.AlarmPriorityEnum;
 
-import java.util.Objects;
-
 public class AlarmModel implements Comparable<AlarmModel> {
 
     private int alarmId;
     private String alarmWord;
     private AlarmGroupEnum alarmGroupEnum;
-    private boolean fromCabin;
     private boolean technicalMode;
     private AlarmPriorityEnum alarmPriorityEnum;
-    private boolean activeInAndroid;
     private int alarmLastingTime;
     private long version;
     private long startTime;
@@ -65,14 +61,6 @@ public class AlarmModel implements Comparable<AlarmModel> {
         this.alarmGroupEnum = alarmGroupEnum;
     }
 
-    public boolean isFromCabin() {
-        return fromCabin;
-    }
-
-    public void setFromCabin(boolean fromCabin) {
-        this.fromCabin = fromCabin;
-    }
-
     public boolean isTechnicalMode() {
         return technicalMode;
     }
@@ -87,14 +75,6 @@ public class AlarmModel implements Comparable<AlarmModel> {
 
     public void setAlarmPriorityEnum(AlarmPriorityEnum alarmPriorityEnum) {
         this.alarmPriorityEnum = alarmPriorityEnum;
-    }
-
-    public synchronized boolean isActiveInAndroid() {
-        return activeInAndroid;
-    }
-
-    public synchronized void setActiveInAndroid(boolean activeInAndroid) {
-        this.activeInAndroid = activeInAndroid;
     }
 
     public int getAlarmLastingTime() {
@@ -135,9 +115,5 @@ public class AlarmModel implements Comparable<AlarmModel> {
 
     public void setBitOffset(int bitOffset) {
         this.bitOffset = bitOffset;
-    }
-
-    public boolean isRangAlarm() {
-        return Objects.equals(category, "HL");
     }
 }
