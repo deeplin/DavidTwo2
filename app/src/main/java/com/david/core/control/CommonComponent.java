@@ -5,8 +5,10 @@ import com.david.core.serial.incubator.IncubatorCommandControl;
 import com.david.core.serial.incubator.command.module.ModuleHardwareCommand;
 import com.david.core.serial.spo2.strategy.ParameterStrategy;
 import com.david.core.ui.component.NumberPopupView;
+import com.david.core.ui.component.TitleView;
 import com.david.core.ui.curve.EcgSurfaceView;
 import com.david.core.ui.curve.Spo2SurfaceView;
+import com.david.core.ui.layout.PopupLayout;
 
 import javax.inject.Singleton;
 
@@ -30,4 +32,8 @@ public interface CommonComponent {
     void inject(Spo2SurfaceView spo2SurfaceView);
 
     void inject(NumberPopupView numberPopupView);
+
+    void inject(PopupLayout popupLayout);
+
+    void inject(TitleView titleView);
 }

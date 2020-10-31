@@ -5,6 +5,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
@@ -13,6 +16,26 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 
 public class ViewUtil {
+
+    private static ConstraintSet constraintSet = new ConstraintSet();
+
+    public static void addInnerView(ConstraintLayout rootView, View view, int width, int height, int start, int top, int end, int bottom) {
+        rootView.addView(view, width, height);
+        constraintSet.clone(rootView);
+        if (start >= 0) {
+            constraintSet.connect(view.getId(), ConstraintSet.START, rootView.getId(), ConstraintSet.START, start);
+        }
+        if (top >= 0) {
+            constraintSet.connect(view.getId(), ConstraintSet.TOP, rootView.getId(), ConstraintSet.TOP, top);
+        }
+        if (end >= 0) {
+            constraintSet.connect(view.getId(), ConstraintSet.END, rootView.getId(), ConstraintSet.END, end);
+        }
+        if (bottom >= 0) {
+            constraintSet.connect(view.getId(), ConstraintSet.BOTTOM, rootView.getId(), ConstraintSet.BOTTOM, bottom);
+        }
+        constraintSet.applyTo(rootView);
+    }
 
     public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, IDisableView titleSetView, boolean isPink) {
         int backgroundColor;
