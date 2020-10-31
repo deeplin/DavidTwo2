@@ -1,10 +1,12 @@
 package com.david.incubator.control;
 
 import com.david.core.control.CommonComponent;
+import com.david.core.ui.curve.Co2SurfaceView;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
 import com.david.incubator.ui.home.basic.StandardSpo2BasicLayout;
+import com.david.incubator.ui.home.bodywave.BodyWaveLayout;
 import com.david.incubator.ui.home.common.Co2RrTinyView;
 import com.david.incubator.ui.home.common.Co2RrView;
 import com.david.incubator.ui.home.common.HrPrView;
@@ -13,13 +15,13 @@ import com.david.incubator.ui.home.common.MonitorLayout;
 import com.david.incubator.ui.home.common.NibpTinyView;
 import com.david.incubator.ui.home.common.NibpView;
 import com.david.incubator.ui.home.common.Spo2ListView;
+import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.common.TimingSmallLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout;
 import com.david.incubator.ui.home.standard.middle.MiddleLeftLayout;
 import com.david.incubator.ui.home.standard.middle.MiddleRightLayout;
 import com.david.incubator.ui.home.standard.top.HomeSetView;
-import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
@@ -79,4 +81,8 @@ public interface MainComponent extends CommonComponent {
     void inject(NibpTinyView nibpTinyView);
 
     void inject(WeightCurveLayout weightCurveLayout);
+
+    void inject(Co2SurfaceView co2SurfaceView);
+
+    void inject(BodyWaveLayout bodyWaveLayout);
 }

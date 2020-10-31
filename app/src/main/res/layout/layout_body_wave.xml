@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginBottom="@dimen/f8"
+            android:background="@drawable/spo2_wave_background"
+            app:layout_constraintBottom_toTopOf="@id/incubatorLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView0"
+            android:layout_width="750dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView1"
+            android:layout_width="750dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.curve.Spo2SurfaceView
+            android:id="@+id/spo2SurfaceView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginTop="240dp"
+            app:layout_constraintBottom_toTopOf="@id/co2SurfaceView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Pleth"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/spo2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/spo2SurfaceView" />
+
+        <TextView
+            android:id="@+id/spo2Gain"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/spo2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/spo2SurfaceView" />
+
+        <TextView
+            android:id="@+id/spo2Speed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/spo2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/spo2SurfaceView" />
+
+        <com.david.core.ui.curve.Co2SurfaceView
+            android:id="@+id/co2SurfaceView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2SurfaceView" />
+
+        <TextView
+            android:id="@+id/co2Title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/co2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/co2SurfaceView" />
+
+        <TextView
+            android:id="@+id/co2Gain"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/co2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/co2SurfaceView" />
+
+        <TextView
+            android:id="@+id/co2Speed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/co2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/co2SurfaceView" />
+
+        <TextView
+            android:id="@+id/co2RangeUpperView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintEnd_toEndOf="@id/co2SurfaceView"
+            app:layout_constraintTop_toTopOf="@id/co2SurfaceView" />
+
+        <TextView
+            android:id="@+id/co2RangeLowerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/f8"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toBottomOf="@id/co2SurfaceView"
+            app:layout_constraintEnd_toEndOf="@id/co2SurfaceView" />
+
+        <com.david.incubator.ui.home.common.MonitorLayout
+            android:id="@+id/monitorListView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--第三行-->
+        <com.david.incubator.ui.home.common.IncubatorLayout
+            android:id="@+id/incubatorLayout"
+            android:layout_width="750dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
