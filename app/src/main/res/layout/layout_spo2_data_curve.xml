@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.david.incubator.ui.home.spo2.Spo2DataCurveLayout" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.incubator.ui.home.spo2.Spo2DataCurveView
+            android:id="@+id/spo2DataWaveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/firstUpperLimit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4px"
+            android:text="@{viewModel.firstUpperLimit}"
+            android:textColor="@{viewModel.firstColor}"
+            android:textSize="@dimen/f16" />
+
+        <TextView
+            android:id="@+id/firstLowerLimit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4px"
+            android:text="@{viewModel.firstLowerLimit}"
+            android:textColor="@{viewModel.firstColor}"
+            android:textSize="@dimen/f16" />
+
+        <TextView
+            android:id="@+id/secondUpperLimit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8px"
+            android:text="@{viewModel.secondUpperLimit}"
+            android:textColor="@{viewModel.secondColor}"
+            android:textSize="@dimen/f16" />
+
+        <TextView
+            android:id="@+id/secondLowerLimit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8px"
+            android:text="@{viewModel.secondLowerLimit}"
+            android:textColor="@{viewModel.secondColor}"
+            android:textSize="@dimen/f16" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

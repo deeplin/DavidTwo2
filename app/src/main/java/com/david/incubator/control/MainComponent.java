@@ -18,6 +18,8 @@ import com.david.incubator.ui.home.common.Spo2ListView;
 import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.common.TimingSmallLayout;
 import com.david.incubator.ui.home.samescreen.SameScreenLayout;
+import com.david.incubator.ui.home.spo2.Spo2Layout;
+import com.david.incubator.ui.home.spo2.Spo2ListLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout;
 import com.david.incubator.ui.home.standard.middle.MiddleLeftLayout;
@@ -88,4 +90,8 @@ public interface MainComponent extends CommonComponent {
     void inject(BodyWaveLayout bodyWaveLayout);
 
     void inject(SameScreenLayout sameScreenLayout);
+
+    void inject(Spo2ListLayout spo2ListLayout);
+
+    void inject(Spo2Layout spo2Layout);
 }

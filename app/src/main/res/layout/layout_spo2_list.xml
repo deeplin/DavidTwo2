@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background0"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/background1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/background0"
+            app:layout_constraintEnd_toStartOf="@id/spo2View0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/background0" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/background0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spo2View"
+            app:layout_constraintTop_toTopOf="@id/background0" />
+
+        <ImageView
+            android:id="@+id/background1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/background2"
+            app:layout_constraintTop_toBottomOf="@id/background0" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/background1"
+            app:layout_constraintEnd_toStartOf="@id/spo2View3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/background1" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/background1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spo2View1"
+            app:layout_constraintTop_toTopOf="@id/background1" />
+
+        <ImageView
+            android:id="@+id/background2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/f8"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/background3"
+            app:layout_constraintTop_toBottomOf="@id/background1" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/background2"
+            app:layout_constraintEnd_toStartOf="@id/spo2View4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/background2" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/background2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spo2View2"
+            app:layout_constraintTop_toTopOf="@id/background2" />
+
+        <ImageView
+            android:id="@+id/background3"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/piView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/background3"
+            app:layout_constraintEnd_toStartOf="@id/spo2View5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/background3" />
+
+        <com.david.core.ui.view.SensorRangeView
+            android:id="@+id/spo2View5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/background3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/piView"
+            app:layout_constraintTop_toTopOf="@id/background3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

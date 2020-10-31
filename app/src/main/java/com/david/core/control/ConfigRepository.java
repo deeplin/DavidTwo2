@@ -9,6 +9,7 @@ import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.model.SensorModel;
+import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.IntervalUtil;
@@ -233,5 +234,16 @@ public class ConfigRepository implements ILifeCycle, Consumer<Long> {
 
     public LazyLiveData<Integer> getConfig(ConfigEnum configEnum) {
         return configList.get(configEnum.ordinal());
+    }
+
+    public List<Integer> getActiveSpo2Module() {
+        List<Integer> activeSpo2Module = new ArrayList<>();
+        int spo2ModuleConfig = getConfig(ConfigEnum.Spo2ModuleConfig).getValue();
+        for (int index = 0; index < 5; index++) {
+            if (BitUtil.getBit(spo2ModuleConfig, index)) {
+                activeSpo2Module.add(index);
+            }
+        }
+        return activeSpo2Module;
     }
 }

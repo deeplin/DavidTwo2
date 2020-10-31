@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--第一行-->
+        <com.david.core.ui.curve.Spo2SurfaceView
+            android:id="@+id/spo2SurfaceView"
+            android:layout_width="1000dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f32"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toStartOf="@id/spo2SurfaceView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/f32"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toEndOf="@id/gain"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--第二行-->
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f12"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/incubatorLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2SurfaceView" />
+
+        <com.david.incubator.ui.home.spo2.Spo2DataCurveLayout
+            android:id="@+id/spo2DataWaveView0"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f12"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/spo2DataWaveView1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2SurfaceView" />
+
+        <com.david.incubator.ui.home.spo2.Spo2DataCurveLayout
+            android:id="@+id/spo2DataWaveView1"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f12"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/spo2DataWaveView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2DataWaveView0" />
+
+        <com.david.incubator.ui.home.spo2.Spo2DataCurveLayout
+            android:id="@+id/spo2DataWaveView2"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f12"
+            android:layout_marginBottom="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/incubatorLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2DataWaveView1" />
+
+        <com.david.incubator.ui.home.spo2.Spo2ListLayout
+            android:id="@+id/spo2ListLayout"
+            android:layout_width="242dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/f8"
+            android:layout_marginEnd="@dimen/f12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spo2SurfaceView" />
+
+        <!--第三行-->
+        <com.david.incubator.ui.home.common.IncubatorLayout
+            android:id="@+id/incubatorLayout"
+            android:layout_width="750dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/f12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
