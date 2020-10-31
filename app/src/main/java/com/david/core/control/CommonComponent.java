@@ -27,4 +27,6 @@ public interface CommonComponent {
     void inject(EcgSurfaceView ecgSurfaceView);
 
     void inject(Spo2SurfaceView spo2SurfaceView);
+
+    void inject(NumberPopupView numberPopupView);
 }
