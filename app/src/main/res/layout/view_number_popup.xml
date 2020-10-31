@@ -35,11 +35,11 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/f48"
+            android:layout_height="48dp"
             android:layout_margin="@dimen/f8"
-            android:background="@drawable/layout_background"
+            android:background="@drawable/button_background"
             android:textAllCaps="false"
-            android:textColor="@color/st_machine_heavy"
+            android:textColor="@color/text_blue"
             android:textSize="@dimen/f20"
             app:layout_constraintBottom_toTopOf="@id/bottomDecreaseButton"
             app:layout_constraintTop_toBottomOf="@id/topDecreaseButton" />
