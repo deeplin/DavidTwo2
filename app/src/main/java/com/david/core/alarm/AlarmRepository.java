@@ -92,11 +92,7 @@ public class AlarmRepository {
                 if (alarmItems.length > 4) {
                     String alarmCategory = alarmItems[4];
                     alarmModel.setCategory(alarmCategory);
-                    try {
-                        alarmModel.setBitOffset(Integer.parseInt(alarmItems[5]));
-                    } catch (Exception e) {
-                        LoggerUtil.e(e);
-                    }
+                    alarmModel.setBitOffset(Integer.parseInt(alarmItems[5]));
                 }
 
                 alarmModel.setAlarmLastingTime(AlarmUtil.getAlarmLastingTime(alarmGroupEnum, alarmWord));
