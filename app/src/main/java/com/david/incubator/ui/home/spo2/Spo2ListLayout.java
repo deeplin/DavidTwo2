@@ -38,7 +38,10 @@ public class Spo2ListLayout extends BindingBasicLayout<LayoutSpo2ListBinding> {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
         binding.spo2View.setUniqueColor();
+        binding.spo2View.setSpo2SmallLayout();
         binding.piView.setUniqueColor();
+        binding.piView.setSpo2SmallLayout();
+        binding.spo2View0.setSpo2SmallLayout();
 
         sensorRangeSmallViews = new SensorRangeView[5];
         sensorRangeSmallViews[0] = binding.spo2View1;
@@ -48,6 +51,7 @@ public class Spo2ListLayout extends BindingBasicLayout<LayoutSpo2ListBinding> {
         sensorRangeSmallViews[4] = binding.spo2View5;
         for (int index = 0; index < 5; index++) {
             sensorRangeSmallViews[index].setUniqueColor();
+            sensorRangeSmallViews[index].setSpo2SmallLayout();
         }
 
         SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
