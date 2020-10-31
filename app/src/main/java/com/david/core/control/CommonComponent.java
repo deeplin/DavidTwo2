@@ -4,6 +4,8 @@ import com.david.core.model.BaseSensorModel;
 import com.david.core.serial.incubator.IncubatorCommandControl;
 import com.david.core.serial.incubator.command.module.ModuleHardwareCommand;
 import com.david.core.serial.spo2.strategy.ParameterStrategy;
+import com.david.core.ui.curve.EcgSurfaceView;
+import com.david.core.ui.curve.Spo2SurfaceView;
 
 import javax.inject.Singleton;
 
@@ -21,4 +23,8 @@ public interface CommonComponent {
     void inject(ParameterStrategy parameterStrategy);
 
     void inject(BaseSensorModel baseSensorModel);
+
+    void inject(EcgSurfaceView ecgSurfaceView);
+
+    void inject(Spo2SurfaceView spo2SurfaceView);
 }
