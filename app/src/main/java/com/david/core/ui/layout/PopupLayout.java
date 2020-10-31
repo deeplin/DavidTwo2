@@ -2,6 +2,7 @@ package com.david.core.ui.layout;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.arch.core.util.Function;
@@ -15,9 +16,9 @@ import com.david.core.enumeration.BindingLayoutEnum;
 import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.KeyButtonEnum;
 import com.david.core.enumeration.LayoutPageEnum;
-import com.david.core.model.SystemModel;
 import com.david.core.ui.component.KeyButtonView;
 import com.david.core.ui.component.NumberPopupView;
+import com.david.core.ui.component.OptionPopupView;
 import com.david.core.ui.component.TitleView;
 import com.david.core.ui.model.IntegerPopupModel;
 import com.david.core.ui.model.LiveDataPopupModel;
@@ -36,8 +37,6 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
     @Inject
     ComponentControl componentControl;
     @Inject
-    SystemModel systemModel;
-    @Inject
     ConfigRepository configRepository;
 
     protected final NumberPopupView numberPopupView;
@@ -47,6 +46,10 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
 
     private final List<IntegerPopupModel> integerPopupModelList = new ArrayList<>();
 
+    private final OptionPopupView optionPopupView;
+    protected KeyButtonView[] keyButtonViews;
+    private ConfigEnum[] configEnums;
+
     private int topMargin = 0;
     protected int titleId;
 
@@ -55,9 +58,12 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
         this.layoutPageEnum = layoutPageEnum;
         ContextUtil.getComponent().inject(this);
         numberPopupView = componentControl.getNumberPopupView();
+        optionPopupView = componentControl.getOptionPopupView();
+
+        init(getBindingLayoutEnum());
     }
 
-    protected void init(BindingLayoutEnum bindingLayoutEnum) {
+    private void init(BindingLayoutEnum bindingLayoutEnum) {
         this.bindingLayoutEnum = bindingLayoutEnum;
         if (bindingLayoutEnum.isTitle()) {
             TitleView titleView = new TitleView(getContext(), null);
@@ -83,6 +89,9 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
         getRoot().addView(numberPopupView, bindingLayoutEnum.getPopupWidth(), bindingLayoutEnum.getPopupHeight());
         closePopup();
 
+        getRoot().addView(optionPopupView, bindingLayoutEnum.getPopupWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+        optionPopupView.close();
+
         for (IntegerPopupModel integerPopupModel : integerPopupModelList) {
             if (integerPopupModel instanceof LiveDataPopupModel) {
                 ((LiveDataPopupModel) integerPopupModel).setOriginValue();
@@ -95,10 +104,15 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
     @Override
     public void detach() {
         closePopup();
+        getRoot().removeView(optionPopupView);
         getRoot().removeView(numberPopupView);
     }
 
-    protected abstract ConstraintLayout getRoot();
+    protected ConstraintLayout getRoot() {
+        return this;
+    }
+
+    protected abstract BindingLayoutEnum getBindingLayoutEnum();
 
     private void addInnerView(View view, int width, int height, int start, int top, int end, int bottom) {
         ViewUtil.addInnerView(getRoot(), view, width, height, start, top, end, bottom);
@@ -131,6 +145,7 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
         }
     }
 
+    /*NumberPopupView*/
     protected void loadLiveDataItems(KeyButtonEnum startEnum, int itemNum, Function<KeyButtonEnum, Integer> lowerCondition,
                                      Function<KeyButtonEnum, Integer> upperCondition) {
         for (int index = 0; index < itemNum; index++) {
@@ -196,6 +211,78 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
     }
 
     protected void closePopup() {
+        optionPopupView.close();
         numberPopupView.close();
+    }
+
+    /*KeyButton*/
+    protected void initPopup(int rowSum) {
+        configEnums = new ConfigEnum[rowSum];
+        keyButtonViews = new KeyButtonView[rowSum];
+        for (int index = 0; index < rowSum; index++) {
+            keyButtonViews[index] = ViewUtil.buildKeyButtonView(getContext());
+        }
+    }
+
+    protected void setRowId(int index, int rowId) {
+        KeyButtonView keyButtonView = keyButtonViews[index];
+        keyButtonView.setVisibility(View.VISIBLE);
+        addInnerView(rowId, keyButtonView);
+    }
+
+    protected void setConfig(int index, ConfigEnum configEnum) {
+        configEnums[index] = configEnum;
+    }
+
+    protected void setText(int index, int textId, Object[] valueArray) {
+        KeyButtonView keyButtonView = keyButtonViews[index];
+        keyButtonView.setSelected(false);
+        keyButtonView.setKeyId(textId);
+        keyButtonView.setValue(valueArray[configRepository.getConfig(configEnums[index]).getValue()].toString());
+    }
+
+    /*OptionPopupView*/
+
+    protected void setPopup(final int index, Object[] valueArray, ConfigEnum[] existingValue,
+                            boolean downward, Consumer<Integer> callback) {
+        setPopup(index, index, valueArray, existingValue, downward, callback);
+    }
+
+    protected void setPopup(final int index, final int dropDownViewId, final Object[] valueArray,
+                            final ConfigEnum[] existingValue, final boolean downward, final Consumer<Integer> callback) {
+        final KeyButtonView keyButtonView = keyButtonViews[index];
+        keyButtonView.getValue().setOnClickListener(v -> {
+            optionPopupView.init();
+
+            for (int i = 0; i < valueArray.length; i++) {
+                boolean match = false;
+                if (existingValue != null) {
+                    for (int j = 0; j < existingValue.length; j++) {
+                        if (i != acceptId() && configRepository.getConfig(existingValue[j]).getValue().intValue() == i) {
+                            match = true;
+                        }
+                    }
+                }
+                if (!match && valueArray[i] != null) {
+                    optionPopupView.setOption(i, valueArray[i].toString());
+                }
+            }
+
+            optionPopupView.setSelectedId(configRepository.getConfig(configEnums[index]).getValue());
+            optionPopupView.setCallback(integer -> {
+                if (integer.intValue() != configRepository.getConfig(configEnums[index]).getValue().intValue()) {
+                    configRepository.getConfig(configEnums[index]).set(integer);
+                    keyButtonView.setValue(valueArray[integer].toString());
+                    keyButtonView.setSelected(true);
+                    if (callback != null)
+                        callback.accept(integer);
+                }
+            });
+            optionPopupView.show(getRoot(), keyButtonViews[dropDownViewId].getId(), downward);
+        });
+    }
+
+    protected int acceptId() {
+        return Integer.MIN_VALUE;
     }
 }

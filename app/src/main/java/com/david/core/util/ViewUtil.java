@@ -1,5 +1,6 @@
 package com.david.core.util;
 
+import android.content.Context;
 import android.graphics.Paint;
 import android.view.Gravity;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
+import com.david.core.ui.component.KeyButtonView;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -35,6 +37,12 @@ public class ViewUtil {
             constraintSet.connect(view.getId(), ConstraintSet.BOTTOM, rootView.getId(), ConstraintSet.BOTTOM, bottom);
         }
         constraintSet.applyTo(rootView);
+    }
+
+    public static KeyButtonView buildKeyButtonView(Context context) {
+        KeyButtonView keyButtonView = new KeyButtonView(context);
+        keyButtonView.setId(View.generateViewId());
+        return keyButtonView;
     }
 
     public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, IDisableView titleSetView, boolean isPink) {
