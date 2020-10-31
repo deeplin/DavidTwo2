@@ -173,11 +173,11 @@ public class BodyWaveLayout extends BindingBasicLayout<LayoutBodyWaveBinding> {
             binding.co2SurfaceView.setVisibility(View.GONE);
         }
 
-//        if (systemModel.darkMode.getValue()) {
-//            binding.backgroundView.setBackgroundResource(R.drawable.sensor_background_dark);
-//        } else {
-//            binding.backgroundView.setBackgroundResource(R.drawable.sensor_background);
-//        }
+        if (systemModel.darkMode.getValue()) {
+            binding.backgroundView.setBackgroundResource(R.drawable.background_panel_dark);
+        } else {
+            binding.backgroundView.setBackgroundResource(R.drawable.background_panel_white);
+        }
     }
 
     @Override
