@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--1024*572-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundView"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            android:layout_marginBottom="@dimen/f8"
+            android:background="@drawable/spo2_wave_background"
+            app:layout_constraintBottom_toTopOf="@id/incubatorLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView0"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView1"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView0" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView2"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView1" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView3"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView2" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView4"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView3" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView5"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toTopOf="@id/ecgView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView4" />
+
+        <com.david.incubator.ui.home.bodywave.EcgWaveView
+            android:id="@+id/ecgView6"
+            android:layout_width="750dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ecgView5" />
+
+        <com.david.incubator.ui.home.common.MonitorLayout
+            android:id="@+id/monitorListView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--第三行-->
+        <com.david.incubator.ui.home.common.IncubatorLayout
+            android:id="@+id/incubatorLayout"
+            android:layout_width="750dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

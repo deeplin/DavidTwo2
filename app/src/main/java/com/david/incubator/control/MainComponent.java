@@ -17,6 +17,7 @@ import com.david.incubator.ui.home.common.NibpView;
 import com.david.incubator.ui.home.common.Spo2ListView;
 import com.david.incubator.ui.home.common.TimingLayout;
 import com.david.incubator.ui.home.common.TimingSmallLayout;
+import com.david.incubator.ui.home.samescreen.SameScreenLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.standard.bottom.StandardSpo2Layout;
 import com.david.incubator.ui.home.standard.middle.MiddleLeftLayout;
@@ -85,4 +86,6 @@ public interface MainComponent extends CommonComponent {
     void inject(Co2SurfaceView co2SurfaceView);
 
     void inject(BodyWaveLayout bodyWaveLayout);
+
+    void inject(SameScreenLayout sameScreenLayout);
 }

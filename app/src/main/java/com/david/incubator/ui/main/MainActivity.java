@@ -28,6 +28,7 @@ import com.david.databinding.ActivityMainBinding;
 import com.david.incubator.control.MainApplication;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.bodywave.BodyWaveLayout;
+import com.david.incubator.ui.home.samescreen.SameScreenLayout;
 import com.david.incubator.ui.home.standard.StandardLayout;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
@@ -201,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
         views[LayoutPageEnum.LAYOUT_TEMP_CURVE.ordinal()] = new TempCurveLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_WEIGHT_CURVE.ordinal()] = new WeightCurveLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_BODY_WAVE.ordinal()] = new BodyWaveLayout(applicationContext);
-//        views[LayoutPageEnum.LAYOUT_SAME_SCREEN.ordinal()] = new SameScreenLayout(applicationContext);
+        views[LayoutPageEnum.LAYOUT_SAME_SCREEN.ordinal()] = new SameScreenLayout(applicationContext);
 //        views[LayoutPageEnum.LAYOUT_SPO2.ordinal()] = new Spo2Layout(applicationContext);
 //        views[LayoutPageEnum.LAYOUT_CAMERA.ordinal()] = new CameraLayout(applicationContext);
 
