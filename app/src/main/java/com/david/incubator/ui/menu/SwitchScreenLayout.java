@@ -88,7 +88,7 @@ public class SwitchScreenLayout extends BaseLayout {
         }
 
         if (moduleHardware.isInstalled(ModuleEnum.Camera)) {
-            setRow(rowId, R.string.camera, LayoutPageEnum.LAYOUT_CAMERA);
+            setRow(rowId++, R.string.camera, LayoutPageEnum.LAYOUT_CAMERA);
         }
 
         for (int index = rowId; index < buttonArray.length; index++) {

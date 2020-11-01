@@ -120,22 +120,6 @@ public class ModuleHardwareCommand extends BaseIncubatorCommand {
                 moduleHardware.post(ModuleEnum.Mute, MUTE);
                 moduleHardware.post(ModuleEnum.Angle, ANGLE);
 
-                moduleHardware.post(ModuleEnum.Hum, 2);
-                moduleHardware.post(ModuleEnum.Oxygen, 2);
-                moduleHardware.post(ModuleEnum.Spo2, 2);
-                moduleHardware.post(ModuleEnum.Weight, 2);
-                moduleHardware.post(ModuleEnum.Ecg, 2);
-                moduleHardware.post(ModuleEnum.Nibp, 2);
-                moduleHardware.post(ModuleEnum.Co2, 2);
-                moduleHardware.post(ModuleEnum.Wake, 2);
-                moduleHardware.post(ModuleEnum.Mat, 2);
-
-                moduleHardware.post(ModuleEnum.Ambient, 2);
-                moduleHardware.post(ModuleEnum.Camera, 2);
-                moduleHardware.post(ModuleEnum.Blue, 2);
-                moduleHardware.post(ModuleEnum.Mute, 2);
-                moduleHardware.post(ModuleEnum.Angle, 2);
-
                 moduleHardware.setDeviceModel(MODEL);
                 systemModel.systemInitState.post(1);
             }
