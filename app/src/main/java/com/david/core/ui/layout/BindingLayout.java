@@ -22,6 +22,7 @@ public abstract class BindingLayout<U extends ViewDataBinding> extends BaseLayou
     protected void init(LayoutPageEnum layoutPageEnum) {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         binding = DataBindingUtil.inflate(inflater, layoutPageEnum.getLayoutId(), this, true);
+        super.init(layoutPageEnum);
     }
 
     @Override
