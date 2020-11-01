@@ -52,8 +52,7 @@
             android:src="@mipmap/decrease"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/bottomIncreaseButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintWidth_percent="1" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/bottomIncreaseButton"
@@ -63,8 +62,7 @@
             android:src="@mipmap/increase"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/bottomDecreaseButton"
-            app:layout_constraintWidth_percent="1" />
+            app:layout_constraintStart_toEndOf="@id/bottomDecreaseButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
