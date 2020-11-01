@@ -25,9 +25,9 @@ public enum LayoutPageEnum {
     MENU_COMFORT_ZONE(R.string.comfort_zone, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     MENU_SENSOR_CALIBRATION(R.string.sensor_calibration, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     MENU_CONFIRM_SENSOR_CALIBRATION(R.layout.layout_confirm, R.string.confirm, null, false, BindingLayoutEnum.Standard),
-    //    MENU_VERSION(R.string.version, LayoutPageEnum.MENU_HOME, true, true),
-//    MENU_FUNCTION_SETUP(R.string.function_setup, LayoutPageEnum.MENU_HOME, true, true),
-//    MENU_PARAMETER_SETUP(R.string.parameter_setup, LayoutPageEnum.MENU_HOME, true, true),
+    MENU_VERSION(R.string.version, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
+    MENU_FUNCTION_SETUP(R.string.function_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
+    //    MENU_PARAMETER_SETUP(R.string.parameter_setup, LayoutPageEnum.MENU_HOME, true, true),
     MENU_PRINT_SETUP(R.string.print_setup, LayoutPageEnum.MENU_HOME, true, null),
     //
     SWITCH_SCREEN(R.string.screen_choice, null, true, BindingLayoutEnum.Standard),

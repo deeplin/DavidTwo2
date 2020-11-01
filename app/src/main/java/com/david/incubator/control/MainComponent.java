@@ -30,7 +30,9 @@ import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.main.PopupLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
+import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
+import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
@@ -112,4 +114,8 @@ public interface MainComponent extends CommonComponent {
     void inject(MenuSensorCalibrationLayout menuSensorCalibrationLayout);
 
     void inject(ConfirmSensorCalibrationLayout confirmSensorCalibrationLayout);
+
+    void inject(MenuVersionLayout menuVersionLayout);
+
+    void inject(MenuFunctionSetupLayout menuFunctionSetupLayout);
 }

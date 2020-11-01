@@ -14,7 +14,9 @@ import com.david.core.util.ILifeCycle;
 import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutPopupBinding;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
+import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
+import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
@@ -41,6 +43,9 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.MENU_COMFORT_ZONE.ordinal() - POPUP_START_ID] = new MenuComfortZoneLayout(getContext());
         views[LayoutPageEnum.MENU_SENSOR_CALIBRATION.ordinal() - POPUP_START_ID] = new MenuSensorCalibrationLayout(getContext());
         views[LayoutPageEnum.MENU_CONFIRM_SENSOR_CALIBRATION.ordinal() - POPUP_START_ID] = new ConfirmSensorCalibrationLayout(getContext());
+        views[LayoutPageEnum.MENU_VERSION.ordinal() - POPUP_START_ID] = new MenuVersionLayout(getContext());
+        views[LayoutPageEnum.MENU_FUNCTION_SETUP.ordinal() - POPUP_START_ID] = new MenuFunctionSetupLayout(getContext());
+
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
             if (view != null) {

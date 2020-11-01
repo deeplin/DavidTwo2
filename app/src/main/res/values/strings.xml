@@ -134,6 +134,23 @@
     <string name="calibration_confirm_weight_0">当前称重%sg\n请确认称重是否在0g下校准！</string>
     <string name="calibration_confirm_weight_5000">当前称重%sg\n请确认称重是否在5000g下校准！</string>
 
+    <!--Version-->
+    <string name="master_version">主机软件版本</string>
+    <string name="slave_version_a">辅助从机A软件版本</string>
+    <string name="slave_version_b">辅助从机B软件版本</string>
+    <string name="slave_version_c">辅助从机C软件版本</string>
+    <string name="slave_version_iso">独立保护从机软件版本</string>
+    <string name="alarm_version">报警器板从机软件版本</string>
+    <string name="android_version">显示从机软件版本</string>
+
+    <!-- Function-->
+    <string name="screen_luminance">屏幕亮度(1-5)</string>
+    <string name="alarm_volume">报警音量</string>
+    <string name="notification_volume">按键音量(1-5)</string>
+    <string name="pulse_volume">脉搏音量(1-5)</string>
+    <string name="apgar_volume">APGAR音量(1-5)</string>
+    <string name="day_mode">日间模式</string>
+    <string name="night_mode">夜间模式</string>
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

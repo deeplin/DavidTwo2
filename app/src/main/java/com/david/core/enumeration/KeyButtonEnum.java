@@ -27,14 +27,14 @@ public enum KeyButtonEnum {
 //    PATIENT_ADD_HEIGHT(R.string.height, 0, 100, 1),
 //    PATIENT_ADD_AGE(R.string.age, 0, 999, 1),
 //
-MENU_COMFORT_ZONE_AGE(R.string.age, 1, 35, 1),
+    MENU_COMFORT_ZONE_AGE(R.string.age, 1, 35, 1),
     MENU_COMFORT_ZONE_GESTATION(R.string.gestation, 28, 37, 1, MenuComfortZoneLayout::getGestationString),
     MENU_COMFORT_ZONE_WEIGHT(R.string.weight_unit, 900, 2600, 100, MenuComfortZoneLayout::getWeightString),
-//
-//    MENU_FUNCTION_SETUP_SCREEN_LUMINANCE(R.string.screen_luminance, 1, 5, 1),
-//    MENU_FUNCTION_SETUP_NOTIFICATION_VOLUME(R.string.notification_volume, 1, 5, 1),
-//    MENU_FUNCTION_SETUP_PULSE_VOLUME(R.string.pulse_volume, 1, 5, 1),
-//    MENU_FUNCTION_SETUP_APGAR_VOLUME(R.string.apgar_volume, 1, 5, 1),
+
+    MENU_FUNCTION_SETUP_SCREEN_LUMINANCE(R.string.screen_luminance, 1, 5, 1),
+    MENU_FUNCTION_SETUP_NOTIFICATION_VOLUME(R.string.notification_volume, 1, 5, 1),
+    MENU_FUNCTION_SETUP_PULSE_VOLUME(R.string.pulse_volume, 1, 5, 1),
+    MENU_FUNCTION_SETUP_APGAR_VOLUME(R.string.apgar_volume, 1, 5, 1),
 //
 //    ALARM_SPO2_UPPER(R.string.spo2_alarm_upper, 510, 1000, 10, FormatUtil::formatOxygen),
 //    ALARM_SPO2_LOWER(R.string.spo2_alarm_lower, 500, 990, 10, FormatUtil::formatOxygen),
