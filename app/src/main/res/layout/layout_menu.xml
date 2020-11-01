@@ -45,7 +45,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="@dimen/f32"
-            android:background="@drawable/bottom_icon_background"
+            android:background="@drawable/button_bottom_rotate_background"
             app:layout_constraintBottom_toBottomOf="@id/backgroundView"
             app:layout_constraintStart_toEndOf="@id/leftWards"
             app:layout_constraintTop_toTopOf="@id/backgroundView" />
@@ -66,7 +66,7 @@
             android:id="@+id/menuButton1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/bottom_icon_background"
+            android:background="@drawable/button_bottom_rotate_background"
             app:layout_constraintBottom_toBottomOf="@id/backgroundView"
             app:layout_constraintEnd_toEndOf="@id/backgroundView"
             app:layout_constraintStart_toStartOf="@id/backgroundView"
@@ -89,7 +89,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginEnd="@dimen/f32"
-            android:background="@drawable/bottom_icon_background"
+            android:background="@drawable/button_bottom_rotate_background"
             app:layout_constraintBottom_toBottomOf="@id/backgroundView"
             app:layout_constraintEnd_toStartOf="@id/rightwards"
             app:layout_constraintTop_toTopOf="@id/backgroundView" />

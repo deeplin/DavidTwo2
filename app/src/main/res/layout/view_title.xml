@@ -11,7 +11,9 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/f60"
+            android:background="@drawable/button_bottom_rotate_background"
             android:src="@mipmap/reverse"
+            android:scaleType="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +35,9 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/f60"
+            android:background="@drawable/button_bottom_rotate_background"
             android:src="@mipmap/close"
+            android:scaleType="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
