@@ -15,8 +15,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/buttonBackground"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/buttonBackground"
@@ -28,8 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/key"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/leftButton"
@@ -49,6 +47,7 @@
             android:id="@+id/rightButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
+
             android:layout_marginTop="@dimen/f4"
             android:layout_marginEnd="@dimen/f4"
             android:layout_marginBottom="@dimen/f4"
