@@ -36,8 +36,8 @@ public enum LayoutPageEnum {
     USER_TIME,
     USER_OVERHEAT_EXPERIMENT(R.string.overheat_experiment, LayoutPageEnum.USER_HOME, true, BindingLayoutEnum.Standard),
     USER_MODULE_SETUP(R.string.module_setup, LayoutPageEnum.USER_HOME, true, BindingLayoutEnum.Standard),
-    //    USER_UNIT_SETUP(R.string.unit_setup, LayoutPageEnum.USER_HOME, true, true),
-//
+    USER_UNIT_SETUP(R.string.unit_setup, LayoutPageEnum.USER_HOME, true, BindingLayoutEnum.Standard),
+    //
     SYSTEM_HOME(R.string.system_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     //    SYSTEM_DEVIATION_ALARM(R.string.deviation_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_OVERHEAT_ALARM(R.string.overheat_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),

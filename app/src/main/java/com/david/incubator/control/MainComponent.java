@@ -48,6 +48,7 @@ import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserModuleSetupLayout;
 import com.david.incubator.ui.user.UserOverheatExperimentLayout;
 import com.david.incubator.ui.user.UserTimeLayout;
+import com.david.incubator.ui.user.UserUnitSetupLayout;
 
 import javax.inject.Singleton;
 
@@ -151,4 +152,6 @@ public interface MainComponent extends CommonComponent {
     void inject(UserOverheatExperimentLayout userOverheatExperimentLayout);
 
     void inject(UserModuleSetupLayout userModuleSetupLayout);
+
+    void inject(UserUnitSetupLayout userUnitSetupLayout);
 }

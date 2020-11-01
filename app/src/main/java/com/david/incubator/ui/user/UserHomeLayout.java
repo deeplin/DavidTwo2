@@ -58,8 +58,8 @@ public class UserHomeLayout extends BaseLayout {
 //            lastUser.userOffset = 0;
 //            systemModel.showLayout(LayoutPageEnum.PATIENT_LIST);
 //        });
-//        moduleSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_MODULE_SETUP));
-//        unitButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_UNIT_SETUP));
+        moduleSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_MODULE_SETUP));
+        unitButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_UNIT_SETUP));
     }
 
     @Override
