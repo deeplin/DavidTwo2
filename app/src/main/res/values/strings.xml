@@ -96,6 +96,16 @@
     <string name="operation">手术</string>
     <string name="diagnostic">诊断</string>
 
+    <!--Switch Screen-->
+    <string name="standard_interface">标准界面</string>
+    <string name="standard_basic_interface">简易界面</string>
+    <string name="temp_curve">温度曲线</string>
+    <string name="weight_curve">体重曲线</string>
+    <string name="body_wave">生理波形</string>
+    <string name="breath_interface">呼吸氧合图界面</string>
+    <string name="same_screen">7导同屏界面</string>
+    <string name="rainbow">Rainbow界面</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -43,6 +44,16 @@ public class ViewUtil {
         KeyButtonView keyButtonView = new KeyButtonView(context);
         keyButtonView.setId(View.generateViewId());
         return keyButtonView;
+    }
+
+    public static Button buildButton(Context context) {
+        Button button = new Button(context);
+        button.setId(View.generateViewId());
+        button.setBackgroundResource(R.drawable.button_background);
+        button.setTextColor(ContextUtil.getColor(R.color.text_blue));
+        button.setTextSize(20);
+        button.setAllCaps(false);
+        return button;
     }
 
     public static void setDisable(ModuleHardware moduleHardware, ModuleEnum moduleEnum, IDisableView titleSetView, boolean isPink) {
