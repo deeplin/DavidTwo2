@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.lifecycle.LifecycleOwner;
-
 import com.david.R;
 import com.david.core.control.ConfigRepository;
 import com.david.core.enumeration.ConfigEnum;
@@ -14,18 +12,17 @@ import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.model.SystemModel;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.ui.component.TextTwoButtonView;
-import com.david.core.ui.layout.BindingLayout;
+import com.david.core.ui.layout.BaseLayout;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ListUtil;
 import com.david.core.util.ViewUtil;
-import com.david.databinding.LayoutCommonBinding;
 
 import javax.inject.Inject;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 
-public class MenuFunctionSetupLayout extends BindingLayout<LayoutCommonBinding> {
+public class MenuFunctionSetupLayout extends BaseLayout {
 
     @Inject
     IncubatorCommandSender incubatorCommandSender;
@@ -68,8 +65,8 @@ public class MenuFunctionSetupLayout extends BindingLayout<LayoutCommonBinding> 
     }
 
     @Override
-    public void attach(LifecycleOwner lifecycleOwner) {
-        super.attach(lifecycleOwner);
+    public void attach() {
+        super.attach();
 
         alarmVolumeView.setKeyId(R.string.alarm_volume);
         alarmVolumeView.setValue(ContextUtil.getString(ListUtil.volumeList.get(0)), ContextUtil.getString(ListUtil.volumeList.get(1)));

@@ -88,7 +88,7 @@ public enum LayoutPageEnum {
     }
 
     LayoutPageEnum(int titleId, LayoutPageEnum parentPageEnum, boolean showClose, BindingLayoutEnum bindingLayoutEnum) {
-        this(R.layout.layout_common, titleId, parentPageEnum, showClose, bindingLayoutEnum);
+        this(0, titleId, parentPageEnum, showClose, bindingLayoutEnum);
     }
 
     LayoutPageEnum(int layoutId, int titleId, LayoutPageEnum parentPageEnum, boolean showClose,
