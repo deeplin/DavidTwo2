@@ -146,7 +146,7 @@ public class HomeSetView extends BindingBasicLayout<ViewHomeSetBinding> {
                 ctrlMode.set(ContextUtil.getString(R.string.manual_mode));
                 setTextColor(ContextUtil.getColor(R.color.text_blue));
                 binding.set.setTextColor(ContextUtil.getColor(R.color.text_blue));
-                binding.setView.setBackgroundResource(R.drawable.set_background_blue);
+                binding.setView.setBackgroundResource(R.drawable.set_background);
                 binding.animationView.setBackgroundResource(R.drawable.inc_background_blue);
                 binding.incOutline.setBackgroundResource(R.drawable.inc_outline_blue);
                 break;
@@ -155,7 +155,7 @@ public class HomeSetView extends BindingBasicLayout<ViewHomeSetBinding> {
                 ctrlMode.set(ContextUtil.getString(R.string.prewarm_mode));
                 setTextColor(ContextUtil.getColor(R.color.text_blue));
                 binding.set.setTextColor(ContextUtil.getColor(R.color.text_blue));
-                binding.setView.setBackgroundResource(R.drawable.set_background_blue);
+                binding.setView.setBackgroundResource(R.drawable.set_background);
                 binding.animationView.setBackgroundResource(R.drawable.inc_background_blue);
                 binding.incOutline.setBackgroundResource(R.drawable.inc_outline_blue);
                 break;

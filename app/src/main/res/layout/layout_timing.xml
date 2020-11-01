@@ -20,7 +20,7 @@
             android:layout_width="160dp"
             android:layout_height="@dimen/f40"
             android:layout_marginTop="@dimen/f16"
-            android:background="@drawable/background_panel_blue"
+            android:background="@drawable/background_panel"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@{viewModel.titleString}"

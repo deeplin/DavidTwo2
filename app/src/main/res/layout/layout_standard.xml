@@ -35,7 +35,7 @@
             android:layout_marginEnd="@dimen/f8"
             android:visibility="invisible"
             app:icon_start="80"
-            app:background_color="@drawable/background_panel_blue"
+            app:background_color="@drawable/background_panel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:text_color="@color/text_blue" />

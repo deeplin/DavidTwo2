@@ -66,7 +66,7 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
             }
         };
 
-        binding.prHrView.setTitleBackground(R.drawable.background_panel_blue);
+        binding.prHrView.setTitleBackground(R.drawable.background_panel);
     }
 
     @Override

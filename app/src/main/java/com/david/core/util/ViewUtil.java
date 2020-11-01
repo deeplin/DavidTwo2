@@ -71,7 +71,7 @@ public class ViewUtil {
         if (isPink) {
             backgroundColor = R.drawable.background_panel_pink;
         } else {
-            backgroundColor = R.drawable.background_panel_blue;
+            backgroundColor = R.drawable.background_panel;
         }
         if (moduleHardware.isActive(moduleEnum)) {
             titleSetView.setDisable(false, backgroundColor);

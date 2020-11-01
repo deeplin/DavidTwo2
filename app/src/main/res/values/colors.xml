@@ -7,7 +7,6 @@
     <!--Layout-->
     <color name="background">#DCEFF3</color>
     <color name="background_dark">#2F2F2F</color>
-    <color name="background_blue">#E4E6f4</color>
     <color name="background_blue_dark">#73ACE6</color>
     <color name="background_pink">#f8e9e4</color>
     <color name="background_pink_dark">#EDC4C9</color>
