@@ -33,6 +33,7 @@ import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.MenuParameterSetupLayout;
+import com.david.incubator.ui.menu.MenuPrintSetupLayout;
 import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
@@ -121,4 +122,6 @@ public interface MainComponent extends CommonComponent {
     void inject(MenuFunctionSetupLayout menuFunctionSetupLayout);
 
     void inject(MenuParameterSetupLayout menuParameterSetupLayout);
+
+    void inject(MenuPrintSetupLayout menuPrintSetupLayout);
 }
