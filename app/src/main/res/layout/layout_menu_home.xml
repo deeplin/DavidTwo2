@@ -15,84 +15,84 @@
 
         <!--第一行-->
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/comfortZoneView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintBottom_toTopOf="@id/printSetupView"-->
-        <!--            app:layout_constraintEnd_toStartOf="@id/sensorCalibrationView"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/titleView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/comfortZoneView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@id/printSetupView"
+            app:layout_constraintEnd_toStartOf="@id/sensorCalibrationView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/sensorCalibrationView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintEnd_toStartOf="@+id/versionView"-->
-        <!--            app:layout_constraintStart_toEndOf="@+id/comfortZoneView"-->
-        <!--            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/sensorCalibrationView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toStartOf="@+id/versionView"
+            app:layout_constraintStart_toEndOf="@+id/comfortZoneView"
+            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/versionView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintEnd_toStartOf="@id/functionSetupView"-->
-        <!--            app:layout_constraintStart_toEndOf="@+id/sensorCalibrationView"-->
-        <!--            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/versionView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toStartOf="@id/functionSetupView"
+            app:layout_constraintStart_toEndOf="@+id/sensorCalibrationView"
+            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/functionSetupView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintEnd_toStartOf="@id/parameterSetupView"-->
-        <!--            app:layout_constraintStart_toEndOf="@+id/versionView"-->
-        <!--            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/functionSetupView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toStartOf="@id/parameterSetupView"
+            app:layout_constraintStart_toEndOf="@+id/versionView"
+            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/parameterSetupView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toEndOf="@+id/functionSetupView"-->
-        <!--            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/parameterSetupView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/functionSetupView"
+            app:layout_constraintTop_toTopOf="@+id/comfortZoneView" />
 
-        <!--        &lt;!&ndash;第二行&ndash;&gt;-->
+        <!--第二行-->
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/printSetupView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/comfortZoneView"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/comfortZoneView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/printSetupView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/comfortZoneView"
+            app:layout_constraintTop_toBottomOf="@id/comfortZoneView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/demoView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/sensorCalibrationView"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/printSetupView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/demoView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@id/sensorCalibrationView"
+            app:layout_constraintTop_toTopOf="@id/printSetupView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/userSetupView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/versionView"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/printSetupView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/userSetupView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@id/versionView"
+            app:layout_constraintTop_toTopOf="@id/printSetupView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/systemSetupView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/functionSetupView"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/printSetupView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/systemSetupView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@id/functionSetupView"
+            app:layout_constraintTop_toTopOf="@id/printSetupView" />
 
-        <!--        <com.david.core.ui.view.IconTextView-->
-        <!--            android:id="@+id/addPatientView"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/parameterSetupView"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/printSetupView" />-->
+        <com.david.core.ui.view.IconTextView
+            android:id="@+id/addPatientView"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@id/parameterSetupView"
+            app:layout_constraintTop_toTopOf="@id/printSetupView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

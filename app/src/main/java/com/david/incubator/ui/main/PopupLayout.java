@@ -68,7 +68,11 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
     public void detach() {
         super.detach();
         currentLayout.setVisibility(View.INVISIBLE);
-        ((ILifeCycle) currentLayout).detach();
+        if (currentLayout instanceof ILifeCycleOwner) {
+            ((ILifeCycleOwner) currentLayout).detach();
+        } else if (currentLayout instanceof ILifeCycle) {
+            ((ILifeCycle) currentLayout).detach();
+        }
         currentLayout = null;
         //        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
     }

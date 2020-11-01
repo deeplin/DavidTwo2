@@ -106,6 +106,18 @@
     <string name="same_screen">7导同屏界面</string>
     <string name="rainbow">Rainbow界面</string>
 
+    <!--Menu Home-->
+    <string name="comfort_zone">舒适区</string>
+    <string name="sensor_calibration">传感器校准</string>
+    <string name="version">版本信息</string>
+    <string name="function_setup">功能设置</string>
+    <string name="parameter_setup">参数设置</string>
+    <string name="quit_demo">退出演示</string>
+    <string name="user_setup">用户设置</string>
+    <string name="system_setup">系统设置</string>
+    <string name="add_patient">添加患者</string>
+
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>
