@@ -2,6 +2,7 @@ package com.david.incubator.control;
 
 import com.david.core.control.CommonComponent;
 import com.david.core.ui.curve.Co2SurfaceView;
+import com.david.core.ui.layout.BaseLayout;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
@@ -94,4 +95,6 @@ public interface MainComponent extends CommonComponent {
     void inject(Spo2ListLayout spo2ListLayout);
 
     void inject(Spo2Layout spo2Layout);
+
+    void inject(BaseLayout baseLayout);
 }

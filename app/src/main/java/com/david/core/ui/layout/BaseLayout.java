@@ -32,7 +32,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle {
+public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle {
 
     @Inject
     ComponentControl componentControl;
@@ -53,7 +53,7 @@ public abstract class PopupLayout extends ConstraintLayout implements ILifeCycle
     private int topMargin = 0;
     protected int titleId;
 
-    public PopupLayout(Context context, LayoutPageEnum layoutPageEnum) {
+    public BaseLayout(Context context, LayoutPageEnum layoutPageEnum) {
         super(context);
         this.layoutPageEnum = layoutPageEnum;
         ContextUtil.getComponent().inject(this);

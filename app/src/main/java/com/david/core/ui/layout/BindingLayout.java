@@ -10,7 +10,7 @@ import androidx.lifecycle.LifecycleOwner;
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.util.ILifeCycleOwner;
 
-public abstract class BindingLayout<U extends ViewDataBinding> extends PopupLayout implements ILifeCycleOwner {
+public abstract class BindingLayout<U extends ViewDataBinding> extends BaseLayout implements ILifeCycleOwner {
 
     protected final U binding;
 

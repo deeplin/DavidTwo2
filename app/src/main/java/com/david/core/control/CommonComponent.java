@@ -8,7 +8,7 @@ import com.david.core.ui.component.NumberPopupView;
 import com.david.core.ui.component.TitleView;
 import com.david.core.ui.curve.EcgSurfaceView;
 import com.david.core.ui.curve.Spo2SurfaceView;
-import com.david.core.ui.layout.PopupLayout;
+import com.david.core.ui.layout.BaseLayout;
 
 import javax.inject.Singleton;
 
@@ -33,7 +33,7 @@ public interface CommonComponent {
 
     void inject(NumberPopupView numberPopupView);
 
-    void inject(PopupLayout popupLayout);
+    void inject(BaseLayout baseLayout);
 
     void inject(TitleView titleView);
 }
