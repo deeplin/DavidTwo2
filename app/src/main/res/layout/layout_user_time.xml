@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--390*285-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <com.david.core.ui.component.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/f56"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/f4"
+            android:src="@drawable/background_panel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+        <!--First Column-->
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="140dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="@dimen/f16"
+            android:gravity="center_vertical"
+            android:text="@string/date"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="@id/imageBackground"
+            app:layout_constraintTop_toTopOf="@id/imageBackground" />
+
+        <Button
+            android:id="@+id/year"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/f8"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/date"
+            app:layout_constraintTop_toTopOf="@id/imageBackground" />
+
+        <TextView
+            android:id="@+id/divider0"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/year"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <Button
+            android:id="@+id/month"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider0"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <TextView
+            android:id="@+id/divider1"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/month"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <Button
+            android:id="@+id/day"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider1"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <!--Second Column-->
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="140dp"
+            android:layout_height="66dp"
+            android:gravity="center_vertical"
+            android:text="@string/time"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="@id/date"
+            app:layout_constraintTop_toBottomOf="@id/date" />
+
+        <Button
+            android:id="@+id/hour"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/f8"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/time"
+            app:layout_constraintTop_toTopOf="@id/time" />
+
+        <TextView
+            android:id="@+id/divider2"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text=":"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/hour"
+            app:layout_constraintStart_toEndOf="@id/hour"
+            app:layout_constraintTop_toTopOf="@id/hour" />
+
+        <Button
+            android:id="@+id/minute"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider2"
+            app:layout_constraintTop_toTopOf="@id/hour" />
+
+        <TextView
+            android:id="@+id/divider3"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text=":"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/minute"
+            app:layout_constraintStart_toEndOf="@id/minute"
+            app:layout_constraintTop_toTopOf="@id/minute" />
+
+        <Button
+            android:id="@+id/second"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider3"
+            app:layout_constraintTop_toTopOf="@id/minute" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_marginTop="@dimen/f4"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/alarm_middle_background"
+            android:gravity="center"
+            android:text="@string/update_time"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
+        <ImageButton
+            android:id="@+id/cancel"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/button_bottom_background"
+            app:layout_constraintEnd_toStartOf="@id/confirm"
+            app:layout_constraintTop_toTopOf="@id/confirm" />
+
+        <ImageButton
+            android:id="@+id/confirm"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="@dimen/f12"
+            android:background="@drawable/button_bottom_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/warning" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -23,6 +23,7 @@ import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
+import com.david.incubator.ui.user.UserTimeLayout;
 
 import javax.inject.Inject;
 
@@ -53,6 +54,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.KEYBOARD_LOGIN_DEMO.ordinal() - POPUP_START_ID] = new KeyboardLoginLayout(getContext());
 
         views[LayoutPageEnum.USER_HOME.ordinal() - POPUP_START_ID] = new UserHomeLayout(getContext());
+        views[LayoutPageEnum.USER_TIME.ordinal() - POPUP_START_ID] = new UserTimeLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
