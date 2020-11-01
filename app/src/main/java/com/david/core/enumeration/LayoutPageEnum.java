@@ -28,9 +28,9 @@ public enum LayoutPageEnum {
 //    MENU_VERSION(R.string.version, LayoutPageEnum.MENU_HOME, true, true),
 //    MENU_FUNCTION_SETUP(R.string.function_setup, LayoutPageEnum.MENU_HOME, true, true),
 //    MENU_PARAMETER_SETUP(R.string.parameter_setup, LayoutPageEnum.MENU_HOME, true, true),
-    MENU_PRINT_SETUP(R.string.print_setup, LayoutPageEnum.MENU_HOME, true, true),
+    MENU_PRINT_SETUP(R.string.print_setup, LayoutPageEnum.MENU_HOME, true, null),
     //
-    SWITCH_SCREEN(R.string.screen_choice, null, false, true),
+    SWITCH_SCREEN(R.string.screen_choice, null, true, BindingLayoutEnum.Standard),
     //
 //    USER_HOME(R.string.user_setup, LayoutPageEnum.MENU_HOME, true, true),
 //    USER_LANGUAGE(R.string.language, LayoutPageEnum.USER_HOME, true, true),
@@ -80,23 +80,24 @@ public enum LayoutPageEnum {
     private final int layoutId;
     private final int titleId;
     private final LayoutPageEnum parentPageEnum;
-    private final boolean showReverse;
     private final boolean showClose;
+    private final BindingLayoutEnum bindingLayoutEnum;
 
     LayoutPageEnum() {
-        this(0, 0, null, false, false);
+        this(0, 0, null, false, null);
     }
 
-    LayoutPageEnum(int titleId, LayoutPageEnum parentPageEnum, boolean showReverse, boolean showClose) {
-        this(R.layout.layout_common, titleId, parentPageEnum, showReverse, showClose);
+    LayoutPageEnum(int titleId, LayoutPageEnum parentPageEnum, boolean showClose, BindingLayoutEnum bindingLayoutEnum) {
+        this(R.layout.layout_common, titleId, parentPageEnum, showClose, bindingLayoutEnum);
     }
 
-    LayoutPageEnum(int layoutId, int titleId, LayoutPageEnum parentPageEnum, boolean showReverse, boolean showClose) {
+    LayoutPageEnum(int layoutId, int titleId, LayoutPageEnum parentPageEnum, boolean showClose,
+                   BindingLayoutEnum bindingLayoutEnum) {
         this.layoutId = layoutId;
         this.titleId = titleId;
         this.parentPageEnum = parentPageEnum;
-        this.showReverse = showReverse;
         this.showClose = showClose;
+        this.bindingLayoutEnum = bindingLayoutEnum;
     }
 
     public int getLayoutId() {
@@ -112,10 +113,14 @@ public enum LayoutPageEnum {
     }
 
     public boolean isShowReverse() {
-        return showReverse;
+        return parentPageEnum != null;
     }
 
     public boolean isShowClose() {
         return showClose;
+    }
+
+    public BindingLayoutEnum getBindingLayoutEnum() {
+        return bindingLayoutEnum;
     }
 }

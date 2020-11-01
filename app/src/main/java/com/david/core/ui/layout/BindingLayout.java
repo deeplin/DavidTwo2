@@ -12,10 +12,14 @@ import com.david.core.util.ILifeCycleOwner;
 
 public abstract class BindingLayout<U extends ViewDataBinding> extends BaseLayout implements ILifeCycleOwner {
 
-    protected final U binding;
+    protected U binding;
 
-    public BindingLayout(Context context, LayoutPageEnum layoutPageEnum) {
-        super(context, layoutPageEnum);
+    public BindingLayout(Context context) {
+        super(context);
+    }
+
+    @Override
+    protected void init(LayoutPageEnum layoutPageEnum) {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         binding = DataBindingUtil.inflate(inflater, layoutPageEnum.getLayoutId(), this, true);
     }

@@ -22,7 +22,6 @@ import com.david.core.ui.component.OptionPopupView;
 import com.david.core.ui.component.TitleView;
 import com.david.core.ui.model.IntegerPopupModel;
 import com.david.core.ui.model.LiveDataPopupModel;
-import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.LazyLiveData;
 import com.david.core.util.ViewUtil;
@@ -39,32 +38,26 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     @Inject
     ConfigRepository configRepository;
 
-    protected final NumberPopupView numberPopupView;
-    private final LayoutPageEnum layoutPageEnum;
-
     private BindingLayoutEnum bindingLayoutEnum;
 
     private final List<IntegerPopupModel> integerPopupModelList = new ArrayList<>();
 
-    private final OptionPopupView optionPopupView;
+    protected NumberPopupView numberPopupView;
+    private OptionPopupView optionPopupView;
     protected KeyButtonView[] keyButtonViews;
     private ConfigEnum[] configEnums;
 
     private int topMargin = 0;
     protected int titleId;
 
-    public BaseLayout(Context context, LayoutPageEnum layoutPageEnum) {
+    public BaseLayout(Context context) {
         super(context);
-        this.layoutPageEnum = layoutPageEnum;
-        ContextUtil.getComponent().inject(this);
-        numberPopupView = componentControl.getNumberPopupView();
-        optionPopupView = componentControl.getOptionPopupView();
-
-        init(getBindingLayoutEnum());
     }
 
-    private void init(BindingLayoutEnum bindingLayoutEnum) {
-        this.bindingLayoutEnum = bindingLayoutEnum;
+    protected void init(LayoutPageEnum layoutPageEnum) {
+        numberPopupView = componentControl.getNumberPopupView();
+        optionPopupView = componentControl.getOptionPopupView();
+        this.bindingLayoutEnum = layoutPageEnum.getBindingLayoutEnum();
         if (bindingLayoutEnum.isTitle()) {
             TitleView titleView = new TitleView(getContext(), null);
             titleId = View.generateViewId();
@@ -111,8 +104,6 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     protected ConstraintLayout getRoot() {
         return this;
     }
-
-    protected abstract BindingLayoutEnum getBindingLayoutEnum();
 
     private void addInnerView(View view, int width, int height, int start, int top, int end, int bottom) {
         ViewUtil.addInnerView(getRoot(), view, width, height, start, top, end, bottom);

@@ -7,7 +7,6 @@ import android.widget.Button;
 import com.david.R;
 import com.david.core.control.ConfigRepository;
 import com.david.core.control.ModuleHardware;
-import com.david.core.enumeration.BindingLayoutEnum;
 import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.enumeration.ModuleEnum;
@@ -32,8 +31,9 @@ public class SwitchScreenLayout extends BaseLayout {
     private final Button[] buttonArray;
 
     public SwitchScreenLayout(Context context) {
-        super(context, SWITCH_SCREEN);
+        super(context);
         ContextUtil.getComponent().inject(this);
+        super.init(SWITCH_SCREEN);
 
         buttonArray = new Button[8];
         for (int index = 0; index < buttonArray.length; index++) {
@@ -99,11 +99,6 @@ public class SwitchScreenLayout extends BaseLayout {
     @Override
     public void detach() {
         super.detach();
-    }
-
-    @Override
-    protected BindingLayoutEnum getBindingLayoutEnum() {
-        return BindingLayoutEnum.Standard;
     }
 
     private void setRow(int rowId, int textId, final LayoutPageEnum layoutPageEnum) {
