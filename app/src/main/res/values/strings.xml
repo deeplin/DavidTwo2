@@ -152,6 +152,20 @@
     <string name="day_mode">日间模式</string>
     <string name="night_mode">夜间模式</string>
 
+    <!--Parameter-->
+    <string name="temp_setting">TEMP设置</string>
+    <string name="hum_setting">HUM设置</string>
+    <string name="oxygen_setting">O₂设置</string>
+    <string name="apgar_setting">APGAR设置</string>
+    <string name="blue_setting">BLUE设置</string>
+    <string name="mat_setting">MAT设置</string>
+    <string name="ecg_setting">ECG设置</string>
+    <string name="nibp_setting">NIBP设置</string>
+    <string name="spo2_setting">SpO₂设置</string>
+    <string name="co2_setting">CO₂设置</string>
+    <string name="resp_setting">RESP设置</string>
+    <string name="wake_setting">窒息唤醒设置</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

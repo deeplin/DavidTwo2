@@ -44,7 +44,7 @@ public class MenuHomeLayout extends BindingBasicLayout<LayoutMenuHomeBinding> {
         binding.sensorCalibrationView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_SENSOR_CALIBRATION));
         binding.versionView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_VERSION));
         binding.functionSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_FUNCTION_SETUP));
-//        binding.parameterSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_PARAMETER_SETUP));
+        binding.parameterSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_PARAMETER_SETUP));
 //        binding.printSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_PRINT_SETUP));
 //        binding.demoView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_DEMO));
 //        binding.userSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_USER));
