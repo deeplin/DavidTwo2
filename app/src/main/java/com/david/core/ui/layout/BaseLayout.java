@@ -52,6 +52,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
 
     public BaseLayout(Context context) {
         super(context);
+        setId(View.generateViewId());
     }
 
     protected void init(LayoutPageEnum layoutPageEnum) {
@@ -64,7 +65,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
             titleView.setId(titleId);
             titleView.set(layoutPageEnum.getTitleId(), layoutPageEnum.getParentPageEnum(), layoutPageEnum.isShowReverse(), layoutPageEnum.isShowClose());
             addInnerView(titleView, LayoutParams.MATCH_PARENT, 56, 0, 0, -1, -1);
-            topMargin = 60;
+            topMargin = 56;
         }
 
         ImageView backgroundImage = new ImageView(getContext());
@@ -73,16 +74,16 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         backgroundImage.setZ(-1);
         addInnerView(backgroundImage, LayoutParams.MATCH_CONSTRAINT, LayoutParams.MATCH_CONSTRAINT, 4, topMargin, 4, 4);
 
-        getRoot().setBackgroundResource(R.drawable.background_panel_blue_dark);
+        setBackgroundResource(R.drawable.background_panel_blue_dark);
         backgroundImage.setOnClickListener(view -> closePopup());
     }
 
     @Override
     public void attach() {
-        getRoot().addView(numberPopupView, bindingLayoutEnum.getPopupWidth(), bindingLayoutEnum.getPopupHeight());
+        addView(numberPopupView, bindingLayoutEnum.getPopupWidth(), bindingLayoutEnum.getPopupHeight());
         closePopup();
 
-        getRoot().addView(optionPopupView, bindingLayoutEnum.getPopupWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+        addView(optionPopupView, bindingLayoutEnum.getPopupWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
         optionPopupView.close();
 
         for (IntegerPopupModel integerPopupModel : integerPopupModelList) {
@@ -97,16 +98,12 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     @Override
     public void detach() {
         closePopup();
-        getRoot().removeView(optionPopupView);
-        getRoot().removeView(numberPopupView);
-    }
-
-    protected ConstraintLayout getRoot() {
-        return this;
+        removeView(optionPopupView);
+        removeView(numberPopupView);
     }
 
     private void addInnerView(View view, int width, int height, int start, int top, int end, int bottom) {
-        ViewUtil.addInnerView(getRoot(), view, width, height, start, top, end, bottom);
+        ViewUtil.addInnerView(this, view, width, height, start, top, end, bottom);
     }
 
     protected void addInnerView(int rowId, View view) {
@@ -173,7 +170,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
             if (maxCondition != null)
                 integerPopupModel.setMax2(maxCondition.apply(keyButtonEnum));
             numberPopupView.set(integerPopupModel);
-            numberPopupView.show(getRoot(), integerPopupModel.getKeyButtonView().getId(), index != 7 && index != 15);
+            numberPopupView.show(this, integerPopupModel.getKeyButtonView().getId(), index != 7 && index != 15);
         });
     }
 
@@ -269,7 +266,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
                         callback.accept(integer);
                 }
             });
-            optionPopupView.show(getRoot(), keyButtonViews[dropDownViewId].getId(), downward);
+            optionPopupView.show(this, keyButtonViews[dropDownViewId].getId(), downward);
         });
     }
 

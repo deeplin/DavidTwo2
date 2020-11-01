@@ -61,7 +61,7 @@ public class SystemModel {
         }
         if (Objects.equals(layoutPageEnum, LayoutPageEnum.LAYOUT_NONE)) {
             layoutPage.post(currentLayoutPage);
-        } else if (layoutPageEnum.ordinal() >= LayoutPageEnum.LAYOUT_STANDARD.ordinal()) {
+        } else if (layoutPageEnum.ordinal() < LayoutPageEnum.MENU_HOME.ordinal()) {
             currentLayoutPage = layoutPageEnum;
             layoutPage.post(layoutPageEnum);
         } else if (layoutPage.getValue() != layoutPageEnum) {

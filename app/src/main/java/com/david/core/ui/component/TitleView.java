@@ -23,7 +23,9 @@ public class TitleView extends BindingBasicLayout<ViewTitleBinding> {
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
-        binding.close.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.LAYOUT_NONE));
+        binding.close.setOnClickListener(view -> {
+            systemModel.showLayout(LayoutPageEnum.LAYOUT_NONE);
+        });
         binding.reverse.setOnClickListener(view -> systemModel.showLayout(reversePageEnum));
     }
 
