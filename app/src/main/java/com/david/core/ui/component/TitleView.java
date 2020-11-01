@@ -23,9 +23,7 @@ public class TitleView extends BindingBasicLayout<ViewTitleBinding> {
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
-        binding.close.setOnClickListener(view -> {
-            systemModel.showLayout(LayoutPageEnum.LAYOUT_NONE);
-        });
+        binding.close.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.LAYOUT_NONE));
         binding.reverse.setOnClickListener(view -> systemModel.showLayout(reversePageEnum));
     }
 
@@ -34,18 +32,14 @@ public class TitleView extends BindingBasicLayout<ViewTitleBinding> {
         return R.layout.view_title;
     }
 
-    public void set(int titleTextId, LayoutPageEnum reversePageEnum, boolean showReverse, boolean showClose) {
-        set(titleTextId, reversePageEnum);
-        if (!showReverse) {
+    public void set(int titleTextId, LayoutPageEnum reversePageEnum, boolean showClose) {
+        binding.title.setText(ContextUtil.getString(titleTextId));
+        this.reversePageEnum = reversePageEnum;
+        if (reversePageEnum == null) {
             binding.reverse.setVisibility(View.GONE);
         }
         if (!showClose) {
             binding.close.setVisibility(View.GONE);
         }
-    }
-
-    public void set(int titleTextId, LayoutPageEnum reversePageEnum) {
-        binding.title.setText(ContextUtil.getString(titleTextId));
-        this.reversePageEnum = reversePageEnum;
     }
 }

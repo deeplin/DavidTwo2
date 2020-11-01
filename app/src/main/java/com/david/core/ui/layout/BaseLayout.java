@@ -63,7 +63,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
             TitleView titleView = new TitleView(getContext(), null);
             titleId = View.generateViewId();
             titleView.setId(titleId);
-            titleView.set(layoutPageEnum.getTitleId(), layoutPageEnum.getParentPageEnum(), layoutPageEnum.isShowReverse(), layoutPageEnum.isShowClose());
+            titleView.set(layoutPageEnum.getTitleId(), layoutPageEnum.getParentPageEnum(), layoutPageEnum.isShowClose());
             addInnerView(titleView, LayoutParams.MATCH_PARENT, 56, 0, 0, -1, -1);
             topMargin = 56;
         }

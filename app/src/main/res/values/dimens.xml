@@ -10,7 +10,9 @@
     <!--    <dimen name="f80">80dp</dimen>-->
     <!--    <dimen name="f100">100dp</dimen>-->
     <!--    <dimen name="f352">352dp</dimen>-->
-
+    <!--LAYOUT-->
+    <dimen name="f56">56dp</dimen>
+    
     <!--Font-->
     <dimen name="f20">20dp</dimen>
     <dimen name="f24">24dp</dimen>

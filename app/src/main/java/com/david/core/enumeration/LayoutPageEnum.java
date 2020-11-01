@@ -112,10 +112,6 @@ public enum LayoutPageEnum {
         return parentPageEnum;
     }
 
-    public boolean isShowReverse() {
-        return parentPageEnum != null;
-    }
-
     public boolean isShowClose() {
         return showClose;
     }

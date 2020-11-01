@@ -11,7 +11,9 @@ import com.david.core.model.SystemModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
+import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutPopupBinding;
+import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 
 import javax.inject.Inject;
@@ -32,6 +34,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         ContextUtil.getComponent().inject(this);
 
         views[LayoutPageEnum.SWITCH_SCREEN.ordinal() - POPUP_START_ID] = new SwitchScreenLayout(getContext());
+        views[LayoutPageEnum.MENU_HOME.ordinal() - POPUP_START_ID] = new MenuHomeLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
@@ -52,7 +55,12 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         super.attach(lifeCycleOwner);
 //        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
         currentLayout = views[systemModel.layoutPage.getValue().ordinal() - LayoutPageEnum.MENU_HOME.ordinal()];
-        ((ILifeCycle) currentLayout).attach();
+        if (currentLayout instanceof ILifeCycleOwner) {
+            ((ILifeCycleOwner) currentLayout).attach(lifeCycleOwner);
+        } else if (currentLayout instanceof ILifeCycle) {
+            ((ILifeCycle) currentLayout).attach();
+        }
+
         currentLayout.setVisibility(View.VISIBLE);
     }
 

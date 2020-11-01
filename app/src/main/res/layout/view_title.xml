@@ -8,8 +8,8 @@
 
         <ImageView
             android:id="@+id/reverse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/f60"
             android:src="@mipmap/reverse"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
 
         <ImageView
             android:id="@+id/close"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/f60"
             android:src="@mipmap/close"
