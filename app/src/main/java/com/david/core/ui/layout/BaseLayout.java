@@ -43,7 +43,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     private final List<IntegerPopupModel> integerPopupModelList = new ArrayList<>();
 
     protected NumberPopupView numberPopupView;
-    private OptionPopupView optionPopupView;
+    protected OptionPopupView optionPopupView;
     protected KeyButtonView[] keyButtonViews;
     private ConfigEnum[] configEnums;
 

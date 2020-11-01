@@ -44,6 +44,7 @@ import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLay
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.top.TopLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
+import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserTimeLayout;
 
 import javax.inject.Singleton;
@@ -142,4 +143,6 @@ public interface MainComponent extends CommonComponent {
     void inject(UserHomeLayout userHomeLayout);
 
     void inject(UserTimeLayout userTimeLayout);
+
+    void inject(UserLanguageLayout userLanguageLayout);
 }
