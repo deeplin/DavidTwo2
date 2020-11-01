@@ -166,6 +166,23 @@
     <string name="resp_setting">RESP设置</string>
     <string name="wake_setting">窒息唤醒设置</string>
 
+    <!--Patient-->
+    <string name="patient_info">患者信息</string>
+    <string name="edit_patient">编辑患者</string>
+    <string name="patient_list">患者列表</string>
+    <string name="delete_patient">删除患者</string>
+    <string name="name">姓名</string>
+    <string name="id">编号</string>
+    <string name="sex">性别</string>
+    <string name="blood_type">血型</string>
+    <string name="birth_weight">出生体重(g)</string>
+    <string name="height">身高(cm)</string>
+    <string name="birthday">出生日期</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="pace_maker">起搏器</string>
+    <string name="confirm_remove_patient">请确认是否删除患者</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

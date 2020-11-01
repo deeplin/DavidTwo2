@@ -4,11 +4,10 @@ import android.content.Context;
 
 import com.david.R;
 import com.david.core.database.entity.UserEntity;
+import com.david.core.enumeration.BloodTypeEnum;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.ListUtil;
 import com.david.databinding.ViewPrintHeaderBinding;
-import com.david.incubator.ui.patient.BloodTypeEnum;
 
 import java.util.Locale;
 

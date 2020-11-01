@@ -2,21 +2,14 @@ package com.david.incubator.serial.print;
 
 import androidx.lifecycle.Observer;
 
-import com.david.core.alarm.enumeration.AlarmWordEnum;
-import com.david.core.alarm.model.AlarmRepository;
+import com.david.core.alarm.AlarmRepository;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.model.PrintModel;
-import com.david.core.model.SensorModel;
-import com.david.core.model.SensorModelEnum;
-import com.david.core.util.Constant;
 import com.david.core.util.LoggerUtil;
 import com.david.incubator.serial.ecg.EcgCommandControl;
 
-import java.util.concurrent.TimeUnit;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
-
-import io.reactivex.rxjava3.core.Observable;
 
 @Singleton
 public class PrintCommandControl extends EcgCommandControl {

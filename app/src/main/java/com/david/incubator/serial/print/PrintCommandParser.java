@@ -2,8 +2,8 @@ package com.david.incubator.serial.print;
 
 import androidx.arch.core.util.Function;
 
-import com.david.core.alarm.enumeration.AlarmWordEnum;
-import com.david.core.alarm.model.AlarmRepository;
+import com.david.core.alarm.AlarmRepository;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.model.PrintModel;
 import com.david.core.util.LoggerUtil;
 import com.david.incubator.serial.ecg.EcgResponseCommand;

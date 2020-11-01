@@ -7,9 +7,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.david.R;
-import com.david.core.config.ConfigEnum;
-import com.david.core.config.ConfigRepository;
-import com.david.core.ui.view.WaveSurfaceView;
+import com.david.core.control.ConfigRepository;
+import com.david.core.enumeration.ConfigEnum;
+import com.david.core.ui.curve.WaveSurfaceView;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
@@ -17,7 +17,7 @@ import com.david.core.util.ViewUtil;
 
 import javax.inject.Inject;
 
-public abstract class BaseCurveView extends View implements ILifeCycle {
+public abstract class BasePrintCurveView extends View implements ILifeCycle {
 
     @Inject
     ConfigRepository configRepository;
@@ -30,7 +30,7 @@ public abstract class BaseCurveView extends View implements ILifeCycle {
     protected float gain;
     protected float stepForDot;
 
-    public BaseCurveView(Context context, AttributeSet attrs) {
+    public BasePrintCurveView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
         newPath = new Path();

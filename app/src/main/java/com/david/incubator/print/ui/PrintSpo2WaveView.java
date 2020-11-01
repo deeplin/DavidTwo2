@@ -1,23 +1,16 @@
 package com.david.incubator.print.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.Observer;
 
 import com.david.R;
-import com.david.core.config.ConfigEnum;
-import com.david.core.config.ConfigRepository;
-import com.david.core.enumeration.EcgChannelEnum;
-import com.david.core.model.EcgModel;
+import com.david.core.control.ConfigRepository;
+import com.david.core.enumeration.ConfigEnum;
 import com.david.core.ui.layout.BindingBasicLayout;
-import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
 import com.david.core.util.ListUtil;
-import com.david.databinding.ViewPrintEcgWaveBinding;
 import com.david.databinding.ViewPrintSpo2WaveBinding;
 import com.david.incubator.print.IPrintView;
 

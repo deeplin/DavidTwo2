@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="350px"
+        android:layout_height="324px"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/f22" />
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/f22" />
+
+        <TextView
+            android:id="@+id/sex"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/f22" />
+
+        <TextView
+            android:id="@+id/bloodType"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/f22" />
+
+        <TextView
+            android:id="@+id/printTime"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/f22" />
+    </LinearLayout>
+</layout>

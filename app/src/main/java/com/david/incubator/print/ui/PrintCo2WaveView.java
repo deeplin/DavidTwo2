@@ -5,29 +5,18 @@ import android.content.Context;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.david.R;
-import com.david.core.config.ConfigEnum;
-import com.david.core.config.ConfigRepository;
 import com.david.core.ui.layout.BindingBasicLayout;
-import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
-import com.david.core.util.ListUtil;
 import com.david.databinding.ViewPrintCo2WaveBinding;
-import com.david.databinding.ViewPrintSpo2WaveBinding;
 import com.david.incubator.print.IPrintView;
 
-import javax.inject.Inject;
-
 public class PrintCo2WaveView extends BindingBasicLayout<ViewPrintCo2WaveBinding> implements IPrintView {
-
-    @Inject
-    ConfigRepository configRepository;
 
     public final LazyLiveData<String> co2Speed = new LazyLiveData<>();
     public final LazyLiveData<String> co2Gain = new LazyLiveData<>();
 
     public PrintCo2WaveView(Context context) {
         super(context);
-        ContextUtil.getComponent().inject(this);
         binding.setViewModel(this);
     }
 
@@ -41,8 +30,6 @@ public class PrintCo2WaveView extends BindingBasicLayout<ViewPrintCo2WaveBinding
         super.attach(lifecycleOwner);
         binding.titleView.setVisibility(VISIBLE);
         binding.printSpo2CurveView.attach();
-//        spo2Speed.set(ListUtil.spo2SpeedList.get(configRepository.getConfig(ConfigEnum.Spo2Speed).getValue()));
-//        spo2Gain.set(ListUtil.ecgGainList.get(configRepository.getConfig(ConfigEnum.Spo2Gain).getValue()));
     }
 
     @Override

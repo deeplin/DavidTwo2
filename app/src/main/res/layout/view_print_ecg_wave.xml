@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.david.incubator.print.ui.PrintEcgWaveView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.david.incubator.print.ui.PrintEcgCurveView
+            android:id="@+id/printEcgCurveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/channelView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.channel}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            android:visibility="@{viewModel.channel.length == 0 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gainView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.gainString}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            android:visibility="@{viewModel.gainString.length == 0 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toEndOf="@id/channelView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/infoView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.info}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toEndOf="@id/gainView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/speedView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.ecgSpeed}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintStart_toEndOf="@id/infoView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/voltageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{viewModel.voltage}"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/standardImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <ImageView
+            android:id="@+id/standardImage"
+            android:layout_width="2dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="60dp"
+            android:background="@color/background_blue_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLeadOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/lead_off"
+            android:textColor="@color/white"
+            android:textSize="@dimen/f18"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

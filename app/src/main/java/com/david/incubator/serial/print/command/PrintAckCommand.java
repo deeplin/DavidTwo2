@@ -1,7 +1,7 @@
 package com.david.incubator.serial.print.command;
 
+import com.david.core.enumeration.CommandEnum;
 import com.david.core.serial.BaseCommand;
-import com.david.core.serial.CommandEnum;
 import com.david.core.util.Crc8Util;
 
 public class PrintAckCommand extends BaseCommand {

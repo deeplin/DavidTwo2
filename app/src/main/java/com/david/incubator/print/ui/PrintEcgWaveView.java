@@ -1,7 +1,6 @@
 package com.david.incubator.print.ui;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,8 +8,8 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 
 import com.david.R;
-import com.david.core.config.ConfigEnum;
-import com.david.core.config.ConfigRepository;
+import com.david.core.control.ConfigRepository;
+import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.EcgChannelEnum;
 import com.david.core.model.EcgModel;
 import com.david.core.ui.layout.BindingBasicLayout;
@@ -97,28 +96,28 @@ public class PrintEcgWaveView extends BindingBasicLayout<ViewPrintEcgWaveBinding
         switch (gain) {
             case (0): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(1.25);
+                layoutParams.height = Constant.getPixel(1.25f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (1): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(2.5);
+                layoutParams.height = Constant.getPixel(2.5f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (2): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(5);
+                layoutParams.height = Constant.getPixel(5f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (3): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(10);
+                layoutParams.height = Constant.getPixel(10f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }

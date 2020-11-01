@@ -5,12 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.util.AttributeSet;
 
-import com.david.core.config.ConfigEnum;
+import com.david.core.enumeration.ConfigEnum;
 import com.david.core.util.Constant;
-import com.david.core.util.LoggerUtil;
-import com.david.core.util.RangeUtil;
+import com.david.core.util.rely.RangeUtil;
 
-public class PrintEcgCurveView extends BaseCurveView {
+public class PrintEcgCurveView extends BasePrintCurveView {
 
     private final Path iPacePath;
     private boolean moveTo;

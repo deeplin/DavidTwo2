@@ -2,7 +2,6 @@ package com.david.incubator.print.ui;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
@@ -10,9 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.david.R;
-import com.david.core.config.ConfigEnum;
-import com.david.core.config.ConfigRepository;
-import com.david.core.control.BufferRepository;
+import com.david.core.buffer.BufferRepository;
+import com.david.core.control.ConfigRepository;
+import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.EcgChannelEnum;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
@@ -21,8 +20,6 @@ import com.david.incubator.print.IPrintView;
 import com.david.incubator.print.buffer.PrintBufferRepository;
 
 import javax.inject.Inject;
-
-import io.reactivex.rxjava3.internal.operators.flowable.FlowableSwitchIfEmpty;
 
 public class PrintWaveView extends BindingBasicLayout<ViewPrintWaveBinding> {
 

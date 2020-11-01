@@ -2,6 +2,10 @@ package com.david.incubator.control;
 
 import com.david.core.control.CommonComponent;
 import com.david.core.ui.curve.Co2SurfaceView;
+import com.david.incubator.print.ui.BasePrintCurveView;
+import com.david.incubator.print.ui.PrintEcgWaveView;
+import com.david.incubator.print.ui.PrintSpo2WaveView;
+import com.david.incubator.print.ui.PrintWaveView;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
@@ -124,4 +128,12 @@ public interface MainComponent extends CommonComponent {
     void inject(MenuParameterSetupLayout menuParameterSetupLayout);
 
     void inject(MenuPrintSetupLayout menuPrintSetupLayout);
+
+    void inject(BasePrintCurveView basePrintCurveView);
+
+    void inject(PrintEcgWaveView printEcgWaveView);
+
+    void inject(PrintSpo2WaveView printSpo2WaveView);
+
+    void inject(PrintWaveView printWaveView);
 }
