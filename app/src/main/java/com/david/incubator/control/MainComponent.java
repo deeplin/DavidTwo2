@@ -43,6 +43,7 @@ import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.top.TopLayout;
+import com.david.incubator.ui.user.UserHomeLayout;
 
 import javax.inject.Singleton;
 
@@ -136,4 +137,6 @@ public interface MainComponent extends CommonComponent {
     void inject(PrintWaveView printWaveView);
 
     void inject(KeyboardLoginLayout keyboardLoginLayout);
+
+    void inject(UserHomeLayout userHomeLayout);
 }

@@ -32,8 +32,8 @@ public enum LayoutPageEnum {
     SWITCH_SCREEN(R.string.screen_choice, null, true, BindingLayoutEnum.Standard),
 
     USER_HOME(R.string.user_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
-    //    USER_LANGUAGE(R.string.language, LayoutPageEnum.USER_HOME, true, true),
-//    USER_TIME,
+    USER_LANGUAGE(R.string.language, LayoutPageEnum.USER_HOME, true, BindingLayoutEnum.Standard),
+    //    USER_TIME,
 //    USER_OVERHEAT_EXPERIMENT(R.string.overheat_experiment, LayoutPageEnum.USER_HOME, true, true),
 //    USER_MODULE_SETUP(R.string.module_setup, LayoutPageEnum.USER_HOME, true, true),
 //    USER_UNIT_SETUP(R.string.unit_setup, LayoutPageEnum.USER_HOME, true, true),
