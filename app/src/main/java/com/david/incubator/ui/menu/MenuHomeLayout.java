@@ -46,9 +46,9 @@ public class MenuHomeLayout extends BindingBasicLayout<LayoutMenuHomeBinding> {
         binding.functionSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_FUNCTION_SETUP));
         binding.parameterSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_PARAMETER_SETUP));
         binding.printSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.MENU_PRINT_SETUP));
-//        binding.demoView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_DEMO));
-//        binding.userSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_USER));
-//        binding.systemSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_SYSTEM));
+        binding.demoView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_DEMO));
+        binding.userSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_USER));
+        binding.systemSetupView.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.KEYBOARD_LOGIN_SYSTEM));
 //        binding.addPatientView.setOnClickListener(view -> {
 //            systemModel.tagId = Constant.NA_VALUE;
 //            lastUser.setEditUserEntity(lastUser.getUserEntity());

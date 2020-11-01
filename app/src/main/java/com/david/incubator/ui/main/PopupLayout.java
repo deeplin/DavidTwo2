@@ -13,11 +13,11 @@ import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutPopupBinding;
+import com.david.incubator.ui.keyboard.KeyboardLoginLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.MenuParameterSetupLayout;
-import com.david.incubator.ui.menu.MenuPrintSetupLayout;
 import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
@@ -48,7 +48,8 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.MENU_VERSION.ordinal() - POPUP_START_ID] = new MenuVersionLayout(getContext());
         views[LayoutPageEnum.MENU_FUNCTION_SETUP.ordinal() - POPUP_START_ID] = new MenuFunctionSetupLayout(getContext());
         views[LayoutPageEnum.MENU_PARAMETER_SETUP.ordinal() - POPUP_START_ID] = new MenuParameterSetupLayout(getContext());
-        views[LayoutPageEnum.MENU_PRINT_SETUP.ordinal() - POPUP_START_ID] = new MenuPrintSetupLayout(getContext());
+
+        views[LayoutPageEnum.KEYBOARD_LOGIN_DEMO.ordinal() - POPUP_START_ID] = new KeyboardLoginLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
@@ -57,6 +58,8 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
                 binding.mainFrameLayout.addView(view);
             }
         }
+        views[LayoutPageEnum.KEYBOARD_LOGIN_USER.ordinal() - POPUP_START_ID] = views[LayoutPageEnum.KEYBOARD_LOGIN_DEMO.ordinal() - POPUP_START_ID];
+        views[LayoutPageEnum.KEYBOARD_LOGIN_SYSTEM.ordinal() - POPUP_START_ID] = views[LayoutPageEnum.KEYBOARD_LOGIN_DEMO.ordinal() - POPUP_START_ID];
     }
 
     @Override

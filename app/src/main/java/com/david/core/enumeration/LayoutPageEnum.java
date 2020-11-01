@@ -30,16 +30,16 @@ public enum LayoutPageEnum {
     MENU_PARAMETER_SETUP(R.string.parameter_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     MENU_PRINT_SETUP(R.string.print_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     SWITCH_SCREEN(R.string.screen_choice, null, true, BindingLayoutEnum.Standard),
-    //
-//    USER_HOME(R.string.user_setup, LayoutPageEnum.MENU_HOME, true, true),
-//    USER_LANGUAGE(R.string.language, LayoutPageEnum.USER_HOME, true, true),
+
+    USER_HOME(R.string.user_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
+    //    USER_LANGUAGE(R.string.language, LayoutPageEnum.USER_HOME, true, true),
 //    USER_TIME,
 //    USER_OVERHEAT_EXPERIMENT(R.string.overheat_experiment, LayoutPageEnum.USER_HOME, true, true),
 //    USER_MODULE_SETUP(R.string.module_setup, LayoutPageEnum.USER_HOME, true, true),
 //    USER_UNIT_SETUP(R.string.unit_setup, LayoutPageEnum.USER_HOME, true, true),
 //
-//    SYSTEM_HOME(R.string.system_setup, LayoutPageEnum.MENU_HOME, true, true),
-//    SYSTEM_DEVIATION_ALARM(R.string.deviation_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),
+    SYSTEM_HOME(R.string.system_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
+    //    SYSTEM_DEVIATION_ALARM(R.string.deviation_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_OVERHEAT_ALARM(R.string.overheat_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_RANGE_SETUP(R.string.range_setup, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_SENSOR_CALIBRATION(R.string.sensor_calibration, LayoutPageEnum.SYSTEM_HOME, true, true),
@@ -66,11 +66,11 @@ public enum LayoutPageEnum {
 //    PATIENT_ADD(R.layout.layout_patient, R.string.add_patient, LayoutPageEnum.PATIENT_INFO, true, true),
 //    PATIENT_CONFIRM_REMOVE,
 //
-//    KEYBOARD_ALPHABET,
-//    KEYBOARD_LOGIN_USER,
-//    KEYBOARD_LOGIN_SYSTEM,
-//    KEYBOARD_LOGIN_DEMO,
-//
+    KEYBOARD_ALPHABET,
+    KEYBOARD_LOGIN_USER,
+    KEYBOARD_LOGIN_SYSTEM,
+    KEYBOARD_LOGIN_DEMO,
+    //
 //    TREND_CHART,
 //    TREND_TABLE,
 //    TREND_PRINT(R.layout.layout_print, R.string.data_print, LayoutPageEnum.TREND_TABLE, true, true),

@@ -183,6 +183,9 @@
     <string name="pace_maker">起搏器</string>
     <string name="confirm_remove_patient">请确认是否删除患者</string>
 
+    <!--Login-->
+    <string name="password">密码</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

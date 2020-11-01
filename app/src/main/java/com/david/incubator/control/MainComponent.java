@@ -31,13 +31,13 @@ import com.david.incubator.ui.home.standard.middle.MiddleRightLayout;
 import com.david.incubator.ui.home.standard.top.HomeSetView;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
+import com.david.incubator.ui.keyboard.KeyboardLoginLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.main.PopupLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.MenuParameterSetupLayout;
-import com.david.incubator.ui.menu.MenuPrintSetupLayout;
 import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
@@ -127,8 +127,6 @@ public interface MainComponent extends CommonComponent {
 
     void inject(MenuParameterSetupLayout menuParameterSetupLayout);
 
-    void inject(MenuPrintSetupLayout menuPrintSetupLayout);
-
     void inject(BasePrintCurveView basePrintCurveView);
 
     void inject(PrintEcgWaveView printEcgWaveView);
@@ -136,4 +134,6 @@ public interface MainComponent extends CommonComponent {
     void inject(PrintSpo2WaveView printSpo2WaveView);
 
     void inject(PrintWaveView printWaveView);
+
+    void inject(KeyboardLoginLayout keyboardLoginLayout);
 }
