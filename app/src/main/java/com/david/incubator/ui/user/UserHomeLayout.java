@@ -53,7 +53,7 @@ public class UserHomeLayout extends BaseLayout {
 
         languageButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_LANGUAGE));
         timeButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_TIME));
-//        overheatExperimentButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_OVERHEAT_EXPERIMENT));
+        overheatExperimentButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_OVERHEAT_EXPERIMENT));
 //        patientListButton.setOnClickListener(v -> {
 //            lastUser.userOffset = 0;
 //            systemModel.showLayout(LayoutPageEnum.PATIENT_LIST);

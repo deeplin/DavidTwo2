@@ -194,6 +194,12 @@
     <string name="language">语言</string>
     <string name="unit_setup">单位设置</string>
 
+    <!--User Overheat Experiment-->
+    <string name="overheat_air_above_37">箱温&gt;37</string>
+    <string name="overheat_air_below_37">箱温≤37</string>
+    <string name="overheat_skin_above_37">肤温&gt;37</string>
+    <string name="stable_state">稳定状态</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

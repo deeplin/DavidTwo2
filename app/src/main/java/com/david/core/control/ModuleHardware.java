@@ -37,12 +37,12 @@ public class ModuleHardware {
         return moduleArray[moduleEnum.ordinal()];
     }
 
-    public boolean isActive(ModuleEnum moduleEnum) {
-        return moduleArray[moduleEnum.ordinal()].getValue() == 2;
-    }
-
     public boolean isInstalled(ModuleEnum moduleEnum) {
         return moduleArray[moduleEnum.ordinal()].getValue() != 0;
+    }
+
+    public boolean isActive(ModuleEnum moduleEnum) {
+        return moduleArray[moduleEnum.ordinal()].getValue() == 2;
     }
 
     public boolean isInActive(ModuleEnum moduleEnum) {

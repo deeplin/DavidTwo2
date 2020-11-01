@@ -24,6 +24,7 @@ import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLay
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
+import com.david.incubator.ui.user.UserOverheatExperimentLayout;
 import com.david.incubator.ui.user.UserTimeLayout;
 
 import javax.inject.Inject;
@@ -57,6 +58,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.USER_HOME.ordinal() - POPUP_START_ID] = new UserHomeLayout(getContext());
         views[LayoutPageEnum.USER_LANGUAGE.ordinal() - POPUP_START_ID] = new UserLanguageLayout(getContext());
         views[LayoutPageEnum.USER_TIME.ordinal() - POPUP_START_ID] = new UserTimeLayout(getContext());
+        views[LayoutPageEnum.USER_OVERHEAT_EXPERIMENT.ordinal() - POPUP_START_ID] = new UserOverheatExperimentLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
