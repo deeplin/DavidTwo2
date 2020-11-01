@@ -19,7 +19,8 @@ public enum LayoutPageEnum {
     LAYOUT_SAME_SCREEN,
     LAYOUT_SPO2,
     LAYOUT_CAMERA,
-    LAYOUT_ALL,
+    LAYOUT_POPUP,
+
     MENU_HOME,
     //    MENU_COMFORT_ZONE(R.string.comfort_zone, LayoutPageEnum.MENU_HOME, true, true),
 //    MENU_SENSOR_CALIBRATION(R.string.sensor_calibration, LayoutPageEnum.MENU_HOME, true, true),
@@ -53,7 +54,7 @@ public enum LayoutPageEnum {
 //    SYSTEM_Video_List(R.string.all_video, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_Image(R.string.image, LayoutPageEnum.SYSTEM_Image_List, true, true),
 //    SYSTEM_Video(R.string.video, LayoutPageEnum.SYSTEM_Video_List, true, true),
-
+//
     SETUP_HOME,
 
     ALARM_LIST_PHYSIOLOGICAL,
@@ -74,7 +75,7 @@ public enum LayoutPageEnum {
 //    TREND_CHART,
 //    TREND_TABLE,
 //    TREND_PRINT(R.layout.layout_print, R.string.data_print, LayoutPageEnum.TREND_TABLE, true, true),
-    NONE;
+    LAYOUT_NONE;
 
     private final int layoutId;
     private final int titleId;
@@ -87,7 +88,7 @@ public enum LayoutPageEnum {
     }
 
     LayoutPageEnum(int titleId, LayoutPageEnum parentPageEnum, boolean showReverse, boolean showClose) {
-        this(0, titleId, parentPageEnum, showReverse, showClose);
+        this(R.layout.layout_common, titleId, parentPageEnum, showReverse, showClose);
     }
 
     LayoutPageEnum(int layoutId, int titleId, LayoutPageEnum parentPageEnum, boolean showReverse, boolean showClose) {

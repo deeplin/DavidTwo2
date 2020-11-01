@@ -18,12 +18,12 @@ public class TitleView extends BindingBasicLayout<ViewTitleBinding> {
     @Inject
     SystemModel systemModel;
 
-    private LayoutPageEnum reversePageEnum = LayoutPageEnum.NONE;
+    private LayoutPageEnum reversePageEnum = LayoutPageEnum.LAYOUT_NONE;
 
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ContextUtil.getComponent().inject(this);
-        binding.close.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.NONE));
+        binding.close.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.LAYOUT_NONE));
         binding.reverse.setOnClickListener(view -> systemModel.showLayout(reversePageEnum));
     }
 

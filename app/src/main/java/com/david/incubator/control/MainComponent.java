@@ -2,7 +2,6 @@ package com.david.incubator.control;
 
 import com.david.core.control.CommonComponent;
 import com.david.core.ui.curve.Co2SurfaceView;
-import com.david.core.ui.layout.BaseLayout;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
@@ -29,6 +28,7 @@ import com.david.incubator.ui.home.standard.top.HomeSetView;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
+import com.david.incubator.ui.main.PopupLayout;
 import com.david.incubator.ui.top.TopLayout;
 
 import javax.inject.Singleton;
@@ -96,5 +96,5 @@ public interface MainComponent extends CommonComponent {
 
     void inject(Spo2Layout spo2Layout);
 
-    void inject(BaseLayout baseLayout);
+    void inject(PopupLayout popupLayout);
 }

@@ -59,7 +59,7 @@ public class SystemModel {
         if (isFreeze()) {
             return;
         }
-        if (Objects.equals(layoutPageEnum, LayoutPageEnum.NONE)) {
+        if (Objects.equals(layoutPageEnum, LayoutPageEnum.LAYOUT_NONE)) {
             layoutPage.post(currentLayoutPage);
         } else if (layoutPageEnum.ordinal() >= LayoutPageEnum.LAYOUT_STANDARD.ordinal()) {
             currentLayoutPage = layoutPageEnum;
