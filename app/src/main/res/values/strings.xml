@@ -122,6 +122,18 @@
     <string name="gestation">胎龄(周)</string>
     <string name="proposed_setting_range">建议设置区间:</string>
 
+    <!--Calibration-->
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="calibration_o2_21">氧浓度21%</string>
+    <string name="calibration_o2_100">氧浓度100%</string>
+    <string name="calibration_confirm_o2_21">请确认是否在21%氧浓度下校准！</string>
+    <string name="calibration_confirm_o2_100">请确认是否在100%氧浓度下校准！</string>
+    <string name="calibration_weight_0">称重0g</string>
+    <string name="calibration_weight_5000">称重5000g</string>
+    <string name="calibration_confirm_weight_0">当前称重%sg\n请确认称重是否在0g下校准！</string>
+    <string name="calibration_confirm_weight_5000">当前称重%sg\n请确认称重是否在5000g下校准！</string>
+
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

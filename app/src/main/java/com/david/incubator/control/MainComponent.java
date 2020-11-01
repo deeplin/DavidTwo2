@@ -32,6 +32,8 @@ import com.david.incubator.ui.main.PopupLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
+import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
+import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.top.TopLayout;
 
 import javax.inject.Singleton;
@@ -106,4 +108,8 @@ public interface MainComponent extends CommonComponent {
     void inject(MenuHomeLayout menuHomeLayout);
 
     void inject(MenuComfortZoneLayout menuComfortZoneLayout);
+
+    void inject(MenuSensorCalibrationLayout menuSensorCalibrationLayout);
+
+    void inject(ConfirmSensorCalibrationLayout confirmSensorCalibrationLayout);
 }
