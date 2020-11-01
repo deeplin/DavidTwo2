@@ -18,18 +18,28 @@ import javax.inject.Inject;
 
 public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
 
+    private final int POPUP_START_ID = LayoutPageEnum.MENU_HOME.ordinal();
+
     @Inject
     SystemModel systemModel;
 
     private View currentLayout;
     private final View[] views =
-            new View[LayoutPageEnum.LAYOUT_NONE.ordinal() - LayoutPageEnum.MENU_HOME.ordinal()];
+            new View[LayoutPageEnum.LAYOUT_NONE.ordinal() - POPUP_START_ID];
 
     public PopupLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
 
-        views[LayoutPageEnum.SWITCH_SCREEN.ordinal()] = new SwitchScreenLayout(getContext());
+        views[LayoutPageEnum.SWITCH_SCREEN.ordinal() - POPUP_START_ID] = new SwitchScreenLayout(getContext());
+
+        for (int index = 0; index < views.length; index++) {
+            View view = views[index];
+            if (view != null) {
+                view.setVisibility(View.INVISIBLE);
+                binding.mainFrameLayout.addView(view);
+            }
+        }
     }
 
     @Override
@@ -43,15 +53,15 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
 //        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
         currentLayout = views[systemModel.layoutPage.getValue().ordinal() - LayoutPageEnum.MENU_HOME.ordinal()];
         ((ILifeCycle) currentLayout).attach();
-        binding.mainFrameLayout.addView((View) currentLayout);
+        currentLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void detach() {
         super.detach();
-        binding.mainFrameLayout.removeAllViews();
+        currentLayout.setVisibility(View.INVISIBLE);
         ((ILifeCycle) currentLayout).detach();
         currentLayout = null;
-//        binding.incubatorVerticalListLayout.detach();
+        //        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
     }
 }

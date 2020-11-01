@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
 
     private Observer<Boolean> darkObserver;
 
-    private final ILifeCycleOwner[] views = new ILifeCycleOwner[LayoutPageEnum.LAYOUT_POPUP.ordinal()];
+    private final ILifeCycleOwner[] views = new ILifeCycleOwner[LayoutPageEnum.MENU_HOME.ordinal()];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
         views[LayoutPageEnum.LAYOUT_SAME_SCREEN.ordinal()] = new SameScreenLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_SPO2.ordinal()] = new Spo2Layout(applicationContext);
 //        views[LayoutPageEnum.LAYOUT_CAMERA.ordinal()] = new CameraLayout(applicationContext);
+        views[LayoutPageEnum.LAYOUT_POPUP.ordinal()] = new PopupLayout(applicationContext);
 
         for (int index = 0; index < views.length; index++) {
             View lifeCycleOwner = (View) views[index];
