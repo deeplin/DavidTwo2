@@ -117,6 +117,11 @@
     <string name="system_setup">系统设置</string>
     <string name="add_patient">添加患者</string>
 
+    <!--ComfortZone-->
+    <string name="age">年龄(天)</string>
+    <string name="gestation">胎龄(周)</string>
+    <string name="proposed_setting_range">建议设置区间:</string>
+
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

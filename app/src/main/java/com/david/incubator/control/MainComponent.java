@@ -29,6 +29,7 @@ import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.main.PopupLayout;
+import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuHomeLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.top.TopLayout;
@@ -103,4 +104,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SwitchScreenLayout switchScreenLayout);
 
     void inject(MenuHomeLayout menuHomeLayout);
+
+    void inject(MenuComfortZoneLayout menuComfortZoneLayout);
 }
