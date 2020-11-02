@@ -211,6 +211,16 @@
     <string name="all_image">所有图片</string>
     <string name="all_video">所有视频</string>
 
+    <!--System Deviation-->
+    <string name="air_upper_limit">箱温上限</string>
+    <string name="air_lower_limit">箱温下限</string>
+    <string name="oxygen_upper_limit">氧浓度上限</string>
+    <string name="oxygen_lower_limit">氧浓度下限</string>
+    <string name="skin_upper_limit">肤温上限</string>
+    <string name="skin_lower_limit">肤温下限</string>
+    <string name="humidity_upper_limit">湿度上限</string>
+    <string name="humidity_lower_limit">湿度下限</string>
+
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

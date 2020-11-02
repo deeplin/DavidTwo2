@@ -3,6 +3,7 @@ package com.david.core.enumeration;
 import androidx.arch.core.util.Function;
 
 import com.david.R;
+import com.david.core.util.FormatUtil;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 
 public enum KeyButtonEnum {
@@ -73,14 +74,14 @@ public enum KeyButtonEnum {
 //    ALARM_NIBP_MEAN_UPPER(R.string.map_alarm_upper, 28, 110, 1, String::valueOf),
 //    ALARM_NIBP_MEAN_LOWER(R.string.map_alarm_lower, 27, 109, 1, String::valueOf),
 //
-//    SYSTEM_DEVIATION_AIR_UPPER(R.string.air_upper_limit, 0, 30, 1, FormatUtil::formatTemp),
-//    SYSTEM_DEVIATION_AIR_LOWER(R.string.air_lower_limit, 0, 30, 1, FormatUtil::formatTemp),
-//    SYSTEM_DEVIATION_SKIN_UPPER(R.string.skin_upper_limit, 0, 10, 1, FormatUtil::formatTemp),
-//    SYSTEM_DEVIATION_SKIN_LOWER(R.string.skin_lower_limit, 0, 10, 1, FormatUtil::formatTemp),
-//    SYSTEM_DEVIATION_HUMIDITY_UPPER(R.string.humidity_upper_limit, 0, 200, 10, FormatUtil::formatHumidity),
-//    SYSTEM_DEVIATION_HUMIDITY_LOWER(R.string.humidity_lower_limit, 0, 200, 10, FormatUtil::formatHumidity),
-//    SYSTEM_DEVIATION_OXYGEN_UPPER(R.string.oxygen_upper_limit, 0, 100, 10, FormatUtil::formatOxygen),
-//    SYSTEM_DEVIATION_OXYGEN_LOWER(R.string.oxygen_lower_limit, 0, 100, 10, FormatUtil::formatOxygen),
+    SYSTEM_DEVIATION_AIR_UPPER(R.string.air_upper_limit, 0, 30, 1, FormatUtil::formatTemp),
+    SYSTEM_DEVIATION_AIR_LOWER(R.string.air_lower_limit, 0, 30, 1, FormatUtil::formatTemp),
+    SYSTEM_DEVIATION_SKIN_UPPER(R.string.skin_upper_limit, 0, 10, 1, FormatUtil::formatTemp),
+    SYSTEM_DEVIATION_SKIN_LOWER(R.string.skin_lower_limit, 0, 10, 1, FormatUtil::formatTemp),
+    SYSTEM_DEVIATION_HUMIDITY_UPPER(R.string.humidity_upper_limit, 0, 200, 10, FormatUtil::formatHumidity),
+    SYSTEM_DEVIATION_HUMIDITY_LOWER(R.string.humidity_lower_limit, 0, 200, 10, FormatUtil::formatHumidity),
+    SYSTEM_DEVIATION_OXYGEN_UPPER(R.string.oxygen_upper_limit, 0, 100, 10, FormatUtil::formatOxygen),
+    SYSTEM_DEVIATION_OXYGEN_LOWER(R.string.oxygen_lower_limit, 0, 100, 10, FormatUtil::formatOxygen),
 //
 //    SYSTEM_OVERHEAT_ALARM_AIR_ABOVE_37(R.string.overheat_air_above_37, 385, 400, 1, FormatUtil::formatTemp),
 //    SYSTEM_OVERHEAT_ALARM_AIR_BELOW_37(R.string.overheat_air_below_37, 375, 390, 1, FormatUtil::formatTemp),

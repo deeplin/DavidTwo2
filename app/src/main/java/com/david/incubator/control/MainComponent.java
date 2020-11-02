@@ -42,6 +42,7 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
 import com.david.incubator.ui.top.TopLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
@@ -157,4 +158,6 @@ public interface MainComponent extends CommonComponent {
     void inject(UserUnitSetupLayout userUnitSetupLayout);
 
     void inject(SystemHomeLayout systemHomeLayout);
+
+    void inject(SystemDeviationAlarmLayout systemDeviationAlarmLayout);
 }
