@@ -75,7 +75,7 @@ public class SystemHomeLayout extends BaseLayout {
         debugInfoButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEBUG_INFO));
         factoryButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_FACTORY));
         moduleCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_MODULE_CALIBRATION));
-//        alarmListButton.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.SYSTEM_ALARM_LIST));
+        alarmListButton.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.SYSTEM_ALARM_LIST));
 //
 //        imageButton.setOnClickListener(view -> {
 //            UserImageListLayout.init(Long.MIN_VALUE, Long.MAX_VALUE);
