@@ -244,6 +244,15 @@
     <!--Nibp Calibration-->
     <string name="pressure">压力计</string>
 
+    <!--Setup-->
+    <string name="setup">设置</string>
+    <string name="mode">模式</string>
+    <string name="temp">温度</string>
+    
+
+    <string name="avg_time" translatable="false">AVG Time</string>
+    <string name="kang">袋鼠模式</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

@@ -10,6 +10,7 @@
     <color name="background_blue_dark">#73ACE6</color>
     <color name="background_pink">#f8e9e4</color>
     <color name="background_pink_dark">#EDC4C9</color>
+    <color name="background_disable">#707070</color>
 
     <!--Button-->
     <color name="button_background_disable">#939598</color>

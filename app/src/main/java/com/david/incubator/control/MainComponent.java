@@ -42,6 +42,7 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
 import com.david.incubator.ui.system.SystemAlarmListLayout;
 import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
@@ -187,4 +188,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SystemNibpCalibrationLayout systemNibpCalibrationLayout);
 
     void inject(SystemAlarmListLayout systemAlarmListLayout);
+
+    void inject(SetupHomeIncubatorLayout setupHomeIncubatorLayout);
 }
