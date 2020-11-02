@@ -6,12 +6,12 @@ public enum SetupPageEnum {
     Oxygen(2),
     Blue(3),
     Mat(4),
-    Ecg(5),
-    Spo2(6),
-    Nibp(7),
-    Co2(8),
-    Resp(9),
-    Wake(10);
+    Ecg(0),
+    Spo2(1),
+    Nibp(2),
+    Co2(3),
+    Resp(4),
+    Wake(5);
 
     private final int layoutId;
 

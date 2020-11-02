@@ -82,7 +82,11 @@ public class SystemModel {
 
     public void showSetupPage(SetupPageEnum setupPageEnum) {
         tagId = setupPageEnum.ordinal();
-        showLayout(LayoutPageEnum.SETUP_HOME);
+        if (setupPageEnum.ordinal() < SetupPageEnum.Ecg.ordinal()) {
+            showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
+        } else {
+            showLayout(LayoutPageEnum.SETUP_HOME_ECG);
+        }
     }
 //
 //    public void showAlarmPage(AlarmPageEnum alarmPageEnum) {

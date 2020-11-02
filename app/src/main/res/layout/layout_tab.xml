@@ -19,7 +19,7 @@
             android:id="@+id/tabHomeLayout"
             android:layout_width="124dp"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/f16"
+            android:layout_marginStart="@dimen/f4"
             android:layout_marginTop="@dimen/f16"
             android:layout_marginBottom="@dimen/f16"
             app:layout_constraintBottom_toBottomOf="parent"

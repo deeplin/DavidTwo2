@@ -2,7 +2,6 @@ package com.david.core.ui.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.lifecycle.LifecycleOwner;
 
@@ -49,7 +48,7 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
 
         //todo deeplin
 //        currentLayout = tabControl.getLayout(layoutId);
-        binding.rootView.addView((View) currentLayout);
-        currentLayout.attach(parentOwner);
+//        binding.rootView.addView((View) currentLayout);
+//        currentLayout.attach(parentOwner);
     }
 }

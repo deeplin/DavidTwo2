@@ -54,7 +54,8 @@ public enum LayoutPageEnum {
 //    SYSTEM_Image(R.string.image, LayoutPageEnum.SYSTEM_Image_List, true, true),
 //    SYSTEM_Video(R.string.video, LayoutPageEnum.SYSTEM_Video_List, true, true),
 //
-    SETUP_HOME,
+    SETUP_HOME_INCUBATOR,
+    SETUP_HOME_ECG,
 
     ALARM_LIST_PHYSIOLOGICAL,
     ALARM_LIST_TECHNICAL,
