@@ -81,4 +81,8 @@ public class FormatUtil {
     public static String formatSpeed(Integer value) {
         return value + " r/min";
     }
+
+    public static String formatPercentage(int value) {
+        return String.format(Locale.US, "%s %%", value);
+    }
 }

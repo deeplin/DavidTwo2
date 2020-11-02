@@ -15,7 +15,7 @@
             android:layout_height="@dimen/f56"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.david.core.ui.layout.TabHomeLayout
+        <com.david.incubator.ui.setup.TabHomeLayout
             android:id="@+id/tabHomeLayout"
             android:layout_width="124dp"
             android:layout_height="0dp"
@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleView" />
 
-        <com.david.core.ui.layout.TabFrameLayout
+        <com.david.incubator.ui.setup.TabFrameLayout
             android:id="@+id/tabFrameLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"

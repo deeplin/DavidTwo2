@@ -9,11 +9,11 @@ import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
 
 public enum KeyButtonEnum {
 
-//    SETUP_AIR(R.string.setup, 0, 1000, 1, FormatUtil::formatTemp),
-//    SETUP_SKIN(R.string.setup, 0, 1000, 1, FormatUtil::formatTemp),
-//    SETUP_MANUEL(R.string.setup, 0, 100, 5, FormatUtil::formatPercentage),
-//    SETUP_HUMIDITY(R.string.setup, 0, 1000, 10, FormatUtil::formatHumidity),
-//    SETUP_OXYGEN(R.string.setup, 0, 1000, 10, FormatUtil::formatOxygen),
+    SETUP_AIR(R.string.setup, 0, 1000, 1, FormatUtil::formatTemp),
+    SETUP_SKIN(R.string.setup, 0, 1000, 1, FormatUtil::formatTemp),
+    SETUP_MANUEL(R.string.setup, 0, 100, 5, FormatUtil::formatPercentage),
+    SETUP_HUMIDITY(R.string.setup, 0, 1000, 10, FormatUtil::formatHumidity),
+    SETUP_OXYGEN(R.string.setup, 0, 1000, 10, FormatUtil::formatOxygen),
 //
 //    SETUP_CO2_O2_COMPENSATE(R.string.o2_compensate, 0, 100, 1, FormatUtil::formatPercentage),
 //    SETUP_CO2_N20_COMPENSATE(R.string.n2o_compensate, 0, 100, 1, FormatUtil::formatPercentage),

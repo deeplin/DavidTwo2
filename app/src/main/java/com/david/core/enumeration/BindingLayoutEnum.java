@@ -2,14 +2,13 @@ package com.david.core.enumeration;
 
 public enum BindingLayoutEnum {
 
-    Standard(true, 352, 64,
+    Standard(352, 64,
             240, 48, 80,
-            176, 132);
+            176, 132),
 
-
-    public boolean isTitle() {
-        return title;
-    }
+    Tab(290, 64,
+            200, 48, 40,
+            140, 132);
 
     public int getComponentWidth() {
         return componentWidth;
@@ -39,7 +38,6 @@ public enum BindingLayoutEnum {
         return buttonStart;
     }
 
-    private final boolean title;
     private final int componentWidth;
     private final int componentHeight;
     private final int buttonWidth;
@@ -48,10 +46,9 @@ public enum BindingLayoutEnum {
     private final int popupWidth;
     private final int popupHeight;
 
-    BindingLayoutEnum(boolean title, int componentWidth, int componentHeight,
+    BindingLayoutEnum(int componentWidth, int componentHeight,
                       int buttonWidth, int buttonHeight, int buttonStart,
                       int popupWidth, int popupHeight) {
-        this.title = title;
         this.componentWidth = componentWidth;
         this.componentHeight = componentHeight;
         this.buttonHeight = buttonHeight;

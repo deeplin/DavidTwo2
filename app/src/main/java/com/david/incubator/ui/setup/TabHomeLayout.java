@@ -1,4 +1,4 @@
-package com.david.core.ui.layout;
+package com.david.incubator.ui.setup;
 
 import android.content.Context;
 import android.util.AttributeSet;

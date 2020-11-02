@@ -56,17 +56,12 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     }
 
     protected void init(LayoutPageEnum layoutPageEnum) {
-        numberPopupView = componentControl.getNumberPopupView();
-        optionPopupView = componentControl.getOptionPopupView();
-        this.bindingLayoutEnum = layoutPageEnum.getBindingLayoutEnum();
-        if (bindingLayoutEnum.isTitle()) {
-            TitleView titleView = new TitleView(getContext(), null);
-            titleId = View.generateViewId();
-            titleView.setId(titleId);
-            titleView.set(layoutPageEnum.getTitleId(), layoutPageEnum.getParentPageEnum(), layoutPageEnum.isShowClose());
-            addInnerView(titleView, LayoutParams.MATCH_PARENT, 56, 0, 0, -1, -1);
-            topMargin = 56;
-        }
+        TitleView titleView = new TitleView(getContext(), null);
+        titleId = View.generateViewId();
+        titleView.setId(titleId);
+        titleView.set(layoutPageEnum.getTitleId(), layoutPageEnum.getParentPageEnum(), layoutPageEnum.isShowClose());
+        addInnerView(titleView, LayoutParams.MATCH_PARENT, 56, 0, 0, -1, -1);
+        topMargin = 56;
 
         ImageView backgroundImage = new ImageView(getContext());
         backgroundImage.setId(View.generateViewId());
@@ -74,8 +69,20 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         backgroundImage.setZ(-1);
         addInnerView(backgroundImage, LayoutParams.MATCH_CONSTRAINT, LayoutParams.MATCH_CONSTRAINT, 4, topMargin, 4, 4);
 
+        init(layoutPageEnum.getBindingLayoutEnum());
+    }
+
+    protected void init() {
+        init(BindingLayoutEnum.Standard);
+    }
+
+    private void init(BindingLayoutEnum bindingLayoutEnum) {
+        this.bindingLayoutEnum = bindingLayoutEnum;
+        numberPopupView = componentControl.getNumberPopupView();
+        optionPopupView = componentControl.getOptionPopupView();
+
         setBackgroundResource(R.drawable.background_panel_blue_dark);
-        backgroundImage.setOnClickListener(view -> closePopup());
+        setOnClickListener(view -> closePopup());
     }
 
     @Override
@@ -143,7 +150,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         }
     }
 
-    protected void addKeyButtonWithLiveData(int index, int rowId) {
+    protected KeyButtonView addKeyButtonWithLiveData(int index, int rowId) {
         KeyButtonView keyButtonView = new KeyButtonView(getContext());
         keyButtonView.setId(View.generateViewId());
 
@@ -152,6 +159,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
 
         keyButtonView.getKey().setOnClickListener(v -> closePopup());
         addInnerView(rowId, keyButtonView);
+        return keyButtonView;
     }
 
     protected void setKeyButtonEnum(int index, KeyButtonEnum keyButtonEnum, Function<KeyButtonEnum, Integer> minCondition,
