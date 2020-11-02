@@ -51,16 +51,19 @@ public class SetupTempLayout extends BaseLayout {
     public SetupTempLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
-        super.init();
+        super.initLargeFont();
 
         modeView = ViewUtil.buildKeyButtonView(getContext());
+        modeView.setBigFont();
         above37View = ViewUtil.buildKeyButtonView(getContext());
+        above37View.setBigFont();
         addInnerView(0, modeView);
         addInnerView(2, above37View);
 
         keyButtonViewArray = new KeyButtonView[3];
         for (int index = 0; index < keyButtonViewArray.length; index++) {
             keyButtonViewArray[index] = addKeyButtonWithLiveData(index, 1);
+            keyButtonViewArray[index].setBigFont();
         }
 
         setKeyButtonEnum(0, KeyButtonEnum.SETUP_AIR, null, this::increaseObjectiveCondition);
@@ -81,6 +84,7 @@ public class SetupTempLayout extends BaseLayout {
         kangButton = ViewUtil.buildButton(getContext());
         addInnerButton(3, kangButton);
         kangButton.setText(ContextUtil.getString(R.string.kang));
+        kangButton.setTextSize(40);
         kangButton.setOnClickListener(view ->
                 incubatorCommandSender.clearAlarm120("ALL", (aBoolean, baseSerialMessage) -> {
                     incubatorModel.KANG.post(true);
