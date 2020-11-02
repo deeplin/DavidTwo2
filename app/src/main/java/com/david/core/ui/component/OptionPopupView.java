@@ -45,7 +45,7 @@ public class OptionPopupView extends BindingBasicLayout<ViewOptionPopupBinding> 
             button.setAllCaps(false);
             button.setHeight(52);
             button.setTextSize(16);
-            button.setBackgroundResource(R.drawable.button_bottom_background);
+            button.setBackgroundResource(R.drawable.button_standard_background);
             button.setVisibility(View.GONE);
             button.setTag(index);
             button.setTextColor(ContextUtil.getColor(R.color.text_blue));
