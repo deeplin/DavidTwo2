@@ -241,6 +241,8 @@
     <string name="restore_setup">恢复设置</string>
     <string name="restore_setup_confirm">请确认是否进行系统设置恢复？</string>
 
+    <!--Nibp Calibration-->
+    <string name="pressure">压力计</string>
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

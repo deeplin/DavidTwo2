@@ -22,10 +22,12 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.system.SystemAlarmListLayout;
 import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
 import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
+import com.david.incubator.ui.system.SystemNibpCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
 import com.david.incubator.ui.system.SystemRangeSetupLayout;
 import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
@@ -82,6 +84,9 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SYSTEM_FACTORY.ordinal() - POPUP_START_ID] = new SystemFactoryLayout(getContext());
         views[LayoutPageEnum.SYSTEM_CONFIRM_FACTORY.ordinal() - POPUP_START_ID] = new ConfirmFactoryLayout(getContext());
         views[LayoutPageEnum.SYSTEM_MODULE_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemModuleCalibrationLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_NIBP_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemNibpCalibrationLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_ALARM_LIST.ordinal() - POPUP_START_ID] = new SystemAlarmListLayout(getContext());
+
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

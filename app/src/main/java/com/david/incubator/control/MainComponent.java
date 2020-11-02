@@ -42,10 +42,12 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.system.SystemAlarmListLayout;
 import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
 import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
+import com.david.incubator.ui.system.SystemNibpCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
 import com.david.incubator.ui.system.SystemRangeSetupLayout;
 import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
@@ -181,4 +183,8 @@ public interface MainComponent extends CommonComponent {
     void inject(SystemFactoryLayout systemFactoryLayout);
 
     void inject(ConfirmFactoryLayout confirmFactoryLayout);
+
+    void inject(SystemNibpCalibrationLayout systemNibpCalibrationLayout);
+
+    void inject(SystemAlarmListLayout systemAlarmListLayout);
 }
