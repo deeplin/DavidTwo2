@@ -63,8 +63,8 @@ public class StatusCommand extends BaseIncubatorCommand {
         setCallback((aBoolean, baseCommand) -> {
             if (aBoolean) {
                 SystemEnum systemMode = SystemEnum.valueOf(mode);
-//                incubatorModel.systemMode.post(SystemEnum.Warmer);
-                incubatorModel.systemMode.post(systemMode);
+                incubatorModel.systemMode.post(SystemEnum.Warmer);
+//                incubatorModel.systemMode.post(systemMode);
 
                 CtrlEnum ctrlEnum = CtrlEnum.valueOf(ctrl);
                 incubatorModel.ctrlMode.post(ctrlEnum);
