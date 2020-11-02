@@ -200,6 +200,18 @@
     <string name="overheat_skin_above_37">肤温&gt;37</string>
     <string name="stable_state">稳定状态</string>
 
+    <!--System Home-->
+    <string name="deviation_alarm">偏差报警</string>
+    <string name="overheat_alarm">超温报警</string>
+    <string name="range_setup">范围设置</string>
+    <string name="debug_info">调试信息</string>
+    <string name="factory_setting">出厂设置</string>
+    <string name="module_calibration">模块校准</string>
+    <string name="alarm_record">报警日志</string>
+    <string name="all_image">所有图片</string>
+    <string name="all_video">所有视频</string>
+
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>
