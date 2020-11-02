@@ -64,4 +64,16 @@ public class TitleIntegerView extends BindingBasicLayout<ViewTitleIntegerBinding
     public void detach() {
         super.detach();
     }
+
+    public void setSmallLayout() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(binding.rootView);
+        constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, 84);
+        constraintSet.applyTo(binding.rootView);
+
+        binding.integerPart.setTextSize(60);
+        binding.decimalPart.setTextSize(40);
+
+        binding.unit.setTextSize(24);
+    }
 }

@@ -21,6 +21,7 @@ import com.david.core.util.ContextUtil;
 import com.david.core.util.ViewUtil;
 import com.david.databinding.LayoutMiddleRightBinding;
 
+import java.util.Locale;
 import java.util.Objects;
 
 import javax.inject.Inject;
@@ -37,6 +38,7 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
     IncubatorModel incubatorModel;
 
     private final Observer<SystemEnum> systemEnumObserver;
+    private final Observer<Integer> cTimeObserver;
 
     public MiddleRightLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -95,6 +97,14 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
         };
 
         binding.prHrView.setTitleBackground(R.drawable.background_panel);
+        binding.matSensorView.setSmallLayout();
+        binding.blueSensorView.setSmallLayout();
+
+        cTimeObserver = integer -> {
+            String heatString = String.format(Locale.US, "%02d:%02d", (integer / 60) % 60, integer % 60);
+            binding.blueSensorView.setText(heatString);
+        };
+        binding.blueSensorView.setUnit("h");
     }
 
     @Override
@@ -117,11 +127,13 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
 
         binding.prHrView.attach(lifeCycleOwner);
         incubatorModel.systemMode.observeForever(systemEnumObserver);
+        incubatorModel.cTime.observeForever(cTimeObserver);
     }
 
     @Override
     public void detach() {
         super.detach();
+        incubatorModel.cTime.removeObserver(cTimeObserver);
         incubatorModel.systemMode.removeObserver(systemEnumObserver);
         binding.prHrView.detach();
         binding.oxygenSensorView.detach();

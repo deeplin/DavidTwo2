@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textString"
+            android:id="@+id/integerPart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
@@ -47,15 +47,15 @@
             android:id="@+id/unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/f16"
+            android:layout_marginStart="@dimen/f4"
             android:includeFontPadding="false"
             android:text="@{sensorModel.unit}"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/f40"
-            app:layout_constraintBaseline_toBaselineOf="@id/textString"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/integerPart"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/textString" />
+            android:textSize="@dimen/f40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/integerPart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
