@@ -70,11 +70,11 @@ public class SystemHomeLayout extends BaseLayout {
 
         deviationAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEVIATION_ALARM));
         overheatAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_OVERHEAT_ALARM));
-//        rangeSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_RANGE_SETUP));
-//        sensorCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_SENSOR_CALIBRATION));
-//        debugInfoButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEBUG_INFO));
-//        factoryButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_FACTORY));
-//        moduleCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_MODULE_CALIBRATION));
+        rangeSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_RANGE_SETUP));
+        sensorCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_SENSOR_CALIBRATION));
+        debugInfoButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEBUG_INFO));
+        factoryButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_FACTORY));
+        moduleCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_MODULE_CALIBRATION));
 //        alarmListButton.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.SYSTEM_ALARM_LIST));
 //
 //        imageButton.setOnClickListener(view -> {

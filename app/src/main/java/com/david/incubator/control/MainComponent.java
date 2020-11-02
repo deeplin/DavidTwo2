@@ -42,9 +42,15 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
+import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
+import com.david.incubator.ui.system.SystemRangeSetupLayout;
+import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
+import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
+import com.david.incubator.ui.system.factory.SystemFactoryLayout;
 import com.david.incubator.ui.top.TopLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
@@ -163,4 +169,16 @@ public interface MainComponent extends CommonComponent {
     void inject(SystemDeviationAlarmLayout systemDeviationAlarmLayout);
 
     void inject(SystemOverheatAlarmLayout systemOverheatAlarmLayout);
+
+    void inject(SystemRangeSetupLayout systemRangeSetupLayout);
+
+    void inject(SystemModuleCalibrationLayout systemModuleCalibrationLayout);
+
+    void inject(SystemSensorCalibrationLayout systemSensorCalibrationLayout);
+
+    void inject(SystemDebugInfoLayout systemDebugInfoLayout);
+
+    void inject(SystemFactoryLayout systemFactoryLayout);
+
+    void inject(ConfirmFactoryLayout confirmFactoryLayout);
 }

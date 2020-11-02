@@ -226,6 +226,21 @@
     <string name="overheat_airflow_above_37">风道&gt;37</string>
     <string name="fan_speed">风机转速</string>
 
+    <!--System Sensor Calibration-->
+    <string name="iso_air">箱温独立</string>
+    <string name="iso_skin1">肤温1独立</string>
+    <string name="nibp_calibration">NIBP校准</string>
+    <string name="nibp_calibration0">校准0mmHg</string>
+    <string name="nibp_calibration140">校准140mmHg</string>
+
+    <!--System Factory-->
+    <string name="reset_lower">重置下位机</string>
+    <string name="reset_lower_confirm">是否重置下位机?</string>
+    <string name="backup_setup">备份设置</string>
+    <string name="backup_setup_confirm">请确认是否进行系统设置备份？</string>
+    <string name="restore_setup">恢复设置</string>
+    <string name="restore_setup_confirm">请确认是否进行系统设置恢复？</string>
+
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

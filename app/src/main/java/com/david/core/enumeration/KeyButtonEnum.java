@@ -5,6 +5,7 @@ import androidx.arch.core.util.Function;
 import com.david.R;
 import com.david.core.util.FormatUtil;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
+import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
 
 public enum KeyButtonEnum {
 
@@ -89,23 +90,19 @@ public enum KeyButtonEnum {
     SYSTEM_OVERHEAT_ALARM_FAN_SPEED(R.string.fan_speed, 400, 5100, 10, FormatUtil::formatSpeed),
     SYSTEM_OVERHEAT_ALARM_AIR_FLOW_ABOVE_37(R.string.overheat_airflow_above_37, 385, 700, 1, FormatUtil::formatTemp),
     SYSTEM_OVERHEAT_ALARM_AIR_FLOW_BELOW_37(R.string.overheat_airflow_below_37, 375, 700, 1, FormatUtil::formatTemp),
-//
-//    SYSTEM_RANGE_SETUP_AIR_UPPER(R.string.air_upper_limit, 370, 390, 1, FormatUtil::formatTemp),
-//    SYSTEM_RANGE_SETUP_AIR_LOWER(R.string.air_lower_limit, 200, 340, 1, FormatUtil::formatTemp),
-//    SYSTEM_RANGE_SETUP_SKIN_UPPER(R.string.skin_upper_limit, 370, 390, 1, FormatUtil::formatTemp),
-//    SYSTEM_RANGE_SETUP_SKIN_LOWER(R.string.skin_lower_limit, 300, 340, 1, FormatUtil::formatTemp),
-//    SYSTEM_RANGE_SETUP_HUMIDITY_UPPER(R.string.humidity_upper_limit, 300, 990, 10, FormatUtil::formatHumidity),
-//    SYSTEM_RANGE_SETUP_HUMIDITY_LOWER(R.string.humidity_lower_limit, 0, 500, 10, FormatUtil::formatHumidity),
-//    SYSTEM_RANGE_SETUP_OXYGEN_UPPER(R.string.oxygen_upper_limit, 300, 650, 10, FormatUtil::formatOxygen),
-//    SYSTEM_RANGE_SETUP_OXYGEN_LOWER(R.string.oxygen_lower_limit, 200, 300, 10, FormatUtil::formatOxygen),
-//
-//    SYSTEM_SENSOR_CALIBRATION_AIR(R.string.air, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
-//    SYSTEM_SENSOR_CALIBRATION_ISO_AIR(R.string.iso_air, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
-//    SYSTEM_SENSOR_CALIBRATION_SKIN(R.string.skin1, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
-//    SYSTEM_SENSOR_CALIBRATION_ISO_SKIN(R.string.iso_skin1, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
-//    SYSTEM_SENSOR_CALIBRATION_HUMIDITY(R.string.humidity, -50, 50, 10, SystemSensorCalibrationLayout::formatHumidity)
-
-    ;
+    SYSTEM_RANGE_SETUP_AIR_UPPER(R.string.air_upper_limit, 370, 390, 1, FormatUtil::formatTemp),
+    SYSTEM_RANGE_SETUP_AIR_LOWER(R.string.air_lower_limit, 200, 340, 1, FormatUtil::formatTemp),
+    SYSTEM_RANGE_SETUP_SKIN_UPPER(R.string.skin_upper_limit, 370, 390, 1, FormatUtil::formatTemp),
+    SYSTEM_RANGE_SETUP_SKIN_LOWER(R.string.skin_lower_limit, 300, 340, 1, FormatUtil::formatTemp),
+    SYSTEM_RANGE_SETUP_HUMIDITY_UPPER(R.string.humidity_upper_limit, 300, 990, 10, FormatUtil::formatHumidity),
+    SYSTEM_RANGE_SETUP_HUMIDITY_LOWER(R.string.humidity_lower_limit, 0, 500, 10, FormatUtil::formatHumidity),
+    SYSTEM_RANGE_SETUP_OXYGEN_UPPER(R.string.oxygen_upper_limit, 300, 650, 10, FormatUtil::formatOxygen),
+    SYSTEM_RANGE_SETUP_OXYGEN_LOWER(R.string.oxygen_lower_limit, 200, 300, 10, FormatUtil::formatOxygen),
+    SYSTEM_SENSOR_CALIBRATION_AIR(R.string.air, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
+    SYSTEM_SENSOR_CALIBRATION_ISO_AIR(R.string.iso_air, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
+    SYSTEM_SENSOR_CALIBRATION_SKIN(R.string.skin1, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
+    SYSTEM_SENSOR_CALIBRATION_ISO_SKIN(R.string.iso_skin1, -50, 50, 1, SystemSensorCalibrationLayout::formatTemp),
+    SYSTEM_SENSOR_CALIBRATION_HUMIDITY(R.string.humidity, -50, 50, 10, SystemSensorCalibrationLayout::formatHumidity);
 
     public int getTitleId() {
         return titleId;

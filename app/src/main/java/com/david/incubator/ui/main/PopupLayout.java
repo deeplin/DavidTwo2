@@ -22,9 +22,15 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
+import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
+import com.david.incubator.ui.system.SystemRangeSetupLayout;
+import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
+import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
+import com.david.incubator.ui.system.factory.SystemFactoryLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserModuleSetupLayout;
@@ -70,6 +76,12 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SYSTEM_HOME.ordinal() - POPUP_START_ID] = new SystemHomeLayout(getContext());
         views[LayoutPageEnum.SYSTEM_DEVIATION_ALARM.ordinal() - POPUP_START_ID] = new SystemDeviationAlarmLayout(getContext());
         views[LayoutPageEnum.SYSTEM_OVERHEAT_ALARM.ordinal() - POPUP_START_ID] = new SystemOverheatAlarmLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_RANGE_SETUP.ordinal() - POPUP_START_ID] = new SystemRangeSetupLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_SENSOR_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemSensorCalibrationLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_DEBUG_INFO.ordinal() - POPUP_START_ID] = new SystemDebugInfoLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_FACTORY.ordinal() - POPUP_START_ID] = new SystemFactoryLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_CONFIRM_FACTORY.ordinal() - POPUP_START_ID] = new ConfirmFactoryLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_MODULE_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemModuleCalibrationLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
