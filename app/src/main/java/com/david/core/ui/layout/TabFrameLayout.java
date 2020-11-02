@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner;
 
 import com.david.R;
 import com.david.core.util.ILifeCycleOwner;
+import com.david.core.util.LoggerUtil;
 import com.david.databinding.LayoutTabFrameBinding;
 
 public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
@@ -45,6 +46,7 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
             currentLayout = null;
         }
         binding.rootView.removeAllViews();
+        LoggerUtil.se("layout id" + layoutId);
 
         //todo deeplin
 //        currentLayout = tabControl.getLayout(layoutId);

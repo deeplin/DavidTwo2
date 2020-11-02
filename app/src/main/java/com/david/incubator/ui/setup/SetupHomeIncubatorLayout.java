@@ -49,25 +49,25 @@ public class SetupHomeIncubatorLayout extends BindingBasicLayout<LayoutTabBindin
         int rowId = 0;
         SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId];
         setSelectId(targetSetupPageEnum, SetupPageEnum.Temp, rowId);
-        binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.temp), SetupPageEnum.Temp.getLayoutId());
+        binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.temp), SetupPageEnum.Temp.ordinal());
 
         if (incubatorModel.isCabin()) {
             if (moduleHardware.isActive(ModuleEnum.Hum)) {
                 setSelectId(targetSetupPageEnum, SetupPageEnum.Humidity, rowId);
-                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.humidity), SetupPageEnum.Humidity.getLayoutId());
+                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.humidity), SetupPageEnum.Humidity.ordinal());
             }
             if (moduleHardware.isActive(ModuleEnum.Oxygen)) {
                 setSelectId(targetSetupPageEnum, SetupPageEnum.Oxygen, rowId);
-                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.oxygen), SetupPageEnum.Oxygen.getLayoutId());
+                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.oxygen), SetupPageEnum.Oxygen.ordinal());
             }
         } else {
             if (moduleHardware.isInstalled(ModuleEnum.Blue)) {
                 setSelectId(targetSetupPageEnum, SetupPageEnum.Blue, rowId);
-                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.blue), SetupPageEnum.Blue.getLayoutId());
+                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.blue), SetupPageEnum.Blue.ordinal());
             }
             if (moduleHardware.isInstalled(ModuleEnum.Mat)) {
                 setSelectId(targetSetupPageEnum, SetupPageEnum.Mat, rowId);
-                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.mat), SetupPageEnum.Mat.getLayoutId());
+                binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.mat), SetupPageEnum.Mat.ordinal());
             }
         }
         binding.tabHomeLayout.attach(lifecycleOwner);
