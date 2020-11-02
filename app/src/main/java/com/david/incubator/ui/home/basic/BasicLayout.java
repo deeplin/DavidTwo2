@@ -126,6 +126,7 @@ public class BasicLayout extends BindingBasicLayout<LayoutBasicBinding> {
         binding.skin1SensorView.setSensorDarkMode(darkMode);
         binding.airSensorView.setSensorDarkMode(darkMode);
         binding.timingLayout.setSensorDarkMode(darkMode);
+        binding.angleSensorView.setSensorDarkMode(darkMode);
         binding.middleRightSensorView.setDarkMode(darkMode);
         binding.standardSpo2Layout.setSensorDarkMode(darkMode);
     }

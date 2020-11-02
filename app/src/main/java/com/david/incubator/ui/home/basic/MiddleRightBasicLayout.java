@@ -58,8 +58,21 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
             systemModel.showSetupPage(SetupPageEnum.Oxygen);
         });
 
+        binding.matSensorView.setOnClickListener(view -> {
+            if (systemModel.isFreeze()) {
+                return;
+            }
+            systemModel.showSetupPage(SetupPageEnum.Mat);
+        });
+
+        binding.blueSensorView.setOnClickListener(view -> {
+            if (systemModel.isFreeze()) {
+                return;
+            }
+            systemModel.showSetupPage(SetupPageEnum.Blue);
+        });
+
         systemEnumObserver = systemEnum -> {
-            systemEnum = SystemEnum.Warmer;
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, true);
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, true);
@@ -80,6 +93,12 @@ public class MiddleRightBasicLayout extends BindingBasicLayout<LayoutMiddleRight
                     binding.matSensorView.setVisibility(View.VISIBLE);
                 } else {
                     binding.matSensorView.setVisibility(View.GONE);
+                }
+
+                if (moduleHardware.isInstalled(ModuleEnum.Blue)) {
+                    binding.blueSensorView.setVisibility(View.VISIBLE);
+                } else {
+                    binding.blueSensorView.setVisibility(View.GONE);
                 }
 
                 if (binding.matSensorView.getVisibility() == View.GONE &&

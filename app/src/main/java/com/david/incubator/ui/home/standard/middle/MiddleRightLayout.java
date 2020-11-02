@@ -56,13 +56,41 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
             systemModel.showSetupPage(SetupPageEnum.Oxygen);
         });
 
+        binding.matSensorView.setOnClickListener(view -> {
+            if (systemModel.isFreeze()) {
+                return;
+            }
+            systemModel.showSetupPage(SetupPageEnum.Mat);
+        });
+
+        binding.blueSensorView.setOnClickListener(view -> {
+            if (systemModel.isFreeze()) {
+                return;
+            }
+            systemModel.showSetupPage(SetupPageEnum.Blue);
+        });
+
         systemEnumObserver = systemEnum -> {
             if (Objects.equals(systemEnum, SystemEnum.Cabin)) {
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Hum, binding.humiditySensorView, false);
                 ViewUtil.setDisable(moduleHardware, ModuleEnum.Oxygen, binding.oxygenSensorView, false);
-            } else {
+                binding.blueSensorView.setVisibility(View.GONE);
+                binding.matSensorView.setVisibility(View.GONE);
+            } else if (Objects.equals(systemEnum, SystemEnum.Warmer)) {
                 binding.humiditySensorView.setVisibility(View.GONE);
                 binding.oxygenSensorView.setVisibility(View.GONE);
+
+                if (moduleHardware.isInstalled(ModuleEnum.Mat)) {
+                    binding.matSensorView.setVisibility(View.VISIBLE);
+                } else {
+                    binding.matSensorView.setVisibility(View.GONE);
+                }
+
+                if (moduleHardware.isInstalled(ModuleEnum.Blue)) {
+                    binding.blueSensorView.setVisibility(View.VISIBLE);
+                } else {
+                    binding.blueSensorView.setVisibility(View.GONE);
+                }
             }
         };
 
@@ -82,6 +110,11 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
         binding.oxygenSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Oxygen));
         binding.oxygenSensorView.attach(lifeCycleOwner);
 
+        binding.matSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.MAT));
+        binding.matSensorView.attach(lifeCycleOwner);
+        binding.blueSensorView.set(sensorModelRepository.getSensorModel(SensorModelEnum.Blue));
+        binding.blueSensorView.attach(lifeCycleOwner);
+
         binding.prHrView.attach(lifeCycleOwner);
         incubatorModel.systemMode.observeForever(systemEnumObserver);
     }
@@ -93,11 +126,16 @@ public class MiddleRightLayout extends BindingBasicLayout<LayoutMiddleRightBindi
         binding.prHrView.detach();
         binding.oxygenSensorView.detach();
         binding.humiditySensorView.detach();
+
+        binding.blueSensorView.detach();
+        binding.matSensorView.detach();
     }
 
     public void setDarkMode(boolean darkMode) {
         binding.prHrView.setSensorDarkMode(darkMode);
         binding.humiditySensorView.setSensorDarkMode(darkMode);
         binding.oxygenSensorView.setSensorDarkMode(darkMode);
+        binding.matSensorView.setSensorDarkMode(darkMode);
+        binding.blueSensorView.setSensorDarkMode(darkMode);
     }
 }

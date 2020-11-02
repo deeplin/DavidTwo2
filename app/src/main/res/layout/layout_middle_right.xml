@@ -27,8 +27,24 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/f8"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/matSensorView"
             app:layout_constraintStart_toEndOf="@id/humiditySensorView" />
+
+        <com.david.core.ui.view.TitleIntegerView
+            android:id="@+id/matSensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintEnd_toStartOf="@id/blueSensorView"
+            app:layout_constraintStart_toEndOf="@id/oxygenSensorView" />
+
+        <com.david.core.ui.view.TitleStringView
+            android:id="@+id/blueSensorView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/f8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/matSensorView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
