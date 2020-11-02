@@ -44,6 +44,7 @@ import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLay
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
+import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
 import com.david.incubator.ui.top.TopLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
@@ -160,4 +161,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SystemHomeLayout systemHomeLayout);
 
     void inject(SystemDeviationAlarmLayout systemDeviationAlarmLayout);
+
+    void inject(SystemOverheatAlarmLayout systemOverheatAlarmLayout);
 }

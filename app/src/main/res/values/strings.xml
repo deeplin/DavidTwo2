@@ -221,6 +221,11 @@
     <string name="humidity_upper_limit">湿度上限</string>
     <string name="humidity_lower_limit">湿度下限</string>
 
+    <!--System Overheat-->
+    <string name="overheat_airflow_below_37">风道≤37</string>
+    <string name="overheat_airflow_above_37">风道&gt;37</string>
+    <string name="fan_speed">风机转速</string>
+
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

@@ -82,13 +82,13 @@ public enum KeyButtonEnum {
     SYSTEM_DEVIATION_HUMIDITY_LOWER(R.string.humidity_lower_limit, 0, 200, 10, FormatUtil::formatHumidity),
     SYSTEM_DEVIATION_OXYGEN_UPPER(R.string.oxygen_upper_limit, 0, 100, 10, FormatUtil::formatOxygen),
     SYSTEM_DEVIATION_OXYGEN_LOWER(R.string.oxygen_lower_limit, 0, 100, 10, FormatUtil::formatOxygen),
-//
-//    SYSTEM_OVERHEAT_ALARM_AIR_ABOVE_37(R.string.overheat_air_above_37, 385, 400, 1, FormatUtil::formatTemp),
-//    SYSTEM_OVERHEAT_ALARM_AIR_BELOW_37(R.string.overheat_air_below_37, 375, 390, 1, FormatUtil::formatTemp),
-//    SYSTEM_OVERHEAT_ALARM_SKIN(R.string.skin, 370, 410, 1, FormatUtil::formatTemp),
-//    SYSTEM_OVERHEAT_ALARM_FAN_SPEED(R.string.fan_speed, 400, 5100, 10, FormatUtil::formatSpeed),
-//    SYSTEM_OVERHEAT_ALARM_AIR_FLOW_ABOVE_37(R.string.overheat_airflow_above_37, 385, 700, 1, FormatUtil::formatTemp),
-//    SYSTEM_OVERHEAT_ALARM_AIR_FLOW_BELOW_37(R.string.overheat_airflow_below_37, 375, 700, 1, FormatUtil::formatTemp),
+
+    SYSTEM_OVERHEAT_ALARM_AIR_ABOVE_37(R.string.overheat_air_above_37, 385, 400, 1, FormatUtil::formatTemp),
+    SYSTEM_OVERHEAT_ALARM_AIR_BELOW_37(R.string.overheat_air_below_37, 375, 390, 1, FormatUtil::formatTemp),
+    SYSTEM_OVERHEAT_ALARM_SKIN(R.string.skin, 370, 410, 1, FormatUtil::formatTemp),
+    SYSTEM_OVERHEAT_ALARM_FAN_SPEED(R.string.fan_speed, 400, 5100, 10, FormatUtil::formatSpeed),
+    SYSTEM_OVERHEAT_ALARM_AIR_FLOW_ABOVE_37(R.string.overheat_airflow_above_37, 385, 700, 1, FormatUtil::formatTemp),
+    SYSTEM_OVERHEAT_ALARM_AIR_FLOW_BELOW_37(R.string.overheat_airflow_below_37, 375, 700, 1, FormatUtil::formatTemp),
 //
 //    SYSTEM_RANGE_SETUP_AIR_UPPER(R.string.air_upper_limit, 370, 390, 1, FormatUtil::formatTemp),
 //    SYSTEM_RANGE_SETUP_AIR_LOWER(R.string.air_lower_limit, 200, 340, 1, FormatUtil::formatTemp),

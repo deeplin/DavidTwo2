@@ -77,4 +77,8 @@ public class FormatUtil {
     public static String formatOxygen(int value) {
         return formatValueUnit(SensorModelEnum.Oxygen, value);
     }
+
+    public static String formatSpeed(Integer value) {
+        return value + " r/min";
+    }
 }

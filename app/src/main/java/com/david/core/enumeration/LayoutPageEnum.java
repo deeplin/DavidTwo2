@@ -40,8 +40,8 @@ public enum LayoutPageEnum {
     //
     SYSTEM_HOME(R.string.system_setup, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Standard),
     SYSTEM_DEVIATION_ALARM(R.string.deviation_alarm, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
-    //    SYSTEM_OVERHEAT_ALARM(R.string.overheat_alarm, LayoutPageEnum.SYSTEM_HOME, true, true),
-//    SYSTEM_RANGE_SETUP(R.string.range_setup, LayoutPageEnum.SYSTEM_HOME, true, true),
+    SYSTEM_OVERHEAT_ALARM(R.string.overheat_alarm, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
+    //    SYSTEM_RANGE_SETUP(R.string.range_setup, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_SENSOR_CALIBRATION(R.string.sensor_calibration, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_DEBUG_INFO,
 //    SYSTEM_FACTORY(R.string.factory_setting, LayoutPageEnum.SYSTEM_HOME, true, true),

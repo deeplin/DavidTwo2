@@ -68,8 +68,8 @@ public class SystemHomeLayout extends BaseLayout {
         videoButton = ViewUtil.buildButton(getContext());
         addInnerButton(9, videoButton);
 
-//        deviationAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEVIATION_ALARM));
-//        overheatAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_OVERHEAT_ALARM));
+        deviationAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEVIATION_ALARM));
+        overheatAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_OVERHEAT_ALARM));
 //        rangeSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_RANGE_SETUP));
 //        sensorCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_SENSOR_CALIBRATION));
 //        debugInfoButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEBUG_INFO));
