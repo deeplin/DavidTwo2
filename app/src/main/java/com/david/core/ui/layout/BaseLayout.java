@@ -68,11 +68,17 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         backgroundImage.setBackgroundResource(R.drawable.background_panel);
         backgroundImage.setZ(-1);
         addInnerView(backgroundImage, LayoutParams.MATCH_CONSTRAINT, LayoutParams.MATCH_CONSTRAINT, 4, topMargin, 4, 4);
-
         init(layoutPageEnum.getBindingLayoutEnum());
     }
 
     protected void init() {
+        ImageView backgroundImage = new ImageView(getContext());
+        backgroundImage.setId(View.generateViewId());
+        backgroundImage.setBackgroundResource(R.drawable.background_panel);
+        backgroundImage.setZ(-1);
+//        addInnerView(backgroundImage, LayoutParams.MATCH_CONSTRAINT, LayoutParams.MATCH_CONSTRAINT, 4, topMargin, 4, 4);
+
+        addInnerView(backgroundImage, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, -1, -1, -1, -1);
         init(BindingLayoutEnum.Standard);
     }
 
