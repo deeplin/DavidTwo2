@@ -15,6 +15,7 @@ import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
+import com.david.core.util.LoggerUtil;
 
 import java.util.Objects;
 
@@ -54,10 +55,13 @@ public class BaseSensorModel {
         }
 
         systemAlarm.observeForever(integer -> {
+            AlarmGroupEnum alarmGroupEnum = rangeCategoryEnum.getAlarmGroupEnum();
             if (integer == 0) {
-                AlarmGroupEnum alarmGroupEnum = rangeCategoryEnum.getAlarmGroupEnum();
                 incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(),
                         rangeCategoryEnum.getCategory(), passThroughAlarmArray[rangeCategoryEnum.getIndex()].getValue());
+            } else {
+                incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(),
+                        rangeCategoryEnum.getCategory(), 0);
             }
         });
     }
@@ -91,24 +95,31 @@ public class BaseSensorModel {
             int data = sensorModel.textNumber.getValue();
             if (data > sensorModel.upperLimit.getValue()) {
                 AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+                setBit(upperAlarmModel, true);
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                setBit(lowerAlarmModel, false);
             } else if (data < sensorModel.lowerLimit.getValue()) {
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, true);
+                LoggerUtil.se(" lower " + upperAlarmEnum.toString() + " " + lowerAlarmEnum.toString());
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+                setBit(upperAlarmModel, false);
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                setBit(lowerAlarmModel, true);
             } else {
-//                alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+                setBit(upperAlarmModel, false);
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                setBit(lowerAlarmModel, false);
             }
         } else {
-//            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
+            AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+            setBit(upperAlarmModel, false);
+            AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+            setBit(lowerAlarmModel, false);
         }
     }
 
-    private void setBit(AlarmWordEnum alarmWordEnum, boolean value) {
-        AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum.toString());
+    private void setBit(AlarmModel alarmModel, boolean value) {
         int bitOffset = alarmModel.getBitOffset();
-        systemAlarm.post(BitUtil.setBit(systemAlarm.getValue(), bitOffset, value));
+        passThroughAlarmArray[0].post(BitUtil.setBit(passThroughAlarmArray[0].getValue(), bitOffset, value));
     }
 }
