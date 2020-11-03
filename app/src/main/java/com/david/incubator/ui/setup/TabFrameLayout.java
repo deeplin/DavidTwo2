@@ -23,7 +23,7 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
     public TabFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         views[SetupPageEnum.Temp.ordinal()] = new SetupTempLayout(getContext());
-
+        views[SetupPageEnum.Humidity.ordinal()] = new SetupHumidityLayout(getContext());
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
             if (view != null) {

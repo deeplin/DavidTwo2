@@ -99,7 +99,6 @@ public class BaseSensorModel {
                 AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
                 setBit(lowerAlarmModel, false);
             } else if (data < sensorModel.lowerLimit.getValue()) {
-                LoggerUtil.se(" lower " + upperAlarmEnum.toString() + " " + lowerAlarmEnum.toString());
                 AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
                 setBit(upperAlarmModel, false);
                 AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());

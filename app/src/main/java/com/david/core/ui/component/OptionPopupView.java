@@ -2,7 +2,9 @@ package com.david.core.ui.component;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
@@ -38,20 +40,20 @@ public class OptionPopupView extends BindingBasicLayout<ViewOptionPopupBinding> 
         currentOptionId = Constant.NA_VALUE;
 
         constraintSet = new ConstraintSet();
-
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
         for (int index = 0; index < MAX_OPTION; index++) {
             Button button = new Button(getContext());
-            button.setWidth(176);
             button.setAllCaps(false);
-            button.setHeight(52);
-            button.setTextSize(16);
+            button.setHeight(56);
+            button.setTextSize(18);
             button.setBackgroundResource(R.drawable.button_standard_background);
             button.setVisibility(View.GONE);
             button.setTag(index);
             button.setTextColor(ContextUtil.getColor(R.color.text_blue));
             button.setOnClickListener(this::confirmAndReturn);
             buttonList.add(button);
-            binding.rootView.addView(button);
+            binding.rootView.addView(button, layoutParams);
         }
     }
 
@@ -129,5 +131,18 @@ public class OptionPopupView extends BindingBasicLayout<ViewOptionPopupBinding> 
         }
         callback.accept((int) view.getTag());
         close();
+    }
+
+    public void setLargeFont(boolean bigFont) {
+        for (int index = 0; index < MAX_OPTION; index++) {
+            Button button = buttonList.get(index);
+            if (bigFont) {
+                button.setHeight(80);
+                button.setTextSize(30);
+            } else {
+                button.setHeight(56);
+                button.setTextSize(18);
+            }
+        }
     }
 }

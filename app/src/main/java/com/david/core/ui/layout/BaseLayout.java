@@ -101,10 +101,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     @Override
     public void attach() {
         addView(numberPopupView, bindingLayoutEnum.getPopupWidth(), bindingLayoutEnum.getPopupHeight());
-        closePopup();
-
         addView(optionPopupView, bindingLayoutEnum.getPopupWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
-        optionPopupView.close();
 
         for (IntegerPopupModel integerPopupModel : integerPopupModelList) {
             if (integerPopupModel instanceof LiveDataPopupModel) {

@@ -9,9 +9,10 @@ public enum BindingLayoutEnum {
     Tab(290, 64,
             200, 48, 40,
             140, 132),
+
     LargeFont(440, 96,
-            300, 80, 60,
-            140, 132);
+            300, 72, 60,
+            220, 144);
 
     public int getComponentWidth() {
         return componentWidth;

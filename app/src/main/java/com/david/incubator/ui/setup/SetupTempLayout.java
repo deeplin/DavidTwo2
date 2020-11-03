@@ -173,6 +173,7 @@ public class SetupTempLayout extends BaseLayout {
     @Override
     public void attach() {
         super.attach();
+        optionPopupView.setLargeFont(true);
         modeView.setSelected(false);
 
         modeView.setKeyId(R.string.mode);
@@ -193,6 +194,7 @@ public class SetupTempLayout extends BaseLayout {
 
     @Override
     public void detach() {
+        optionPopupView.setLargeFont(false);
         super.detach();
         incubatorModel.ctrlMode.removeObserver(getCtrlObserver);
     }
