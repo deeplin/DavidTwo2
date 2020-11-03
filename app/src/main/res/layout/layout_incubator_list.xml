@@ -8,34 +8,46 @@
 
         <com.david.core.ui.view.TitleIconView
             android:id="@+id/skin1SensorView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/f8"
             android:layout_marginBottom="80dp"
+            app:background_color="@drawable/background_panel_pink"
+            app:decimal_size="40"
+            app:icon_bottom="20"
+            app:icon_start="8"
+            app:integer_size="60"
             app:layout_constraintBottom_toTopOf="@id/skin2SensorView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color="@color/text_pink"
+            app:title_height="40"
+            app:unit_size="24" />
+
+        <com.david.core.ui.view.TitleIconView
+            android:id="@+id/skin2SensorView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:layout_marginBottom="138dp"
+            app:background_color="@drawable/background_panel_pink"
+            app:decimal_size="40"
+            app:icon_bottom="12"
+            app:icon_start="8"
+            app:integer_size="60"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skin1SensorView"
+            app:text_color="@color/text_pink"
+            app:title_height="40"
+            app:unit_size="24" />
+
+        <com.david.incubator.ui.home.standard.top.HomeSetView
+            android:id="@+id/homeSetView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="@id/skin2SensorView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--        <com.david.core.ui.sensor.SensorIconView-->
-        <!--            android:id="@+id/skin2SensorView"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            android:layout_marginEnd="@dimen/f8"-->
-        <!--            android:layout_marginBottom="138dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/skin1SensorView" />-->
-
-        <!--        <com.david.incubator.ui.home.standard.top.HomeSetView-->
-        <!--            android:id="@+id/homeSetView"-->
-        <!--            android:layout_width="130dp"-->
-        <!--            android:layout_height="130dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="@id/skin2SensorView"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/skin1SensorView" />-->
+            app:layout_constraintTop_toTopOf="@id/skin1SensorView" />
 
         <!--        <com.david.incubator.ui.home.common.IncubatorListView-->
         <!--            android:id="@+id/humidityView"-->
@@ -57,12 +69,12 @@
         <!--            app:layout_constraintEnd_toEndOf="parent"-->
         <!--            app:layout_constraintStart_toEndOf="@id/humidityView" />-->
 
-        <FrameLayout
-            android:id="@+id/skin2SensorView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="#ff0000"
-            app:layout_constraintBottom_toBottomOf="parent" />
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/skin2SensorView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="300dp"-->
+        <!--            android:background="#ff0000"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
