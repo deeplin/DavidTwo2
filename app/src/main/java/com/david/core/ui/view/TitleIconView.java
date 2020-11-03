@@ -20,6 +20,7 @@ public class TitleIconView extends BindingBasicLayout<ViewTitleIconBinding> {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleIconView);
         Drawable backgroundColor = typedArray.getDrawable(R.styleable.TitleIconView_background_color);
         int textColor = typedArray.getInteger(R.styleable.TitleIconView_text_color, 0);
+        int titleTop = typedArray.getInteger(R.styleable.TitleIconView_title_top, -1);
         int titleHeight = typedArray.getInteger(R.styleable.TitleIconView_title_height, -1);
         int iconStart = typedArray.getInteger(R.styleable.TitleIconView_icon_start, -1);
         int iconBottom = typedArray.getInteger(R.styleable.TitleIconView_icon_bottom, -1);
@@ -35,6 +36,9 @@ public class TitleIconView extends BindingBasicLayout<ViewTitleIconBinding> {
 
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
+        if (titleTop >= 0) {
+            constraintSet.setMargin(R.id.title, ConstraintSet.TOP, titleTop);
+        }
         if (titleHeight >= 0) {
             constraintSet.constrainHeight(R.id.title, titleHeight);
         }
@@ -45,7 +49,7 @@ public class TitleIconView extends BindingBasicLayout<ViewTitleIconBinding> {
             constraintSet.setMargin(binding.icon.getId(), ConstraintSet.BOTTOM, iconBottom);
         }
         if (integerStart >= 0) {
-            constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.START, integerStart);
+            constraintSet.setMargin(R.id.integerPart, ConstraintSet.START, integerStart);
         }
         constraintSet.applyTo(binding.rootView);
 

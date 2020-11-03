@@ -3,6 +3,8 @@
     <declare-styleable name="TitleIconView">
         <attr name="background_color" format="reference" />
         <attr name="text_color" format="color" />
+        <attr name="title_width" format="integer" />
+        <attr name="title_top" format="integer" />
         <attr name="title_height" format="integer" />
         <attr name="icon_start" format="integer" />
         <attr name="icon_bottom" format="integer" />

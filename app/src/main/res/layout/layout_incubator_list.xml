@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/f8"
-            android:layout_marginBottom="138dp"
+            android:layout_marginBottom="158dp"
             app:background_color="@drawable/background_panel_pink"
             app:decimal_size="40"
             app:icon_bottom="12"
@@ -49,32 +49,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/skin1SensorView" />
 
-        <!--        <com.david.incubator.ui.home.common.IncubatorListView-->
-        <!--            android:id="@+id/humidityView"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="130dp"-->
-        <!--            android:layout_marginEnd="@dimen/f8"-->
-        <!--            android:background="@drawable/sensor_background"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toStartOf="@id/oxygenView"-->
-        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <com.david.core.ui.view.TitleSetView
+            android:id="@+id/humidityView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:background="@drawable/background_panel"
+            app:integer_size="40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/oxygenView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:title_top="4"
+            app:title_width="100" />
 
-        <!--        <com.david.incubator.ui.home.common.IncubatorListView-->
-        <!--            android:id="@+id/oxygenView"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="130dp"-->
-        <!--            android:layout_marginEnd="@dimen/f8"-->
-        <!--            android:background="@drawable/sensor_background"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toEndOf="@id/humidityView" />-->
-
-        <!--        <FrameLayout-->
-        <!--            android:id="@+id/skin2SensorView"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="300dp"-->
-        <!--            android:background="#ff0000"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+        <com.david.core.ui.view.TitleSetView
+            android:id="@+id/oxygenView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="@dimen/f8"
+            android:background="@drawable/background_panel_pink"
+            app:integer_size="40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/humidityView"
+            app:title_top="4"
+            app:title_width="100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

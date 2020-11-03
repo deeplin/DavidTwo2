@@ -19,13 +19,21 @@ public class TitleSetView extends BindingBasicLayout<ViewTitleSetBinding> implem
     public TitleSetView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleIconView);
+        int titleTop = typedArray.getInteger(R.styleable.TitleIconView_title_top, -1);
+        int titleWidth = typedArray.getInteger(R.styleable.TitleIconView_title_width, -1);
         int integerTop = typedArray.getInteger(R.styleable.TitleIconView_integer_top, -1);
         int integerSize = typedArray.getInteger(R.styleable.TitleIconView_integer_size, -1);
         typedArray.recycle();
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.rootView);
+        if (titleTop >= 0) {
+            constraintSet.setMargin(R.id.title, ConstraintSet.TOP, titleTop);
+        }
+        if (titleWidth >= 0) {
+            constraintSet.constrainWidth(R.id.title, titleWidth);
+        }
         if (integerTop >= 0) {
-            constraintSet.setMargin(binding.integerPart.getId(), ConstraintSet.TOP, integerTop);
+            constraintSet.setMargin(R.id.integerPart, ConstraintSet.TOP, integerTop);
         }
         constraintSet.applyTo(binding.rootView);
         if (integerSize >= 0) {
