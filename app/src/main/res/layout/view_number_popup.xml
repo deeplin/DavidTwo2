@@ -15,6 +15,7 @@
             android:scaleType="center"
             android:src="@mipmap/decrease"
             android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/button"
             app:layout_constraintEnd_toStartOf="@id/topIncreaseButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +27,7 @@
             android:scaleType="center"
             android:src="@mipmap/increase"
             android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/topDecreaseButton"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,9 +47,10 @@
         <ImageView
             android:id="@+id/bottomDecreaseButton"
             android:layout_width="0dp"
-            android:layout_height="@dimen/f60"
+            android:layout_height="0dp"
             android:scaleType="center"
             android:src="@mipmap/decrease"
+            app:layout_constraintTop_toBottomOf="@id/button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/bottomIncreaseButton"
             app:layout_constraintStart_toStartOf="parent" />
@@ -55,9 +58,10 @@
         <ImageView
             android:id="@+id/bottomIncreaseButton"
             android:layout_width="0dp"
-            android:layout_height="@dimen/f60"
+            android:layout_height="0dp"
             android:scaleType="center"
             android:src="@mipmap/increase"
+            app:layout_constraintTop_toBottomOf="@id/button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/bottomDecreaseButton" />

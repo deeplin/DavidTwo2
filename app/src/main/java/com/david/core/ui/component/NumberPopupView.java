@@ -158,7 +158,7 @@ public class NumberPopupView extends BindingBasicLayout<ViewNumberPopupBinding> 
 
     public void setBigFont(boolean bigFont) {
         if (bigFont) {
-            binding.button.setHeight(76);
+            binding.button.setHeight(88);
             binding.button.setTextSize(30);
         } else {
             binding.button.setHeight(56);
