@@ -36,9 +36,4 @@ public abstract class BindingLayout<U extends ViewDataBinding> extends BaseLayou
         super.detach();
         binding.setLifecycleOwner(null);
     }
-
-//    @Override
-//    protected ConstraintLayout getRoot() {
-//        return (ConstraintLayout) binding.getRoot();
-//    }
 }

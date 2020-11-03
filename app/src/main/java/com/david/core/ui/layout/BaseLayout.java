@@ -141,7 +141,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
     protected void addInnerButton(int rowId, View view) {
         if (rowId < 8) {
             addInnerView(view, bindingLayoutEnum.getButtonWidth(), bindingLayoutEnum.getButtonHeight(),
-                    bindingLayoutEnum.getButtonStart(), topMargin + 8 + rowId * bindingLayoutEnum.getComponentHeight(),
+                    bindingLayoutEnum.getButtonStart(), topMargin + 4 + rowId * bindingLayoutEnum.getComponentHeight(),
                     -1, -1);
         } else {
             addInnerView(view, bindingLayoutEnum.getButtonWidth(), bindingLayoutEnum.getButtonHeight(),

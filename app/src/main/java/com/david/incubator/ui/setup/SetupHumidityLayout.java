@@ -8,7 +8,6 @@ import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.SystemEnum;
 import com.david.core.model.SensorModel;
 import com.david.core.serial.incubator.IncubatorCommandSender;
-import com.david.core.ui.component.KeyButtonView;
 import com.david.core.ui.layout.BaseLayout;
 import com.david.core.ui.model.IntegerPopupModel;
 import com.david.core.util.ContextUtil;
@@ -27,8 +26,7 @@ public class SetupHumidityLayout extends BaseLayout {
         ContextUtil.getComponent().inject(this);
         super.initLargeFont();
 
-        KeyButtonView keyButtonViewArray = addKeyButtonWithLiveData(0, 0);
-        keyButtonViewArray.setBigFont();
+        addKeyButtonWithLiveData(0, 0).setBigFont();
         setKeyButtonEnum(0, KeyButtonEnum.SETUP_HUMIDITY, null, null);
 
         SensorModel humidityModel = sensorModelRepository.getSensorModel(SensorModelEnum.Humidity);
@@ -39,6 +37,7 @@ public class SetupHumidityLayout extends BaseLayout {
 
     @Override
     public void attach() {
+        super.attach();
         optionPopupView.setBigFont(true);
         numberPopupView.setBigFont(true);
         IntegerPopupModel integerPopupModel = getIntegerPopupModel(0);

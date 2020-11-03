@@ -24,8 +24,10 @@ public class SetupOxygenLayout extends BaseLayout {
     public SetupOxygenLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
+        super.initLargeFont();
 
-        loadLiveDataItems(KeyButtonEnum.SETUP_OXYGEN, 1, null, null);
+        addKeyButtonWithLiveData(0, 0).setBigFont();
+        setKeyButtonEnum(0, KeyButtonEnum.SETUP_OXYGEN, null, null);
 
         SensorModel oxygenModel = sensorModelRepository.getSensorModel(SensorModelEnum.Oxygen);
         setOriginValue(0, oxygenModel.objective);

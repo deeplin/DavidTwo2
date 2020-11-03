@@ -3,15 +3,15 @@ package com.david.core.enumeration;
 public enum BindingLayoutEnum {
 
     Standard(352, 64,
-            240, 48, 80,
+            240, 56, 80,
             176, 132),
 
     Tab(290, 64,
-            200, 48, 40,
+            200, 56, 40,
             140, 132),
 
     LargeFont(440, 96,
-            300, 72, 60,
+            300, 88, 60,
             220, 144);
 
     public int getComponentWidth() {

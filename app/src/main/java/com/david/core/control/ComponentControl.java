@@ -1,6 +1,7 @@
 package com.david.core.control;
 
 import android.content.Context;
+import android.view.View;
 
 import com.david.core.ui.component.NumberPopupView;
 import com.david.core.ui.component.OptionPopupView;
@@ -28,5 +29,7 @@ public class ComponentControl {
         Context applicationContext = ContextUtil.getApplicationContext();
         numberPopupView = new NumberPopupView(applicationContext);
         optionPopupView = new OptionPopupView(applicationContext);
+        numberPopupView.setVisibility(View.GONE);
+        optionPopupView.setVisibility(View.GONE);
     }
 }
