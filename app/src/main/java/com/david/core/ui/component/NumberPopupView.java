@@ -155,4 +155,14 @@ public class NumberPopupView extends BindingBasicLayout<ViewNumberPopupBinding> 
         binding.button.setText(integerButtonModel.getNewValue());
         binding.button.setSelected(integerButtonModel.equal());
     }
+
+    public void setBigFont(boolean bigFont) {
+        if (bigFont) {
+            binding.button.setHeight(76);
+            binding.button.setTextSize(30);
+        } else {
+            binding.button.setHeight(56);
+            binding.button.setTextSize(20);
+        }
+    }
 }

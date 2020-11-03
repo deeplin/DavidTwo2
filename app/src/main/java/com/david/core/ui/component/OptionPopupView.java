@@ -133,14 +133,14 @@ public class OptionPopupView extends BindingBasicLayout<ViewOptionPopupBinding> 
         close();
     }
 
-    public void setLargeFont(boolean bigFont) {
+    public void setBigFont(boolean bigFont) {
         for (int index = 0; index < MAX_OPTION; index++) {
             Button button = buttonList.get(index);
             if (bigFont) {
                 button.setHeight(80);
                 button.setTextSize(30);
             } else {
-                button.setHeight(56);
+                button.setHeight(60);
                 button.setTextSize(18);
             }
         }

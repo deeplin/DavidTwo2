@@ -33,8 +33,8 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_margin="@dimen/f8"
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/f4"
             android:background="@drawable/function_button_background"
             android:textAllCaps="false"
             android:textColor="@color/text_blue"

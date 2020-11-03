@@ -39,7 +39,7 @@ public class SetupHumidityLayout extends BaseLayout {
 
     @Override
     public void attach() {
-        optionPopupView.setLargeFont(true);
+        optionPopupView.setBigFont(true);
         IntegerPopupModel integerPopupModel = getIntegerPopupModel(0);
         SensorModel humidityModel = sensorModelRepository.getSensorModel(SensorModelEnum.Humidity);
         integerPopupModel.setMin(humidityModel.lowerLimit.getValue());
@@ -48,7 +48,7 @@ public class SetupHumidityLayout extends BaseLayout {
 
     @Override
     public void detach() {
-        optionPopupView.setLargeFont(false);
+        optionPopupView.setBigFont(false);
         super.detach();
     }
 
