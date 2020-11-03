@@ -32,6 +32,7 @@ public class SystemHomeLayout extends BaseLayout {
 
     private final Button imageButton;
     private final Button videoButton;
+    private final Button printButton;
 
     public SystemHomeLayout(Context context) {
         super(context);
@@ -68,6 +69,9 @@ public class SystemHomeLayout extends BaseLayout {
         videoButton = ViewUtil.buildButton(getContext());
         addInnerButton(9, videoButton);
 
+        printButton = ViewUtil.buildButton(getContext());
+        addInnerButton(10, printButton);
+
         deviationAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEVIATION_ALARM));
         overheatAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_OVERHEAT_ALARM));
         rangeSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_RANGE_SETUP));
@@ -76,6 +80,7 @@ public class SystemHomeLayout extends BaseLayout {
         factoryButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_FACTORY));
         moduleCalibrationButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_MODULE_CALIBRATION));
         alarmListButton.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.SYSTEM_ALARM_LIST));
+        printButton.setOnClickListener(view -> systemModel.showLayout(LayoutPageEnum.SYSTEM_PRINT));
 //
 //        imageButton.setOnClickListener(view -> {
 //            UserImageListLayout.init(Long.MIN_VALUE, Long.MAX_VALUE);
