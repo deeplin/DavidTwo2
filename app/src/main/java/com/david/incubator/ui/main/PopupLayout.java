@@ -110,7 +110,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
     @Override
     public void attach(LifecycleOwner lifeCycleOwner) {
         super.attach(lifeCycleOwner);
-//        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
+        binding.incubatorListLayout.attach(lifeCycleOwner);
         currentLayout = views[systemModel.layoutPage.getValue().ordinal() - LayoutPageEnum.MENU_HOME.ordinal()];
         if (currentLayout instanceof ILifeCycleOwner) {
             ((ILifeCycleOwner) currentLayout).attach(lifeCycleOwner);
@@ -131,6 +131,6 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
             ((ILifeCycle) currentLayout).detach();
         }
         currentLayout = null;
-        //        binding.incubatorVerticalListLayout.attach(lifeCycleOwner);
+        binding.incubatorListLayout.detach();
     }
 }

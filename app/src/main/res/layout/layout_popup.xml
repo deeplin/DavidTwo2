@@ -14,11 +14,11 @@
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-<!--        <com.david.incubator.ui.main.IncubatorVerticalListLayout-->
-<!--            android:id="@+id/incubatorVerticalListLayout"-->
-<!--            android:layout_width="258dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+        <com.david.incubator.ui.main.IncubatorListLayout
+            android:id="@+id/incubatorListLayout"
+            android:layout_width="258dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

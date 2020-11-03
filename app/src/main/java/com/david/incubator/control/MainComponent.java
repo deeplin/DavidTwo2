@@ -32,6 +32,7 @@ import com.david.incubator.ui.home.standard.top.HomeSetView;
 import com.david.incubator.ui.home.tempcurve.TempCurveLayout;
 import com.david.incubator.ui.home.weightcurve.WeightCurveLayout;
 import com.david.incubator.ui.keyboard.KeyboardLoginLayout;
+import com.david.incubator.ui.main.IncubatorListLayout;
 import com.david.incubator.ui.main.MainActivity;
 import com.david.incubator.ui.main.PopupLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
@@ -199,4 +200,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupHumidityLayout setupHumidityLayout);
 
     void inject(SetupOxygenLayout setupOxygenLayout);
+
+    void inject(IncubatorListLayout incubatorListLayout);
 }
