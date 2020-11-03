@@ -12,7 +12,7 @@ public enum BindingLayoutEnum {
 
     LargeFont(440, 96,
             300, 88, 60,
-            220, 144);
+            220, 148);
 
     public int getComponentWidth() {
         return componentWidth;
