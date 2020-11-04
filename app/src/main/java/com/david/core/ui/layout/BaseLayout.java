@@ -217,7 +217,7 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         return integerPopupModelList.get(index);
     }
 
-    private void closePopup() {
+    protected void closePopup() {
         optionPopupView.close();
         numberPopupView.close();
     }
