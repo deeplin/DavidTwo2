@@ -1,6 +1,8 @@
 package com.david.incubator.control;
 
 import com.david.core.control.CommonComponent;
+import com.david.core.ui.alarm.PhysiologicalAlarmListLayout;
+import com.david.core.ui.alarm.TechnicalAlarmListLayout;
 import com.david.core.ui.curve.Co2SurfaceView;
 import com.david.incubator.print.ui.BasePrintCurveView;
 import com.david.incubator.print.ui.PrintEcgWaveView;
@@ -250,4 +252,8 @@ public interface MainComponent extends CommonComponent {
     void inject(PatientInfoLayout patientInfoLayout);
 
     void inject(PatientListLayout patientListLayout);
+
+    void inject(PhysiologicalAlarmListLayout physiologicalAlarmListLayout);
+
+    void inject(TechnicalAlarmListLayout technicalAlarmListLayout);
 }

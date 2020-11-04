@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--610*325-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <com.david.core.ui.component.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/f56"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--610*285-->
+        <FrameLayout
+            android:id="@+id/alarmLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/f8"
+            android:background="@drawable/background_panel"
+            android:padding="@dimen/f8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

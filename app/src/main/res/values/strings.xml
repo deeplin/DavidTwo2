@@ -32,7 +32,9 @@
     <string name="overheat_mode">超温模式</string>
     <string name="manual_mode">手控模式</string>
     <string name="prewarm_mode">预热模式</string>
-
+    <string name="physiological_alarm">生理报警</string>
+    <string name="technical_alarm">技术报警</string>
+    
     <!--com.david.core.enumeration.SensorModeEnum-->
     <string name="skin">肤温</string>
     <string name="skin2">肤温2</string>

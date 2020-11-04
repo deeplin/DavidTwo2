@@ -1,6 +1,8 @@
 package com.david.core.alarm;
 
+import com.david.R;
 import com.david.core.enumeration.AlarmGroupEnum;
+import com.david.core.enumeration.AlarmPriorityEnum;
 import com.david.core.util.ContextUtil;
 
 import java.util.Objects;
@@ -26,6 +28,18 @@ public class AlarmUtil {
             }
         } else {
             return 120;
+        }
+    }
+
+    public static int getAlarmColor(AlarmPriorityEnum alarmPriorityEnum) {
+        if (Objects.equals(alarmPriorityEnum, AlarmPriorityEnum.H)) {
+            return R.color.alarm_high;
+        } else if (Objects.equals(alarmPriorityEnum, AlarmPriorityEnum.M)) {
+            return R.color.alarm_middle;
+        } else if (Objects.equals(alarmPriorityEnum, AlarmPriorityEnum.L)) {
+            return R.color.alarm_low;
+        } else {
+            return R.color.alarm_info;
         }
     }
 }
