@@ -282,6 +282,30 @@
     <string name="trap_filter">陷波滤波器</string>
     <string name="pace_check">起搏检测</string>
 
+    <!--Resp Objective-->
+    <string name="rr_source">RR来源</string>
+    <string name="lead_choice">呼吸导联</string>
+
+    <!--Co2 Objective-->
+    <string name="ruler">标尺</string>
+    <string name="co2_mode">CO₂工作模式</string>
+    <string name="co2_standby">CO₂待机</string>
+    <string name="co2_measurement">CO₂测量</string>
+    <string name="o2_compensate">O₂补偿</string>
+    <string name="n2o_compensate">N₂O补偿</string>
+    <string name="chock_delay">窒息延迟</string>
+    <string name="co2_calibration">CO₂校零</string>
+
+    <!--Nibp Objective-->
+    <string name="measurement_mode">测量模式</string>
+    <string name="initial_sleeve_pressure">初始袖口气压</string>
+    <string name="cycle">周期(分钟)</string>
+
+
+    <!--Wake Objective-->
+    <string name="self_test">自测</string>
+    <string name="vibration_intensity">震动强度</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

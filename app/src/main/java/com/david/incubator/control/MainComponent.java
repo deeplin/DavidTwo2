@@ -47,7 +47,9 @@ import com.david.incubator.ui.setup.SetupEcgLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
 import com.david.incubator.ui.setup.SetupHomeLayout;
 import com.david.incubator.ui.setup.SetupHumidityLayout;
+import com.david.incubator.ui.setup.SetupNibpLayout;
 import com.david.incubator.ui.setup.SetupOxygenLayout;
+import com.david.incubator.ui.setup.SetupRespLayout;
 import com.david.incubator.ui.setup.SetupSpo2Layout;
 import com.david.incubator.ui.setup.SetupTempLayout;
 import com.david.incubator.ui.system.SystemAlarmListLayout;
@@ -211,4 +213,8 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupSpo2Layout setupSpo2Layout);
 
     void inject(SetupEcgLayout setupEcgLayout);
+
+    void inject(SetupRespLayout setupRespLayout);
+
+    void inject(SetupNibpLayout setupNibpLayout);
 }

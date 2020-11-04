@@ -27,8 +27,9 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
         views[SetupPageEnum.Oxygen.ordinal()] = new SetupOxygenLayout(getContext());
 
         views[SetupPageEnum.Spo2.ordinal()] = new SetupSpo2Layout(getContext());
-
         views[SetupPageEnum.Ecg.ordinal()] = new SetupEcgLayout(getContext());
+        views[SetupPageEnum.Resp.ordinal()] = new SetupRespLayout(getContext());
+        views[SetupPageEnum.Nibp.ordinal()] = new SetupNibpLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
