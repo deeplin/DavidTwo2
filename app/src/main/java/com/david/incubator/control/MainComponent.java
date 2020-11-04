@@ -47,6 +47,10 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.patient.PatientAddLayout;
+import com.david.incubator.ui.patient.PatientConfirmRemoveLayout;
+import com.david.incubator.ui.patient.PatientInfoLayout;
+import com.david.incubator.ui.patient.PatientListLayout;
 import com.david.incubator.ui.setup.SetupCo2Layout;
 import com.david.incubator.ui.setup.SetupEcgLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
@@ -238,4 +242,12 @@ public interface MainComponent extends CommonComponent {
     void inject(MenuPrintSetupLayout menuPrintSetupLayout);
 
     void inject(SystemPrintLayout systemPrintLayout);
+
+    void inject(PatientAddLayout patientAddLayout);
+
+    void inject(PatientConfirmRemoveLayout patientConfirmRemoveLayout);
+
+    void inject(PatientInfoLayout patientInfoLayout);
+
+    void inject(PatientListLayout patientListLayout);
 }

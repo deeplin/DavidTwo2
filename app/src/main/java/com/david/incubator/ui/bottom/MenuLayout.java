@@ -19,6 +19,7 @@ import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
+import com.david.core.enumeration.SetupPageEnum;
 import com.david.core.model.IncubatorModel;
 import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
@@ -26,6 +27,7 @@ import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutMenuBinding;
+import com.david.incubator.serial.nibp.NibpCommandControl;
 import com.david.incubator.ui.top.TopViewModel;
 
 import java.util.ArrayList;
@@ -52,8 +54,8 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
 //    TrendControlModel trendControlModel;
     @Inject
     SensorModelRepository sensorModelRepository;
-//    @Inject
-//    NibpCommandControl nibpCommandControl;
+    @Inject
+    NibpCommandControl nibpCommandControl;
 
     private int startId = 0;
     private int initialStartId = 0;
@@ -187,7 +189,7 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
         int functionId = iconId + startId;
         switch (functionId) {
             case (0):
-//                nibpCommandControl.press();
+                nibpCommandControl.press();
                 break;
             case (1):
                 systemModel.showLayout(LayoutPageEnum.SWITCH_SCREEN);
@@ -210,7 +212,7 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
                 systemModel.showLayout(LayoutPageEnum.MENU_PRINT_SETUP);
                 break;
             case (6):
-//                systemModel.showAlarmPage(AlarmPageEnum.Ecg);
+                systemModel.showSetupPage(SetupPageEnum.Ecg);
                 break;
         }
     }

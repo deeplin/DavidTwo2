@@ -54,10 +54,10 @@ public class UserHomeLayout extends BaseLayout {
         languageButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_LANGUAGE));
         timeButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_TIME));
         overheatExperimentButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_OVERHEAT_EXPERIMENT));
-//        patientListButton.setOnClickListener(v -> {
-//            lastUser.userOffset = 0;
-//            systemModel.showLayout(LayoutPageEnum.PATIENT_LIST);
-//        });
+        patientListButton.setOnClickListener(v -> {
+            lastUser.userOffset = 0;
+            systemModel.showLayout(LayoutPageEnum.PATIENT_LIST);
+        });
         moduleSetupButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_MODULE_SETUP));
         unitButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.USER_UNIT_SETUP));
     }
@@ -66,7 +66,6 @@ public class UserHomeLayout extends BaseLayout {
     public void attach() {
         super.attach();
         systemModel.tagId = Constant.NA_VALUE;
-
 
         languageButton.setText(ContextUtil.getString(R.string.language));
         timeButton.setText(ContextUtil.getString(R.string.time));

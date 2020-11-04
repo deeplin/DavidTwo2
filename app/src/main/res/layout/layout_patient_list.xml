@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--610*325-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <com.david.core.ui.component.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/f56"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--610*285-->
+        <ImageView
+            android:id="@+id/imageBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/f4"
+            android:src="@drawable/background_panel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+        <Button
+            android:id="@+id/previousPage"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/f50"
+            android:layout_marginEnd="@dimen/f32"
+            android:background="@drawable/button_background"
+            android:text="@string/previous_page"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintEnd_toStartOf="@id/nextPage" />
+
+        <Button
+            android:id="@+id/nextPage"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/f50"
+            android:layout_marginEnd="@dimen/f40"
+            android:layout_marginBottom="@dimen/f12"
+            android:background="@drawable/button_background"
+            android:text="@string/next_page"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

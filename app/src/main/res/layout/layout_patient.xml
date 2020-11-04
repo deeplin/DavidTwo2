@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--610*325-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <!--第一列-->
+        <com.david.core.ui.component.KeyButtonView
+            android:id="@+id/idView"
+            android:layout_width="352dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_marginTop="40dp"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.component.TextTwoButtonView
+            android:id="@+id/sexView"
+            android:layout_width="352dp"
+            android:layout_height="64dp"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="@id/idView"
+            app:layout_constraintTop_toBottomOf="@id/idView" />
+
+        <!--日期设置-->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="176dp"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:text="@string/date"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="@id/idView"
+            app:layout_constraintTop_toBottomOf="@id/sexView" />
+
+        <Button
+            android:id="@+id/year"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/f8"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/date"
+            app:layout_constraintTop_toTopOf="@id/date" />
+
+        <TextView
+            android:id="@+id/divider0"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/year"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <Button
+            android:id="@+id/month"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider0"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <TextView
+            android:id="@+id/divider1"
+            android:layout_width="@dimen/f32"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/month"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <Button
+            android:id="@+id/day"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toEndOf="@id/divider1"
+            app:layout_constraintTop_toTopOf="@id/year" />
+
+        <com.david.core.ui.component.TextTwoButtonView
+            android:id="@+id/paceMakerView"
+            android:layout_width="352dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="@dimen/f4"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/idView" />
+
+        <!--第二列-->
+        <com.david.core.ui.component.KeyButtonView
+            android:id="@+id/nameView"
+            android:layout_width="352dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/idView" />
+
+        <com.david.core.ui.component.KeyButtonView
+            android:id="@+id/bloodTypeView"
+            android:layout_width="352dp"
+            android:layout_height="64dp"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintStart_toStartOf="@id/nameView"
+            app:layout_constraintTop_toBottomOf="@id/nameView" />
+
+        <!--按钮-->
+        <ImageButton
+            android:id="@+id/confirm"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="74dp"
+            android:background="@drawable/button_background"
+            app:layout_constraintEnd_toEndOf="@id/nameView"
+            app:layout_constraintTop_toBottomOf="@id/bloodTypeView" />
+
+        <Button
+            android:id="@+id/editPatient"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/f32"
+            android:background="@drawable/button_background"
+            android:text="@string/edit_patient"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="@id/addPatient"
+            app:layout_constraintEnd_toStartOf="@id/addPatient" />
+
+        <Button
+            android:id="@+id/addPatient"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="74dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintEnd_toEndOf="@id/nameView"
+            app:layout_constraintTop_toBottomOf="@id/bloodTypeView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

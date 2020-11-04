@@ -63,13 +63,13 @@ public enum LayoutPageEnum {
     ALARM_LIST_PHYSIOLOGICAL,
     ALARM_LIST_TECHNICAL,
     //    ALARM_SETUP(R.layout.layout_common, R.string.alarm_setup, LayoutPageEnum.SETUP_HOME, true, true),
-//
-//    PATIENT_LIST,
-//    PATIENT_LIST_INFO(R.layout.layout_patient, R.string.patient_list, LayoutPageEnum.PATIENT_LIST, true, true),
-//    PATIENT_INFO(R.layout.layout_patient, R.string.patient_info, LayoutPageEnum.MENU_HOME, true, true),
-//    PATIENT_ADD(R.layout.layout_patient, R.string.add_patient, LayoutPageEnum.PATIENT_INFO, true, true),
-//    PATIENT_CONFIRM_REMOVE,
-//
+
+    PATIENT_LIST(R.layout.layout_patient_list, R.string.patient_list, LayoutPageEnum.USER_HOME, true, BindingLayoutEnum.Tab),
+    PATIENT_LIST_INFO(R.layout.layout_patient, R.string.patient_list, LayoutPageEnum.PATIENT_LIST, true, BindingLayoutEnum.Tab),
+    PATIENT_INFO(R.layout.layout_patient, R.string.patient_info, LayoutPageEnum.MENU_HOME, true, BindingLayoutEnum.Tab),
+    PATIENT_ADD(R.layout.layout_patient, R.string.add_patient, LayoutPageEnum.PATIENT_INFO, true, BindingLayoutEnum.Tab),
+    PATIENT_CONFIRM_REMOVE,
+
     KEYBOARD_ALPHABET,
     KEYBOARD_LOGIN_USER,
     KEYBOARD_LOGIN_SYSTEM,
