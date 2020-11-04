@@ -81,7 +81,14 @@ public class SystemModel {
     }
 
     public void showSetupPage(SetupPageEnum setupPageEnum) {
+        showSetupPage(setupPageEnum, false);
+    }
+
+    public void showSetupPage(SetupPageEnum setupPageEnum, boolean reverseToFunction) {
         tagId = setupPageEnum.ordinal();
+        if (reverseToFunction) {
+            tagId += 100;
+        }
         if (setupPageEnum.ordinal() < SetupPageEnum.Ecg.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
         } else if (setupPageEnum.ordinal() < SetupPageEnum.EcgAlarm.ordinal()) {

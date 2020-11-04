@@ -59,17 +59,17 @@ public class MenuParameterSetupLayout extends BaseLayout {
         respButton = ViewUtil.buildButton(getContext());
         wakeButton = ViewUtil.buildButton(getContext());
 
-        tempButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Temp));
-        humButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Humidity));
-        oxygenButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Oxygen));
-        blueButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Blue));
-        matButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Mat));
-        ecgButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Ecg));
-        spo2Button.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Spo2));
-        nibpButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Nibp));
-        co2Button.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Co2));
-        respButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Resp));
-        wakeButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Wake));
+        tempButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Temp, true));
+        humButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Humidity, true));
+        oxygenButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Oxygen, true));
+        blueButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Blue, true));
+        matButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Mat, true));
+        ecgButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Ecg, true));
+        spo2Button.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Spo2, true));
+        nibpButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Nibp, true));
+        co2Button.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Co2, true));
+        respButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Resp, true));
+        wakeButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Wake, true));
 
         systemModeObserver = systemEnum -> {
             removeViews();

@@ -28,7 +28,7 @@ public class SetupHomeLayout extends SetupBaseLayout {
     @Override
     public void attach(LifecycleOwner lifecycleOwner) {
         int rowId = 0;
-        SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId];
+        SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId % 100];
         if (moduleHardware.isActive(ModuleEnum.Spo2)) {
             setSelectId(targetSetupPageEnum, SetupPageEnum.Spo2, rowId);
             binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.spo2_id), SetupPageEnum.Spo2.ordinal());

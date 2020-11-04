@@ -31,7 +31,7 @@ public class SetupHomeIncubatorLayout extends SetupBaseLayout {
     @Override
     public void attach(LifecycleOwner lifecycleOwner) {
         int rowId = 0;
-        SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId];
+        SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId % 100];
         setSelectId(targetSetupPageEnum, SetupPageEnum.Temp, rowId);
         binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.temp), SetupPageEnum.Temp.ordinal());
 
