@@ -44,6 +44,7 @@ import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
+import com.david.incubator.ui.setup.SetupHomeLayout;
 import com.david.incubator.ui.setup.SetupHumidityLayout;
 import com.david.incubator.ui.setup.SetupOxygenLayout;
 import com.david.incubator.ui.setup.SetupTempLayout;
@@ -202,4 +203,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupOxygenLayout setupOxygenLayout);
 
     void inject(IncubatorListLayout incubatorListLayout);
+
+    void inject(SetupHomeLayout setupHomeLayout);
 }

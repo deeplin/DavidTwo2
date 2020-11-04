@@ -188,7 +188,8 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
             if (maxCondition != null)
                 integerPopupModel.setMax2(maxCondition.apply(keyButtonEnum));
             numberPopupView.set(integerPopupModel);
-            numberPopupView.show(this, integerPopupModel.getKeyButtonView().getId(), index != 7 && index != 15);
+            numberPopupView.show(this, integerPopupModel.getKeyButtonView().getId(),
+                    index != 7 && index != 15);
         });
     }
 
