@@ -29,12 +29,12 @@ public abstract class BasePatientLayout extends BindingLayout<LayoutPatientBindi
     protected IntegerButtonModel monthSpinnerModel;
     protected IntegerButtonModel daySpinnerModel;
 
-    public BasePatientLayout(Context context, LayoutPageEnum layoutPageEnum) {
+    public BasePatientLayout(Context context) {
         super(context);
-        super.init(layoutPageEnum);
     }
 
-    protected void initPatient() {
+    protected void initPatient(LayoutPageEnum layoutPageEnum) {
+        super.init(layoutPageEnum);
         addKeyButtonWithLiveData(0, 3);
         addKeyButtonWithLiveData(1, 4);
         addKeyButtonWithLiveData(2, 5);

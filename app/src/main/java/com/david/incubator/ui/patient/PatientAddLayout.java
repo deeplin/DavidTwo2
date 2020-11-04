@@ -36,10 +36,9 @@ public class PatientAddLayout extends BasePatientLayout {
     private int bloodTypeOptionId;
 
     public PatientAddLayout(Context context) {
-        super(context, LayoutPageEnum.PATIENT_ADD);
+        super(context);
         ContextUtil.getComponent().inject(this);
-
-        super.initPatient();
+        super.initPatient(LayoutPageEnum.PATIENT_ADD);
 
         setKeyButtonEnum(0, KeyButtonEnum.PATIENT_ADD_GESTATION, null, null);
         setKeyButtonEnum(1, KeyButtonEnum.PATIENT_ADD_WEIGHT, null, null);

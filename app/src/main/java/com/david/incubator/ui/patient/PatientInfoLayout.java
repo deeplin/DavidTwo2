@@ -9,7 +9,6 @@ import com.david.R;
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.model.SystemModel;
 import com.david.core.util.ContextUtil;
-import com.david.incubator.ui.keyboard.InputModel;
 
 import javax.inject.Inject;
 
@@ -23,9 +22,9 @@ public class PatientInfoLayout extends BasePatientLayout {
     }
 
     public PatientInfoLayout(Context context, LayoutPageEnum layoutPageEnum) {
-        super(context, layoutPageEnum);
+        super(context);
         ContextUtil.getComponent().inject(this);
-        super.init();
+        super.initPatient(layoutPageEnum);
 
         binding.confirm.setVisibility(View.GONE);
         binding.sexView.disable();

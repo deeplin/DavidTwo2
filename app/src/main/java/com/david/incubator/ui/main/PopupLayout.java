@@ -23,6 +23,8 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.patient.PatientAddLayout;
+import com.david.incubator.ui.patient.PatientListLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
 import com.david.incubator.ui.setup.SetupHomeLayout;
 import com.david.incubator.ui.system.SystemAlarmListLayout;
@@ -94,6 +96,9 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SETUP_HOME_INCUBATOR.ordinal() - POPUP_START_ID] = new SetupHomeIncubatorLayout(getContext());
         views[LayoutPageEnum.SETUP_HOME.ordinal() - POPUP_START_ID] = new SetupHomeLayout(getContext());
         views[LayoutPageEnum.SYSTEM_PRINT.ordinal() - POPUP_START_ID] = new SystemPrintLayout(getContext());
+
+        views[LayoutPageEnum.PATIENT_ADD.ordinal() - POPUP_START_ID] = new PatientAddLayout(getContext());
+        views[LayoutPageEnum.PATIENT_LIST.ordinal() - POPUP_START_ID] = new PatientListLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
