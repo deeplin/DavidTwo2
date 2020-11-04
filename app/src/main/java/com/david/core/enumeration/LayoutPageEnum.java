@@ -57,7 +57,7 @@ public enum LayoutPageEnum {
 //    SYSTEM_Video(R.string.video, LayoutPageEnum.SYSTEM_Video_List, true, true),
 //
     SETUP_HOME_INCUBATOR,
-    SETUP_HOME_ECG,
+    SETUP_HOME,
 
     ALARM_LIST_PHYSIOLOGICAL,
     ALARM_LIST_TECHNICAL,

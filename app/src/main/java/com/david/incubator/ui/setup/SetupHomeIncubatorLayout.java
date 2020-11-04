@@ -10,15 +10,11 @@ import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SetupPageEnum;
 import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
-import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.databinding.LayoutTabBinding;
-
-import java.util.Objects;
 
 import javax.inject.Inject;
 
-public class SetupHomeIncubatorLayout extends BindingBasicLayout<LayoutTabBinding> {
+public class SetupHomeIncubatorLayout extends SetupBaseLayout {
 
     @Inject
     ModuleHardware moduleHardware;
@@ -28,24 +24,12 @@ public class SetupHomeIncubatorLayout extends BindingBasicLayout<LayoutTabBindin
     IncubatorModel incubatorModel;
 
     public SetupHomeIncubatorLayout(Context context) {
-        super(context);
+        super(context, 3);
         ContextUtil.getComponent().inject(this);
-        binding.tabHomeLayout.setTabConsumer(binding.tabFrameLayout::show);
-        binding.tabHomeLayout.init(3);
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.layout_tab;
     }
 
     @Override
     public void attach(LifecycleOwner lifecycleOwner) {
-        super.attach(lifecycleOwner);
-        binding.titleView.set(R.string.setup, null, true);
-
-        binding.tabFrameLayout.attach(lifecycleOwner);
-
         int rowId = 0;
         SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId];
         setSelectId(targetSetupPageEnum, SetupPageEnum.Temp, rowId);
@@ -70,19 +54,11 @@ public class SetupHomeIncubatorLayout extends BindingBasicLayout<LayoutTabBindin
                 binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.mat), SetupPageEnum.Mat.ordinal());
             }
         }
-        binding.tabHomeLayout.attach(lifecycleOwner);
+        super.attach(lifecycleOwner);
     }
 
     @Override
     public void detach() {
         super.detach();
-        binding.tabHomeLayout.detach();
-        binding.tabFrameLayout.detach();
-    }
-
-    private void setSelectId(SetupPageEnum targetSetupPageEnum, SetupPageEnum setupPageEnum, int id) {
-        if (Objects.equals(targetSetupPageEnum, setupPageEnum)) {
-            binding.tabHomeLayout.setTab(id);
-        }
     }
 }

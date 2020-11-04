@@ -85,7 +85,7 @@ public class SystemModel {
         if (setupPageEnum.ordinal() < SetupPageEnum.Ecg.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
         } else {
-            showLayout(LayoutPageEnum.SETUP_HOME_ECG);
+            showLayout(LayoutPageEnum.SETUP_HOME);
         }
     }
 //

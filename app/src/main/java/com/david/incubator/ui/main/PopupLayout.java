@@ -23,6 +23,7 @@ import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
+import com.david.incubator.ui.setup.SetupHomeLayout;
 import com.david.incubator.ui.system.SystemAlarmListLayout;
 import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
@@ -89,7 +90,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SYSTEM_ALARM_LIST.ordinal() - POPUP_START_ID] = new SystemAlarmListLayout(getContext());
 
         views[LayoutPageEnum.SETUP_HOME_INCUBATOR.ordinal() - POPUP_START_ID] = new SetupHomeIncubatorLayout(getContext());
-
+        views[LayoutPageEnum.SETUP_HOME.ordinal() - POPUP_START_ID] = new SetupHomeLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
