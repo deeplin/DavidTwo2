@@ -284,12 +284,13 @@ public class AutomationControl implements ILifeCycle {
             }
         }
         if (moduleHardware.isInstalled(ModuleEnum.Wake)) {
-            try {
-                wakeCommandControl.init();
-                wakeCommandControl.open(Constant.WAKE_COM_ID, Constant.WAKE_BAUDRATE);
-            } catch (Exception e) {
-                LoggerUtil.e(e);
-            }
+            //todo deeplin
+//            try {
+//                wakeCommandControl.init();
+//                wakeCommandControl.open(Constant.WAKE_COM_ID, Constant.WAKE_BAUDRATE);
+//            } catch (Exception e) {
+//                LoggerUtil.e(e);
+//            }
         }
 
         try {
