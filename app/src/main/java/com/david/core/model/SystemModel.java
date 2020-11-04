@@ -84,15 +84,12 @@ public class SystemModel {
         tagId = setupPageEnum.ordinal();
         if (setupPageEnum.ordinal() < SetupPageEnum.Ecg.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
-        } else {
+        } else if (setupPageEnum.ordinal() < SetupPageEnum.EcgAlarm.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME);
+        } else {
+            showLayout(LayoutPageEnum.SETUP_ALARM);
         }
     }
-//
-//    public void showAlarmPage(AlarmPageEnum alarmPageEnum) {
-//        tagId = alarmPageEnum.ordinal();
-//        showLayout(LayoutPageEnum.ALARM_SETUP);
-//    }
 
     public void initializeTimeOut() {
         lockTime = Constant.SCREEN_LOCK_SECOND;

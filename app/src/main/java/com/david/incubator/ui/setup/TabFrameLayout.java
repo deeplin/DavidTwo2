@@ -26,6 +26,8 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
         views[SetupPageEnum.Humidity.ordinal()] = new SetupHumidityLayout(getContext());
         views[SetupPageEnum.Oxygen.ordinal()] = new SetupOxygenLayout(getContext());
 
+        views[SetupPageEnum.Spo2.ordinal()] = new SetupSpo2Layout(getContext());
+
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
             if (view != null) {

@@ -58,6 +58,7 @@ public enum LayoutPageEnum {
 //
     SETUP_HOME_INCUBATOR,
     SETUP_HOME,
+    SETUP_ALARM,
 
     ALARM_LIST_PHYSIOLOGICAL,
     ALARM_LIST_TECHNICAL,

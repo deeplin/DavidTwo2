@@ -248,10 +248,29 @@
     <string name="setup">设置</string>
     <string name="mode">模式</string>
     <string name="temp">温度</string>
-    
-
     <string name="avg_time" translatable="false">AVG Time</string>
     <string name="kang">袋鼠模式</string>
+
+    <!--Setup-->
+    <string name="next_page">下一页</string>
+    <string name="previous_page">上一页</string>
+    <string name="wave_speed">波形速度</string>
+    <string name="gain">增益</string>
+    <string name="smart_tone">脉搏音</string>
+    <string name="sphb_precision">SpHb精度</string>
+    <string name="sphb_avm">SpHb动/静脉</string>
+    <string name="sphb_average">SpHb平均</string>
+    <string name="pvi_average">PVI平均</string>
+    <string name="precision_0">精确0.1</string>
+    <string name="precision_1">精确0.5</string>
+    <string name="precision_2">整数</string>
+    <string name="arterial">动脉</string>
+    <string name="venous">静脉</string>
+    <string name="forever">长</string>
+    <string name="middle">中</string>
+    <string name="brief">短</string>
+    <string name="normal">正常</string>
+    <string name="fast">快速</string>
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
