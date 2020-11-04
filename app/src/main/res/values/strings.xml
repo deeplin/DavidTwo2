@@ -272,6 +272,16 @@
     <string name="normal">正常</string>
     <string name="fast">快速</string>
 
+    <!--Ecg Objective-->
+    <string name="hr_source">HR/PR来源</string>
+    <string name="lead_3">3导</string>
+    <string name="lead_5">5导</string>
+    <string name="lead_setting">导联模式</string>
+    <string name="filter_mode">滤波模式</string>
+    <string name="no_trap">无陷波</string>
+    <string name="trap_filter">陷波滤波器</string>
+    <string name="pace_check">起搏检测</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

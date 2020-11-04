@@ -28,6 +28,8 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
 
         views[SetupPageEnum.Spo2.ordinal()] = new SetupSpo2Layout(getContext());
 
+        views[SetupPageEnum.Ecg.ordinal()] = new SetupEcgLayout(getContext());
+
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
             if (view != null) {
