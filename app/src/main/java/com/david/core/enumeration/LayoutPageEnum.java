@@ -50,7 +50,7 @@ public enum LayoutPageEnum {
     SYSTEM_NIBP_CALIBRATION(R.string.nibp_calibration, LayoutPageEnum.SYSTEM_MODULE_CALIBRATION, true, BindingLayoutEnum.Standard),
     SYSTEM_ALARM_LIST,
 
-    SYSTEM_PRINT,
+    SYSTEM_PRINT(R.string.print_setup, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
     //    SYSTEM_Image_List(R.string.all_image, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_Video_List(R.string.all_video, LayoutPageEnum.SYSTEM_HOME, true, true),
 //    SYSTEM_Image(R.string.image, LayoutPageEnum.SYSTEM_Image_List, true, true),

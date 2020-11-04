@@ -36,6 +36,7 @@ import com.david.incubator.ui.system.SystemRangeSetupLayout;
 import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
 import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
 import com.david.incubator.ui.system.factory.SystemFactoryLayout;
+import com.david.incubator.ui.system.print.SystemPrintLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserModuleSetupLayout;
@@ -92,6 +93,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
 
         views[LayoutPageEnum.SETUP_HOME_INCUBATOR.ordinal() - POPUP_START_ID] = new SetupHomeIncubatorLayout(getContext());
         views[LayoutPageEnum.SETUP_HOME.ordinal() - POPUP_START_ID] = new SetupHomeLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_PRINT.ordinal() - POPUP_START_ID] = new SystemPrintLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

@@ -64,14 +64,14 @@ public class SystemHomeLayout extends BaseLayout {
         alarmListButton = ViewUtil.buildButton(getContext());
         addInnerButton(7, alarmListButton);
 
+        printButton = ViewUtil.buildButton(getContext());
+        addInnerButton(8, printButton);
+
 //        imageButton = ViewUtil.buildButton(getContext());
 //        addInnerButton(8, imageButton);
 //
 //        videoButton = ViewUtil.buildButton(getContext());
 //        addInnerButton(9, videoButton);
-
-        printButton = ViewUtil.buildButton(getContext());
-        addInnerButton(8, printButton);
 
         deviationAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_DEVIATION_ALARM));
         overheatAlarmButton.setOnClickListener(v -> systemModel.showLayout(LayoutPageEnum.SYSTEM_OVERHEAT_ALARM));
@@ -106,6 +106,7 @@ public class SystemHomeLayout extends BaseLayout {
         factoryButton.setText(ContextUtil.getString(R.string.factory_setting));
         moduleCalibrationButton.setText(ContextUtil.getString(R.string.module_calibration));
         alarmListButton.setText(ContextUtil.getString(R.string.alarm_record));
+        printButton.setText(ContextUtil.getString(R.string.print_setup));
 //        imageButton.setText(ContextUtil.getString(R.string.all_image));
 //        videoButton.setText(ContextUtil.getString(R.string.all_video));
     }

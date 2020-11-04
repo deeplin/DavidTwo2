@@ -306,10 +306,17 @@
     <string name="initial_sleeve_pressure">初始袖口气压</string>
     <string name="cycle">周期(分钟)</string>
 
-
     <!--Wake Objective-->
     <string name="self_test">自测</string>
     <string name="vibration_intensity">震动强度</string>
+
+    <!--Print-->
+    <string name="data">数据</string>
+    <string name="category">类型</string>
+    <string name="hours">小时</string>
+    <string name="days">天</string>
+    <string name="print_content">打印内容</string>
+    <string name="print_cycle">打印周期</string>
 
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>

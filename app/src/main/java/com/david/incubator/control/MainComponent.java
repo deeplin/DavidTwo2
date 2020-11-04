@@ -69,6 +69,7 @@ import com.david.incubator.ui.system.SystemRangeSetupLayout;
 import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
 import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
 import com.david.incubator.ui.system.factory.SystemFactoryLayout;
+import com.david.incubator.ui.system.print.SystemPrintLayout;
 import com.david.incubator.ui.top.TopLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
@@ -235,4 +236,6 @@ public interface MainComponent extends CommonComponent {
     void inject(CameraView cameraView);
 
     void inject(MenuPrintSetupLayout menuPrintSetupLayout);
+
+    void inject(SystemPrintLayout systemPrintLayout);
 }

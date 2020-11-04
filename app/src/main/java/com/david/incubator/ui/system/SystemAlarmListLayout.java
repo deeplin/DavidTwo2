@@ -56,7 +56,7 @@ public class SystemAlarmListLayout extends BindingBasicLayout<LayoutSystemAlarmL
                 textViews[row][column].setBackgroundResource(R.drawable.table_outline);
                 int height = 34;
                 if (row == 0) {
-                    height = 56;
+                    height = 40;
                 }
 
                 if (column == 0) {
