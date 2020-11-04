@@ -7,7 +7,7 @@ public enum EcgChannelEnum {
     I("I"), II("II"), III("III"),
     aVR("aVR"), aVL("aVL"), aVF("aVF"), V("V"),
     Spo2("SpO₂"),
-    Resp("RESP"),
+//    Resp("RESP"),
     Co2("CO₂"),
     Close(null);
 
@@ -34,9 +34,9 @@ public enum EcgChannelEnum {
         return ecgChannelEnum.ordinal() == Spo2.ordinal();
     }
 
-    public static boolean isResp(EcgChannelEnum ecgChannelEnum) {
-        return ecgChannelEnum.ordinal() == Resp.ordinal();
-    }
+//    public static boolean isResp(EcgChannelEnum ecgChannelEnum) {
+////        return ecgChannelEnum.ordinal() == Resp.ordinal();
+//    }
 
     public static boolean isCo2(EcgChannelEnum ecgChannelEnum) {
         return ecgChannelEnum.ordinal() == Co2.ordinal();

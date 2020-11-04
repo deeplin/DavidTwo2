@@ -52,7 +52,7 @@ public class MenuPrintSetupLayout extends BaseLayout implements ILifeCycleOwner 
         ContextUtil.getComponent().inject(this);
         super.init(LayoutPageEnum.MENU_PRINT_SETUP);
 
-        activeChannelEnums = new EcgChannelEnum[10];
+        activeChannelEnums = new EcgChannelEnum[11];
 
         super.initPopup(4);
 
