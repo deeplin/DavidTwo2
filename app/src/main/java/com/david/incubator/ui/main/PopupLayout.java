@@ -24,6 +24,9 @@ import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
 import com.david.incubator.ui.patient.PatientAddLayout;
+import com.david.incubator.ui.patient.PatientConfirmRemoveLayout;
+import com.david.incubator.ui.patient.PatientInfoLayout;
+import com.david.incubator.ui.patient.PatientListInfoLayout;
 import com.david.incubator.ui.patient.PatientListLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
 import com.david.incubator.ui.setup.SetupHomeLayout;
@@ -97,8 +100,11 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SETUP_HOME.ordinal() - POPUP_START_ID] = new SetupHomeLayout(getContext());
         views[LayoutPageEnum.SYSTEM_PRINT.ordinal() - POPUP_START_ID] = new SystemPrintLayout(getContext());
 
+        views[LayoutPageEnum.PATIENT_INFO.ordinal() - POPUP_START_ID] = new PatientInfoLayout(getContext());
         views[LayoutPageEnum.PATIENT_ADD.ordinal() - POPUP_START_ID] = new PatientAddLayout(getContext());
         views[LayoutPageEnum.PATIENT_LIST.ordinal() - POPUP_START_ID] = new PatientListLayout(getContext());
+        views[LayoutPageEnum.PATIENT_LIST_INFO.ordinal() - POPUP_START_ID] = new PatientListInfoLayout(getContext());
+        views[LayoutPageEnum.PATIENT_CONFIRM_REMOVE.ordinal() - POPUP_START_ID] = new PatientConfirmRemoveLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

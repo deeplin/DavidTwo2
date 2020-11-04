@@ -15,7 +15,7 @@
             android:layout_width="352dp"
             android:layout_height="64dp"
             android:layout_marginStart="@dimen/f16"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="56dp"
             android:textSize="@dimen/f20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,8 +43,8 @@
         <Button
             android:id="@+id/year"
             android:layout_width="140dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="@dimen/f8"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/f4"
             android:background="@drawable/button_background"
             android:textColor="@color/text_blue"
             android:textSize="@dimen/f20"
@@ -65,7 +65,7 @@
         <Button
             android:id="@+id/month"
             android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_height="56dp"
             android:background="@drawable/button_background"
             android:textColor="@color/text_blue"
             android:textSize="@dimen/f20"
@@ -86,7 +86,7 @@
         <Button
             android:id="@+id/day"
             android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_height="56dp"
             android:background="@drawable/button_background"
             android:textColor="@color/text_blue"
             android:textSize="@dimen/f20"
@@ -126,7 +126,7 @@
         <ImageButton
             android:id="@+id/confirm"
             android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_height="56dp"
             android:layout_marginTop="74dp"
             android:background="@drawable/button_background"
             app:layout_constraintEnd_toEndOf="@id/nameView"
@@ -135,7 +135,7 @@
         <Button
             android:id="@+id/editPatient"
             android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_height="56dp"
             android:layout_marginEnd="@dimen/f32"
             android:background="@drawable/button_background"
             android:text="@string/edit_patient"
@@ -147,7 +147,7 @@
         <Button
             android:id="@+id/addPatient"
             android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_height="56dp"
             android:layout_marginTop="74dp"
             android:background="@drawable/button_background"
             android:textColor="@color/text_blue"
