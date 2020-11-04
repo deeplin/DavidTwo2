@@ -5,9 +5,25 @@ import java.text.DecimalFormat;
 public class UnitUtil {
 
     //Co2
+    public static int percentageToMmHg(int percentage, int atmospheric) {
+        if (percentage > 0) {
+            return (int) (percentage * 7.5f * atmospheric / 1000);
+        } else {
+            return Constant.NA_VALUE;
+        }
+    }
+
     public static String percentageToMmHgString(int percentage) {
         float value = percentage * 7.5f * 1013 / 1000;
         return FormatUtil.formatValue(value, 10, "0");
+    }
+
+    public static int percentageToKPa(int percentage, int atmospheric) {
+        if (percentage > 0) {
+            return percentage * atmospheric / 1000;
+        } else {
+            return Constant.NA_VALUE;
+        }
     }
 
     public static String percentageToKPaString(int percentage) {

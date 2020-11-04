@@ -6,6 +6,7 @@ import com.david.incubator.print.ui.BasePrintCurveView;
 import com.david.incubator.print.ui.PrintEcgWaveView;
 import com.david.incubator.print.ui.PrintSpo2WaveView;
 import com.david.incubator.print.ui.PrintWaveView;
+import com.david.incubator.serial.co2.Co2CommandControl;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
@@ -217,4 +218,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupRespLayout setupRespLayout);
 
     void inject(SetupNibpLayout setupNibpLayout);
+
+    void inject(Co2CommandControl co2CommandControl);
 }
