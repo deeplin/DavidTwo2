@@ -8,6 +8,8 @@ import androidx.lifecycle.LifecycleOwner;
 import com.david.R;
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.model.SystemModel;
+import com.david.core.ui.alarm.PhysiologicalAlarmListLayout;
+import com.david.core.ui.alarm.TechnicalAlarmListLayout;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
@@ -105,6 +107,9 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.PATIENT_LIST.ordinal() - POPUP_START_ID] = new PatientListLayout(getContext());
         views[LayoutPageEnum.PATIENT_LIST_INFO.ordinal() - POPUP_START_ID] = new PatientListInfoLayout(getContext());
         views[LayoutPageEnum.PATIENT_CONFIRM_REMOVE.ordinal() - POPUP_START_ID] = new PatientConfirmRemoveLayout(getContext());
+
+        views[LayoutPageEnum.ALARM_LIST_PHYSIOLOGICAL.ordinal() - POPUP_START_ID] = new PhysiologicalAlarmListLayout(getContext());
+        views[LayoutPageEnum.ALARM_LIST_TECHNICAL.ordinal() - POPUP_START_ID] = new TechnicalAlarmListLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
