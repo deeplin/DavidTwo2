@@ -13,6 +13,7 @@ import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
 import com.david.incubator.ui.home.basic.StandardSpo2BasicLayout;
 import com.david.incubator.ui.home.bodywave.BodyWaveLayout;
+import com.david.incubator.ui.home.camera.CameraView;
 import com.david.incubator.ui.home.common.Co2RrTinyView;
 import com.david.incubator.ui.home.common.Co2RrView;
 import com.david.incubator.ui.home.common.HrPrView;
@@ -229,4 +230,6 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupCo2Layout setupCo2Layout);
 
     void inject(SetupWakeLayout setupWakeLayout);
+
+    void inject(CameraView cameraView);
 }

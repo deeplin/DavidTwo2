@@ -24,9 +24,13 @@ import com.david.core.util.Constant;
 import com.david.core.util.GpioUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.LoggerUtil;
+import com.david.incubator.serial.co2.Co2CommandControl;
 import com.david.incubator.serial.ecg.EcgCommandControl;
 import com.david.incubator.serial.ecg.EcgCommandParser;
 import com.david.incubator.serial.ecg.EcgCommandSender;
+import com.david.incubator.serial.nibp.NibpCommandControl;
+import com.david.incubator.serial.print.PrintCommandControl;
+import com.david.incubator.serial.wake.WakeCommandControl;
 
 import java.util.concurrent.TimeUnit;
 
@@ -73,14 +77,14 @@ public class AutomationControl implements ILifeCycle {
     GpioControl gpioControl;
     @Inject
     SensorModelRepository sensorModelRepository;
-//    @Inject
-//    Co2CommandControl co2CommandControl;
-//    @Inject
-//    NibpCommandControl nibpCommandControl;
-//    @Inject
-//    PrintCommandControl printCommandControl;
-//    @Inject
-//    WakeCommandControl wakeCommandControl;
+    @Inject
+    Co2CommandControl co2CommandControl;
+    @Inject
+    NibpCommandControl nibpCommandControl;
+    @Inject
+    PrintCommandControl printCommandControl;
+    @Inject
+    WakeCommandControl wakeCommandControl;
 
     private Observer<Integer> startObserver;
     private final Observer<Boolean> spo2ErrorObserver;
@@ -217,8 +221,7 @@ public class AutomationControl implements ILifeCycle {
 
     @Override
     public void detach() {
-        //todo
-//        spo2CommandControl.errorOccur.removeObserver(spo2ErrorObserver);
+        spo2CommandControl.errorOccur.removeObserver(spo2ErrorObserver);
 
         alarmControl.detach();
 
@@ -264,38 +267,38 @@ public class AutomationControl implements ILifeCycle {
         }
 
         if (moduleHardware.isInstalled(ModuleEnum.Co2)) {
-//            try {
-//                co2CommandControl.init();
-//                co2CommandControl.open(Constant.CO2_COM_ID, Constant.CO2_BAUDRATE);
-//            } catch (Exception e) {
-//                LoggerUtil.e(e);
-//            }
+            try {
+                co2CommandControl.init();
+                co2CommandControl.open(Constant.CO2_COM_ID, Constant.CO2_BAUDRATE);
+            } catch (Exception e) {
+                LoggerUtil.e(e);
+            }
         }
 
         if (moduleHardware.isInstalled(ModuleEnum.Nibp)) {
-//            try {
-//                nibpCommandControl.init();
-//                nibpCommandControl.open(Constant.NIBP_COM_ID, Constant.NIBP_BAUDRATE);
-//            } catch (Exception e) {
-//                LoggerUtil.e(e);
-//            }
+            try {
+                nibpCommandControl.init();
+                nibpCommandControl.open(Constant.NIBP_COM_ID, Constant.NIBP_BAUDRATE);
+            } catch (Exception e) {
+                LoggerUtil.e(e);
+            }
         }
         if (moduleHardware.isInstalled(ModuleEnum.Wake)) {
-//            try {
-//                wakeCommandControl.init();
-//                wakeCommandControl.open(Constant.WAKE_COM_ID, Constant.WAKE_BAUDRATE);
-//            } catch (Exception e) {
-//                LoggerUtil.e(e);
-//            }
+            try {
+                wakeCommandControl.init();
+                wakeCommandControl.open(Constant.WAKE_COM_ID, Constant.WAKE_BAUDRATE);
+            } catch (Exception e) {
+                LoggerUtil.e(e);
+            }
         }
 
-//        try {
-//            printCommandControl.init();
-//            printCommandControl.open(Constant.PRINT_COM_ID, Constant.PRINT_BAUDRATE);
-//            printCommandControl.attach();
-//        } catch (Exception e) {
-//            LoggerUtil.e(e);
-//        }
+        try {
+            printCommandControl.init();
+            printCommandControl.open(Constant.PRINT_COM_ID, Constant.PRINT_BAUDRATE);
+            printCommandControl.attach();
+        } catch (Exception e) {
+            LoggerUtil.e(e);
+        }
     }
 
     private void connectSpo2() {
@@ -313,28 +316,28 @@ public class AutomationControl implements ILifeCycle {
     }
 
     private void closeSerialPort() {
-//        if (moduleHardware.wake.getValue()) {
-//            wakeCommandControl.close();
-//        }
-//
-//        if (moduleHardware.nibp.getValue()) {
-//            nibpCommandControl.close();
-//        }
-//
-//        if (moduleHardware.co2.getValue()) {
-//            co2CommandControl.close();
-//        }
-//
-        if (moduleHardware.isActive(ModuleEnum.Spo2)) {
+        if (moduleHardware.isInstalled(ModuleEnum.Wake)) {
+            wakeCommandControl.close();
+        }
+
+        if (moduleHardware.isInstalled(ModuleEnum.Nibp)) {
+            nibpCommandControl.close();
+        }
+
+        if (moduleHardware.isInstalled(ModuleEnum.Co2)) {
+            co2CommandControl.close();
+        }
+
+        if (moduleHardware.isInstalled(ModuleEnum.Spo2)) {
             spo2CommandControl.close();
         }
 
-        if (moduleHardware.isActive(ModuleEnum.Ecg)) {
+        if (moduleHardware.isInstalled(ModuleEnum.Ecg)) {
             ecgCommandControl.close();
         }
-//
-//        printCommandControl.close();
-//        printCommandControl.detach();
+
+        printCommandControl.close();
+        printCommandControl.detach();
     }
 
     private void setSource() {

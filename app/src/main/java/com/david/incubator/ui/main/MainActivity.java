@@ -28,6 +28,7 @@ import com.david.databinding.ActivityMainBinding;
 import com.david.incubator.control.MainApplication;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.bodywave.BodyWaveLayout;
+import com.david.incubator.ui.home.camera.CameraLayout;
 import com.david.incubator.ui.home.samescreen.SameScreenLayout;
 import com.david.incubator.ui.home.spo2.Spo2Layout;
 import com.david.incubator.ui.home.standard.StandardLayout;
@@ -205,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements ILifeCycle, Consu
         views[LayoutPageEnum.LAYOUT_BODY_WAVE.ordinal()] = new BodyWaveLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_SAME_SCREEN.ordinal()] = new SameScreenLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_SPO2.ordinal()] = new Spo2Layout(applicationContext);
-//        views[LayoutPageEnum.LAYOUT_CAMERA.ordinal()] = new CameraLayout(applicationContext);
+        views[LayoutPageEnum.LAYOUT_CAMERA.ordinal()] = new CameraLayout(applicationContext);
         views[LayoutPageEnum.LAYOUT_POPUP.ordinal()] = new PopupLayout(applicationContext);
 
         for (int index = 0; index < views.length; index++) {
