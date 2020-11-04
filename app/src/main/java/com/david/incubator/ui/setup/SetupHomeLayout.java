@@ -8,11 +8,8 @@ import com.david.R;
 import com.david.core.control.ModuleHardware;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SetupPageEnum;
-import com.david.core.model.IncubatorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.util.ContextUtil;
-
-import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -32,9 +29,6 @@ public class SetupHomeLayout extends SetupBaseLayout {
     public void attach(LifecycleOwner lifecycleOwner) {
         int rowId = 0;
         SetupPageEnum targetSetupPageEnum = SetupPageEnum.values()[systemModel.tagId];
-        setSelectId(targetSetupPageEnum, SetupPageEnum.Temp, rowId);
-        binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.temp), SetupPageEnum.Temp.ordinal());
-
         if (moduleHardware.isActive(ModuleEnum.Spo2)) {
             setSelectId(targetSetupPageEnum, SetupPageEnum.Spo2, rowId);
             binding.tabHomeLayout.setText(rowId++, ContextUtil.getString(R.string.spo2_id), SetupPageEnum.Spo2.ordinal());

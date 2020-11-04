@@ -18,7 +18,7 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
     private LifecycleOwner lifeCycleOwner;
     private View currentLayout;
 
-    private final View[] views = new View[SetupPageEnum.Wake.ordinal()];
+    private final View[] views = new View[SetupPageEnum.Wake.ordinal() + 1];
 
     public TabFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
