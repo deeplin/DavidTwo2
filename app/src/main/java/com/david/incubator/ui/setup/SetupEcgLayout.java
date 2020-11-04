@@ -164,7 +164,7 @@ public class SetupEcgLayout extends BaseLayout {
 
             optionPopupView.setSelectedId(configRepository.getConfig(ConfigEnum.Ecg1).getValue());
             optionPopupView.setCallback(this::ecg1Callback);
-            optionPopupView.show(this, ecg1View.getId(), true);
+            optionPopupView.show(this, ecg0View.getId(), true);
         });
 
         ecg2View.getValue().setOnClickListener(v -> {
@@ -177,7 +177,7 @@ public class SetupEcgLayout extends BaseLayout {
 
             optionPopupView.setSelectedId(configRepository.getConfig(ConfigEnum.Ecg2).getValue());
             optionPopupView.setCallback(this::ecg2Callback);
-            optionPopupView.show(this, ecg1View.getId(), true);
+            optionPopupView.show(this, ecg2View.getId(), true);
         });
 
         speedView.getValue().setOnClickListener(v -> {
