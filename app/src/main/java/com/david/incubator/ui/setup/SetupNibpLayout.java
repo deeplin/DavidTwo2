@@ -40,7 +40,8 @@ public class SetupNibpLayout extends BaseLayout {
     public SetupNibpLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
-
+        super.init();
+        
         measureModeView = ViewUtil.buildKeyButtonView(getContext());
         addInnerView(0, measureModeView);
 

@@ -15,14 +15,14 @@ public enum KeyButtonEnum {
     SETUP_MANUEL(R.string.setup, 0, 100, 5, FormatUtil::formatPercentage),
     SETUP_HUMIDITY(R.string.setup, 0, 1000, 10, FormatUtil::formatHumidity),
     SETUP_OXYGEN(R.string.setup, 0, 1000, 10, FormatUtil::formatOxygen),
-    //
-//    SETUP_CO2_O2_COMPENSATE(R.string.o2_compensate, 0, 100, 1, FormatUtil::formatPercentage),
-//    SETUP_CO2_N20_COMPENSATE(R.string.n2o_compensate, 0, 100, 1, FormatUtil::formatPercentage),
-//
-//    SETUP_WAKE_VIBRATION_INTENSITY(R.string.vibration_intensity, 50, 100, 1, String::valueOf),
-//    SETUP_WAKE_HR(R.string.hr, 90, 110, 1, String::valueOf),
-//    SETUP_WAKE_SPO2(R.string.spo2_id, 80, 90, 1, String::valueOf),
-//
+
+    SETUP_CO2_O2_COMPENSATE(R.string.o2_compensate, 0, 100, 1, FormatUtil::formatPercentage),
+    SETUP_CO2_N20_COMPENSATE(R.string.n2o_compensate, 0, 100, 1, FormatUtil::formatPercentage),
+
+    SETUP_WAKE_VIBRATION_INTENSITY(R.string.vibration_intensity, 50, 100, 1, String::valueOf),
+    SETUP_WAKE_HR(R.string.hr, 90, 110, 1, String::valueOf),
+    SETUP_WAKE_SPO2(R.string.spo2_id, 80, 90, 1, String::valueOf),
+
     SETUP_SPO2_AVG_TIME(R.string.avg_time, 0, 6, 1, SetupSpo2Layout::convertAverageTime),
     //
 //    PATIENT_ADD_GESTATION(R.string.gestation, 0, 99, 1),

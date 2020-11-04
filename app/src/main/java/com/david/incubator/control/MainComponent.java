@@ -45,6 +45,7 @@ import com.david.incubator.ui.menu.MenuVersionLayout;
 import com.david.incubator.ui.menu.SwitchScreenLayout;
 import com.david.incubator.ui.menu.sensorcalibration.ConfirmSensorCalibrationLayout;
 import com.david.incubator.ui.menu.sensorcalibration.MenuSensorCalibrationLayout;
+import com.david.incubator.ui.setup.SetupCo2Layout;
 import com.david.incubator.ui.setup.SetupEcgLayout;
 import com.david.incubator.ui.setup.SetupHomeIncubatorLayout;
 import com.david.incubator.ui.setup.SetupHomeLayout;
@@ -54,6 +55,7 @@ import com.david.incubator.ui.setup.SetupOxygenLayout;
 import com.david.incubator.ui.setup.SetupRespLayout;
 import com.david.incubator.ui.setup.SetupSpo2Layout;
 import com.david.incubator.ui.setup.SetupTempLayout;
+import com.david.incubator.ui.setup.SetupWakeLayout;
 import com.david.incubator.ui.system.SystemAlarmListLayout;
 import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
@@ -223,4 +225,8 @@ public interface MainComponent extends CommonComponent {
     void inject(Co2CommandControl co2CommandControl);
 
     void inject(WakeCommandControl wakeCommandControl);
+
+    void inject(SetupCo2Layout setupCo2Layout);
+
+    void inject(SetupWakeLayout setupWakeLayout);
 }

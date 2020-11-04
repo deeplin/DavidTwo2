@@ -50,6 +50,7 @@ public class SetupRespLayout extends BaseLayout {
     public SetupRespLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
+        super.init();
 
         rrSourceView = ViewUtil.buildKeyButtonView(getContext());
         addInnerView(0, rrSourceView);

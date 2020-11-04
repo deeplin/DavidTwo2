@@ -29,7 +29,9 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
         views[SetupPageEnum.Spo2.ordinal()] = new SetupSpo2Layout(getContext());
         views[SetupPageEnum.Ecg.ordinal()] = new SetupEcgLayout(getContext());
         views[SetupPageEnum.Resp.ordinal()] = new SetupRespLayout(getContext());
+        views[SetupPageEnum.Co2.ordinal()] = new SetupCo2Layout(getContext());
         views[SetupPageEnum.Nibp.ordinal()] = new SetupNibpLayout(getContext());
+        views[SetupPageEnum.Wake.ordinal()] = new SetupWakeLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];
