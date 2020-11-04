@@ -7,6 +7,7 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.view.View;
 
 import com.david.core.buffer.BufferRepository;
 import com.david.core.enumeration.ConfigEnum;
@@ -39,6 +40,7 @@ public class Spo2SurfaceView extends WaveSurfaceView {
         super.attach();
         newSiqPath.reset();
         bufferRepository.getSpo2Buffer().start2(this::draw);
+        setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -46,6 +48,7 @@ public class Spo2SurfaceView extends WaveSurfaceView {
         bufferRepository.getSpo2Buffer().stop();
         newSiqPath.reset();
         super.detach();
+        setVisibility(View.GONE);
     }
 
     @Override

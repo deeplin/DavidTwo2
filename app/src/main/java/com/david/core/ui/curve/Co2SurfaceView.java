@@ -7,6 +7,7 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.lifecycle.Observer;
 
@@ -59,6 +60,7 @@ public class Co2SurfaceView extends WaveSurfaceView {
     public void attach() {
         super.attach();
         systemModel.selectCo2.observeForever(selectCo2RrObserver);
+        setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -67,6 +69,7 @@ public class Co2SurfaceView extends WaveSurfaceView {
         bufferRepository.getCo2Buffer().stop();
         bufferRepository.getEcgRrBuffer().stop();
         super.detach();
+        setVisibility(View.GONE);
     }
 
     @Override

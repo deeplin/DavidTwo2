@@ -48,6 +48,7 @@ public class EcgSurfaceView extends WaveSurfaceView {
         iPacePath.reset();
         newPath2.reset();
         bufferRepository.getEcgBuffer(ecgChannelEnumId).start(this::draw);
+        setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -56,6 +57,7 @@ public class EcgSurfaceView extends WaveSurfaceView {
         iPacePath.reset();
         newPath2.reset();
         super.detach();
+        setVisibility(View.GONE);
     }
 
     @Override
