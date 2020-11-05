@@ -27,8 +27,8 @@ public class EcgModel extends BaseSensorModel {
         super(ModuleEnum.Ecg, AlarmCategoryEnum.Ecg_Range, 2);
         for (int index = 0; index < 2; index++) {
             SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.EcgHr.ordinal() + index];
-            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HR_OVH.ordinal() + 2 * index];
-            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HR_OVL.ordinal() + 2 * index];
+            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRH.ordinal() + 2 * index];
+            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRL.ordinal() + 2 * index];
             loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
         leadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_DROP, aBoolean));

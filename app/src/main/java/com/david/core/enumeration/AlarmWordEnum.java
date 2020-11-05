@@ -49,10 +49,10 @@ public enum AlarmWordEnum {
     ECG_ASY(),
     ECG_VEN(),
 
-    ECG_HR_OVH(),
-    ECG_HR_OVL(),
-    ECG_PR_OVH(),
-    ECG_PR_OVL(),
+    ECG_HRH(),
+    ECG_HRL(),
+    ECG_RRH(),
+    ECG_RRL(),
 
     /*Co2*/
     CO2_CON(),
