@@ -28,9 +28,9 @@ public class SetupAlarmSpo2Layout extends BaseLayout {
     @Override
     public void attach() {
         super.attach();
+        int rowId = 0;
         int enumId = KeyButtonEnum.ALARM_SPO2_UPPER.ordinal();
-        for (int rowId = 0; rowId < configRepository.getActiveSpo2Enum().size(); rowId++) {
-            SensorModelEnum sensorModelEnum = configRepository.getActiveSpo2Enum().get(rowId);
+        for (SensorModelEnum sensorModelEnum : configRepository.getActiveSpo2Enum()) {
             SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
             addKeyButton(rowId, sensorModel, KeyButtonEnum.values()[enumId + rowId], KeyButtonEnum.values()[enumId + rowId + 1],
                     this::minCondition, this::maxCondition);
