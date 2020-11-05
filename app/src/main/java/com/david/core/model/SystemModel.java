@@ -91,7 +91,7 @@ public class SystemModel {
         }
         if (setupPageEnum.ordinal() < SetupPageEnum.Spo2.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
-        } else if (setupPageEnum.ordinal() < SetupPageEnum.EcgAlarm.ordinal()) {
+        } else if (setupPageEnum.ordinal() < SetupPageEnum.Spo2Alarm.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME);
         } else {
             showLayout(LayoutPageEnum.SETUP_ALARM);
