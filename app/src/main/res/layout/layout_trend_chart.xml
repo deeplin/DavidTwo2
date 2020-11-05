@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--624*304-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <!--Left Column-->
+
+        <com.david.core.ui.view.ButtonValueView
+            android:id="@+id/buttonValueView0"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="@dimen/f16"
+            app:layout_constraintBottom_toBottomOf="@id/chartView0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/chartView0" />
+
+        <com.david.core.ui.view.ButtonValueView
+            android:id="@+id/buttonValueView1"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/chartView1"
+            app:layout_constraintStart_toStartOf="@id/buttonValueView0"
+            app:layout_constraintTop_toTopOf="@id/chartView1" />
+
+        <com.david.core.ui.view.ButtonValueView
+            android:id="@+id/buttonValueView2"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/chartView2"
+            app:layout_constraintStart_toStartOf="@id/buttonValueView0"
+            app:layout_constraintTop_toTopOf="@id/chartView2" />
+
+        <!--Right Column-->
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/chartView0"
+            android:layout_width="570dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/f50"
+            app:layout_constraintBottom_toTopOf="@id/chartView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/chartView1"
+            android:layout_width="570dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/chartView2"
+            app:layout_constraintEnd_toEndOf="@id/chartView0"
+            app:layout_constraintTop_toBottomOf="@id/chartView0"
+            app:layout_goneMarginBottom="72dp" />
+
+        <com.david.core.ui.view.ChartView
+            android:id="@+id/chartView2"
+            android:layout_width="570dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/chartView0"
+            app:layout_constraintTop_toBottomOf="@id/chartView1" />
+
+        <!--Trend Control-->
+        <Button
+            android:id="@+id/selectCategory"
+            android:layout_width="120dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/selectInterval"
+            android:layout_width="120dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:includeFontPadding="false"
+            android:textAllCaps="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintStart_toEndOf="@id/selectCategory" />
+
+        <ImageButton
+            android:id="@+id/previousPage"
+            android:layout_width="@dimen/f70"
+            android:layout_height="52dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/previous_left"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintEnd_toStartOf="@id/moveLeft" />
+
+        <ImageButton
+            android:id="@+id/moveLeft"
+            android:layout_width="@dimen/f70"
+            android:layout_height="52dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/left"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintEnd_toStartOf="@id/moveRight" />
+
+        <ImageButton
+            android:id="@+id/moveRight"
+            android:layout_width="@dimen/f70"
+            android:layout_height="52dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/right"
+            app:layout_constraintBottom_toBottomOf="@id/nextPage"
+            app:layout_constraintEnd_toStartOf="@id/nextPage" />
+
+        <ImageButton
+            android:id="@+id/nextPage"
+            android:layout_width="@dimen/f70"
+            android:layout_height="52dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:layout_marginBottom="@dimen/f8"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/next_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/trendSwitch" />
+
+        <ImageButton
+            android:id="@+id/trendSwitch"
+            android:layout_width="@dimen/f60"
+            android:layout_height="@dimen/f60"
+            android:layout_marginEnd="@dimen/f16"
+            android:layout_marginBottom="@dimen/f4"
+            android:background="@drawable/layout_circle_background"
+            android:src="@mipmap/table"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/sampleLine"
+            android:layout_width="2dp"
+            android:layout_height="450dp"
+            android:layout_marginBottom="72dp"
+            android:background="@color/background_blue_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/chartView0" />
+
+        <TextView
+            android:id="@+id/sampleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f16"
+            app:layout_constraintBottom_toTopOf="@id/sampleLine"
+            app:layout_constraintEnd_toEndOf="@id/sampleLine"
+            app:layout_constraintStart_toStartOf="@id/sampleLine" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

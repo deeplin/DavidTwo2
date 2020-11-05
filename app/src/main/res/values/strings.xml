@@ -320,6 +320,11 @@
     <string name="print_content">打印内容</string>
     <string name="print_cycle">打印周期</string>
 
+    <!--Trend-->
+    <string name="incubator">培养箱</string>
+    <string name="spo2">血氧</string>
+    <string name="data_print">数据打印</string>
+
     <!--Alarm Setting-->
     <string name="spo2_alarm_upper">SpO₂报警上限</string>
     <string name="spo2_alarm_lower">SpO₂报警下限</string>

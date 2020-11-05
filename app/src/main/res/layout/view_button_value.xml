@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/keyButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/f60"
+            android:background="@drawable/button_background"
+            android:textAllCaps="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f20"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/f18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keyButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

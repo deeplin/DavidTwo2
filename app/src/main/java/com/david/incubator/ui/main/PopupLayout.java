@@ -44,6 +44,9 @@ import com.david.incubator.ui.system.SystemSensorCalibrationLayout;
 import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
 import com.david.incubator.ui.system.factory.SystemFactoryLayout;
 import com.david.incubator.ui.system.print.SystemPrintLayout;
+import com.david.incubator.ui.trend.chart.TrendChartLayout;
+import com.david.incubator.ui.trend.print.TrendPrintLayout;
+import com.david.incubator.ui.trend.table.TrendTableLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserModuleSetupLayout;
@@ -110,6 +113,10 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
 
         views[LayoutPageEnum.ALARM_LIST_PHYSIOLOGICAL.ordinal() - POPUP_START_ID] = new PhysiologicalAlarmListLayout(getContext());
         views[LayoutPageEnum.ALARM_LIST_TECHNICAL.ordinal() - POPUP_START_ID] = new TechnicalAlarmListLayout(getContext());
+
+        views[LayoutPageEnum.TREND_CHART.ordinal() - POPUP_START_ID] = new TrendChartLayout(getContext());
+        views[LayoutPageEnum.TREND_TABLE.ordinal() - POPUP_START_ID] = new TrendTableLayout(getContext());
+        views[LayoutPageEnum.TREND_PRINT.ordinal() - POPUP_START_ID] = new TrendPrintLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

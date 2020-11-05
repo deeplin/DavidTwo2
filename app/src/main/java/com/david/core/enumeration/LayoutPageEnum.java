@@ -74,10 +74,10 @@ public enum LayoutPageEnum {
     KEYBOARD_LOGIN_USER,
     KEYBOARD_LOGIN_SYSTEM,
     KEYBOARD_LOGIN_DEMO,
-    //
-//    TREND_CHART,
-//    TREND_TABLE,
-//    TREND_PRINT(R.layout.layout_print, R.string.data_print, LayoutPageEnum.TREND_TABLE, true, true),
+
+    TREND_CHART,
+    TREND_TABLE,
+    TREND_PRINT(R.layout.layout_print, R.string.data_print, LayoutPageEnum.TREND_TABLE, true, BindingLayoutEnum.Tab),
     LAYOUT_NONE;
 
     private final int layoutId;

@@ -77,6 +77,10 @@ import com.david.incubator.ui.system.factory.ConfirmFactoryLayout;
 import com.david.incubator.ui.system.factory.SystemFactoryLayout;
 import com.david.incubator.ui.system.print.SystemPrintLayout;
 import com.david.incubator.ui.top.TopLayout;
+import com.david.incubator.ui.trend.chart.TrendChartLayout;
+import com.david.incubator.ui.trend.print.TrendPrintLayout;
+import com.david.incubator.ui.trend.print.TrendPrintTableLayout;
+import com.david.incubator.ui.trend.table.TrendTableLayout;
 import com.david.incubator.ui.user.UserHomeLayout;
 import com.david.incubator.ui.user.UserLanguageLayout;
 import com.david.incubator.ui.user.UserModuleSetupLayout;
@@ -256,4 +260,12 @@ public interface MainComponent extends CommonComponent {
     void inject(PhysiologicalAlarmListLayout physiologicalAlarmListLayout);
 
     void inject(TechnicalAlarmListLayout technicalAlarmListLayout);
+
+    void inject(TrendChartLayout trendChartLayout);
+
+    void inject(TrendTableLayout trendTableLayout);
+
+    void inject(TrendPrintTableLayout trendPrintTableLayout);
+
+    void inject(TrendPrintLayout trendPrintLayout);
 }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_panel_blue_dark">
+
+        <com.david.core.ui.component.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/f56"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.david.core.util.MyGridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/f16"
+            android:layout_marginEnd="@dimen/f16"
+            android:layout_marginBottom="66dp"
+            android:background="@drawable/table_outline"
+            android:padding="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+        <!--Trend Control-->
+
+        <ImageButton
+            android:id="@+id/trendPrint"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/layout_circle_background"
+            android:src="@mipmap/trend_print"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/trendSwitch"
+            app:layout_constraintEnd_toStartOf="@id/pageUp" />
+
+        <ImageButton
+            android:id="@+id/pageUp"
+            android:layout_width="@dimen/f70"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/previous_table"
+            app:layout_constraintBottom_toBottomOf="@id/pageDown"
+            app:layout_constraintEnd_toStartOf="@id/pageDown" />
+
+        <ImageButton
+            android:id="@+id/pageDown"
+            android:layout_width="@dimen/f70"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/f16"
+            android:layout_marginBottom="@dimen/f8"
+            android:background="@drawable/background_panel"
+            android:src="@mipmap/next_table"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/trendSwitch" />
+
+        <ImageButton
+            android:id="@+id/trendSwitch"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="@dimen/f32"
+            android:layout_marginBottom="@dimen/f4"
+            android:background="@drawable/layout_circle_background"
+            android:src="@mipmap/trend_chart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

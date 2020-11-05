@@ -29,6 +29,7 @@ import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutMenuBinding;
 import com.david.incubator.serial.nibp.NibpCommandControl;
 import com.david.incubator.ui.top.TopViewModel;
+import com.david.incubator.ui.trend.TrendControlModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +51,8 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
     IncubatorCommandSender incubatorCommandSender;
     @Inject
     ModuleHardware moduleHardware;
-    //    @Inject
-//    TrendControlModel trendControlModel;
+    @Inject
+    TrendControlModel trendControlModel;
     @Inject
     SensorModelRepository sensorModelRepository;
     @Inject
@@ -198,8 +199,8 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
                 systemModel.freezeWave.set(!systemModel.freezeWave.getValue());
                 break;
             case (3):
-//                trendControlModel.init();
-//                systemModel.showLayout(LayoutPageEnum.TREND_CHART);
+                trendControlModel.init();
+                systemModel.showLayout(LayoutPageEnum.TREND_CHART);
                 break;
             case (4):
                 if (systemModel.layoutPage.getValue() == LayoutPageEnum.LAYOUT_CAMERA) {
