@@ -15,7 +15,6 @@ import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
-import com.david.core.util.LoggerUtil;
 
 import java.util.Objects;
 
@@ -95,29 +94,29 @@ public class BaseSensorModel {
             int data = sensorModel.textNumber.getValue();
             if (data > sensorModel.upperLimit.getValue()) {
                 AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
-                setBit(upperAlarmModel, true);
+                setRangeBit(upperAlarmModel, true);
                 AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
-                setBit(lowerAlarmModel, false);
+                setRangeBit(lowerAlarmModel, false);
             } else if (data < sensorModel.lowerLimit.getValue()) {
                 AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
-                setBit(upperAlarmModel, false);
+                setRangeBit(upperAlarmModel, false);
                 AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
-                setBit(lowerAlarmModel, true);
+                setRangeBit(lowerAlarmModel, true);
             } else {
                 AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
-                setBit(upperAlarmModel, false);
+                setRangeBit(upperAlarmModel, false);
                 AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
-                setBit(lowerAlarmModel, false);
+                setRangeBit(lowerAlarmModel, false);
             }
         } else {
             AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
-            setBit(upperAlarmModel, false);
+            setRangeBit(upperAlarmModel, false);
             AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
-            setBit(lowerAlarmModel, false);
+            setRangeBit(lowerAlarmModel, false);
         }
     }
 
-    private void setBit(AlarmModel alarmModel, boolean value) {
+    private void setRangeBit(AlarmModel alarmModel, boolean value) {
         int bitOffset = alarmModel.getBitOffset();
         passThroughAlarmArray[0].post(BitUtil.setBit(passThroughAlarmArray[0].getValue(), bitOffset, value));
     }

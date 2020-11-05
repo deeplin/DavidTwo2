@@ -6,7 +6,10 @@ public enum AlarmCategoryEnum {
     Spo2_Sys(2, AlarmGroupEnum.S, "SYS"),
     Spo2_Bfc(3, AlarmGroupEnum.S, "BFC"),
     Spo2_Df(4, AlarmGroupEnum.S, "DF"),
-    Spo2_Sp(5, AlarmGroupEnum.S, "SP");
+    Spo2_Sp(5, AlarmGroupEnum.S, "SP"),
+
+    Ecg_Range(0, AlarmGroupEnum.E, "HL"),
+    Ecg_Con(1, AlarmGroupEnum.E, "SEN");
 
     private final int index;
     private final AlarmGroupEnum alarmGroupEnum;
