@@ -325,20 +325,8 @@ public class TrendChartLayout extends BindingBasicLayout<LayoutTrendChartBinding
                 }
             }
         } else {
-            int id = 0;
-            if (existingId0 != 0 && existingId1 != 0 && existingId2 != 0) {
-                optionPopupView.setOption(id++, ContextUtil.getString(SensorModelEnum.Spo2.getDisplayNameId()));
-            }
-            if (existingId0 != 1 && existingId1 != 1 && existingId2 != 1) {
-                optionPopupView.setOption(id++, ContextUtil.getString(SensorModelEnum.Pr.getDisplayNameId()));
-            }
-            if (existingId0 != 2 && existingId1 != 2 && existingId2 != 2) {
-                optionPopupView.setOption(id++, ContextUtil.getString(SensorModelEnum.Pi.getDisplayNameId()));
-            }
-
-            for (int index = 0; index < configRepository.getActiveSpo2Module().size(); index++) {
-                int offset = configRepository.getActiveSpo2Module().get(index);
-                SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Sphb.ordinal() + offset];
+            for (int index = 0; index < configRepository.getActiveSpo2Enum().size(); index++) {
+                SensorModelEnum sensorModelEnum = configRepository.getActiveSpo2Enum().get(index);
                 if (index != existingId0 && index != existingId1 && index != existingId2) {
                     optionPopupView.setOption(index, ContextUtil.getString(sensorModelEnum.getDisplayNameId()));
                 }

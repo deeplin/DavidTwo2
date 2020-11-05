@@ -133,16 +133,7 @@ public class TrendControlModel {
                 return SensorModelEnum.values()[itemId + SensorModelEnum.EcgHr.ordinal()];
             case 2:
                 LazyLiveData<Integer> spo2LazyLiveData = getItemOption(itemId);
-                switch (spo2LazyLiveData.getValue()) {
-                    case (0):
-                        return SensorModelEnum.Spo2;
-                    case (1):
-                        return SensorModelEnum.Pr;
-                    case (2):
-                        return SensorModelEnum.Pi;
-                    default:
-                        configRepository.getActiveSpo2Module().get(spo2LazyLiveData.getValue());
-                }
+                return configRepository.getActiveSpo2Enum().get(spo2LazyLiveData.getValue());
             default:
                 return SensorModelEnum.values()[itemId + SensorModelEnum.Co2.ordinal()];
         }

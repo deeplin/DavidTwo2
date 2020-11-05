@@ -15,6 +15,7 @@ import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutPopupBinding;
+import com.david.incubator.ui.alarm.SetupAlarmLayout;
 import com.david.incubator.ui.keyboard.KeyboardLoginLayout;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.menu.MenuFunctionSetupLayout;
@@ -117,6 +118,8 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.TREND_CHART.ordinal() - POPUP_START_ID] = new TrendChartLayout(getContext());
         views[LayoutPageEnum.TREND_TABLE.ordinal() - POPUP_START_ID] = new TrendTableLayout(getContext());
         views[LayoutPageEnum.TREND_PRINT.ordinal() - POPUP_START_ID] = new TrendPrintLayout(getContext());
+
+        views[LayoutPageEnum.SETUP_ALARM.ordinal() - POPUP_START_ID] = new SetupAlarmLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

@@ -85,4 +85,24 @@ public class FormatUtil {
     public static String formatPercentage(int value) {
         return String.format(Locale.US, "%s %%", value);
     }
+
+    public static String formatPr(int value) {
+        return formatValueUnit(SensorModelEnum.Pr, value);
+    }
+
+    public static String formatPi(int value) {
+        return formatValueUnit(SensorModelEnum.Pi, value);
+    }
+
+    public static String formatSphb(int value) {
+        return formatValueUnit(SensorModelEnum.Sphb, value);
+    }
+
+    public static String formatSpoc(int value) {
+        return formatValueUnit(SensorModelEnum.Spoc, value);
+    }
+
+    public static String formatPvi(int value) {
+        return formatValueUnit(SensorModelEnum.Pvi, value);
+    }
 }

@@ -246,4 +246,18 @@ public class ConfigRepository implements ILifeCycle, Consumer<Long> {
         }
         return activeSpo2Module;
     }
+
+    public List<SensorModelEnum> getActiveSpo2Enum() {
+        List<SensorModelEnum> activeSpo2Module = new ArrayList<>();
+        activeSpo2Module.add(SensorModelEnum.Spo2);
+        activeSpo2Module.add(SensorModelEnum.Pr);
+        activeSpo2Module.add(SensorModelEnum.Pi);
+        int spo2ModuleConfig = getConfig(ConfigEnum.Spo2ModuleConfig).getValue();
+        for (int index = 0; index < 5; index++) {
+            if (BitUtil.getBit(spo2ModuleConfig, index)) {
+                activeSpo2Module.add(SensorModelEnum.values()[SensorModelEnum.Sphb.ordinal() + index]);
+            }
+        }
+        return activeSpo2Module;
+    }
 }

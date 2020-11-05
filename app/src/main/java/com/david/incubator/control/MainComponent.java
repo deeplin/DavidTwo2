@@ -10,6 +10,8 @@ import com.david.incubator.print.ui.PrintSpo2WaveView;
 import com.david.incubator.print.ui.PrintWaveView;
 import com.david.incubator.serial.co2.Co2CommandControl;
 import com.david.incubator.serial.wake.WakeCommandControl;
+import com.david.incubator.ui.alarm.SetupAlarmLayout;
+import com.david.incubator.ui.alarm.SetupAlarmSpo2Layout;
 import com.david.incubator.ui.bottom.MenuLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
@@ -268,4 +270,8 @@ public interface MainComponent extends CommonComponent {
     void inject(TrendPrintTableLayout trendPrintTableLayout);
 
     void inject(TrendPrintLayout trendPrintLayout);
+
+    void inject(SetupAlarmLayout setupAlarmLayout);
+
+    void inject(SetupAlarmSpo2Layout setupAlarmSpo2Layout);
 }
