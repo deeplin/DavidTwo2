@@ -41,8 +41,8 @@ public class MainApplication extends Application {
     SensorModelRepository sensorModelRepository;
     @Inject
     AutomationControl automationControl;
-    //    @Inject
-//    DemoControl demoControl;
+    @Inject
+    DemoControl demoControl;
     @Inject
     SoundUtil soundUtil;
     @Inject
@@ -66,14 +66,13 @@ public class MainApplication extends Application {
         soundUtil.attach();
         beepUtil.attach();
 
-        //todo deeplin
-//        demoCallback = aBoolean -> {
-//            if (systemModel.demo.getValue()) {
-//                demoControl.attach();
-//            } else {
-//                demoControl.detach();
-//            }
-//        };
+        demoCallback = aBoolean -> {
+            if (systemModel.demo.getValue()) {
+                demoControl.attach();
+            } else {
+                demoControl.detach();
+            }
+        };
 
         Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
             daoControl.start(MainApplication.this);
@@ -89,11 +88,11 @@ public class MainApplication extends Application {
         incubatorCommandControl.open(Constant.INCUBATOR_COM_ID, Constant.INCUBATOR_BAUDRATE);
         automationControl.attach();
 
-//        systemModel.demo.observeForever(demoCallback);
+        systemModel.demo.observeForever(demoCallback);
     }
 
     public void stop() {
-//        systemModel.demo.removeObserver(demoCallback);
+        systemModel.demo.removeObserver(demoCallback);
 
         automationControl.detach();
         incubatorCommandControl.close();
