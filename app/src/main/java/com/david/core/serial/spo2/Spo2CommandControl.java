@@ -92,7 +92,7 @@ public class Spo2CommandControl extends BaseSerialControl {
 
     @Override
     protected void setConnectionError(boolean status) {
-        spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Con, status ? 1 : 0);
+        spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Con, status ? 1 : 0);
         if (status) {
             errorOccur.notifyChange();
             if (!systemModel.demo.getValue()) {

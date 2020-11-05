@@ -38,5 +38,20 @@ public class Spo2Model extends BaseSensorModel {
             AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVL.ordinal() + 2 * index];
             loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
+        SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
+        isSpo2Below85(sensorModel, AlarmWordEnum.SPO2_LOW);
+    }
+
+    private void isSpo2Below85(SensorModel sensorModel, AlarmWordEnum alarmEnum) {
+        if (moduleHardware.isActive(ModuleEnum.Spo2)) {
+            int data = sensorModel.textNumber.getValue();
+            if (data < 850) {
+                alarmRepository.produceAlarmFromAndroid(alarmEnum, true);
+            } else {
+                alarmRepository.produceAlarmFromAndroid(alarmEnum, false);
+            }
+        } else {
+            alarmRepository.produceAlarmFromAndroid(alarmEnum, false);
+        }
     }
 }

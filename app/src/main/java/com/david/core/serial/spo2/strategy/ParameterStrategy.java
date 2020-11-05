@@ -56,7 +56,7 @@ public class ParameterStrategy implements Consumer<byte[]> {
             switch (buffer[3]) {
                 case (0x01):
                     spo2TextNumber.post((int) NumberUtil.getShortHighFirst(4, buffer));
-                    spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Sp, (int) NumberUtil.getShortHighFirst(8, buffer));
+                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Sp, (int) NumberUtil.getShortHighFirst(8, buffer));
                     break;
                 case (0x02):
                     prTextNumber.post((int) NumberUtil.getShortHighFirst(4, buffer));
@@ -80,7 +80,7 @@ public class ParameterStrategy implements Consumer<byte[]> {
                     break;
                 case (0x0C):
                     int data = NumberUtil.getLongHighFirst(buffer, 4);
-                    spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Sys, data);
+                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Sys, data);
                     if ((data & 1) == 0 && !spo2Model.isAlarmEnabled()) {
                         spo2Model.setAlarmEnabled();
                         spo2TextNumber.notifyChange();
@@ -94,8 +94,8 @@ public class ParameterStrategy implements Consumer<byte[]> {
                     }
                     break;
                 case (0x0D):
-                    spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Bfc, (int) NumberUtil.getShortHighFirst(4, buffer));
-                    spo2Model.setAlarm(AlarmCategoryEnum.Spo2_Df, (int) NumberUtil.getShortHighFirst(6, buffer));
+                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Bfc, (int) NumberUtil.getShortHighFirst(4, buffer));
+                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Df, (int) NumberUtil.getShortHighFirst(6, buffer));
                     break;
                 case (0x2B):
 //                shareMemory.PiDelta.post(NumberUtil.getShortHighFirst(4, buffer));

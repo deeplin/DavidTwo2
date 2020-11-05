@@ -27,8 +27,8 @@ public class AlarmRepository {
         loadAsset();
     }
 
-    public AlarmModel getAlarmModel(String alarmWord) {
-        return alarmMap.get(alarmWord);
+    public AlarmModel getAlarmModel(AlarmWordEnum alarmWordEnum) {
+        return alarmMap.get(alarmWordEnum.toString());
     }
 
     //    //触发下位机报警

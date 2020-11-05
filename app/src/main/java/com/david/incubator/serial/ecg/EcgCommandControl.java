@@ -4,7 +4,9 @@ import androidx.arch.core.util.Function;
 
 import com.david.core.alarm.AlarmRepository;
 import com.david.core.control.SensorModelRepository;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.SensorModelEnum;
+import com.david.core.model.EcgModel;
 import com.david.core.model.SensorModel;
 import com.david.core.model.SystemModel;
 import com.david.core.serial.BaseSerialControl;
@@ -19,13 +21,13 @@ import javax.inject.Singleton;
 public class EcgCommandControl extends BaseSerialControl {
 
     @Inject
-    AlarmRepository alarmRepository;
-    @Inject
     EcgResponseCommand ecgResponseCommand;
     @Inject
     SensorModelRepository sensorModelRepository;
     @Inject
     SystemModel systemModel;
+    @Inject
+    EcgModel ecgModel;
 
     private EcgCommandMode ecgCommandMode;
     private Function<EcgResponseCommand, Boolean> function;
@@ -133,8 +135,7 @@ public class EcgCommandControl extends BaseSerialControl {
 
     @Override
     protected void setConnectionError(boolean status) {
-        //todo deeplin
-//        alarmRepository.produceAlarmFromAndroid(AlarmWordEnum.ECG_CON, status);
+        ecgModel.setSenAlarm(AlarmWordEnum.ECG_CON, status);
         if (status && !systemModel.demo.getValue()) {
             for (int index = SensorModelEnum.EcgHr.ordinal(); index <= SensorModelEnum.EcgRr.ordinal(); index++) {
                 SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.values()[index]);

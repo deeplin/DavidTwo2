@@ -57,10 +57,10 @@ public class BaseSensorModel {
             AlarmGroupEnum alarmGroupEnum = rangeCategoryEnum.getAlarmGroupEnum();
             if (integer == 0) {
                 incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(),
-                        rangeCategoryEnum.getCategory(), passThroughAlarmArray[rangeCategoryEnum.getIndex()].getValue());
+                        "HL", passThroughAlarmArray[0].getValue());
             } else {
                 incubatorCommandSender.setAlarmExcCommand(alarmGroupEnum.name(),
-                        rangeCategoryEnum.getCategory(), 0);
+                        "HL", 0);
             }
         });
     }
@@ -73,11 +73,19 @@ public class BaseSensorModel {
         alarmEnabled = true;
     }
 
-    public void setAlarm(AlarmCategoryEnum alarmCategoryEnum, int value) {
+    public void setSystemAlarm(AlarmCategoryEnum alarmCategoryEnum, int value) {
         if (alarmEnabled) {
             int index = alarmCategoryEnum.getIndex();
             passThroughAlarmArray[index].post(value);
             systemAlarm.post(BitUtil.setBit(systemAlarm.getValue(), index, value > 0));
+        }
+    }
+
+    public void setSenAlarm(AlarmWordEnum alarmWordEnum, boolean value) {
+        if (alarmEnabled) {
+            AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum);
+            int bitOffset = alarmModel.getBitOffset();
+            passThroughAlarmArray[1].post(BitUtil.setBit(passThroughAlarmArray[1].getValue(), bitOffset, value));
         }
     }
 
@@ -93,25 +101,25 @@ public class BaseSensorModel {
         if (moduleHardware.isActive(moduleEnum)) {
             int data = sensorModel.textNumber.getValue();
             if (data > sensorModel.upperLimit.getValue()) {
-                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum);
                 setRangeBit(upperAlarmModel, true);
-                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum);
                 setRangeBit(lowerAlarmModel, false);
             } else if (data < sensorModel.lowerLimit.getValue()) {
-                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum);
                 setRangeBit(upperAlarmModel, false);
-                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum);
                 setRangeBit(lowerAlarmModel, true);
             } else {
-                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+                AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum);
                 setRangeBit(upperAlarmModel, false);
-                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+                AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum);
                 setRangeBit(lowerAlarmModel, false);
             }
         } else {
-            AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum.toString());
+            AlarmModel upperAlarmModel = alarmRepository.getAlarmModel(upperAlarmEnum);
             setRangeBit(upperAlarmModel, false);
-            AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum.toString());
+            AlarmModel lowerAlarmModel = alarmRepository.getAlarmModel(lowerAlarmEnum);
             setRangeBit(lowerAlarmModel, false);
         }
     }

@@ -24,7 +24,7 @@ public class EcgModel extends BaseSensorModel {
 
     @Inject
     public EcgModel() {
-        super(ModuleEnum.Ecg, AlarmCategoryEnum.Spo2_Range, 2);
+        super(ModuleEnum.Ecg, AlarmCategoryEnum.Ecg_Range, 2);
         for (int index = 0; index < 2; index++) {
             SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.EcgHr.ordinal() + index];
             AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HR_OVH.ordinal() + 2 * index];
