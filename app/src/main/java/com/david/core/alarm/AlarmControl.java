@@ -1,11 +1,8 @@
 package com.david.core.alarm;
 
-import androidx.lifecycle.Observer;
-
 import com.david.core.control.SensorModelRepository;
 import com.david.core.database.DaoControl;
 import com.david.core.database.entity.AlarmEntity;
-import com.david.core.model.SensorModel;
 import com.david.core.model.Spo2Model;
 import com.david.core.serial.BaseCommand;
 import com.david.core.serial.incubator.IncubatorCommandSender;
@@ -184,35 +181,5 @@ public class AlarmControl implements ILifeCycle {
 
     public boolean isAlarm() {
         return technicalAlarmList.size() > 0 || physiologicalAlarmList.size() > 0;
-    }
-
-    private void setRangeAlarms(int sensorId, final SensorModel sensorModel, LazyLiveData<Integer> enableModule, LazyLiveData<Boolean> enableSpo2) {
-        Observer<Integer> observer = new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer integer) {
-//                if (enableSpo2.getValue()) {
-//                    if (enableModule.getValue() == 2) {
-//                        int data = sensorModel.textNumber.getValue();
-//                        if (data > sensorModel.upperLimit.getValue()) {
-//                            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, true);
-//                            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//                        } else if (data < sensorModel.lowerLimit.getValue()) {
-//                            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, true);
-//                        } else {
-//                            alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                            alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//                        }
-//                    } else {
-//                        alarmRepository.produceAlarmFromAndroid(upperAlarmEnum, false);
-//                        alarmRepository.produceAlarmFromAndroid(lowerAlarmEnum, false);
-//                    }
-//                }
-            }
-        };
-
-        sensorModel.textNumber.observeForever(observer);
-        sensorModel.upperLimit.observeForever(observer);
-        sensorModel.lowerLimit.observeForever(observer);
     }
 }

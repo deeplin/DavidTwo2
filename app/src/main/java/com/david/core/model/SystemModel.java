@@ -89,7 +89,7 @@ public class SystemModel {
         if (reverseToFunction) {
             tagId += 100;
         }
-        if (setupPageEnum.ordinal() < SetupPageEnum.Ecg.ordinal()) {
+        if (setupPageEnum.ordinal() < SetupPageEnum.Spo2.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME_INCUBATOR);
         } else if (setupPageEnum.ordinal() < SetupPageEnum.EcgAlarm.ordinal()) {
             showLayout(LayoutPageEnum.SETUP_HOME);
