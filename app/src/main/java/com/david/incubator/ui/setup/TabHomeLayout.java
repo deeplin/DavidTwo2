@@ -15,7 +15,6 @@ import com.david.R;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycleOwner;
-import com.david.core.util.LoggerUtil;
 
 public class TabHomeLayout extends LinearLayout implements ILifeCycleOwner {
 
@@ -69,8 +68,6 @@ public class TabHomeLayout extends LinearLayout implements ILifeCycleOwner {
 
     @Override
     public void attach(LifecycleOwner lifecycleOwner) {
-        //todo deeplin
-        LoggerUtil.se(" tab " + tabId);
         textViews[tabId].setSelected(true);
     }
 
