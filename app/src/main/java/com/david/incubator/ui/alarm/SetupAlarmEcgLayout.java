@@ -2,7 +2,6 @@ package com.david.incubator.ui.alarm;
 
 import android.content.Context;
 
-import com.david.core.control.ConfigRepository;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.KeyButtonEnum;
 import com.david.core.enumeration.SensorModelEnum;
@@ -12,14 +11,12 @@ import com.david.core.util.ContextUtil;
 
 import javax.inject.Inject;
 
-public class SetupAlarmSpo2Layout extends BaseLayout {
+public class SetupAlarmEcgLayout extends BaseLayout {
 
     @Inject
     SensorModelRepository sensorModelRepository;
-    @Inject
-    ConfigRepository configRepository;
 
-    public SetupAlarmSpo2Layout(Context context) {
+    public SetupAlarmEcgLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
     }
@@ -27,14 +24,10 @@ public class SetupAlarmSpo2Layout extends BaseLayout {
     @Override
     public void attach() {
         super.attach();
-        int enumId = KeyButtonEnum.ALARM_SPO2_UPPER.ordinal();
-        for (int rowId = 0; rowId < configRepository.getActiveSpo2Enum().size(); rowId++) {
-            SensorModelEnum sensorModelEnum = configRepository.getActiveSpo2Enum().get(rowId);
-            SensorModel sensorModel = sensorModelRepository.getSensorModel(sensorModelEnum);
-            addKeyButton(rowId, sensorModel, KeyButtonEnum.values()[enumId + rowId], KeyButtonEnum.values()[enumId + rowId + 1],
-                    this::minCondition, this::maxCondition);
-            rowId += 2;
-        }
+
+        SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.EcgHr);
+        addKeyButton(0, sensorModel, KeyButtonEnum.ALARM_HR_UPPER, KeyButtonEnum.ALARM_HR_LOWER,
+                this::minCondition, this::maxCondition);
     }
 
     @Override

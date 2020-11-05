@@ -55,11 +55,11 @@ public enum KeyButtonEnum {
     ALARM_SPCO_LOWER(R.string.spco_alarm_lower, 200, 990, 10, FormatUtil::formatOxygen),
     ALARM_PVI_UPPER(R.string.pvi_alarm_upper, 2, 100, 1, FormatUtil::formatPvi),
     ALARM_PVI_LOWER(R.string.pvi_alarm_lower, 1, 99, 1, FormatUtil::formatPvi),
-    //
-//    ALARM_HR_UPPER(R.string.hr_alarm_upper, 16, 350, 1, FormatUtil::formatPr),
-//    ALARM_HR_LOWER(R.string.hr_alarm_lower, 15, 349, 1, FormatUtil::formatPr),
-//
-//    ALARM_CO2_UPPER(R.string.etco2_alarm_upper, 1, 250, 1, null),
+
+    ALARM_HR_UPPER(R.string.hr_alarm_upper, 16, 350, 1, FormatUtil::formatPr),
+    ALARM_HR_LOWER(R.string.hr_alarm_lower, 15, 349, 1, FormatUtil::formatPr),
+
+    //    ALARM_CO2_UPPER(R.string.etco2_alarm_upper, 1, 250, 1, null),
 //    ALARM_CO2_LOWER(R.string.etco2_alarm_lower, 0, 249, 2, null),
 //    ALARM_CO2_FI_UPPER(R.string.fico2_alarm_upper, 1, 250, 1, FormatUtil::formatOxygen),
 //    ALARM_CO2_FI_LOWER(R.string.fico2_alarm_lower, 0, 249, 1, FormatUtil::formatOxygen),

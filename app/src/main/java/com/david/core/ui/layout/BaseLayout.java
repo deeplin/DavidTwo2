@@ -16,6 +16,7 @@ import com.david.core.enumeration.BindingLayoutEnum;
 import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.KeyButtonEnum;
 import com.david.core.enumeration.LayoutPageEnum;
+import com.david.core.model.SensorModel;
 import com.david.core.ui.component.KeyButtonView;
 import com.david.core.ui.component.NumberPopupView;
 import com.david.core.ui.component.OptionPopupView;
@@ -291,5 +292,15 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
 
     protected int acceptId() {
         return Integer.MIN_VALUE;
+    }
+
+    protected void addKeyButton(int rowId, SensorModel sensorModel, KeyButtonEnum upperKeyButtonEnum, KeyButtonEnum lowerKeyButtonEnum,
+                                Function<KeyButtonEnum, Integer> minCondition, Function<KeyButtonEnum, Integer> maxCondition) {
+        addKeyButtonWithLiveData(rowId, rowId);
+        setKeyButtonEnum(rowId, upperKeyButtonEnum, minCondition, maxCondition);
+        setOriginValue(rowId++, sensorModel.upperLimit);
+        addKeyButtonWithLiveData(rowId, rowId);
+        setKeyButtonEnum(rowId, lowerKeyButtonEnum, minCondition, maxCondition);
+        setOriginValue(rowId, sensorModel.lowerLimit);
     }
 }
