@@ -59,23 +59,23 @@ public enum KeyButtonEnum {
     ALARM_HR_UPPER(R.string.hr_alarm_upper, 16, 350, 1, FormatUtil::formatPr),
     ALARM_HR_LOWER(R.string.hr_alarm_lower, 15, 349, 1, FormatUtil::formatPr),
 
-    //    ALARM_CO2_UPPER(R.string.etco2_alarm_upper, 1, 250, 1, null),
-//    ALARM_CO2_LOWER(R.string.etco2_alarm_lower, 0, 249, 2, null),
-//    ALARM_CO2_FI_UPPER(R.string.fico2_alarm_upper, 1, 250, 1, FormatUtil::formatOxygen),
-//    ALARM_CO2_FI_LOWER(R.string.fico2_alarm_lower, 0, 249, 1, FormatUtil::formatOxygen),
-//    ALARM_CO2_RR_UPPER(R.string.awrr_alarm_upper, 1, 190, 1, FormatUtil::formatRr),
-//    ALARM_CO2_RR_LOWER(R.string.awrr_alarm_lower, 0, 189, 1, FormatUtil::formatRr),
-//
-//    ALARM_ECG_RR_UPPER(R.string.rr_alarm_upper, 21, 150, 1, FormatUtil::formatRr),
-//    ALARM_ECG_RR_LOWER(R.string.rr_alarm_lower, 0, 119, 1, FormatUtil::formatRr),
-//
-//    ALARM_NIBP_UPPER(R.string.sys_alarm_upper, 41, 130, 1, String::valueOf),
-//    ALARM_NIBP_LOWER(R.string.sys_alarm_lower, 40, 129, 1, String::valueOf),
-//    ALARM_NIBP_DIA_UPPER(R.string.dia_alarm_upper, 21, 100, 1, String::valueOf),
-//    ALARM_NIBP_DIA_LOWER(R.string.dia_alarm_lower, 20, 99, 1, String::valueOf),
-//    ALARM_NIBP_MEAN_UPPER(R.string.map_alarm_upper, 28, 110, 1, String::valueOf),
-//    ALARM_NIBP_MEAN_LOWER(R.string.map_alarm_lower, 27, 109, 1, String::valueOf),
-//
+    ALARM_ECG_RR_UPPER(R.string.rr_alarm_upper, 21, 150, 1, FormatUtil::formatEcgRr),
+    ALARM_ECG_RR_LOWER(R.string.rr_alarm_lower, 0, 119, 1, FormatUtil::formatEcgRr),
+
+    ALARM_CO2_UPPER(R.string.etco2_alarm_upper, 1, 250, 1, null),
+    ALARM_CO2_LOWER(R.string.etco2_alarm_lower, 0, 249, 2, null),
+    ALARM_CO2_FI_UPPER(R.string.fico2_alarm_upper, 1, 250, 1, FormatUtil::formatOxygen),
+    ALARM_CO2_FI_LOWER(R.string.fico2_alarm_lower, 0, 249, 1, FormatUtil::formatOxygen),
+    ALARM_CO2_RR_UPPER(R.string.awrr_alarm_upper, 1, 190, 1, FormatUtil::formatEcgRr),
+    ALARM_CO2_RR_LOWER(R.string.awrr_alarm_lower, 0, 189, 1, FormatUtil::formatEcgRr),
+
+    ALARM_NIBP_UPPER(R.string.sys_alarm_upper, 41, 130, 1, String::valueOf),
+    ALARM_NIBP_LOWER(R.string.sys_alarm_lower, 40, 129, 1, String::valueOf),
+    ALARM_NIBP_DIA_UPPER(R.string.dia_alarm_upper, 21, 100, 1, String::valueOf),
+    ALARM_NIBP_DIA_LOWER(R.string.dia_alarm_lower, 20, 99, 1, String::valueOf),
+    ALARM_NIBP_MEAN_UPPER(R.string.map_alarm_upper, 28, 110, 1, String::valueOf),
+    ALARM_NIBP_MEAN_LOWER(R.string.map_alarm_lower, 27, 109, 1, String::valueOf),
+
     SYSTEM_DEVIATION_AIR_UPPER(R.string.air_upper_limit, 0, 30, 1, FormatUtil::formatTemp),
     SYSTEM_DEVIATION_AIR_LOWER(R.string.air_lower_limit, 0, 30, 1, FormatUtil::formatTemp),
     SYSTEM_DEVIATION_SKIN_UPPER(R.string.skin_upper_limit, 0, 10, 1, FormatUtil::formatTemp),

@@ -13,6 +13,10 @@ public class UnitUtil {
         }
     }
 
+    public static int percentageToMmHg(int percentage) {
+        return (int) (percentage * 7.5f * 1013 / 10000 + 0.5);
+    }
+
     public static String percentageToMmHgString(int percentage) {
         float value = percentage * 7.5f * 1013 / 1000;
         return FormatUtil.formatValue(value, 10, "0");
@@ -24,6 +28,10 @@ public class UnitUtil {
         } else {
             return Constant.NA_VALUE;
         }
+    }
+
+    public static int percentageToKPa(int percentage) {
+        return (int) (percentage * 1013 / 1000f + 0.5);
     }
 
     public static String percentageToKPaString(int percentage) {
@@ -49,5 +57,17 @@ public class UnitUtil {
             return String.valueOf(mmHg);
         }
         return Constant.SENSOR_DEFAULT_ERROR_STRING;
+    }
+
+    public static int kPaToPercentage(int percentage) {
+        return (int) (percentage / 1013f * 1000 + 0.5);
+    }
+
+    public static int mmHgToPercentage(int percentage) {
+        return (int) (percentage / 7.5f / 1013 * 10000 + 0.5);
+    }
+
+    public static int transparent(int value) {
+        return value;
     }
 }

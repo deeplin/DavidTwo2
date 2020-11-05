@@ -105,4 +105,20 @@ public class FormatUtil {
     public static String formatPvi(int value) {
         return formatValueUnit(SensorModelEnum.Pvi, value);
     }
+
+    public static String formatEcgRr(int value) {
+        return formatValueUnit(SensorModelEnum.EcgRr, value);
+    }
+
+    public static String formatMmHg(Integer value) {
+        return formatValue(value, 1, "0 mmHg");
+    }
+
+    public static String formatKPa(Integer value) {
+        return formatValue(value, 10, "0.0 kPa");
+    }
+
+    public static String formatPercentageBy10(int value) {
+        return formatValue(value, 10, "0.0") + " %";
+    }
 }

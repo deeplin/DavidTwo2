@@ -12,7 +12,10 @@ import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.ILifeCycleOwner;
 import com.david.databinding.LayoutTabFrameBinding;
+import com.david.incubator.ui.alarm.SetupAlarmCo2Layout;
 import com.david.incubator.ui.alarm.SetupAlarmEcgLayout;
+import com.david.incubator.ui.alarm.SetupAlarmNibpLayout;
+import com.david.incubator.ui.alarm.SetupAlarmRespLayout;
 import com.david.incubator.ui.alarm.SetupAlarmSpo2Layout;
 
 public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
@@ -37,6 +40,9 @@ public class TabFrameLayout extends BindingBasicLayout<LayoutTabFrameBinding> {
 
         views[SetupPageEnum.Spo2Alarm.ordinal()] = new SetupAlarmSpo2Layout(getContext());
         views[SetupPageEnum.EcgAlarm.ordinal()] = new SetupAlarmEcgLayout(getContext());
+        views[SetupPageEnum.RespAlarm.ordinal()] = new SetupAlarmRespLayout(getContext());
+        views[SetupPageEnum.Co2Alarm.ordinal()] = new SetupAlarmCo2Layout(getContext());
+        views[SetupPageEnum.NibpAlarm.ordinal()] = new SetupAlarmNibpLayout(getContext());
 
         for (int index = 0; index < views.length; index++) {
             View view = views[index];

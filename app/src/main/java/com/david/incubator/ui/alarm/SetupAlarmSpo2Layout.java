@@ -22,6 +22,7 @@ public class SetupAlarmSpo2Layout extends BaseLayout {
     public SetupAlarmSpo2Layout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
+        super.init();
     }
 
     @Override
