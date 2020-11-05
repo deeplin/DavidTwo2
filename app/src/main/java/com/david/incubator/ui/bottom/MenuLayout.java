@@ -212,7 +212,7 @@ public class MenuLayout extends LinearLayout implements ILifeCycleOwner {
                 systemModel.showLayout(LayoutPageEnum.MENU_PRINT_SETUP);
                 break;
             case (6):
-                systemModel.showSetupPage(SetupPageEnum.Ecg);
+                systemModel.showSetupPage(SetupPageEnum.Spo2);
                 break;
         }
     }
