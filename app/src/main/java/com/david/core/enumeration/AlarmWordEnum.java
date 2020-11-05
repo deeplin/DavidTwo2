@@ -46,9 +46,7 @@ public enum AlarmWordEnum {
     ECG_OV(),
 
     ECG_APN(),
-
     ECG_ASY(),
-
     ECG_VEN(),
 
     ECG_HR_OVH(),
