@@ -56,7 +56,7 @@ public class ParameterStrategy implements Consumer<byte[]> {
             switch (buffer[3]) {
                 case (0x01):
                     spo2TextNumber.post((int) NumberUtil.getShortHighFirst(4, buffer));
-                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Sp, (int) NumberUtil.getShortHighFirst(8, buffer));
+                    spo2Model.setSystemAlarm(AlarmCategoryEnum.Spo2_Sp, NumberUtil.getShortHighFirst(8, buffer));
                     break;
                 case (0x02):
                     prTextNumber.post((int) NumberUtil.getShortHighFirst(4, buffer));

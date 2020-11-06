@@ -32,7 +32,7 @@ public class EcgModel extends BaseSensorModel {
             loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
         leadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_DROP, aBoolean));
-        v1LeadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_DROP, aBoolean));
+        v1LeadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_VDROP, aBoolean));
         overload.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_OV, aBoolean));
     }
 }

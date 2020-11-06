@@ -30,5 +30,10 @@ public class Co2Model extends BaseSensorModel {
             AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.CO2_ETL.ordinal() + 2 * index];
             loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
+
+        serException.observeForever(aBoolean -> setSystemAlarm(AlarmCategoryEnum.Co2_Ser, aBoolean));
+        asrException.observeForever(aBoolean -> setSystemAlarm(AlarmCategoryEnum.Co2_Asr, aBoolean));
+        dvrException.observeForever(aBoolean -> setSystemAlarm(AlarmCategoryEnum.Co2_Dvr, aBoolean));
+        ssrException.observeForever(aBoolean -> setSystemAlarm(AlarmCategoryEnum.Co2_Ssr, aBoolean));
     }
 }
