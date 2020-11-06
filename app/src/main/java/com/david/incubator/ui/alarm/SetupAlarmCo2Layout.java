@@ -91,7 +91,7 @@ public class SetupAlarmCo2Layout extends BaseLayout {
     @Override
     public void detach() {
         super.detach();
-        removeAllViews();
+        removeItemViews();
     }
 
     private Integer minRrCondition(KeyButtonEnum keyButtonEnum) {

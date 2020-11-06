@@ -303,4 +303,13 @@ public abstract class BaseLayout extends ConstraintLayout implements ILifeCycle 
         setKeyButtonEnum(rowId, lowerKeyButtonEnum, minCondition, maxCondition);
         setOriginValue(rowId, sensorModel.lowerLimit);
     }
+
+    protected void removeItemViews() {
+        for (int index = getChildCount() - 1; index >= 0; index--) {
+            View view = getChildAt(index);
+            if (!(view instanceof ImageView) && !(view instanceof TitleView)) {
+                removeView(view);
+            }
+        }
+    }
 }

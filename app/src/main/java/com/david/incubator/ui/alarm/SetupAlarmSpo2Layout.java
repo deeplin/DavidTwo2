@@ -41,7 +41,7 @@ public class SetupAlarmSpo2Layout extends BaseLayout {
     @Override
     public void detach() {
         super.detach();
-        removeAllViews();
+        removeItemViews();
     }
 
     private Integer minCondition(KeyButtonEnum keyButtonEnum) {
