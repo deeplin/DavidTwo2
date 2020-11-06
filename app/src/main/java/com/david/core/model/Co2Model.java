@@ -26,8 +26,8 @@ public class Co2Model extends BaseSensorModel {
 
         for (int index = 0; index < 3; index++) {
             SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Co2.ordinal() + index];
-            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVH.ordinal() + 2 * index];
-            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVL.ordinal() + 2 * index];
+            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.CO2_ETH.ordinal() + 2 * index];
+            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.CO2_ETL.ordinal() + 2 * index];
             loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
         }
     }

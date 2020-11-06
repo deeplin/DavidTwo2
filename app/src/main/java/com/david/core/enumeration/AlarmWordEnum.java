@@ -57,6 +57,13 @@ public enum AlarmWordEnum {
     /*Co2*/
     CO2_CON(),
 
+    CO2_ETH,
+    CO2_ETL,
+    CO2_BRH,
+    CO2_BRL,
+    CO2_FIH,
+    CO2_FIL,
+
     /*Nibp*/
     NIBP_CON(),
 
