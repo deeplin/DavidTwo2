@@ -28,7 +28,7 @@ public class EcgHrStrategy implements Function<EcgResponseCommand, Boolean> {
     public Boolean apply(EcgResponseCommand command) {
         if (!systemModel.demo.getValue()) {
             int hr = NumberUtil.getShort(0, command.getResponseBuffer());
-            if (hr > 2 && !ecgModel.isAlarmEnabled()) {
+            if (hr > 5 && !ecgModel.isAlarmEnabled()) {
                 ecgModel.setAlarmEnabled();
                 sensorModelRepository.getSensorModel(SensorModelEnum.EcgHr).textNumber.notifyChange();
                 sensorModelRepository.getSensorModel(SensorModelEnum.EcgRr).textNumber.notifyChange();

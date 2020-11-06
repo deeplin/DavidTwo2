@@ -1,11 +1,10 @@
 package com.david.incubator.serial.co2;
 
-import androidx.lifecycle.Observer;
-
 import com.david.core.buffer.BufferRepository;
 import com.david.core.control.ConfigRepository;
 import com.david.core.control.ModuleHardware;
 import com.david.core.control.SensorModelRepository;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.ModuleEnum;
 import com.david.core.enumeration.SensorModelEnum;
@@ -74,16 +73,13 @@ public class Co2CommandControl extends BaseSerialControl {
             co2FiModel.textNumber.notifyChange();
         });
 
-        moduleHardware.getModule(ModuleEnum.Co2).observeForever(new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer integer) {
-                if (moduleHardware.isActive(ModuleEnum.Co2)) {
-                    /*设置 sleep 模式*/
-                    co2Model.mode.set(0);
-                } else {
-                    /*设置 measurement 模式*/
-                    co2Model.mode.set(1);
-                }
+        moduleHardware.getModule(ModuleEnum.Co2).observeForever(integer -> {
+            if (moduleHardware.isActive(ModuleEnum.Co2)) {
+                /*设置 sleep 模式*/
+                co2Model.mode.set(0);
+            } else {
+                /*设置 measurement 模式*/
+                co2Model.mode.set(1);
             }
         });
     }
@@ -99,8 +95,7 @@ public class Co2CommandControl extends BaseSerialControl {
 
     @Override
     protected void setConnectionError(boolean status) {
-        //todo deeplin
-//        alarmRepository.produceAlarmFromAndroid(AlarmWordEnum.CO2_CON, status);
+        co2Model.setSenAlarm(AlarmWordEnum.CO2_CON, status);
         if (status && !systemModel.demo.getValue()) {
             co2RrModel.textNumber.post(Constant.SENSOR_NA_VALUE);
             co2FiModel.textNumber.post(Constant.SENSOR_NA_VALUE);
@@ -151,9 +146,11 @@ public class Co2CommandControl extends BaseSerialControl {
                 if (value == 255) {
                     value = Constant.SENSOR_NA_VALUE;
                 }
-                if (value > 7) {
-                    //todo deeplin
-//                    alarmRepository.enableCo2Mode.set(EnableAlarmEnum.Started);
+                if (value > 7 && !co2Model.isAlarmEnabled()) {
+                    co2Model.setAlarmEnabled();
+                    sensorModelRepository.getSensorModel(SensorModelEnum.Co2).textNumber.notifyChange();
+                    sensorModelRepository.getSensorModel(SensorModelEnum.Co2Fi).textNumber.notifyChange();
+                    sensorModelRepository.getSensorModel(SensorModelEnum.Co2Rr).textNumber.notifyChange();
                 }
                 co2RrModel.textNumber.post(value);
 
