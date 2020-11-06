@@ -51,6 +51,7 @@ public enum LayoutPageEnum {
     SYSTEM_ALARM_LIST,
     SYSTEM_PRINT(R.string.print_setup, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
     SYSTEM_MODULE_SETUP(R.string.module_setup, null, true, BindingLayoutEnum.Standard),
+    SYSTEM_MODULE_SPO2_SETUP(R.string.module_setup, null, true, BindingLayoutEnum.Standard),
 
     CAMERA_IMAGE_LIST(R.layout.layout_image_list, R.string.all_image, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
     CAMERA_VIDEO_LIST(R.layout.layout_image_list, R.string.all_video, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),

@@ -40,7 +40,7 @@ public class SystemModuleSetupLayout extends BaseLayout {
         ContextUtil.getComponent().inject(this);
         super.init(LayoutPageEnum.USER_MODULE_SETUP);
 
-        initPopup(8);
+        initPopup(7);
 
         setRowId(0, 0);
         setRowId(1, 1);
@@ -49,7 +49,6 @@ public class SystemModuleSetupLayout extends BaseLayout {
         setRowId(4, 4);
         setRowId(5, 5);
         setRowId(6, 6);
-        setRowId(7, 7);
     }
 
     @Override
@@ -58,55 +57,35 @@ public class SystemModuleSetupLayout extends BaseLayout {
 
         int index = 0;
 
-        if (incubatorModel.isCabin()) {
-            if (moduleHardware.isInstalled(ModuleEnum.Hum)) {
-                moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Hum) ? 1 : 0;
-                setText(index, R.string.hum_setting, ListUtil.statusList.toArray());
-                setPopup(index++, ListUtil.statusList.toArray(), true, this::humidityCallback);
-            }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Hum) ? 1 : 0;
+        setText(index, R.string.hum_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::humidityCallback);
 
-            if (moduleHardware.isInstalled(ModuleEnum.Oxygen)) {
-                moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Oxygen) ? 1 : 0;
-                setText(index, R.string.oxygen_setting, ListUtil.statusList.toArray());
-                setPopup(index++, ListUtil.statusList.toArray(), true, this::oxygenCallback);
-            }
-        }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Oxygen) ? 1 : 0;
+        setText(index, R.string.oxygen_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::oxygenCallback);
 
-        if (moduleHardware.isInstalled(ModuleEnum.Spo2)) {
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Spo2) ? 1 : 0;
-            setText(index, R.string.spo2_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::spo2Callback);
-        }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Spo2) ? 1 : 0;
+        setText(index, R.string.spo2_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::spo2Callback);
 
-        if (moduleHardware.isInstalled(ModuleEnum.Ecg)) {
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Ecg) ? 1 : 0;
-            setText(index, R.string.ecg_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::ecgCallback);
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Ecg) ? 1 : 0;
+        setText(index, R.string.ecg_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::ecgCallback);
 
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Resp) ? 1 : 0;
-            setText(index, R.string.resp_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::respCallback);
-        }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Co2) ? 1 : 0;
+        setText(index, R.string.co2_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::co2Callback);
 
-        if (moduleHardware.isInstalled(ModuleEnum.Co2)) {
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Co2) ? 1 : 0;
-            setText(index, R.string.co2_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::co2Callback);
-        }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Nibp) ? 1 : 0;
+        setText(index, R.string.nibp_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::nibpCallback);
 
-        if (moduleHardware.isInstalled(ModuleEnum.Nibp)) {
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Nibp) ? 1 : 0;
-            setText(index, R.string.nibp_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::nibpCallback);
-        }
+        moduleSettings[index] = moduleHardware.isInstalled(ModuleEnum.Wake) ? 1 : 0;
+        setText(index, R.string.wake_setting, ListUtil.statusList.toArray());
+        setPopup(index++, ListUtil.statusList.toArray(), true, this::wakeCallback);
 
-        if (moduleHardware.isInstalled(ModuleEnum.Wake)) {
-            moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Wake) ? 1 : 0;
-            setText(index, R.string.wake_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::wakeCallback);
-        }
-
-        for (; index < 8; index++) {
+        for (; index < 7; index++) {
             keyButtonViews[index].setVisibility(View.INVISIBLE);
         }
     }
@@ -171,45 +150,23 @@ public class SystemModuleSetupLayout extends BaseLayout {
 
     private void spo2Callback(Integer position) {
         setValue(position, SensorModelEnum.Spo2.getCommandName());
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
     }
 
     private void ecgCallback(Integer position) {
         setValue(position, ContextUtil.getString(R.string.ecg_id));
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
     }
 
     private void nibpCallback(Integer position) {
         setValue(position, SensorModelEnum.Nibp.getCommandName());
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
     }
 
 
     private void co2Callback(Integer position) {
         setValue(position, SensorModelEnum.Co2.getCommandName());
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
-    }
-
-    private void respCallback(Integer position) {
-        setValue(position, "RESP");
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
     }
 
     private void wakeCallback(Integer position) {
         setValue(position, SensorModelEnum.Wake.getCommandName());
-        if (position == 0) {
-            systemModel.setStandardLayout();
-        }
     }
 
     private void setValue(Integer position, String commandName) {

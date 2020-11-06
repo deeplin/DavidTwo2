@@ -42,6 +42,7 @@ import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
 import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
+import com.david.incubator.ui.system.SystemModuleSetupLayout;
 import com.david.incubator.ui.system.SystemNibpCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
 import com.david.incubator.ui.system.SystemRangeSetupLayout;
@@ -105,6 +106,7 @@ public class PopupLayout extends BindingBasicLayout<LayoutPopupBinding> {
         views[LayoutPageEnum.SYSTEM_MODULE_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemModuleCalibrationLayout(getContext());
         views[LayoutPageEnum.SYSTEM_NIBP_CALIBRATION.ordinal() - POPUP_START_ID] = new SystemNibpCalibrationLayout(getContext());
         views[LayoutPageEnum.SYSTEM_ALARM_LIST.ordinal() - POPUP_START_ID] = new SystemAlarmListLayout(getContext());
+        views[LayoutPageEnum.SYSTEM_MODULE_SETUP.ordinal() - POPUP_START_ID] = new SystemModuleSetupLayout(getContext());
 
         views[LayoutPageEnum.SETUP_HOME_INCUBATOR.ordinal() - POPUP_START_ID] = new SetupHomeIncubatorLayout(getContext());
         views[LayoutPageEnum.SETUP_HOME.ordinal() - POPUP_START_ID] = new SetupHomeLayout(getContext());

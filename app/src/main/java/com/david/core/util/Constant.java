@@ -72,7 +72,7 @@ public class Constant {
     public static final String USER_PASSWORD = "36663";
     public static final String DEMO_PASSWORD = "11111";
     public static final String SYSTEM_MODULE = "67611";
-    public static final String USER_MODULE = "67610";
+    public static final String SYSTEM_MODULE_SPO2 = "67610";
 
     /*信息输入*/
     public static final int MAX_INPUT = 12;
