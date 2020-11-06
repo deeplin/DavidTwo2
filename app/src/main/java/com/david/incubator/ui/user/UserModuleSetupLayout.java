@@ -213,12 +213,7 @@ public class UserModuleSetupLayout extends BaseLayout {
     }
 
     private void setValue(Integer position, String commandName) {
-        //todo deeplin
-        incubatorCommandSender.setModule(position == 1, commandName,
-                (aBoolean, baseSerialMessage) -> {
-                    if (aBoolean) {
-//                        incubatorCommandSender.getSoftwareModule();
-                    }
-                });
+        incubatorCommandSender.setModule(commandName, true, position == 1,
+                null);
     }
 }

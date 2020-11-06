@@ -38,7 +38,7 @@ public class SystemModuleSetupLayout extends BaseLayout {
     public SystemModuleSetupLayout(Context context) {
         super(context);
         ContextUtil.getComponent().inject(this);
-        super.init(LayoutPageEnum.USER_MODULE_SETUP);
+        super.init(LayoutPageEnum.SYSTEM_MODULE_SETUP);
 
         initPopup(7);
 
@@ -170,12 +170,6 @@ public class SystemModuleSetupLayout extends BaseLayout {
     }
 
     private void setValue(Integer position, String commandName) {
-        //todo deeplin
-        incubatorCommandSender.setModule(position == 1, commandName,
-                (aBoolean, baseSerialMessage) -> {
-                    if (aBoolean) {
-//                        incubatorCommandSender.getSoftwareModule();
-                    }
-                });
+        incubatorCommandSender.setModule(commandName, false, position == 1, null);
     }
 }

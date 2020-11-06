@@ -14,24 +14,26 @@ import java.util.Locale;
 
 public class ModuleSetCommand extends BaseIncubatorCommand {
 
+    private String sensorId;
+    private boolean software;
     private String statusString;
-    private String sensorID;
 
     public ModuleSetCommand() {
         super();
     }
 
-    public void set(boolean status, String sensorId) {
+    public void set(String sensorId, boolean software, boolean status) {
+        this.sensorId = sensorId;
+        this.software = software;
         if (status) {
             statusString = CommandChar.ON;
         } else {
             statusString = CommandChar.OFF;
         }
-        this.sensorID = sensorId;
     }
 
     @Override
     protected String getRequestString() {
-        return String.format(Locale.US, "MODULE %s %s", statusString, sensorID);
+        return String.format(Locale.US, "MODULE %s %s%s", sensorId, software ? "S" : "H", statusString);
     }
 }
