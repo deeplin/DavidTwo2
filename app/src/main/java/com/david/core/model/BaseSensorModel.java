@@ -15,6 +15,7 @@ import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
+import com.david.core.util.LoggerUtil;
 
 import java.util.Objects;
 
@@ -74,19 +75,15 @@ public class BaseSensorModel {
     }
 
     public void setSystemAlarm(AlarmCategoryEnum alarmCategoryEnum, int value) {
-        if (alarmEnabled) {
-            int index = alarmCategoryEnum.getIndex();
-            passThroughAlarmArray[index].post(value);
-            systemAlarm.post(BitUtil.setBit(systemAlarm.getValue(), index, value > 0));
-        }
+        int index = alarmCategoryEnum.getIndex();
+        passThroughAlarmArray[index].post(value);
+        systemAlarm.post(BitUtil.setBit(systemAlarm.getValue(), index, value > 0));
     }
 
     public void setSenAlarm(AlarmWordEnum alarmWordEnum, boolean value) {
-        if (alarmEnabled) {
-            AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum);
-            int bitOffset = alarmModel.getBitOffset();
-            passThroughAlarmArray[1].post(BitUtil.setBit(passThroughAlarmArray[1].getValue(), bitOffset, value));
-        }
+        AlarmModel alarmModel = alarmRepository.getAlarmModel(alarmWordEnum);
+        int bitOffset = alarmModel.getBitOffset();
+        passThroughAlarmArray[1].post(BitUtil.setBit(passThroughAlarmArray[1].getValue(), bitOffset, value));
     }
 
     public void loadRangeAlarm(SensorModelEnum sensorModelEnum, AlarmWordEnum upperAlarmEnum, AlarmWordEnum lowerAlarmEnum) {
@@ -125,7 +122,9 @@ public class BaseSensorModel {
     }
 
     private void setRangeBit(AlarmModel alarmModel, boolean value) {
-        int bitOffset = alarmModel.getBitOffset();
-        passThroughAlarmArray[0].post(BitUtil.setBit(passThroughAlarmArray[0].getValue(), bitOffset, value));
+        if (alarmEnabled) {
+            int bitOffset = alarmModel.getBitOffset();
+            passThroughAlarmArray[0].post(BitUtil.setBit(passThroughAlarmArray[0].getValue(), bitOffset, value));
+        }
     }
 }
