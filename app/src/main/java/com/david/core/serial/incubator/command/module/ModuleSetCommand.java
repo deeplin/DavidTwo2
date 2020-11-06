@@ -34,6 +34,6 @@ public class ModuleSetCommand extends BaseIncubatorCommand {
 
     @Override
     protected String getRequestString() {
-        return String.format(Locale.US, "MODULE %s %s%s", sensorId, software ? "S" : "H", statusString);
+        return String.format(Locale.US, "MODULE %s%s %s", software ? "S" : "H", statusString, sensorId);
     }
 }

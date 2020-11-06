@@ -95,7 +95,7 @@ public class IncubatorCommandSender {
 
     public void setModule(String sensorName, boolean software, boolean status, BiConsumer<Boolean, BaseCommand> onComplete) {
         ModuleSetCommand moduleSetCommand = new ModuleSetCommand();
-        moduleSetCommand.set(sensorName, status, software);
+        moduleSetCommand.set(sensorName, software, status);
         moduleSetCommand.setCallback(onComplete);
         incubatorCommandControl.produce(moduleSetCommand);
     }
