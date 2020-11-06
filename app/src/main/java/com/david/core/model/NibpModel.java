@@ -6,8 +6,10 @@ import com.david.R;
 import com.david.core.control.ConfigRepository;
 import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.AlarmCategoryEnum;
+import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.ConfigEnum;
 import com.david.core.enumeration.ModuleEnum;
+import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
@@ -36,12 +38,6 @@ public class NibpModel extends BaseSensorModel implements ILifeCycle {
     public final LazyLiveData<Boolean> error = new LazyLiveData<>();
     public final LazyLiveData<String> fieldString = new LazyLiveData<>(Constant.SENSOR_DEFAULT_ERROR_STRING);
     public final LazyLiveData<String> subFieldString = new LazyLiveData<>();
-    public final LazyLiveData<Integer> Dia = new LazyLiveData<>((int) Constant.NA_VALUE);
-    public final LazyLiveData<Integer> Mean = new LazyLiveData<>((int) Constant.NA_VALUE);
-    public final LazyLiveData<Integer> diaLowerLimit = new LazyLiveData<>(30);
-    public final LazyLiveData<Integer> diaUpperLimit = new LazyLiveData<>(70);
-    public final LazyLiveData<Integer> meanLowerLimit = new LazyLiveData<>(35);
-    public final LazyLiveData<Integer> meanUpperLimit = new LazyLiveData<>(80);
 
     public final LazyLiveData<Boolean> nibpCal = new LazyLiveData<>(false);
 
@@ -57,10 +53,16 @@ public class NibpModel extends BaseSensorModel implements ILifeCycle {
 
     @Inject
     public NibpModel() {
-        super(ModuleEnum.Nibp, AlarmCategoryEnum.Spo2_Range, 6);
+        super(ModuleEnum.Nibp, AlarmCategoryEnum.Nibp_Range, 3);
+
+        for (int index = 0; index < 3; index++) {
+            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Nibp.ordinal() + index];
+            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.NIBP_SH.ordinal() + 2 * index];
+            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.NIBP_SL.ordinal() + 2 * index];
+            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
+        }
 
         processMode = NibpProcessMode.Complete;
-
         errorCallback = aBoolean -> {
             if (aBoolean == null) {
                 functionValue.set(null);
@@ -69,7 +71,6 @@ public class NibpModel extends BaseSensorModel implements ILifeCycle {
             }
         };
     }
-
 
     @Override
     public void attach() {

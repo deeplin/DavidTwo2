@@ -15,7 +15,6 @@ import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.BitUtil;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.LazyLiveData;
-import com.david.core.util.LoggerUtil;
 
 import java.util.Objects;
 

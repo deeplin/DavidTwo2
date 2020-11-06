@@ -19,8 +19,8 @@ public enum AlarmCategoryEnum {
     Co2_Ssr(5, AlarmGroupEnum.C, "SSR"),
 
     Nibp_Range(0, AlarmGroupEnum.N, "HL"),
-    Nibp_Con(0, AlarmGroupEnum.N, "SEN"),
-    Nibp_Sys(0, AlarmGroupEnum.N, "SYS");
+    Nibp_Con(1, AlarmGroupEnum.N, "SEN"),
+    Nibp_Sys(2, AlarmGroupEnum.N, "SYS");
 
     private final int index;
     private final AlarmGroupEnum alarmGroupEnum;
