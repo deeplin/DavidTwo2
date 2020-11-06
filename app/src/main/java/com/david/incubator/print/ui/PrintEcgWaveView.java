@@ -96,42 +96,42 @@ public class PrintEcgWaveView extends BindingBasicLayout<ViewPrintEcgWaveBinding
         switch (gain) {
             case (0): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(1.25f);
+                layoutParams.height = Constant.getPrintPixel(1.25f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (1): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(2.5f);
+                layoutParams.height = Constant.getPrintPixel(2.5f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (2): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(5f);
+                layoutParams.height = Constant.getPrintPixel(5f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (3): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(10f);
+                layoutParams.height = Constant.getPrintPixel(10f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("1mv");
             }
             break;
             case (4): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(10);
+                layoutParams.height = Constant.getPrintPixel(10f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("0.5mv");
             }
             break;
             case (5): {
                 ViewGroup.LayoutParams layoutParams = binding.standardImage.getLayoutParams();
-                layoutParams.height = Constant.getPixel(10);
+                layoutParams.height = Constant.getPrintPixel(10f);
                 binding.standardImage.setLayoutParams(layoutParams);
                 voltage.set("0.25mv");
             }

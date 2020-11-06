@@ -79,6 +79,7 @@ import com.david.incubator.ui.system.SystemDebugInfoLayout;
 import com.david.incubator.ui.system.SystemDeviationAlarmLayout;
 import com.david.incubator.ui.system.SystemHomeLayout;
 import com.david.incubator.ui.system.SystemModuleCalibrationLayout;
+import com.david.incubator.ui.system.SystemModuleSetupLayout;
 import com.david.incubator.ui.system.SystemNibpCalibrationLayout;
 import com.david.incubator.ui.system.SystemOverheatAlarmLayout;
 import com.david.incubator.ui.system.SystemRangeSetupLayout;
@@ -298,4 +299,6 @@ public interface MainComponent extends CommonComponent {
     void inject(CameraImageLayout cameraImageLayout);
 
     void inject(CameraVideoLayout cameraVideoLayout);
+
+    void inject(SystemModuleSetupLayout systemModuleSetupLayout);
 }

@@ -54,6 +54,10 @@ public class Constant {
         return (int) (mm / getCurrentDotPitch());
     }
 
+    public static int getPrintPixel(float mm) {
+        return (int) (mm / PRINT_DOT_PITCH);
+    }
+
     /*按钮事件设置*/
     public static final int LONG_CLICK_DELAY = 100; //millisecond
 
@@ -67,6 +71,8 @@ public class Constant {
     public static final String SYSTEM_PASSWORD = "78722";
     public static final String USER_PASSWORD = "36663";
     public static final String DEMO_PASSWORD = "11111";
+    public static final String SYSTEM_MODULE = "67611";
+    public static final String USER_MODULE = "67610";
 
     /*信息输入*/
     public static final int MAX_INPUT = 12;

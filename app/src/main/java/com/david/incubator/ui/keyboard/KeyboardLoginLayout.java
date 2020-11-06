@@ -124,6 +124,10 @@ public class KeyboardLoginLayout extends BindingBasicLayout<LayoutKeyboardLoginB
             systemModel.showLayout(LayoutPageEnum.SYSTEM_HOME);
         } else if (password.toString().equals(Constant.USER_PASSWORD) && (systemModel.layoutPage.getValue() == LayoutPageEnum.KEYBOARD_LOGIN_USER)) {
             systemModel.showLayout(LayoutPageEnum.USER_HOME);
+        } else if (password.toString().equals(Constant.SYSTEM_PASSWORD) && (systemModel.layoutPage.getValue() == LayoutPageEnum.KEYBOARD_LOGIN_USER)) {
+            systemModel.showLayout(LayoutPageEnum.USER_HOME);
+        } else if (password.toString().equals(Constant.USER_PASSWORD) && (systemModel.layoutPage.getValue() == LayoutPageEnum.KEYBOARD_LOGIN_USER)) {
+            systemModel.showLayout(LayoutPageEnum.USER_HOME);
         } else if (password.toString().equals(Constant.DEMO_PASSWORD) && (systemModel.layoutPage.getValue() == LayoutPageEnum.KEYBOARD_LOGIN_DEMO)) {
             systemModel.demo.set(!systemModel.demo.getValue());
             incubatorCommandSender.setDemo(systemModel.demo.getValue());
