@@ -25,14 +25,14 @@ public class EcgModel extends BaseSensorModel {
     @Inject
     public EcgModel() {
         super(ModuleEnum.Ecg, AlarmCategoryEnum.Ecg_Range, 2);
-        for (int index = 0; index < 2; index++) {
-            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.EcgHr.ordinal() + index];
-            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRH.ordinal() + 2 * index];
-            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRL.ordinal() + 2 * index];
-            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
-        }
-        leadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_DROP, aBoolean));
-        v1LeadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_VDROP, aBoolean));
-        overload.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_OV, aBoolean));
+//        for (int index = 0; index < 2; index++) {
+//            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.EcgHr.ordinal() + index];
+//            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRH.ordinal() + 2 * index];
+//            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.ECG_HRL.ordinal() + 2 * index];
+//            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
+//        }
+//        leadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_DROP, aBoolean));
+//        v1LeadOff.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_VDROP, aBoolean));
+//        overload.observeForever(aBoolean -> setSenAlarm(AlarmWordEnum.ECG_OV, aBoolean));
     }
 }

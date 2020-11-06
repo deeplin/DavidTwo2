@@ -5,7 +5,9 @@ import androidx.lifecycle.Observer;
 import com.david.R;
 import com.david.core.control.ConfigRepository;
 import com.david.core.control.SensorModelRepository;
+import com.david.core.enumeration.AlarmCategoryEnum;
 import com.david.core.enumeration.ConfigEnum;
+import com.david.core.enumeration.ModuleEnum;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 import com.david.core.util.ILifeCycle;
@@ -20,7 +22,7 @@ import javax.inject.Singleton;
 
 
 @Singleton
-public class NibpModel implements ILifeCycle {
+public class NibpModel extends BaseSensorModel implements ILifeCycle {
 
     @Inject
     ConfigRepository configRepository;
@@ -55,6 +57,8 @@ public class NibpModel implements ILifeCycle {
 
     @Inject
     public NibpModel() {
+        super(ModuleEnum.Nibp, AlarmCategoryEnum.Spo2_Range, 6);
+
         processMode = NibpProcessMode.Complete;
 
         errorCallback = aBoolean -> {

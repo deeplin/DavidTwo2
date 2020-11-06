@@ -553,6 +553,7 @@
     <string name="NIBP.DL">NIBP舒张压低</string>
     <string name="NIBP.MH">NIBP平均压高</string>
     <string name="NIBP.ML">NIBP平均压低</string>
+    <string name="CO2.CON">CO2通信中断</string>
     <string name="CO2.ETH">EtCO₂高</string>
     <string name="CO2.ETL">EtCO₂低</string>
     <string name="CO2.FIH">FiCO₂高</string>
@@ -562,6 +563,5 @@
     <string name="HUM.DEVH">湿度上偏差</string>
     <string name="HUM.DEVL">湿度下偏差</string>
     <string name="SPO2.LOW">血氧饱和度低于85%</string>
-
 
 </resources>
