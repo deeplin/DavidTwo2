@@ -112,6 +112,10 @@
     <string name="capture_confirm">已添加%s</string>
     <string name="capture_failed">拍照失败</string>
     <string name="no_camera">请连接摄像头！</string>
+    <string name="image">图片</string>
+    <string name="video">视频</string>
+    <string name="all_image">所有图片</string>
+    <string name="all_video">所有视频</string>
 
     <!--Menu Home-->
     <string name="comfort_zone">舒适区</string>
@@ -215,8 +219,6 @@
     <string name="factory_setting">出厂设置</string>
     <string name="module_calibration">模块校准</string>
     <string name="alarm_record">报警日志</string>
-    <string name="all_image">所有图片</string>
-    <string name="all_video">所有视频</string>
 
     <!--System Deviation-->
     <string name="air_upper_limit">箱温上限</string>

@@ -49,13 +49,13 @@ public enum LayoutPageEnum {
     SYSTEM_MODULE_CALIBRATION(R.string.module_calibration, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
     SYSTEM_NIBP_CALIBRATION(R.string.nibp_calibration, LayoutPageEnum.SYSTEM_MODULE_CALIBRATION, true, BindingLayoutEnum.Standard),
     SYSTEM_ALARM_LIST,
-
     SYSTEM_PRINT(R.string.print_setup, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
-    //    SYSTEM_Image_List(R.string.all_image, LayoutPageEnum.SYSTEM_HOME, true, true),
-//    SYSTEM_Video_List(R.string.all_video, LayoutPageEnum.SYSTEM_HOME, true, true),
-//    SYSTEM_Image(R.string.image, LayoutPageEnum.SYSTEM_Image_List, true, true),
-//    SYSTEM_Video(R.string.video, LayoutPageEnum.SYSTEM_Video_List, true, true),
-//
+
+    CAMERA_IMAGE_LIST(R.layout.layout_image_list, R.string.all_image, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
+    CAMERA_VIDEO_LIST(R.layout.layout_image_list, R.string.all_video, LayoutPageEnum.SYSTEM_HOME, true, BindingLayoutEnum.Standard),
+    CAMERA_IMAGE(R.string.image, LayoutPageEnum.CAMERA_IMAGE_LIST, true, BindingLayoutEnum.Standard),
+    CAMERA_VIDEO(R.string.video, LayoutPageEnum.CAMERA_VIDEO_LIST, true, BindingLayoutEnum.Standard),
+
     SETUP_HOME_INCUBATOR,
     SETUP_HOME,
     SETUP_ALARM,

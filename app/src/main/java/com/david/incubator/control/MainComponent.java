@@ -17,6 +17,8 @@ import com.david.incubator.ui.alarm.SetupAlarmNibpLayout;
 import com.david.incubator.ui.alarm.SetupAlarmRespLayout;
 import com.david.incubator.ui.alarm.SetupAlarmSpo2Layout;
 import com.david.incubator.ui.bottom.MenuLayout;
+import com.david.incubator.ui.camera.CameraImageListLayout;
+import com.david.incubator.ui.camera.CameraVideoListLayout;
 import com.david.incubator.ui.home.basic.BasicLayout;
 import com.david.incubator.ui.home.basic.MiddleRightBasicLayout;
 import com.david.incubator.ui.home.basic.StandardSpo2BasicLayout;
@@ -286,4 +288,8 @@ public interface MainComponent extends CommonComponent {
     void inject(SetupAlarmCo2Layout setupAlarmCo2Layout);
 
     void inject(SetupAlarmNibpLayout setupAlarmNibpLayout);
+
+    void inject(CameraImageListLayout cameraImageListLayout);
+
+    void inject(CameraVideoListLayout cameraVideoListLayout);
 }
