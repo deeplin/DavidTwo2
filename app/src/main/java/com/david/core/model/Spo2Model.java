@@ -3,7 +3,6 @@ package com.david.core.model;
 import com.david.core.enumeration.AlarmCategoryEnum;
 import com.david.core.enumeration.AlarmWordEnum;
 import com.david.core.enumeration.ModuleEnum;
-import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.enumeration.Spo2AverageTimeEnum;
 import com.david.core.enumeration.Spo2SensEnum;
 import com.david.core.util.LazyLiveData;
@@ -32,14 +31,16 @@ public class Spo2Model extends BaseSensorModel {
     @Inject
     public Spo2Model() {
         super(ModuleEnum.Spo2, AlarmCategoryEnum.Spo2_Range, 6);
-        for (int index = 0; index < 8; index++) {
-            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Spo2.ordinal() + index];
-            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVH.ordinal() + 2 * index];
-            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVL.ordinal() + 2 * index];
-            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
-        }
-        SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
-        isSpo2Below85(sensorModel, AlarmWordEnum.SPO2_LOW);
+
+        //todo deeplin
+//        for (int index = 0; index < 8; index++) {
+//            SensorModelEnum sensorModelEnum = SensorModelEnum.values()[SensorModelEnum.Spo2.ordinal() + index];
+//            AlarmWordEnum upperAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVH.ordinal() + 2 * index];
+//            AlarmWordEnum lowerAlarmEnum = AlarmWordEnum.values()[AlarmWordEnum.SP_OVL.ordinal() + 2 * index];
+//            loadRangeAlarm(sensorModelEnum, upperAlarmEnum, lowerAlarmEnum);
+//        }
+//        SensorModel sensorModel = sensorModelRepository.getSensorModel(SensorModelEnum.Spo2);
+//        isSpo2Below85(sensorModel, AlarmWordEnum.SPO2_LOW);
     }
 
     private void isSpo2Below85(SensorModel sensorModel, AlarmWordEnum alarmEnum) {

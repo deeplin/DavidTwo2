@@ -9,7 +9,14 @@ public enum AlarmCategoryEnum {
     Spo2_Sp(5, AlarmGroupEnum.S, "SP"),
 
     Ecg_Range(0, AlarmGroupEnum.E, "HL"),
-    Ecg_Con(1, AlarmGroupEnum.E, "SEN");
+    Ecg_Con(1, AlarmGroupEnum.E, "SEN"),
+
+    Co2_Range(0, AlarmGroupEnum.C, "HL"),
+    Co2_Sen(1, AlarmGroupEnum.C, "SEN"),
+    Co2_Ser(2, AlarmGroupEnum.C, "SER"),
+    Co2_Asr(3, AlarmGroupEnum.C, "ASR"),
+    Co2_Dvr(4, AlarmGroupEnum.C, "DVR"),
+    Co2_Ssr(5, AlarmGroupEnum.C, "SSR");
 
     private final int index;
     private final AlarmGroupEnum alarmGroupEnum;
