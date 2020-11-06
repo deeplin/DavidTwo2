@@ -120,7 +120,7 @@ public class SetupCo2Layout extends BaseLayout {
         setKeyButtonEnum(1, KeyButtonEnum.SETUP_CO2_N20_COMPENSATE, null, null);
         setOriginValue(1, configRepository.getConfig(ConfigEnum.Co2N2oCompensate));
 
-        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Co2));
+        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Co2Alarm));
     }
 
     @Override

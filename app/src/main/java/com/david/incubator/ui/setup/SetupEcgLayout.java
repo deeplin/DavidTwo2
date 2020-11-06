@@ -283,7 +283,7 @@ public class SetupEcgLayout extends BaseLayout {
 
         alarmSettingButton = ViewUtil.buildButton(getContext());
         addInnerButton(9, alarmSettingButton);
-        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Ecg));
+        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.EcgAlarm));
     }
 
     @Override

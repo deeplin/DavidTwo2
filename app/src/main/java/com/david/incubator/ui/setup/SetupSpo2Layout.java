@@ -38,6 +38,17 @@ import javax.inject.Inject;
 
 public class SetupSpo2Layout extends BaseLayout {
 
+    private final KeyButtonView sensView;
+    private final TextTwoButtonView fastSatView;
+    private final TextTwoButtonView lineFrequencyView;
+    private final TextTwoButtonView spo2SmartToneView;
+    private final KeyButtonView spo2SpeedView;
+    private final KeyButtonView spo2GainView;
+    private final Button alarmSettingButton;
+    private final Observer<Boolean> pviAverageObserver;
+    private final Observer<Integer> sphbPrecisionObserver;
+    private final Observer<Boolean> sphbArterialObserver;
+    private final Observer<Integer> sphbAverageObserver;
     @Inject
     Spo2CommandControl spo2CommandControl;
     @Inject
@@ -46,24 +57,10 @@ public class SetupSpo2Layout extends BaseLayout {
     ConfigRepository configRepository;
     @Inject
     SystemModel systemModel;
-
-    private final KeyButtonView sensView;
-    private final TextTwoButtonView fastSatView;
-    private final TextTwoButtonView lineFrequencyView;
-    private final TextTwoButtonView spo2SmartToneView;
-    private final KeyButtonView spo2SpeedView;
-    private final KeyButtonView spo2GainView;
     private TextTwoButtonView pviAverageView;
     private KeyButtonView sphbPrecisionView;
     private TextTwoButtonView sphbArterialView;
     private KeyButtonView sphbAverageView;
-
-    private final Button alarmSettingButton;
-
-    private final Observer<Boolean> pviAverageObserver;
-    private final Observer<Integer> sphbPrecisionObserver;
-    private final Observer<Boolean> sphbArterialObserver;
-    private final Observer<Integer> sphbAverageObserver;
 
     public SetupSpo2Layout(Context context) {
         super(context);
@@ -206,6 +203,11 @@ public class SetupSpo2Layout extends BaseLayout {
         sphbAverageObserver = integer -> sphbAverageView.getValue().setText(getSphbAverageString(integer));
     }
 
+    public static String convertAverageTime(Integer enumId) {
+        Spo2AverageTimeEnum spo2AverageTimeEnum = Spo2AverageTimeEnum.values()[enumId];
+        return spo2AverageTimeEnum.toString();
+    }
+
     @Override
     public void attach() {
         super.attach();
@@ -298,11 +300,6 @@ public class SetupSpo2Layout extends BaseLayout {
         Spo2SenCommand command = new Spo2SenCommand();
         command.set((byte) (2 - optionId));
         spo2CommandControl.produce(command);
-    }
-
-    public static String convertAverageTime(Integer enumId) {
-        Spo2AverageTimeEnum spo2AverageTimeEnum = Spo2AverageTimeEnum.values()[enumId];
-        return spo2AverageTimeEnum.toString();
     }
 
     private void setAverageTime(Integer value) {

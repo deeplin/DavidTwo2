@@ -135,7 +135,7 @@ public class SetupRespLayout extends BaseLayout {
             optionPopupView.show(this, rrSourceView.getId(), true);
         });
 
-        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.Resp));
+        alarmSettingButton.setOnClickListener(v -> systemModel.showSetupPage(SetupPageEnum.RespAlarm));
     }
 
     @Override
