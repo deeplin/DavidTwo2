@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.ui.layout.BaseLayout;
+import com.david.core.util.ContextUtil;
 import com.david.core.util.ViewUtil;
 
 public class CameraImageLayout extends BaseLayout {
@@ -18,6 +19,7 @@ public class CameraImageLayout extends BaseLayout {
 
     public CameraImageLayout(Context context) {
         super(context);
+        ContextUtil.getComponent().inject(this);
         super.init(LayoutPageEnum.CAMERA_IMAGE);
 
         imageView = new ImageView(context);

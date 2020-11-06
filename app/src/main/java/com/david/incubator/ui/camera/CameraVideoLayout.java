@@ -6,6 +6,7 @@ import android.widget.VideoView;
 
 import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.ui.layout.BaseLayout;
+import com.david.core.util.ContextUtil;
 import com.david.core.util.LoggerUtil;
 import com.david.core.util.ViewUtil;
 
@@ -17,6 +18,7 @@ public class CameraVideoLayout extends BaseLayout {
 
     public CameraVideoLayout(Context context) {
         super(context);
+        ContextUtil.getComponent().inject(this);
         super.init(LayoutPageEnum.CAMERA_VIDEO);
     }
 
