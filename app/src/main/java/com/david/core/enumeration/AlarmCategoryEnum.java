@@ -20,7 +20,9 @@ public enum AlarmCategoryEnum {
 
     Nibp_Range(0, AlarmGroupEnum.N, "HL"),
     Nibp_Con(1, AlarmGroupEnum.N, "SEN"),
-    Nibp_Sys(2, AlarmGroupEnum.N, "SYS");
+    Nibp_Sys(2, AlarmGroupEnum.N, "SYS"),
+
+    Print_Sen(0, AlarmGroupEnum.P, "SEN");
 
     private final int index;
     private final AlarmGroupEnum alarmGroupEnum;

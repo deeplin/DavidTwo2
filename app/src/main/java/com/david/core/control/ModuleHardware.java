@@ -42,7 +42,10 @@ public class ModuleHardware {
     }
 
     public boolean isActive(ModuleEnum moduleEnum) {
-        return moduleArray[moduleEnum.ordinal()].getValue() == 2;
+        if (moduleEnum != null) {
+            return moduleArray[moduleEnum.ordinal()].getValue() == 2;
+        }
+        return true;
     }
 
     public boolean isInActive(ModuleEnum moduleEnum) {
