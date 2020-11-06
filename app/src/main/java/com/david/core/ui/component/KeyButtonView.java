@@ -65,7 +65,7 @@ public class KeyButtonView extends BindingBasicLayout<ViewKeyButtonBinding> {
     }
 
     public void setBigFont() {
-        binding.key.setTextSize(30);
-        binding.value.setTextSize(30);
+        binding.key.setTextSize(40);
+        binding.value.setTextSize(40);
     }
 }

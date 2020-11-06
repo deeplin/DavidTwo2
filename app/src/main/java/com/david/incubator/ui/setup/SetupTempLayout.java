@@ -82,9 +82,9 @@ public class SetupTempLayout extends BaseLayout {
         setCallback(2, this::setManualObjective);
 
         kangButton = ViewUtil.buildButton(getContext());
-        addInnerButton(3, kangButton);
+        addInnerButton(4, kangButton);
         kangButton.setText(ContextUtil.getString(R.string.kang));
-        kangButton.setTextSize(30);
+        kangButton.setTextSize(40);
         kangButton.setOnClickListener(view ->
                 incubatorCommandSender.clearAlarm120("ALL", (aBoolean, baseSerialMessage) -> {
                     incubatorModel.KANG.post(true);
