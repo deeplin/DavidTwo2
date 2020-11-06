@@ -103,7 +103,7 @@ public class UserModuleSetupLayout extends BaseLayout {
         if (moduleHardware.isInstalled(ModuleEnum.Wake)) {
             moduleSettings[index] = moduleHardware.isActive(ModuleEnum.Wake) ? 1 : 0;
             setText(index, R.string.wake_setting, ListUtil.statusList.toArray());
-            setPopup(index++, ListUtil.statusList.toArray(), true, this::wakeCallback);
+            setPopup(index++, ListUtil.statusList.toArray(), false, this::wakeCallback);
         }
 
         for (; index < 8; index++) {
