@@ -4,6 +4,7 @@ import androidx.arch.core.util.Function;
 
 import com.david.core.control.SensorModelRepository;
 import com.david.core.enumeration.SensorModelEnum;
+import com.david.core.model.EcgModel;
 import com.david.core.model.SystemModel;
 import com.david.core.util.NumberUtil;
 import com.david.incubator.serial.ecg.EcgResponseCommand;
@@ -16,6 +17,8 @@ public class EcgHrStrategy implements Function<EcgResponseCommand, Boolean> {
     SystemModel systemModel;
     @Inject
     SensorModelRepository sensorModelRepository;
+    @Inject
+    EcgModel ecgModel;
 
     @Inject
     public EcgHrStrategy() {
@@ -24,8 +27,13 @@ public class EcgHrStrategy implements Function<EcgResponseCommand, Boolean> {
     @Override
     public Boolean apply(EcgResponseCommand command) {
         if (!systemModel.demo.getValue()) {
-            sensorModelRepository.getSensorModel(SensorModelEnum.EcgHr).textNumber
-                    .post((int) NumberUtil.getShort(0, command.getResponseBuffer()));
+            int hr = NumberUtil.getShort(0, command.getResponseBuffer());
+            if (hr > 2 && !ecgModel.isAlarmEnabled()) {
+                ecgModel.setAlarmEnabled();
+                sensorModelRepository.getSensorModel(SensorModelEnum.EcgHr).textNumber.notifyChange();
+                sensorModelRepository.getSensorModel(SensorModelEnum.EcgRr).textNumber.notifyChange();
+            }
+            sensorModelRepository.getSensorModel(SensorModelEnum.EcgHr).textNumber.post(hr);
         }
         return false;
     }
