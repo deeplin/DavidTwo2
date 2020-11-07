@@ -60,8 +60,9 @@ public class UserLanguageLayout extends BaseLayout {
     private void languageCallback(int optionId) {
         if (optionId != originLanguageOption) {
             originLanguageOption = optionId;
-            LanguageEnum.setLanguage(LanguageEnum.values()[optionId]);
-            LanguageEnum.setLanguage(optionId);
+            LanguageEnum languageEnum = LanguageEnum.values()[optionId];
+            LanguageEnum.saveLanguage(languageEnum);
+            LanguageEnum.setLanguage(ContextUtil.getApplicationContext(), languageEnum);
             sensorModelRepository.setText();
             languageView.setValue(LanguageEnum.values()[optionId].toString());
             languageView.setSelected(true);

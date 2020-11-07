@@ -58,7 +58,7 @@ public class MainApplication extends Application {
         ContextUtil.getComponent().inject(this);
 
         LanguageEnum languageEnum = LanguageEnum.getLanguage();
-        LanguageEnum.setLanguage(languageEnum.ordinal());
+        LanguageEnum.setLanguage(getApplicationContext(), languageEnum);
         sensorModelRepository.setText();
 
         intervalUtil.attach();

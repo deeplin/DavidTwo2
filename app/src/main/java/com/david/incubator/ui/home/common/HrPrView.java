@@ -55,7 +55,7 @@ public class HrPrView extends BindingBasicLayout<ViewHrPrBinding> {
             }
         });
 
-        AlphaAnimation alphaAnimation = AnimationUtil.getAlphaAnimation(250, 1, 0);
+        AlphaAnimation alphaAnimation = AnimationUtil.getAlphaAnimation(200, 1, 0);
 
         ecgBeepCallback = aBoolean -> binding.ivSet.startAnimation(alphaAnimation);
 

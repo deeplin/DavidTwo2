@@ -2,11 +2,15 @@ package com.david.core.enumeration;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
 
 import java.util.Locale;
+import java.util.Objects;
 
 /**
  * author: Ling Lin
@@ -31,10 +35,11 @@ public enum LanguageEnum {
         return text;
     }
 
-    public static Locale setLanguage(int languageIndex) {
-        if (languageIndex == LanguageEnum.CHN.ordinal()) {
+    private static Locale getLanguageLocal(LanguageEnum languageEnum) {
+        if (Objects.equals(languageEnum.ordinal(), LanguageEnum.CHN.ordinal())) {
             return Locale.CHINESE;
-        } else if (languageIndex == LanguageEnum.ENG.ordinal()) {
+        }
+        if (Objects.equals(languageEnum.ordinal(), LanguageEnum.ENG.ordinal())) {
             return Locale.ENGLISH;
         }
 //        else if (languageIndex == LanguageEnum.TUR.ordinal()) {
@@ -61,9 +66,17 @@ public enum LanguageEnum {
         return LanguageEnum.values()[languageId];
     }
 
-    public static void setLanguage(LanguageEnum languageEnum) {
+    public static void saveLanguage(LanguageEnum languageEnum) {
         final SharedPreferences sharedPreferences = ContextUtil.getApplicationContext()
                 .getSharedPreferences("config", Context.MODE_PRIVATE);
         sharedPreferences.edit().putInt(LANGUAGE_ID, languageEnum.ordinal()).apply();
+    }
+
+    public static void setLanguage(Context context, LanguageEnum languageEnum) {
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.setLocale(getLanguageLocal(languageEnum));
+        resources.updateConfiguration(configuration, metrics);
     }
 }

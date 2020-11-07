@@ -10,7 +10,7 @@ package com.david.core.util;
 public class Constant {
 
     /*设置屏幕锁屏时间*/
-    public static final int SCREEN_LOCK_SECOND = 15000000; //second
+    public static final int SCREEN_LOCK_SECOND = 150000; //second
 
     /*是否新生儿*/
     public static final boolean IS_NEONATE = false;
