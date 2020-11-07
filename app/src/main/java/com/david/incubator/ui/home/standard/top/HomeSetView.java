@@ -15,7 +15,7 @@ import com.david.core.model.IncubatorModel;
 import com.david.core.model.SensorModel;
 import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.core.util.LazyLiveData;
 import com.david.databinding.ViewHomeSetBinding;
 

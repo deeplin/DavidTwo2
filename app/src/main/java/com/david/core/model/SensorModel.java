@@ -3,7 +3,7 @@ package com.david.core.model;
 import com.david.core.enumeration.SensorModelEnum;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.core.util.LazyLiveData;
 
 public class SensorModel {

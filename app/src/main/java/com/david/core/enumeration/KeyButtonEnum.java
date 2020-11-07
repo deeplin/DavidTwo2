@@ -3,7 +3,7 @@ package com.david.core.enumeration;
 import androidx.arch.core.util.Function;
 
 import com.david.R;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.incubator.ui.menu.MenuComfortZoneLayout;
 import com.david.incubator.ui.setup.SetupSpo2Layout;
 import com.david.incubator.ui.system.SystemSensorCalibrationLayout;

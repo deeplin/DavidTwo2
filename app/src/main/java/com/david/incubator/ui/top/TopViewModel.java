@@ -16,7 +16,7 @@ import com.david.core.model.SystemModel;
 import com.david.core.serial.incubator.IncubatorCommandSender;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.core.util.ILifeCycle;
 import com.david.core.util.IntervalUtil;
 import com.david.core.util.LazyLiveData;

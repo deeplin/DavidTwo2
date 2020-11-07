@@ -14,7 +14,7 @@ import com.david.core.enumeration.LayoutPageEnum;
 import com.david.core.ui.component.KeyButtonView;
 import com.david.core.ui.layout.BaseLayout;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.core.util.LoggerUtil;
 import com.david.core.util.TimeUtil;
 import com.david.core.util.ViewUtil;

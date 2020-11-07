@@ -27,7 +27,7 @@ import com.david.core.ui.layout.BindingBasicLayout;
 import com.david.core.ui.view.ChartView;
 import com.david.core.util.Constant;
 import com.david.core.util.ContextUtil;
-import com.david.core.util.FormatUtil;
+import com.david.core.util.rely.FormatUtil;
 import com.david.core.util.ListUtil;
 import com.david.core.util.TimeUtil;
 import com.david.core.util.rely.RangeUtil;

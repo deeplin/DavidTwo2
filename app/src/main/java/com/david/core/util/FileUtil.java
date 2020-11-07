@@ -1,10 +1,6 @@
 package com.david.core.util;
 
-import android.content.Context;
 import android.content.res.AssetManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
 
 import androidx.arch.core.util.Function;
 
@@ -15,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Locale;
 
 /**
  * author: Ling Lin
@@ -64,14 +59,6 @@ public class FileUtil {
         } catch (Throwable e) {
             LoggerUtil.e(e);
         }
-    }
-
-    public static void setLocalLanguage(Context context, Locale locale) {
-        Resources resources = context.getResources();
-        DisplayMetrics metrics = resources.getDisplayMetrics();
-        Configuration configuration = resources.getConfiguration();
-        configuration.setLocale(locale);
-        resources.updateConfiguration(configuration, metrics);
     }
 
     public static boolean makeDirectory(String directory) {
